@@ -1,0 +1,219 @@
+/* =========================================================
+   MASSASH DESIGN SYSTEM — CSS Custom Properties
+   massash.com · Massage · Rehabilitation · Coaching
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Nunito+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+
+  /* -------------------------------------------------------
+     COLORS — Base Palette
+  ------------------------------------------------------- */
+  --color-bg:           #F9F6F0;
+  --color-surface:      #F5F5F5;
+  --color-surface-tint: #EFF4F3;  /* subtle green-tinted bg for sections */
+
+  --color-accent-green:       #3D7A6B;
+  --color-accent-green-dark:  #336859;
+  --color-accent-green-light: #E8F1EF;
+
+  --color-accent-terra:       #B5522A;
+  --color-accent-terra-dark:  #9E4522;
+  --color-accent-terra-light: #F5EAE4;
+
+  --color-text:    #1C1915;
+  --color-muted:   #8A7E6F;
+  --color-subtle:  #C4BAB0;
+  --color-border:  #EEEBE7;
+  --color-border-input: #D6CEC4;
+
+  /* -------------------------------------------------------
+     COLORS — Semantic Roles
+  ------------------------------------------------------- */
+  --bg-page:           var(--color-bg);
+  --bg-card:           var(--color-surface);
+  --bg-section-tint:   var(--color-surface-tint);
+
+  --fg-primary:        var(--color-text);
+  --fg-secondary:      var(--color-muted);
+  --fg-disabled:       var(--color-subtle);
+
+  --action-primary:    var(--color-accent-green);
+  --action-primary-hover: var(--color-accent-green-dark);
+  --action-secondary:  var(--color-accent-terra);
+  --action-secondary-hover: var(--color-accent-terra-dark);
+
+  --focus-ring:        rgba(61,122,107,0.3);
+
+  /* -------------------------------------------------------
+     TYPOGRAPHY — Font Families
+  ------------------------------------------------------- */
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body:    'Nunito Sans', 'Helvetica Neue', sans-serif;
+
+  /* -------------------------------------------------------
+     TYPOGRAPHY — Scale
+  ------------------------------------------------------- */
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-md:   1.125rem;  /* 18px */
+  --text-lg:   1.25rem;   /* 20px */
+  --text-xl:   1.5rem;    /* 24px */
+  --text-2xl:  1.875rem;  /* 30px */
+  --text-3xl:  2.25rem;   /* 36px */
+  --text-4xl:  3rem;      /* 48px */
+  --text-5xl:  3.75rem;   /* 60px */
+  --text-6xl:  4.5rem;    /* 72px */
+
+  /* -------------------------------------------------------
+     TYPOGRAPHY — Semantic Roles
+  ------------------------------------------------------- */
+  --h1-size:   var(--text-5xl);
+  --h1-weight: 400;
+  --h1-family: var(--font-display);
+  --h1-lh:     1.1;
+  --h1-ls:     -0.01em;
+
+  --h2-size:   var(--text-4xl);
+  --h2-weight: 400;
+  --h2-family: var(--font-display);
+  --h2-lh:     1.15;
+  --h2-ls:     -0.01em;
+
+  --h3-size:   var(--text-3xl);
+  --h3-weight: 400;
+  --h3-family: var(--font-display);
+  --h3-lh:     1.2;
+  --h3-ls:     0;
+
+  --h4-size:   var(--text-xl);
+  --h4-weight: 600;
+  --h4-family: var(--font-body);
+  --h4-lh:     1.3;
+  --h4-ls:     0;
+
+  --body-size:   var(--text-base);
+  --body-weight: 400;
+  --body-family: var(--font-body);
+  --body-lh:     1.6;
+  --body-ls:     0;
+
+  --body-lg-size: var(--text-md);
+  --body-sm-size: var(--text-sm);
+
+  --caption-size:   var(--text-xs);
+  --caption-weight: 600;
+  --caption-ls:     0.06em;
+
+  --label-size:   var(--text-sm);
+  --label-weight: 600;
+  --label-ls:     0.02em;
+
+  /* -------------------------------------------------------
+     SPACING — 4px base unit
+  ------------------------------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  --section-py: var(--space-20);
+  --container-max: 1200px;
+  --container-px: var(--space-6);
+
+  /* -------------------------------------------------------
+     BORDER RADIUS
+  ------------------------------------------------------- */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* -------------------------------------------------------
+     SHADOWS
+  ------------------------------------------------------- */
+  --shadow-sm:  0 1px 4px rgba(28,25,21,0.06);
+  --shadow-md:  0 2px 12px rgba(28,25,21,0.08);
+  --shadow-lg:  0 8px 32px rgba(28,25,21,0.12);
+  --shadow-xl:  0 16px 48px rgba(28,25,21,0.16);
+
+  /* -------------------------------------------------------
+     TRANSITIONS
+  ------------------------------------------------------- */
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:   180ms;
+  --duration-base:   240ms;
+  --duration-slow:   360ms;
+  --transition-base: var(--duration-base) var(--ease);
+}
+
+/* -------------------------------------------------------
+   SEMANTIC TAG DEFAULTS
+------------------------------------------------------- */
+h1 {
+  font-family: var(--h1-family);
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  line-height: var(--h1-lh);
+  letter-spacing: var(--h1-ls);
+  color: var(--fg-primary);
+}
+h2 {
+  font-family: var(--h2-family);
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: var(--h2-lh);
+  letter-spacing: var(--h2-ls);
+  color: var(--fg-primary);
+}
+h3 {
+  font-family: var(--h3-family);
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  line-height: var(--h3-lh);
+  letter-spacing: var(--h3-ls);
+  color: var(--fg-primary);
+}
+h4 {
+  font-family: var(--h4-family);
+  font-size: var(--h4-size);
+  font-weight: var(--h4-weight);
+  line-height: var(--h4-lh);
+  letter-spacing: var(--h4-ls);
+  color: var(--fg-primary);
+}
+p, li, td {
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  font-weight: var(--body-weight);
+  line-height: var(--body-lh);
+  color: var(--fg-primary);
+}
+small, .caption {
+  font-family: var(--font-body);
+  font-size: var(--caption-size);
+  font-weight: var(--caption-weight);
+  letter-spacing: var(--caption-ls);
+  text-transform: uppercase;
+  color: var(--fg-secondary);
+}
+a {
+  color: var(--action-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+a:hover {
+  color: var(--action-primary-hover);
+}

@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<!-- saved from url=(0298)https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957 -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style data-omelette-injected="">html,body{background:transparent}</style><script data-omelette-injected="">(()=>{var A=["https://claude.ai","https://preview.claude.ai","https://eap-omelette.claude.ai"];var L=30000;var u=3000;document.addEventListener("DOMContentLoaded",()=>{const V=window.Babel;const $="om-src-id";if(V&&V.registerPlugin&&!(V.availablePlugins&&V.availablePlugins[$])){V.registerPlugin($,({types:Q})=>({visitor:{JSXOpeningElement(W,X){const K=W.node;if(K.name&&K.name.type==="JSXMemberExpression")return;for(let J=0;J<K.attributes.length;J++){const w=K.attributes[J];if(w.type==="JSXAttribute"&&w.name&&w.name.name==="data-om-id")return}const z=X.file&&X.file.opts&&X.file.opts.filename||"?";const k=K.loc&&K.loc.start;const C=`jsx:${z}:${K.start??0}:${k?k.line:0}:${k?k.column+1:0}`;K.attributes.push(Q.jsxAttribute(Q.jsxIdentifier("data-om-id"),Q.stringLiteral(C)))}}}))}const Z=["transform-react-jsx-source",$];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Q,W)=>{const X=Q.getAttribute("data-plugins")||"";const K=Z.filter((z)=>X.indexOf(z)<0);if(K.length){Q.setAttribute("data-plugins",X?`${X},${K.join(",")}`:K.join(","))}if(!Q.hasAttribute("data-filename")){Q.setAttribute("data-filename",Q.getAttribute("src")||`inline-${W}`)}})});var b=window.parent;if(b&&b!==window){const V=(z,k)=>{try{b.postMessage({__omelette_log:true,type:z,data:k},"*")}catch{}};["log","warn","error"].forEach((z)=>{const k=console[z];console[z]=(...C)=>{const J=C.map((w)=>{try{return typeof w==="object"?JSON.stringify(w):String(w)}catch{try{return String(w)}catch{return"[unstringifiable]"}}}).join(" ");V(z,J);k.apply(console,C)}});window.addEventListener("error",(z)=>{const k=z.target;if(k&&k!==window&&k.tagName){const C=k.src||k.href||"";V("resource_error",`${k.tagName} failed to load: ${C}`)}else{V("error",`${z.message||"Unknown error"} at ${z.filename||"?"}:${z.lineno||0}:${z.colno||0}`)}},true);window.addEventListener("unhandledrejection",(z)=>{const k=z.reason;const C=k instanceof Error?`${k.message} ${k.stack}`:String(k);V("error",`Unhandled rejection: ${C}`)});const $=()=>{try{b.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")$();else window.addEventListener("load",$);if(window.ResizeObserver)new ResizeObserver($).observe(document.documentElement);const Z={};let Q=0;window.claude={complete(z){return new Promise((k,C)=>{if(!A.length){C(new Error("claude.complete: no parent origin"));return}const J=`c${++Q}`;const w=()=>setTimeout(()=>{delete Z[J];C(new Error(`claude.complete: no data for ${L/1000}s`))},L);const Y=w();Z[J]={resolve:k,reject:C,text:"",t:Y,arm:w};try{for(const F of A){b.postMessage({__om_api:true,id:J,body:z},F)}}catch(F){clearTimeout(Y);delete Z[J];C(F)}})}};const W={};let X=0;window.omelette={writeFile:(z,k)=>new Promise((C,J)=>{if(!A.length){C();return}const w=`f${++X}`;const Y=setTimeout(()=>{delete W[w];C()},u);W[w]={resolve:C,reject:J,t:Y};try{for(const F of A){b.postMessage({__om_file:true,id:w,op:"write",path:z,content:k},F)}}catch{clearTimeout(Y);delete W[w];C()}})};const K=(z)=>{try{return JSON.stringify(z)}catch{return JSON.stringify(String(z))}};window.addEventListener("message",(z)=>{if(A.indexOf(z.origin)<0)return;if(z.source!==b)return;const k=z.data;if(!k)return;if(k.__om_file_r){const w=W[k.id];if(!w)return;clearTimeout(w.t);delete W[k.id];if(k.ok)w.resolve();else w.reject(new Error(k.error||"write failed"));return}if(k.__om_api_r){const w=Z[k.id];if(!w)return;if(k.error!=null){clearTimeout(w.t);delete Z[k.id];w.reject(new Error(k.error));return}if(k.chunk!=null){clearTimeout(w.t);w.t=w.arm();w.text+=k.chunk;return}if(k.done){clearTimeout(w.t);delete Z[k.id];w.resolve(k.text!=null?k.text:w.text);return}return}if(!k.__om_eval)return;const C=k;const J=(w)=>{z.source.postMessage({...w,__om_eval_r:1,id:C.id},z.origin)};try{const w=(0,eval)(C.code);if(w&&typeof w.then==="function"){w.then((Y)=>J({ok:1,v:K(Y)}),(Y)=>J({ok:0,e:String(Y)}))}else{J({ok:1,v:K(w)})}}catch(w){J({ok:0,e:String(w)})}})}})();
+</script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>massash — Системная работа с телом</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./css2" rel="stylesheet">
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito Sans', sans-serif; background: #F9F6F0; color: #1C1915; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── TOKENS ── */
+:root {
+  --green:        #3D7A6B;
+  --green-dark:   #336859;
+  --green-light:  #E8F1EF;
+  --green-tint:   #EFF4F3;
+  --terra:        #B5522A;
+  --terra-light:  #F5EAE4;
+  --text:         #1C1915;
+  --muted:        #8A7E6F;
+  --subtle:       #C4BAB0;
+  --border:       #EEEBE7;
+  --border-input: #D6CEC4;
+  --bg:           #F9F6F0;
+  --surface:      #F5F5F5;
+  --max:          1200px;
+  --px:           48px;
+  --serif:        'Cormorant Garamond', Georgia, serif;
+  --sans:         'Nunito Sans', sans-serif;
+  --shadow-md:    0 2px 12px rgba(28,25,21,0.08);
+  --shadow-lg:    0 8px 32px rgba(28,25,21,0.12);
+  --ease:         cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ── LAYOUT HELPERS ── */
+.container { max-width: var(--max); margin: 0 auto; padding: 0 var(--px); }
+section { padding: 80px 0; }
+
+/* ── EYEBROW ── */
+.eyebrow {
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 12px;
+}
+
+/* ══════════════════════════════════════════
+   1. HEADER
+══════════════════════════════════════════ */
+.header { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); }
+
+.header-top {
+  background: var(--green-tint); border-bottom: 1px solid #D6CEC4;
+  padding: 22px 0;
+}
+.header-top .container {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.header-top-text { font-size: 12px; font-weight: 600; color: var(--green); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.header-top-phone { font-size: 12px; font-weight: 600; color: var(--muted); }
+.header-top-phone a { color: var(--muted); transition: color 180ms var(--ease); }
+.header-top-phone a:hover { color: var(--text); }
+
+.header-nav { padding: 0; }
+.header-nav .container {
+  display: flex; align-items: center; height: 68px; gap: 0;
+}
+.logo {
+  font-family: var(--serif); font-size: 28px; font-weight: 500;
+  color: var(--text); letter-spacing: -0.01em; flex-shrink: 0;
+}
+.logo span { color: var(--green); }
+
+.nav-links {
+  display: flex; gap: 32px; list-style: none;
+  margin: 0 auto;
+}
+.nav-links a {
+  font-size: 14px; font-weight: 600; color: var(--text);
+  letter-spacing: 0.01em; transition: color 180ms var(--ease);
+  position: relative; padding-bottom: 2px; white-space: nowrap;
+}
+.nav-links a:hover { color: var(--green); }
+.nav-links a.active { color: var(--green); }
+.nav-links a.active::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
+  height: 2px; background: var(--green); border-radius: 1px;
+}
+
+.btn-book {
+  background: var(--green); color: #fff; border: none;
+  border-radius: 8px; padding: 11px 22px; font-family: var(--sans);
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  letter-spacing: 0.02em; transition: background 180ms var(--ease), transform 150ms var(--ease);
+  white-space: nowrap; flex-shrink: 0;
+}
+.btn-book:hover { background: var(--green-dark); }
+.btn-book:active { transform: scale(0.98); }
+
+/* ══════════════════════════════════════════
+   2. HERO — Layout B (60/40 split)
+══════════════════════════════════════════ */
+.hero { padding: 0; overflow: hidden; border-bottom: 1px solid var(--border); }
+.hero-inner {
+  display: grid; grid-template-columns: 60fr 40fr;
+  min-height: 580px; max-width: var(--max); margin: 0 auto;
+}
+
+.hero-left {
+  padding: 72px var(--px) 72px var(--px);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.hero-tag { margin-bottom: 20px; }
+.hero-h1 {
+  font-family: var(--serif); font-size: 58px; font-weight: 400;
+  line-height: 1.05; letter-spacing: -0.015em; color: var(--text);
+  margin-bottom: 8px;
+}
+.hero-h1 em { font-style: italic; font-weight: 300; }
+.hero-byline {
+  font-family: var(--serif); font-size: 18px; font-style: italic;
+  font-weight: 300; color: var(--muted); margin-bottom: 20px;
+}
+.hero-desc {
+  font-size: 16px; line-height: 1.7; color: var(--muted);
+  max-width: 420px; margin-bottom: 36px;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center;
+  background: var(--green); color: #fff; border: none; border-radius: 8px;
+  padding: 14px 32px; font-family: var(--sans); font-size: 15px;
+  font-weight: 700; cursor: pointer; letter-spacing: 0.02em; white-space: nowrap;
+  transition: background 180ms var(--ease), transform 150ms var(--ease);
+}
+.btn-primary:hover { background: var(--green-dark); }
+.btn-primary:active { transform: scale(0.98); }
+
+.btn-outline {
+  display: inline-flex; align-items: center;
+  background: transparent; color: var(--green);
+  border: 1.5px solid var(--green); border-radius: 8px;
+  padding: 13px 28px; font-family: var(--sans); font-size: 15px;
+  font-weight: 600; cursor: pointer; white-space: nowrap;
+  transition: background 180ms var(--ease);
+}
+.btn-outline:hover { background: var(--green-light); }
+
+.hero-actions { display: flex; gap: 12px; margin-bottom: 48px; }
+
+.hero-stats {
+  display: flex; gap: 36px; padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.stat-num {
+  font-family: var(--serif); font-size: 36px; font-weight: 500;
+  color: var(--text); line-height: 1;
+}
+.stat-lbl {
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  margin-top: 4px; letter-spacing: 0.02em; white-space: nowrap;
+}
+
+
+.hero-right { position: relative; overflow: hidden; }
+.hero-photo {
+  width: 100%; height: 100%;
+  background: var(--green-tint);
+  border-left: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-photo-inner {
+  width: 100%; height: 100%;
+  min-height: 580px;
+  display: flex; align-items: flex-end; justify-content: center;
+  overflow: hidden;
+}
+/* Placeholder silhouette */
+<div class="hero-photo-inner">
+  <img src="assets/image/hero.jpg" 
+       alt="Александр — массажист-реабилитолог" 
+       style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+</div>
+.hero-badge {
+  position: absolute; bottom: 28px; left: -1px;
+  background: #fff; border-radius: 0 10px 10px 0;
+  box-shadow: var(--shadow-lg); padding: 12px 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+.badge-text { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.3; }
+.badge-sub  { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.3; display: block; }
+
+/* ══════════════════════════════════════════
+   3. REHAB LEVELS — Layout A (3 cols)
+══════════════════════════════════════════ */
+.rehab { background: #F0EDE7; border-bottom: 1px solid var(--border); }
+.rehab-head { text-align: center; margin-bottom: 40px; }
+.rehab-h2 {
+  font-family: var(--serif); font-size: 44px; font-weight: 400;
+  line-height: 1.1; color: var(--text); margin-bottom: 12px;
+}
+.rehab-sub { font-size: 16px; color: var(--muted); max-width: 520px; margin: 0 auto; }
+
+.rehab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.rehab-card {
+  background: var(--bg); border-radius: 12px;
+  border: 1px solid rgba(28,25,21,0.07);
+  box-shadow: var(--shadow-md); padding: 32px 28px;
+  transition: box-shadow 240ms var(--ease), transform 240ms var(--ease);
+  display: flex; flex-direction: column;
+}
+.rehab-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.rehab-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; flex: 1; }
+
+.rehab-num {
+  font-family: var(--serif); font-size: 52px; font-weight: 300;
+  color: var(--green); line-height: 1; margin-bottom: 12px;
+  opacity: 0.7;
+}
+.rehab-title {
+  font-family: var(--serif); font-size: 22px; font-weight: 500;
+  color: var(--text); margin-bottom: 10px; line-height: 1.2;
+}
+.rehab-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+.rehab-tools {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.tag {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
+  text-transform: uppercase; padding: 3px 9px; border-radius: 4px;
+  background: var(--green-light); color: var(--green);
+}
+
+/* ══════════════════════════════════════════
+   4. HOW I WORK — Layout A (numbered list)
+══════════════════════════════════════════ */
+.method { background: var(--bg); border-bottom: 1px solid var(--border); }
+.method-inner { display: block; }
+
+.method-head { text-align: center; margin-bottom: 48px; }
+.method-h2 {
+  font-family: var(--serif); font-size: 44px; font-weight: 400;
+  line-height: 1.1; color: var(--text); margin-bottom: 12px;
+}
+.method-sub { font-size: 16px; color: var(--muted); line-height: 1.7; max-width: 560px; margin: 0 auto; }
+
+.method-steps { display: flex; flex-direction: column; }
+.method-step {
+  display: flex; gap: 28px; align-items: flex-start;
+  padding: 24px 28px; border-bottom: 1px solid var(--border);
+}
+.method-step:last-child { border-bottom: none; }
+.step-num {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--green); color: #fff; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--sans); font-size: 15px; font-weight: 700;
+  margin-top: 2px;
+}
+.step-title {
+  font-family: var(--sans); font-size: 16px; font-weight: 700;
+  color: var(--text); margin-bottom: 6px; line-height: 1.3;
+}
+.step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+/* ══════════════════════════════════════════
+   5. SERVICES — Layout C (horizontal tiles)
+══════════════════════════════════════════ */
+.services { background: #F0EDE7; border-bottom: 1px solid var(--border); }
+.services-head { margin-bottom: 32px; }
+.services-h2 {
+  font-family: var(--serif); font-size: 44px; font-weight: 400;
+  line-height: 1.1; color: var(--text); margin-bottom: 8px;
+}
+.services-sub { font-size: 16px; color: var(--muted); }
+
+.services-tiles { display: flex; flex-direction: column; gap: 0; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); }
+
+.service-tile {
+  display: grid; grid-template-columns: 200px 1fr auto;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+  transition: background 200ms var(--ease);
+}
+.service-tile:last-child { border-bottom: none; }
+.service-tile:hover { background: #fff; }
+
+.tile-img {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  background: var(--green-tint); border-right: 1px solid var(--border);
+  min-height: 130px; font-family: var(--sans); letter-spacing: 0.02em;
+}
+.tile-img.terra-tint { background: var(--terra-light); }
+.tile-img.neutral-tint { background: #F0EDE7; }
+
+.tile-body { padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
+.tile-eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.tile-eyebrow.green { color: var(--green); }
+.tile-eyebrow.terra { color: var(--terra); }
+.tile-eyebrow.muted { color: var(--muted); }
+
+.tile-title {
+  font-family: var(--serif); font-size: 22px; font-weight: 500;
+  color: var(--text); margin-bottom: 8px; line-height: 1.2;
+}
+.tile-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+.tile-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag-outline {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 3px 9px; border-radius: 4px;
+  border: 1.5px solid; color: var(--green); border-color: currentColor;
+  background: transparent;
+}
+.tag-outline.terra { color: var(--terra); }
+.tag-outline.muted { color: var(--muted); border-color: var(--border-input); }
+
+.tile-action {
+  padding: 24px 28px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+  border-left: 1px solid var(--border); min-width: 160px;
+}
+.tile-price {
+  font-family: var(--serif); font-size: 24px; font-weight: 500;
+  color: var(--text); text-align: center; white-space: nowrap;
+}
+.tile-price-sub { font-family: var(--sans); font-size: 12px; color: var(--muted); }
+.btn-tile {
+  margin-top: 4px; background: var(--green); color: #fff;
+  border: none; border-radius: 8px; padding: 10px 20px;
+  font-family: var(--sans); font-size: 13px; font-weight: 700;
+  cursor: pointer; transition: background 180ms var(--ease);
+  white-space: nowrap;
+}
+.btn-tile:hover { background: var(--green-dark); }
+.btn-tile.terra-btn { background: var(--terra); }
+.btn-tile.terra-btn:hover { background: #9E4522; }
+
+/* ══════════════════════════════════════════
+   6. REVIEWS CAROUSEL
+══════════════════════════════════════════ */
+.reviews { background: var(--bg); border-bottom: 1px solid var(--border); }
+.reviews-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; }
+.reviews-h2 {
+  font-family: var(--serif); font-size: 44px; font-weight: 400;
+  line-height: 1.1; color: var(--text);
+}
+.reviews-nav { display: flex; gap: 8px; }
+.reviews-nav-btn {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid var(--border-input); background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: border-color 180ms var(--ease), background 180ms var(--ease);
+  color: var(--text);
+}
+.reviews-nav-btn:hover { border-color: var(--green); background: var(--green-light); }
+.reviews-nav-btn svg { width: 18px; height: 18px; stroke: currentColor; }
+
+.reviews-track-wrap { overflow: hidden; }
+.reviews-track {
+  display: flex; gap: 20px;
+  transition: transform 350ms var(--ease);
+}
+.review-card {
+  flex: 0 0 calc((100% - 40px) / 3);
+  background: var(--surface); border-radius: 12px;
+  border: 1px solid rgba(28,25,21,0.07);
+  box-shadow: var(--shadow-md); padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.review-stars { display: flex; gap: 3px; }
+.review-stars svg { width: 16px; height: 16px; fill: #E6A817; stroke: none; }
+.review-meta { display: flex; align-items: center; gap: 12px; }
+.review-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--green-tint); display: flex;
+  align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--green);
+  flex-shrink: 0;
+}
+.review-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.review-date { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.review-text { font-size: 14px; color: var(--muted); line-height: 1.65; flex: 1; }
+.review-source { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--subtle); margin-top: 4px; }
+
+.reviews-footer {
+  margin-top: 32px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+}
+.reviews-footer-label { font-size: 13px; color: var(--muted); }
+.btn-review-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1.5px solid var(--border-input); border-radius: 8px;
+  padding: 9px 18px; font-family: var(--sans); font-size: 13px; font-weight: 700;
+  color: var(--text); background: #fff;
+  transition: border-color 180ms var(--ease), color 180ms var(--ease);
+}
+.btn-review-link:hover { border-color: var(--green); color: var(--green); }
+.btn-review-link svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
+
+/* ══════════════════════════════════════════
+   7. FAQ ACCORDION
+══════════════════════════════════════════ */
+.faq { background: #F0EDE7; border-bottom: 1px solid var(--border); }
+.faq-head { text-align: center; margin-bottom: 40px; }
+.faq-h2 {
+  font-family: var(--serif); font-size: 44px; font-weight: 400;
+  line-height: 1.1; color: var(--text); margin-bottom: 12px;
+}
+.faq-sub { font-size: 16px; color: var(--muted); max-width: 500px; margin: 0 auto; }
+
+.faq-list {
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  background: var(--bg); box-shadow: var(--shadow-md);
+  max-width: 800px; margin: 0 auto;
+}
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:last-child { border-bottom: none; }
+.faq-q {
+  width: 100%; display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 28px; background: none; border: none; cursor: pointer;
+  text-align: left; gap: 16px;
+  transition: background 180ms var(--ease);
+}
+.faq-q:hover { background: var(--green-tint); }
+.faq-q-text {
+  font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--text);
+  line-height: 1.4;
+}
+.faq-icon {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--green-light); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 220ms var(--ease), transform 220ms var(--ease);
+}
+.faq-icon svg { width: 12px; height: 12px; stroke: var(--green); stroke-width: 2.5; transition: transform 220ms var(--ease); }
+.faq-item.open .faq-icon { background: var(--green); }
+.faq-item.open .faq-icon svg { stroke: #fff; transform: rotate(45deg); }
+.faq-a-wrap { max-height: 0; overflow: hidden; transition: max-height 300ms var(--ease); }
+.faq-a { padding: 0 28px 22px; font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ══════════════════════════════════════════
+   8. CTA — Layout B (text left + form right, green bg)
+══════════════════════════════════════════ */
+.cta-section { background: var(--green); border-bottom: 1px solid var(--green-dark); }
+.cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+.cta-left { padding-top: 4px; }
+.cta-eyebrow { color: rgba(255,255,255,0.55); margin-bottom: 16px; }
+.cta-h2 {
+  font-family: var(--serif); font-size: 44px; font-weight: 400;
+  line-height: 1.1; color: #fff; margin-bottom: 16px;
+}
+.cta-sub { font-size: 16px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 32px; }
+
+.cta-details { display: flex; flex-direction: column; gap: 14px; }
+.cta-detail { display: flex; align-items: center; gap: 12px; }
+.cta-detail-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.12); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+}
+.cta-detail-text { font-size: 14px; color: rgba(255,255,255,0.75); font-weight: 600; }
+.cta-detail-sub  { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 1px; }
+
+.cta-form {
+  background: var(--bg); border-radius: 16px;
+  padding: 36px 32px; box-shadow: 0 16px 48px rgba(28,25,21,0.2);
+}
+.form-title {
+  font-family: var(--serif); font-size: 24px; font-weight: 500;
+  color: var(--text); margin-bottom: 24px; line-height: 1.2;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 0; }
+.field { margin-bottom: 14px; }
+.field label {
+  display: block; font-size: 13px; font-weight: 700;
+  color: var(--text); margin-bottom: 6px; letter-spacing: 0.01em;
+}
+.field input, .field select, .field textarea {
+  width: 100%; font-family: var(--sans); font-size: 15px;
+  color: var(--text); background: #fff; border: 1px solid var(--border-input);
+  border-radius: 8px; padding: 11px 14px; outline: none;
+  transition: border-color 180ms var(--ease), box-shadow 180ms var(--ease);
+  appearance: none;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(61,122,107,0.15);
+}
+.field textarea { resize: none; }
+
+.btn-submit {
+  width: 100%; background: var(--green); color: #fff; border: none;
+  border-radius: 8px; padding: 14px; font-family: var(--sans);
+  font-size: 15px; font-weight: 700; cursor: pointer;
+  letter-spacing: 0.02em; margin-top: 6px;
+  transition: background 180ms var(--ease), transform 150ms var(--ease);
+}
+.btn-submit:hover { background: var(--green-dark); }
+.btn-submit:active { transform: scale(0.99); }
+.form-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 10px; }
+
+/* ══════════════════════════════════════════
+   7. FOOTER
+══════════════════════════════════════════ */
+.footer { background: #1C1915; padding: 56px 0 32px; }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px; margin-bottom: 40px;
+}
+.footer-logo {
+  font-family: var(--serif); font-size: 26px; font-weight: 500;
+  color: #fff; margin-bottom: 10px;
+}
+.footer-logo span { color: var(--green); }
+.footer-tagline { font-size: 13px; color: #8A7E6F; line-height: 1.6; max-width: 220px; }
+
+.footer-col-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.09em;
+  text-transform: uppercase; color: #C4BAB0; margin-bottom: 16px;
+  font-family: var(--sans);
+}
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a, .footer-links span {
+  font-size: 13px; color: #8A7E6F; transition: color 180ms var(--ease);
+  font-family: var(--sans);
+}
+.footer-links a:hover { color: #fff; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 20px; display: flex; justify-content: space-between;
+  align-items: center;
+}
+.footer-copy { font-size: 12px; color: #8A7E6F; font-family: var(--sans); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ 1. HEADER ═══════════ -->
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-text">Сертифицированный специалист · Москва · м. Аэропорт</div>
+      <div class="header-top-phone"><a href="tel:+79991234567">+7 (926) 663-6641-67</a></div>
+    </div>
+  </div>
+  <nav class="header-nav">
+    <div class="container">
+      <div class="logo">mas<span>sash</span></div>
+      <ul class="nav-links">
+        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#" class="active">Главная</a></li>
+        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Услуги</a></li>
+        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#prices">Цены</a></li>
+        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#about">Обо мне</a></li>
+        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#reviews">Отзывы</a></li>
+        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#blog">Блог</a></li>
+      </ul>
+      <button class="btn-book" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══════════ 2. HERO — Layout B (60/40) ═══════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag eyebrow">Реабилитолог · Массажист · Тренер</div>
+      <h1 class="hero-h1">Системная<br><em>работа с телом</em></h1>
+      <p class="hero-byline">— Вахания Александр, 5 лет практики массажист-реабилитолог, 10 лет спортивный тренер</p>
+      <p class="hero-desc">Работаю с болью, движением и восстановлением. Не точечное снятие симптомов — а понимание причин и долгосрочный результат для каждого клиента.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться на консультацию</button>
+        <button class="btn-outline" onclick="document.getElementById(&#39;services&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Узнать об услугах</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">8+</div><div class="stat-lbl">лет опыта</div></div>
+        <div><div class="stat-num">1&nbsp;200+</div><div class="stat-lbl">клиентов</div></div>
+        <div><div class="stat-num">4.9</div><div class="stat-lbl">рейтинг</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo">
+        <div class="hero-photo-inner">
+          <img src="assets/image/hero.jpg" 
+          alt="Александр — массажист-реабилитолог" 
+          style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      </div>
+    </div>
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        <div>
+          <div class="badge-text">Свободно сегодня</div>
+          <div class="badge-sub">Запишитесь онлайн</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 3. REHAB LEVELS — Layout A (3 cols) ═══════════ -->
+<section class="rehab">
+  <div class="container">
+    <div class="rehab-head">
+      <div class="eyebrow">Уровни работы</div>
+      <h2 class="rehab-h2">Три уровня реабилитации</h2>
+      <p class="rehab-sub">Работаю системно — от снятия острой боли до долгосрочной стабилизации и укрепления тела.</p>
+    </div>
+    <div class="rehab-grid">
+      <div class="rehab-card">
+        <div class="rehab-num">01</div>
+        <h3 class="rehab-title">Снятие боли</h3>
+        <p class="rehab-desc">Локализация источника боли, работа с триггерными точками и мышечными зажимами. Быстрое облегчение с первых сеансов.</p>
+        <div class="rehab-tools">
+          <span class="tag">Массаж</span>
+          <span class="tag">МФР</span>
+          <span class="tag">Триггерные точки</span>
+        </div>
+      </div>
+      <div class="rehab-card">
+        <div class="rehab-num">02</div>
+        <h3 class="rehab-title">Восстановление движения</h3>
+        <p class="rehab-desc">Возврат полного объёма движений, работа с ограничениями суставов и фасций. Мобилизация и растяжка проблемных зон.</p>
+        <div class="rehab-tools">
+          <span class="tag">Мобилизация</span>
+          <span class="tag">Стретчинг</span>
+          <span class="tag">Фасции</span>
+        </div>
+      </div>
+      <div class="rehab-card">
+        <div class="rehab-num">03</div>
+        <h3 class="rehab-title">Стабилизация и сила</h3>
+        <p class="rehab-desc">Укрепление глубоких мышц-стабилизаторов, коррекция осанки и двигательных паттернов для долгосрочного результата.</p>
+        <div class="rehab-tools">
+          <span class="tag">Тренинг</span>
+          <span class="tag">Осанка</span>
+          <span class="tag">Стабилизация</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 4. HOW I WORK — Layout A (numbered list) ═══════════ -->
+<section class="method" id="about">
+  <div class="container">
+    <div class="method-inner">
+      <div class="method-head">
+        <div class="eyebrow">Методология</div>
+        <h2 class="method-h2">Как я работаю</h2>
+        <p class="method-sub">Каждый клиент — отдельная история. Не применяю шаблонные протоколы: сначала разбираюсь в причинах, потом выстраиваю план работы.</p>
+      </div>
+      <div class="method-steps" style="border: 1px solid var(--border); border-radius: 12px; overflow: hidden;">
+        <div class="method-step">
+          <div class="step-num">1</div>
+          <div>
+            <div class="step-title">Первичная оценка состояния</div>
+            <div class="step-desc">Анализ осанки, объёма движений, болевых точек. Подробная беседа о Вашем образе жизни и истории боли.</div>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="step-num">2</div>
+          <div>
+            <div class="step-title">Составление протокола работы</div>
+            <div class="step-desc">Персональный план: количество сеансов, инструменты, цели на каждом этапе. Чёткий вектор — никакой бесконечной терапии.</div>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="step-num">3</div>
+          <div>
+            <div class="step-title">Системная работа — сеансы</div>
+            <div class="step-desc">Комбинирование массажа, МФР и коррекционного тренинга в зависимости от задач. Домашние задания между сеансами.</div>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="step-num">4</div>
+          <div>
+            <div class="step-title">Оценка динамики и корректировка</div>
+            <div class="step-desc">Регулярная проверка прогресса. При необходимости — изменение подхода. Цель — Ваш результат, не количество визитов.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 5. SERVICES — Layout C (horizontal tiles) ═══════════ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-head">
+      <div class="eyebrow">Услуги</div>
+      <h2 class="services-h2">Три направления работы</h2>
+      <p class="services-sub">Массаж, реабилитация и оздоровительный тренинг — как инструменты единой системы.</p>
+    </div>
+    <div class="services-tiles">
+
+      <!-- Tile 1: Массаж -->
+      <div class="service-tile">
+        <div class="tile-img">Фото · массаж</div>
+        <div class="tile-body">
+          <div class="tile-eyebrow green">Массаж</div>
+          <h3 class="tile-title">Ручная работа с тканями тела</h3>
+          <p class="tile-desc">Снятие мышечного напряжения, улучшение кровообращения и лимфотока, работа с триггерными точками. Классический, спортивный, лимфодренажный — подбираю формат под Вашу задачу.</p>
+          <div class="tile-tags">
+            <span class="tag-outline">Классический</span>
+            <span class="tag-outline">Спортивный</span>
+            <span class="tag-outline">Лимфодренаж</span>
+            <span class="tag-outline">Точечный</span>
+          </div>
+        </div>
+        <div class="tile-action">
+          <div>
+            <div class="tile-price">от 3 500 ₽</div>
+            <div class="tile-price-sub">60–90 мин</div>
+          </div>
+          <button class="btn-tile" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться</button>
+        </div>
+      </div>
+
+      <!-- Tile 2: Реабилитация -->
+      <div class="service-tile">
+        <div class="tile-img terra-tint">Фото · реабилитация</div>
+        <div class="tile-body">
+          <div class="tile-eyebrow terra">Реабилитация</div>
+          <h3 class="tile-title">Восстановление после травм и операций</h3>
+          <p class="tile-desc">Работа по индивидуальному протоколу: постоперационное восстановление, хроническая боль в спине, нарушения осанки, последствия травм. Возврат к привычной жизни без боли.</p>
+          <div class="tile-tags">
+            <span class="tag-outline terra">Постоперационная</span>
+            <span class="tag-outline terra">Боль в спине</span>
+            <span class="tag-outline terra">Осанка</span>
+          </div>
+        </div>
+        <div class="tile-action">
+          <div>
+            <div class="tile-price">от 4 500 ₽</div>
+            <div class="tile-price-sub">60–90 мин</div>
+          </div>
+          <button class="btn-tile terra-btn" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться</button>
+        </div>
+      </div>
+
+      <!-- Tile 3: Оздоровительные тренировки -->
+      <div class="service-tile">
+        <div class="tile-img neutral-tint">Фото · тренинг</div>
+        <div class="tile-body">
+          <div class="tile-eyebrow muted">Оздоровительные тренировки</div>
+          <h3 class="tile-title">Движение как основа здоровья</h3>
+          <p class="tile-desc">Персональные тренировки с акцентом на функциональное движение, стабилизацию позвоночника и укрепление тела. Для тех, кто хочет двигаться правильно — без боли и травм.</p>
+          <div class="tile-tags">
+            <span class="tag-outline muted">Функциональный тренинг</span>
+            <span class="tag-outline muted">Стабилизация</span>
+            <span class="tag-outline muted">Растяжка</span>
+          </div>
+        </div>
+        <div class="tile-action">
+          <div>
+            <div class="tile-price">от 4 000 ₽</div>
+            <div class="tile-price-sub">60 мин</div>
+          </div>
+          <button class="btn-tile" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 6. REVIEWS CAROUSEL ═══════════ -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-head">
+      <div>
+        <div class="eyebrow">Отзывы клиентов</div>
+        <h2 class="reviews-h2">Что говорят клиенты</h2>
+      </div>
+      <div class="reviews-nav">
+        <button class="reviews-nav-btn" id="rev-prev" aria-label="Назад">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="reviews-nav-btn" id="rev-next" aria-label="Вперёд">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="reviews-track-wrap">
+      <div class="reviews-track" id="reviews-track">
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          </div>
+          <p class="review-text">«Обратилась с хронической болью в пояснице — два года мучилась. После 6 сеансов с Анной боль ушла, и она не возвращается уже 4 месяца. Впервые за долгое время сплю без дискомфорта. Очень индивидуальный подход, чувствуется глубокое понимание тела.»</p>
+          <div class="review-meta">
+            <div class="review-avatar">М</div>
+            <div>
+              <div class="review-name">Мария К.</div>
+              <div class="review-date">14 марта 2025</div>
+            </div>
+          </div>
+          <div class="review-source">Яндекс Услуги</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          </div>
+          <p class="review-text">«Делал спортивный массаж после марафона — ноги восстановились за 2 дня вместо обычных 5–7. Анна знает, как работают мышцы спортсмена. Объяснила, что делает и почему, дала рекомендации по растяжке. Теперь хожу регулярно перед стартами.»</p>
+          <div class="review-meta">
+            <div class="review-avatar">А</div>
+            <div>
+              <div class="review-name">Андрей Т.</div>
+              <div class="review-date">2 февраля 2025</div>
+            </div>
+          </div>
+          <div class="review-source">Авито</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          </div>
+          <p class="review-text">«После операции на колене врач направил к реабилитологу. Анна составила чёткий план на 8 недель — каждый сеанс понимаешь, что делается и зачем. Вернулась к бегу быстрее, чем ожидала. Профессионализм на высочайшем уровне.»</p>
+          <div class="review-meta">
+            <div class="review-avatar">Е</div>
+            <div>
+              <div class="review-name">Елена В.</div>
+              <div class="review-date">18 января 2025</div>
+            </div>
+          </div>
+          <div class="review-source">Яндекс Услуги</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+          </div>
+          <p class="review-text">«Занималась оздоровительными тренировками — хотела укрепить спину и исправить осанку. Через 2 месяца коллеги сами заметили изменения. Анна объясняет каждое упражнение с точки зрения анатомии — это очень мотивирует делать всё правильно.»</p>
+          <div class="review-meta">
+            <div class="review-avatar">О</div>
+            <div>
+              <div class="review-name">Ольга Д.</div>
+              <div class="review-date">5 декабря 2024</div>
+            </div>
+          </div>
+          <div class="review-source">Авито</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="reviews-footer">
+      <span class="reviews-footer-label">Читать все отзывы:</span>
+      <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#" class="btn-review-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 16 12 12 16"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        Отзывы на Яндекс Услугах
+      </a>
+      <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#" class="btn-review-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 16 12 12 16"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        Отзывы на Авито
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 7. FAQ ═══════════ -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-head">
+      <div class="eyebrow">Вопросы и ответы</div>
+      <h2 class="faq-h2">Часто спрашивают</h2>
+      <p class="faq-sub">Ответы на самые популярные вопросы о работе и записи.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Что такое реабилитация и чем отличается от массажа?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Массаж — это инструмент работы с мягкими тканями: мышцами, фасциями, кожей. Он снимает напряжение, улучшает кровообращение и помогает восстановиться после нагрузок. Реабилитация — более широкий процесс: это системное восстановление функций тела после травмы, операции или хронического нарушения. В реабилитацию входят диагностика движения, составление протокола, упражнения на стабилизацию и, при необходимости, массаж как один из инструментов. Проще говоря: массаж работает с тем, что есть, реабилитация устраняет причину.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Сколько сеансов нужно для результата?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Зависит от запроса. Для расслабляющего массажа достаточно одного сеанса. При хронической боли или реабилитации после травмы обычно нужен курс от 6 до 12 сеансов. На первичной консультации я оцениваю Вашу ситуацию и называю конкретные цифры — без размытых «столько, сколько нужно». Прогресс отслеживаем вместе на каждом этапе.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Работаете ли вы онлайн?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Частично — да. Онлайн-формат подходит для первичной консультации, разбора Вашей ситуации и составления программы домашних упражнений. Массаж и ручная работа с тканями возможны только очно. Если Вы находитесь в другом городе, мы можем начать с онлайн-сессии, разобрать причины боли и составить план — а ручную работу выстроить во время Вашего визита в Москву или у специалиста на месте.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">По каким районам Москвы выезжаете?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Работаю на выезд в пределах ТТК и ближайшего Подмосковья — Химки, Красногорск, Мытищи, Одинцово. Основной приём веду в студии у метро Аэропорт. Стоимость выезда обсуждается индивидуально в зависимости от района. Напишите или позвоните — уточним детали за 2 минуты.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Как записаться на консультацию?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Проще всего — заполнить форму ниже или написать в WhatsApp по номеру +7 (926) 663-6641-67. Первичная консультация бесплатна: я задам несколько вопросов, чтобы понять Вашу ситуацию, и предложу оптимальный формат работы. Отвечаю в течение часа в рабочее время.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 8. CTA — Layout B (text left + form right, green bg) ═══════════ -->
+<section class="cta-section" id="booking">
+  <div class="container">
+    <div class="cta-inner">
+
+      <div class="cta-left">
+        <div class="eyebrow cta-eyebrow">Запись на приём</div>
+        <h2 class="cta-h2">Запишитесь на консультацию</h2>
+        <p class="cta-sub">Первичная консультация бесплатна — разберём Вашу ситуацию, определим направление работы и ответим на все вопросы.</p>
+        <div class="cta-details">
+          <div class="cta-detail">
+            <div class="cta-detail-icon">📞</div>
+            <div>
+              <div class="cta-detail-text">+7 (999) 123-45-67</div>
+              <div class="cta-detail-sub">Звонок или WhatsApp</div>
+            </div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-detail-icon">📍</div>
+            <div>
+              <div class="cta-detail-text">г. Москва, м. Аэропорт</div>
+              <div class="cta-detail-sub">Точный адрес после записи</div>
+            </div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-detail-icon">🕐</div>
+            <div>
+              <div class="cta-detail-text">Пн–Пт 9:00–20:00</div>
+              <div class="cta-detail-sub">Сб–Вс 10:00–18:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-form">
+        <div class="form-title">Оставьте заявку</div>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Ваше имя</label>
+              <input type="text" id="name" placeholder="Анна Иванова" required="">
+            </div>
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" placeholder="+7 (999) 000-00-00" required="">
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">Направление</label>
+            <select id="service">
+              <option value="">Не выбрано</option>
+              <option>Массаж</option>
+              <option>Реабилитация</option>
+              <option>Оздоровительные тренировки</option>
+              <option>Первичная консультация</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="comment">Расскажите о Вашей ситуации</label>
+            <textarea id="comment" rows="3" placeholder="Опишите запрос — это поможет подготовиться к встрече..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Отправить заявку</button>
+          <p class="form-note">Отвечаю в течение часа в рабочее время</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 7. FOOTER ═══════════ -->
+<footer class="footer" id="contacts">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">mas<span>sash</span></div>
+        <p class="footer-tagline">Профессиональный массаж, реабилитация и оздоровительные тренировки в Москве.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Услуги</div>
+        <div class="footer-links">
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Классический массаж</a>
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Спортивный массаж</a>
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Лимфодренаж</a>
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Реабилитация</a>
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Оздоровительный тренинг</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Информация</div>
+        <div class="footer-links">
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#about">Обо мне</a>
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#">Сертификаты</a>
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#reviews">Отзывы</a>
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#blog">Блог</a>
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#">Оферта</a>
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#">Политика конфиденциальности</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Контакты</div>
+        <div class="footer-links">
+          <a href="tel:+79991234567">+7 (926) 663-66-41</a>
+          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#">г. Москва, м. Аэропорт</a>
+          <span>Пн–Пт: 9:00–20:00</span>
+          <span>Сб–Вс: 10:00–18:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 massash.com · Все права защищены</div>
+      <div class="footer-copy">Оферта · Политика конфиденциальности</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.btn-submit');
+  btn.textContent = 'Заявка отправлена ✓';
+  btn.style.background = '#336859';
+  btn.disabled = true;
+  form.querySelectorAll('input, select, textarea').forEach(el => el.disabled = true);
+}
+
+// Reviews carousel
+(function() {
+  const track = document.getElementById('reviews-track');
+  const cards = track.querySelectorAll('.review-card');
+  let idx = 0;
+  const visible = 3;
+  const total = cards.length;
+
+  function getCardWidth() {
+    const wrap = track.parentElement;
+    const gap = 20;
+    return (wrap.offsetWidth - gap * (visible - 1)) / visible;
+  }
+
+  function update() {
+    const w = getCardWidth();
+    track.style.transform = `translateX(-${idx * (w + 20)}px)`;
+  }
+
+  document.getElementById('rev-prev').addEventListener('click', () => {
+    if (idx > 0) { idx--; update(); }
+  });
+  document.getElementById('rev-next').addEventListener('click', () => {
+    if (idx < total - visible) { idx++; update(); }
+  });
+
+  window.addEventListener('resize', update);
+})();
+
+// FAQ accordion
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wrap = item.querySelector('.faq-a-wrap');
+  const isOpen = item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-item.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-a-wrap').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    wrap.style.maxHeight = wrap.scrollHeight + 'px';
+  }
+}
+
+// Active nav on scroll
+const sections = document.querySelectorAll('section[id], section');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
+
+
+</body></html>
