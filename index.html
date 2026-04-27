@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0298)https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957 -->
+<!-- saved from url=(0298)# -->
 <html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style data-omelette-injected="">html,body{background:transparent}</style><script data-omelette-injected="">(()=>{var A=["https://claude.ai","https://preview.claude.ai","https://eap-omelette.claude.ai"];var L=30000;var u=3000;document.addEventListener("DOMContentLoaded",()=>{const V=window.Babel;const $="om-src-id";if(V&&V.registerPlugin&&!(V.availablePlugins&&V.availablePlugins[$])){V.registerPlugin($,({types:Q})=>({visitor:{JSXOpeningElement(W,X){const K=W.node;if(K.name&&K.name.type==="JSXMemberExpression")return;for(let J=0;J<K.attributes.length;J++){const w=K.attributes[J];if(w.type==="JSXAttribute"&&w.name&&w.name.name==="data-om-id")return}const z=X.file&&X.file.opts&&X.file.opts.filename||"?";const k=K.loc&&K.loc.start;const C=`jsx:${z}:${K.start??0}:${k?k.line:0}:${k?k.column+1:0}`;K.attributes.push(Q.jsxAttribute(Q.jsxIdentifier("data-om-id"),Q.stringLiteral(C)))}}}))}const Z=["transform-react-jsx-source",$];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Q,W)=>{const X=Q.getAttribute("data-plugins")||"";const K=Z.filter((z)=>X.indexOf(z)<0);if(K.length){Q.setAttribute("data-plugins",X?`${X},${K.join(",")}`:K.join(","))}if(!Q.hasAttribute("data-filename")){Q.setAttribute("data-filename",Q.getAttribute("src")||`inline-${W}`)}})});var b=window.parent;if(b&&b!==window){const V=(z,k)=>{try{b.postMessage({__omelette_log:true,type:z,data:k},"*")}catch{}};["log","warn","error"].forEach((z)=>{const k=console[z];console[z]=(...C)=>{const J=C.map((w)=>{try{return typeof w==="object"?JSON.stringify(w):String(w)}catch{try{return String(w)}catch{return"[unstringifiable]"}}}).join(" ");V(z,J);k.apply(console,C)}});window.addEventListener("error",(z)=>{const k=z.target;if(k&&k!==window&&k.tagName){const C=k.src||k.href||"";V("resource_error",`${k.tagName} failed to load: ${C}`)}else{V("error",`${z.message||"Unknown error"} at ${z.filename||"?"}:${z.lineno||0}:${z.colno||0}`)}},true);window.addEventListener("unhandledrejection",(z)=>{const k=z.reason;const C=k instanceof Error?`${k.message} ${k.stack}`:String(k);V("error",`Unhandled rejection: ${C}`)});const $=()=>{try{b.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")$();else window.addEventListener("load",$);if(window.ResizeObserver)new ResizeObserver($).observe(document.documentElement);const Z={};let Q=0;window.claude={complete(z){return new Promise((k,C)=>{if(!A.length){C(new Error("claude.complete: no parent origin"));return}const J=`c${++Q}`;const w=()=>setTimeout(()=>{delete Z[J];C(new Error(`claude.complete: no data for ${L/1000}s`))},L);const Y=w();Z[J]={resolve:k,reject:C,text:"",t:Y,arm:w};try{for(const F of A){b.postMessage({__om_api:true,id:J,body:z},F)}}catch(F){clearTimeout(Y);delete Z[J];C(F)}})}};const W={};let X=0;window.omelette={writeFile:(z,k)=>new Promise((C,J)=>{if(!A.length){C();return}const w=`f${++X}`;const Y=setTimeout(()=>{delete W[w];C()},u);W[w]={resolve:C,reject:J,t:Y};try{for(const F of A){b.postMessage({__om_file:true,id:w,op:"write",path:z,content:k},F)}}catch{clearTimeout(Y);delete W[w];C()}})};const K=(z)=>{try{return JSON.stringify(z)}catch{return JSON.stringify(String(z))}};window.addEventListener("message",(z)=>{if(A.indexOf(z.origin)<0)return;if(z.source!==b)return;const k=z.data;if(!k)return;if(k.__om_file_r){const w=W[k.id];if(!w)return;clearTimeout(w.t);delete W[k.id];if(k.ok)w.resolve();else w.reject(new Error(k.error||"write failed"));return}if(k.__om_api_r){const w=Z[k.id];if(!w)return;if(k.error!=null){clearTimeout(w.t);delete Z[k.id];w.reject(new Error(k.error));return}if(k.chunk!=null){clearTimeout(w.t);w.t=w.arm();w.text+=k.chunk;return}if(k.done){clearTimeout(w.t);delete Z[k.id];w.resolve(k.text!=null?k.text:w.text);return}return}if(!k.__om_eval)return;const C=k;const J=(w)=>{z.source.postMessage({...w,__om_eval_r:1,id:C.id},z.origin)};try{const w=(0,eval)(C.code);if(w&&typeof w.then==="function"){w.then((Y)=>J({ok:1,v:K(Y)}),(Y)=>J({ok:0,e:String(Y)}))}else{J({ok:1,v:K(w)})}}catch(w){J({ok:0,e:String(w)})}})}})();
 </script>
@@ -563,12 +563,12 @@ section { padding: 80px 0; }
     <div class="container">
       <div class="logo">mas<span>sash</span></div>
       <ul class="nav-links">
-        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#" class="active">Главная</a></li>
-        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Услуги</a></li>
-        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#prices">Цены</a></li>
-        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#about">Обо мне</a></li>
-        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#reviews">Отзывы</a></li>
-        <li><a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#blog">Блог</a></li>
+        <li><a href="#" class="active">Главная</a></li>
+        <li><a href=#services">Услуги</a></li>
+        <li><a href=#prices">Цены</a></li>
+        <li><a href=#about">Обо мне</a></li>
+        <li><a href=#reviews">Отзывы</a></li>
+        <li><a href=#blog">Блог</a></li>
       </ul>
       <button class="btn-book" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться</button>
     </div>
@@ -581,7 +581,7 @@ section { padding: 80px 0; }
     <div class="hero-left">
       <div class="hero-tag eyebrow">Реабилитолог · Массажист · Тренер</div>
       <h1 class="hero-h1">Системная<br><em>работа с телом</em></h1>
-      <p class="hero-byline">— Вахания Александр, 5 лет практики массажист-реабилитолог, 10 лет спортивный тренер</p>
+      <p class="hero-byline">— Вахания Александр, 5 лет практики массажистом-реабилитологом, 10 лет спортивным тренером</p>
       <p class="hero-desc">Работаю с болью, движением и восстановлением. Не точечное снятие симптомов — а понимание причин и долгосрочный результат для каждого клиента.</p>
       <div class="hero-actions">
         <button class="btn-primary" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться на консультацию</button>
@@ -881,11 +881,11 @@ section { padding: 80px 0; }
 
     <div class="reviews-footer">
       <span class="reviews-footer-label">Читать все отзывы:</span>
-      <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#" class="btn-review-link">
+      <a href="#" class="btn-review-link">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 16 12 12 16"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
         Отзывы на Яндекс Услугах
       </a>
-      <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#" class="btn-review-link">
+      <a href="#" class="btn-review-link">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 16 12 12 16"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
         Отзывы на Авито
       </a>
@@ -949,7 +949,7 @@ section { padding: 80px 0; }
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
         </button>
         <div class="faq-a-wrap">
-          <div class="faq-a">Проще всего — заполнить форму ниже или написать в WhatsApp по номеру +7 (926) 663-6641-67. Первичная консультация бесплатна: я задам несколько вопросов, чтобы понять Вашу ситуацию, и предложу оптимальный формат работы. Отвечаю в течение часа в рабочее время.</div>
+          <div class="faq-a">Проще всего — заполнить форму ниже или написать в WhatsApp по номеру +7 (926) 663-6641-67. Первичная консультация бесплатна: я задам несколько вопросов, чтобы понять Вашу ситуацию, и предложу оптимальный формат работы. Отвечаю оперативно в рабочее время.</div>
         </div>
       </div>
 
@@ -1019,7 +1019,7 @@ section { padding: 80px 0; }
             <textarea id="comment" rows="3" placeholder="Опишите запрос — это поможет подготовиться к встрече..."></textarea>
           </div>
           <button type="submit" class="btn-submit">Отправить заявку</button>
-          <p class="form-note">Отвечаю в течение часа в рабочее время</p>
+          <p class="form-note">Отвечаю оперативно в рабочее время</p>
         </form>
       </div>
 
@@ -1038,29 +1038,29 @@ section { padding: 80px 0; }
       <div>
         <div class="footer-col-title">Услуги</div>
         <div class="footer-links">
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Классический массаж</a>
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Спортивный массаж</a>
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Лимфодренаж</a>
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Реабилитация</a>
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#services">Оздоровительный тренинг</a>
+          <a href=#services">Классический массаж</a>
+          <a href=#services">Спортивный массаж</a>
+          <a href=#services">Лимфодренаж</a>
+          <a href=#services">Реабилитация</a>
+          <a href=#services">Оздоровительный тренинг</a>
         </div>
       </div>
       <div>
         <div class="footer-col-title">Информация</div>
         <div class="footer-links">
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#about">Обо мне</a>
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#">Сертификаты</a>
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#reviews">Отзывы</a>
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#blog">Блог</a>
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#">Оферта</a>
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#">Политика конфиденциальности</a>
+          <a href=#about">Обо мне</a>
+          <a href="#">Сертификаты</a>
+          <a href=#reviews">Отзывы</a>
+          <a href=#blog">Блог</a>
+          <a href="#">Оферта</a>
+          <a href="#">Политика конфиденциальности</a>
         </div>
       </div>
       <div>
         <div class="footer-col-title">Контакты</div>
         <div class="footer-links">
           <a href="tel:+79991234567">+7 (926) 663-66-41</a>
-          <a href="https://019dbf49-4e57-7c34-aaa7-bacb06d154d7.claudeusercontent.com/v1/design/projects/019dbf49-4e57-7c34-aaa7-bacb06d154d7/serve/Index%20Page.html?t=289dc5d8ad236b4ab5f0e31594e00cca3b539a8fcd72df2aba5137714e8192cd.221ac192-f120-4798-8890-e1fe3a6e21f6.ed897f03-8332-4423-b09f-29690d4c8dda.1777221957#">г. Москва, м. Аэропорт</a>
+          <a href="#">г. Москва, м. Аэропорт</a>
           <span>Пн–Пт: 9:00–20:00</span>
           <span>Сб–Вс: 10:00–18:00</span>
         </div>
