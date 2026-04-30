@@ -119,6 +119,8 @@ section { padding: 80px 0; }
 .btn-book:hover { background: var(--green-dark); }
 .btn-book:active { transform: scale(0.98); }
 
+
+
 /* ══════════════════════════════════════════
    2. HERO — Layout B (60/40 split)
 ══════════════════════════════════════════ */
@@ -585,11 +587,61 @@ section { padding: 80px 0; }
     padding: 12px 0;
   }
   .header-nav {
+  display: block !important;
+  padding: 8px 0;
+  }
+  .header-nav .nav-links {
     display: none;
   }
   .btn-primary.header-cta {
     display: none;
   }
+
+  /* BURGER */
+.burger-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.header-nav .container {
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.header-nav {
+  display: block !important;
+}
+
+
+.burger-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.nav-links.open {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  z-index: 99;
+  gap: 0;
+}
+.nav-links.open li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
 
   /* HERO */
 .hero-inner {
@@ -721,18 +773,21 @@ body {
     </div>
   </div>
   <nav class="header-nav">
-    <div class="container">
-      <div class="logo">mas<span>sash</span></div>
-      <ul class="nav-links">
-        <li><a href="#" class="active">Главная</a></li>
-        <li><a href=#services">Услуги</a></li>
-        <li><a href=#prices">Цены</a></li>
-        <li><a href=#about">Обо мне</a></li>
-        <li><a href=#reviews">Отзывы</a></li>
-        <li><a href=#blog">Блог</a></li>
-      </ul>
-      <button class="btn-book" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться</button>
-    </div>
+  <div class="container">
+    <div class="logo">mas<span>sash</span></div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Главная</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#prices">Цены</a></li>
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#blog">Блог</a></li>
+    </ul>
+    <button class="burger-btn" onclick="toggleMenu()" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+    <button class="btn-book" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться</button>
+  </div>
   </nav>
 </header>
 
@@ -1305,5 +1360,9 @@ window.addEventListener('scroll', () => {
 });
 </script>
 
-
+<script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+</script>
 </body></html>
