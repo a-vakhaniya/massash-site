@@ -22,12 +22,12 @@
 <link rel="canonical" href="https://massash.com/">
 <title>massash — Системная работа с телом</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
-<link href="./css2" rel="stylesheet">
+
 <style>
 /* ── RESET & BASE ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Nunito Sans', sans-serif; background: #F9F6F0; color: #1C1915; line-height: 1.6; }
+html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
+body { font-family: 'Nunito Sans', sans-serif; background: #F9F6F0; color: #1C1915; line-height: 1.6; max-width: 100%; overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
@@ -561,6 +561,153 @@ section { padding: 80px 0; }
   align-items: center;
 }
 .footer-copy { font-size: 12px; color: #8A7E6F; font-family: var(--sans); }
+/* ================================
+   MOBILE ADAPTATION (@media)
+   ================================ */
+
+@media (max-width: 768px) {
+
+:root {
+  --max: 100%;
+  --px: 16px;
+}
+
+  /* HEADER */
+  .header-top {
+    padding: 10px 0;
+    text-align: center;
+  }
+  .header-top .container {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .header-inner {
+    padding: 12px 0;
+  }
+  .header-nav {
+    display: none;
+  }
+  .btn-primary.header-cta {
+    display: none;
+  }
+
+  /* HERO */
+.hero-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  grid-template-columns: unset !important;
+  min-height: auto !important;
+  width: 100% !important;
+}
+  .hero-left {
+    width: 100%;
+    padding: 40px 20px 24px;
+  }
+  .hero-right {
+    width: 100%;
+    height: 380px;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+  .hero-title {
+    font-size: 42px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-stats {
+    gap: 20px;
+  }
+
+  /* SECTIONS */
+  section { padding: 48px 0; }
+  .container { padding: 0 16px; }
+
+  .hero, .hero-inner, .hero-left, .hero-right {
+  max-width: 100vw;
+  overflow: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+
+  /* CARDS — 1 колонка */
+  .rehab-grid,
+  .services-grid,
+  .method-steps,
+  .pricing-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  /* REVIEWS */
+  .reviews-track {
+    flex-direction: column;
+  }
+
+  .review-card {
+  width: 100% !important;
+  min-width: unset !important;
+  }
+
+  /* SERVICES TILE */
+.services-tiles {
+  flex-direction: column !important;
+}
+.service-tile {
+  display: flex !important;
+  flex-direction: column !important;
+  grid-template-columns: unset !important;
+}
+.service-tile-image {
+  width: 100% !important;
+  height: 200px !important;
+}
+
+/* PRICING */
+.pricing-grid {
+  grid-template-columns: 1fr !important;
+}
+
+  /* FAQ */
+  .faq-list {
+  gap: 8px;
+  width: 100% !important;
+}
+
+  /* BOOKING */
+  .booking-inner {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+  .booking-form {
+    flex-direction: column;
+  }
+  .booking-form input,
+  .booking-form button {
+    width: 100%;
+  }
+
+  /* FOOTER */
+  .footer-bottom {
+  flex-direction: column !important;
+  text-align: center !important;
+  gap: 12px !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
 </style>
 </head>
 <body>
@@ -984,7 +1131,7 @@ section { padding: 80px 0; }
           <div class="cta-detail">
             <div class="cta-detail-icon">📞</div>
             <div>
-              <div class="cta-detail-text">+7 (999) 123-45-67</div>
+              <div class="cta-detail-text">+7 (926) 663-66-41</div>
               <div class="cta-detail-sub">Звонок или WhatsApp</div>
             </div>
           </div>
