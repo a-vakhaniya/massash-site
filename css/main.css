@@ -1092,6 +1092,11 @@ section { padding: 80px 0; }
     display: none;
   }
 
+  .cta-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   /* BURGER */
 .burger-btn {
   display: flex;
