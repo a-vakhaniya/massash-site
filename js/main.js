@@ -2,10 +2,31 @@ function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const btn = form.querySelector('.btn-submit');
-  btn.textContent = 'Заявка отправлена ✓';
-  btn.style.background = '#336859';
+
+  const data = {
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    service: document.getElementById('service').value,
+    message: document.getElementById('comment').value
+  };
+
+  btn.textContent = 'Отправляем...';
   btn.disabled = true;
-  form.querySelectorAll('input, select, textarea').forEach(el => el.disabled = true);
+
+  fetch('https://n8n.ezi.ru/webhook/massash-form', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    btn.textContent = 'Заявка отправлена ✓';
+    btn.style.background = '#336859';
+    form.querySelectorAll('input, select, textarea').forEach(el => el.disabled = true);
+  })
+  .catch(() => {
+    btn.textContent = 'Ошибка — попробуйте ещё раз';
+    btn.disabled = false;
+  });
 }
 
 // Reviews carousel
