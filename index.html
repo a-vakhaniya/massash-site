@@ -562,6 +562,13 @@
             <label for="comment">Расскажите о Вашей ситуации</label>
             <textarea id="comment" rows="3" placeholder="Опишите запрос — это поможет подготовиться к встрече..."></textarea>
           </div>
+          <div class="consent-block">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">
+            Я согласен(а) на обработку персональных данных в соответствии с 
+            <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a>
+          </label>
+        </div>
           <button type="submit" class="btn-submit">Отправить заявку</button>
           <p class="form-note">Отвечаю оперативно в рабочее время</p>
         </form>
@@ -596,8 +603,8 @@
           <a href="#">Сертификаты</a>
           <a href=#reviews">Отзывы</a>
           <a href=#blog">Блог</a>
-          <a href="#">Оферта</a>
-          <a href="#">Политика конфиденциальности</a>
+          <a href="/oferta.html">Оферта</a>
+          <a href="/privacy.html">Политика конфиденциальности</a>
         </div>
       </div>
       <div>
@@ -612,7 +619,10 @@
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">© 2025 massash.com · Все права защищены</div>
-      <div class="footer-copy">Оферта · Политика конфиденциальности</div>
+    <div class="footer-copy">
+      <a href="/oferta.html">Оферта</a> · 
+      <a href="/privacy.html">Политика конфиденциальности</a>
+    </div>
     </div>
   </div>
 </footer>

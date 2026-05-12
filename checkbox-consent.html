@@ -1,0 +1,39 @@
+<!-- ЧЕКБОКС СОГЛАСИЯ — вставить в форму перед кнопкой отправки -->
+<!-- CSS -->
+<style>
+.consent-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 0;
+}
+.consent-block input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 2px;
+  accent-color: #2d6a4f;
+  cursor: pointer;
+}
+.consent-block label {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.consent-block label a {
+  color: #2d6a4f;
+  text-decoration: underline;
+}
+</style>
+
+<!-- HTML — вставить перед кнопкой "Записаться" / "Отправить" -->
+<div class="consent-block">
+  <input type="checkbox" id="consent" name="consent" required>
+  <label for="consent">
+    Я согласен(а) на обработку персональных данных в соответствии с 
+    <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a>
+  </label>
+</div>
+
+<!-- ВАЖНО: атрибут required не даст отправить форму без галочки -->
