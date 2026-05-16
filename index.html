@@ -26,6 +26,70 @@
 <link rel="stylesheet" href="css/main.css">
 
 <link rel="icon" type="image/svg+xml" href="assets/image/favicon.svg">
+<style>
+/* Dropdown меню */
+.nav-dropdown { position: relative; }
+.nav-arrow { font-size: 12px; opacity: 0.7; margin-left: 6px; }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  padding-top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid var(--border, #e5e0d8);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  min-width: 180px;
+  padding: 8px 0;
+  list-style: none;
+  z-index: 100;
+}
+.nav-dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: var(--text, #1a1a1a);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.nav-dropdown-menu li a:hover {
+  background: var(--bg-alt, #f5f2ed);
+  color: var(--accent, #2d6a4f);
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+
+/* Теги-ссылки в тайлах */
+.tile-tags a.tag-outline {
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.tile-tags a.tag-outline:hover {
+  background: var(--accent, #2d6a4f);
+  color: #fff;
+  border-color: var(--accent, #2d6a4f);
+}
+.tile-tags a.tag-outline.terra:hover {
+  background: #c0623a;
+  color: #fff;
+  border-color: #c0623a;
+}
+.tile-tags a.tag-outline.muted:hover {
+  background: #666;
+  color: #fff;
+  border-color: #666;
+}
+
+/* Кнопка-ссылка в тайле */
+a.btn-tile {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+</style>
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -55,12 +119,18 @@
   <div class="container">
     <div class="logo">mas<span>sash</span></div>
     <ul class="nav-links">
-      <li><a href="#" class="active">Главная</a></li>
-      <li><a href="#services">Услуги</a></li>
-      <li><a href="#prices">Цены</a></li>
-      <li><a href="#about">Обо мне</a></li>
+      <li><a href="/" class="active">Главная</a></li>
+      <li class="nav-dropdown">
+        <a href="#services" class="nav-dropdown-toggle">Услуги <span class="nav-arrow">▾</span></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/massage/">Массаж</a></li>
+          <li><a href="/rehab/">Реабилитация</a></li>
+          <li><a href="/training/">Тренировки</a></li>
+        </ul>
+      </li>
+      <li><a href="/specialists/">Специалисты</a></li>
       <li><a href="#reviews">Отзывы</a></li>
-      <li><a href="#blog">Блог</a></li>
+      <li><a href="#contacts">Контакты</a></li>
     </ul>
     <button class="burger-btn" onclick="toggleMenu()" aria-label="Меню">
       <span></span><span></span><span></span>
@@ -203,32 +273,7 @@
     </div>
     <div class="services-tiles">
 
-      <!-- Tile 1: Массаж -->
-      <div class="service-tile">
-        <div class="tile-img">
-          <img src="assets/image/massage.jpg" alt="Массаж">
-        </div>
-        <div class="tile-body">
-          <div class="tile-eyebrow green">Массаж</div>
-          <h3 class="tile-title">Ручная работа с тканями тела</h3>
-          <p class="tile-desc">Снятие мышечного напряжения, улучшение кровообращения и лимфотока, работа с триггерными точками. Классический, спортивный, лимфодренажный — подбираю формат под Вашу задачу.</p>
-          <div class="tile-tags">
-            <span class="tag-outline">Классический</span>
-            <span class="tag-outline">Спортивный</span>
-            <span class="tag-outline">Лимфодренаж</span>
-            <span class="tag-outline">Точечный</span>
-          </div>
-        </div>
-        <div class="tile-action">
-          <div>
-            <div class="tile-price">от 3 500 ₽</div>
-            <div class="tile-price-sub">60–90 мин</div>
-          </div>
-          <button class="btn-tile" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться</button>
-        </div>
-      </div>
-
-      <!-- Tile 2: Реабилитация -->
+      <!-- Tile 1: Реабилитация (первая) -->
       <div class="service-tile">
         <div class="tile-img terra-tint">
           <img src="assets/image/physiotherapy.jpg" alt="Реабилитация">
@@ -238,17 +283,46 @@
           <h3 class="tile-title">Восстановление после травм и операций</h3>
           <p class="tile-desc">Работа по индивидуальному протоколу: постоперационное восстановление, хроническая боль в спине, нарушения осанки, последствия травм. Возврат к привычной жизни без боли.</p>
           <div class="tile-tags">
-            <span class="tag-outline terra">Постоперационная</span>
-            <span class="tag-outline terra">Боль в спине</span>
-            <span class="tag-outline terra">Осанка</span>
+            <a href="/rehab/stroke/" class="tag-outline terra">Инсульт</a>
+            <a href="/rehab/posture/" class="tag-outline terra">Осанка</a>
+            <a href="/rehab/spine/" class="tag-outline terra">Позвоночник</a>
+            <a href="/rehab/flatfoot/" class="tag-outline terra">Плоскостопие</a>
+            <a href="/rehab/shoulder/" class="tag-outline terra">Плечо и рука</a>
+            <a href="/rehab/tbi/" class="tag-outline terra">ЧМТ</a>
           </div>
         </div>
         <div class="tile-action">
           <div>
-            <div class="tile-price">от 4 500 ₽</div>
+            <div class="tile-price">от 3 500 ₽</div>
             <div class="tile-price-sub">60–90 мин</div>
           </div>
-          <button class="btn-tile terra-btn" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться</button>
+          <a href="/rehab/" class="btn-tile terra-btn">Подробнее</a>
+        </div>
+      </div>
+
+      <!-- Tile 2: Массаж -->
+      <div class="service-tile">
+        <div class="tile-img">
+          <img src="assets/image/massage.jpg" alt="Массаж">
+        </div>
+        <div class="tile-body">
+          <div class="tile-eyebrow green">Массаж</div>
+          <h3 class="tile-title">Ручная работа с тканями тела</h3>
+          <p class="tile-desc">Снятие мышечного напряжения, улучшение кровообращения и лимфотока, работа с триггерными точками. Классический, спортивный, лимфодренажный — подбираю формат под Вашу задачу.</p>
+          <div class="tile-tags">
+            <a href="/massage/classic/" class="tag-outline">Классический</a>
+            <a href="/massage/sport/" class="tag-outline">Спортивный</a>
+            <a href="/massage/lymphatic/" class="tag-outline">Лимфодренаж</a>
+            <a href="/massage/thai/" class="tag-outline">Тайский</a>
+            <a href="/massage/antistress/" class="tag-outline">Антистрессовый</a>
+          </div>
+        </div>
+        <div class="tile-action">
+          <div>
+            <div class="tile-price">от 3 500 ₽</div>
+            <div class="tile-price-sub">60–90 мин</div>
+          </div>
+          <a href="/massage/" class="btn-tile">Подробнее</a>
         </div>
       </div>
 
@@ -262,17 +336,18 @@
           <h3 class="tile-title">Движение как основа здоровья</h3>
           <p class="tile-desc">Персональные тренировки с акцентом на функциональное движение, стабилизацию позвоночника и укрепление тела. Для тех, кто хочет двигаться правильно — без боли и травм.</p>
           <div class="tile-tags">
-            <span class="tag-outline muted">Функциональный тренинг</span>
-            <span class="tag-outline muted">Стабилизация</span>
-            <span class="tag-outline muted">Растяжка</span>
+            <a href="/training/functional/" class="tag-outline muted">Функциональный тренинг</a>
+            <a href="/training/lfk/" class="tag-outline muted">ЛФК</a>
+            <a href="/training/stabilization/" class="tag-outline muted">Стабилизация</a>
+            <a href="/training/stretch/" class="tag-outline muted">Растяжка</a>
           </div>
         </div>
         <div class="tile-action">
           <div>
-            <div class="tile-price">от 4 000 ₽</div>
+            <div class="tile-price">от 3 500 ₽</div>
             <div class="tile-price-sub">60 мин</div>
           </div>
-          <button class="btn-tile" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Записаться</button>
+          <a href="/training/" class="btn-tile">Подробнее</a>
         </div>
       </div>
 
@@ -589,20 +664,22 @@
       <div>
         <div class="footer-col-title">Услуги</div>
         <div class="footer-links">
-          <a href=#services">Классический массаж</a>
-          <a href=#services">Спортивный массаж</a>
-          <a href=#services">Лимфодренаж</a>
-          <a href=#services">Реабилитация</a>
-          <a href=#services">Оздоровительный тренинг</a>
+          <a href="/massage/">Массаж</a>
+          <a href="/rehab/">Реабилитация</a>
+          <a href="/training/">Тренировки</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Специалисты</div>
+        <div class="footer-links">
+          <a href="/specialists/">Все специалисты</a>
         </div>
       </div>
       <div>
         <div class="footer-col-title">Информация</div>
         <div class="footer-links">
-          <a href=#about">Обо мне</a>
-          <a href="#">Сертификаты</a>
-          <a href=#reviews">Отзывы</a>
-          <a href=#blog">Блог</a>
+          <a href="#about">Обо мне</a>
+          <a href="#reviews">Отзывы</a>
           <a href="/oferta.html">Оферта</a>
           <a href="/privacy.html">Политика конфиденциальности</a>
         </div>
@@ -610,19 +687,17 @@
       <div>
         <div class="footer-col-title">Контакты</div>
         <div class="footer-links">
-          <a href="tel:+79991234567">+7 (926) 663-66-41</a>
-          <a href="#">г. Москва, м. Аэропорт</a>
-          <span>Пн–Пт: 9:00–20:00</span>
-          <span>Сб–Вс: 10:00–18:00</span>
+          <a href="tel:+79266636641">+7 (926) 663-66-41</a>
+          <a href="#contacts">г. Москва, м. Аэропорт</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 massash.com · Все права защищены</div>
-    <div class="footer-copy">
-      <a href="/oferta.html">Оферта</a> · 
-      <a href="/privacy.html">Политика конфиденциальности</a>
-    </div>
+      <div class="footer-copy">© 2025 ИП Вахания Александр Петрович · ИНН 504410052123</div>
+      <div class="footer-copy">
+        <a href="/oferta.html">Оферта</a> · 
+        <a href="/privacy.html">Политика конфиденциальности</a>
+      </div>
     </div>
   </div>
 </footer>
