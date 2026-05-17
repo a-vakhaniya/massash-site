@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вахания Александр Петрович — массажист-реабилитолог, Москва · massash.com</title>
+<meta name="description" content="Вахания Александр Петрович — массажист-реабилитолог и персональный тренер с 12-летним опытом. Москва, выезд на дом и приём в студии у м. Аэропорт. Рейтинг 4,9 · 184 отзыва.">
+<link rel="stylesheet" href="/css/variables.css">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito Sans', sans-serif; background: #F9F6F0; color: #1C1915; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; }
+svg { display: block; }
+
+/* ── PAGE TOKENS — алиасы на variables.css + страничные переменные ── */
+:root {
+  /* Алиасы цветов из variables.css */
+  --green:        var(--color-accent-green);
+  --green-dark:   var(--color-accent-green-dark);
+  --green-light:  var(--color-accent-green-light);
+  --green-tint:   var(--color-surface-tint);
+  --terra:        var(--color-accent-terra);
+  --terra-dark:   var(--color-accent-terra-dark);
+  --terra-light:  var(--color-accent-terra-light);
+  --text:         var(--color-text);
+  --muted:        var(--color-muted);
+  --subtle:       var(--color-subtle);
+  --border:       var(--color-border);
+  --border-input: var(--color-border-input);
+  --bg:           var(--color-bg);
+  --serif:        var(--font-display);
+  --sans:         var(--font-body);
+  /* --shadow-md, --shadow-lg, --ease — из variables.css */
+
+  /* Специфичные для страницы */
+  --bg-tint:   #F2EEE5;
+  --surface:   #FFFFFF;
+  --gold:      #D6A03A;
+  --max:       1240px;
+  --px:        48px;
+}
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 var(--px); }
+
+.eyebrow {
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--green);
+}
+
+/* ══════════════════════════════════════════
+   HEADER — Marketplace shell
+══════════════════════════════════════════ */
+.mp-bar {
+  background: #1C1915; color: rgba(255,255,255,0.7);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.01em;
+}
+.mp-bar .container {
+  display: flex; justify-content: space-between; align-items: center;
+  height: 36px;
+}
+.mp-bar-left, .mp-bar-right { display: flex; align-items: center; gap: 24px; }
+.mp-bar a { transition: color 160ms var(--ease); display: inline-flex; align-items: center; gap: 6px; }
+.mp-bar a:hover { color: #fff; }
+.mp-bar svg { width: 13px; height: 13px; stroke: currentColor; stroke-width: 1.6; }
+.mp-bar .city-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px; border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px; color: #fff;
+}
+.mp-bar .city-pill:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.35); }
+.mp-divider { width: 1px; height: 12px; background: rgba(255,255,255,0.15); }
+
+.header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+.header-nav .container {
+  display: flex; align-items: center; height: 72px; gap: 36px;
+}
+.logo {
+  font-family: var(--serif); font-size: 28px; font-weight: 500;
+  color: var(--text); letter-spacing: -0.01em; flex-shrink: 0;
+  display: inline-flex; align-items: baseline;
+}
+.logo span { color: var(--green); }
+.logo small {
+  font-family: var(--sans); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-left: 10px; align-self: center;
+  border-left: 1px solid var(--border-input); padding-left: 10px;
+}
+
+/* Catalog search inline in header */
+.hdr-search {
+  flex: 1; max-width: 520px;
+  display: flex; align-items: center; gap: 0;
+  background: #fff; border: 1px solid var(--border-input);
+  border-radius: 999px; padding: 4px 4px 4px 18px;
+  transition: border-color 180ms var(--ease), box-shadow 180ms var(--ease);
+}
+.hdr-search:focus-within { border-color: var(--green); box-shadow: 0 0 0 3px rgba(61,122,107,0.12); }
+.hdr-search svg { width: 16px; height: 16px; stroke: var(--muted); stroke-width: 1.7; flex-shrink: 0; }
+.hdr-search input {
+  flex: 1; border: none; outline: none; background: transparent;
+  font-family: var(--sans); font-size: 14px; color: var(--text);
+  padding: 10px 12px;
+}
+.hdr-search input::placeholder { color: var(--muted); }
+.hdr-search-btn {
+  background: var(--green); color: #fff; border: none;
+  border-radius: 999px; padding: 8px 18px;
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  transition: background 180ms var(--ease);
+}
+.hdr-search-btn:hover { background: var(--green-dark); }
+
+.hdr-right { display: flex; align-items: center; gap: 22px; flex-shrink: 0; }
+.hdr-link {
+  font-size: 13px; font-weight: 600; color: var(--text);
+  transition: color 180ms var(--ease); display: inline-flex; align-items: center; gap: 6px;
+}
+.hdr-link:hover { color: var(--green); }
+.hdr-link svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.6; }
+.hdr-link.muted { color: var(--muted); }
+.hdr-link.muted:hover { color: var(--text); }
+
+/* ══════════════════════════════════════════
+   CATALOG STRIP — sub-nav under header (categories)
+══════════════════════════════════════════ */
+.cat-strip {
+  background: #fff; border-bottom: 1px solid var(--border);
+}
+.cat-strip .container {
+  display: flex; align-items: center; gap: 4px;
+  height: 48px; overflow-x: auto; scrollbar-width: none;
+}
+.cat-strip .container::-webkit-scrollbar { display: none; }
+.cat-pill {
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  padding: 7px 14px; border-radius: 999px; white-space: nowrap;
+  transition: background 160ms var(--ease), color 160ms var(--ease);
+}
+.cat-pill:hover { background: var(--green-tint); color: var(--text); }
+.cat-pill.active { background: var(--text); color: #fff; }
+.cat-strip .sep { width: 1px; height: 18px; background: var(--border); margin: 0 8px; flex-shrink: 0; }
+.cat-strip-meta {
+  margin-left: auto; font-size: 12px; color: var(--muted); font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+}
+.cat-strip-meta svg { width: 13px; height: 13px; stroke: var(--muted); stroke-width: 1.7; }
+
+/* ══════════════════════════════════════════
+   BREADCRUMB
+══════════════════════════════════════════ */
+.breadcrumb-wrap { background: var(--bg); padding: 20px 0 0; }
+.breadcrumb {
+  font-size: 12px; color: var(--muted);
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.breadcrumb a {
+  color: var(--muted); transition: color 160ms var(--ease);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.breadcrumb a:hover { color: var(--green); }
+.breadcrumb .sep { color: var(--subtle); }
+.breadcrumb .current { color: var(--text); font-weight: 600; }
+.breadcrumb svg { width: 12px; height: 12px; stroke: currentColor; stroke-width: 1.8; }
+
+/* ══════════════════════════════════════════
+   HERO — Profile header
+══════════════════════════════════════════ */
+.profile-hero {
+  background: var(--bg);
+  padding: 28px 0 64px;
+}
+
+.ph-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr 320px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Photo column */
+.ph-photo-wrap { position: relative; }
+.ph-photo {
+  width: 100%; aspect-ratio: 4/5;
+  border-radius: 16px; overflow: hidden;
+  background: linear-gradient(155deg, #DCD3C3 0%, #C4BAB0 60%, #A89B89 100%);
+  position: relative; box-shadow: var(--shadow-md);
+  border: 1px solid rgba(28,25,21,0.06);
+}
+.ph-photo-ph {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.6);
+  font-family: var(--serif); font-style: italic; font-size: 16px;
+}
+.ph-photo-ph svg { width: 64px; height: 64px; opacity: 0.35; stroke: #fff; stroke-width: 1; fill: none; margin-bottom: 8px; }
+.ph-photo-ph div { text-align: center; }
+
+.ph-verified {
+  position: absolute; top: 16px; left: 16px;
+  background: rgba(28,25,21,0.85); color: #fff;
+  padding: 6px 12px 6px 10px; border-radius: 999px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+  display: inline-flex; align-items: center; gap: 6px;
+  backdrop-filter: blur(4px);
+}
+.ph-verified svg { width: 13px; height: 13px; stroke: #6FD3A6; stroke-width: 2.5; fill: none; }
+
+.ph-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+.ph-thumb {
+  aspect-ratio: 1/1; border-radius: 8px;
+  background: var(--bg-tint); border: 1px solid var(--border);
+  cursor: pointer; transition: border-color 160ms var(--ease), transform 160ms var(--ease);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 600; color: var(--muted); letter-spacing: 0.03em; text-transform: uppercase;
+}
+.ph-thumb:hover { border-color: var(--green); transform: translateY(-1px); }
+.ph-thumb.video { background: var(--text); color: #fff; }
+.ph-thumb.more { background: var(--green-tint); color: var(--green); font-weight: 700; }
+
+/* Center column — main info */
+.ph-main { padding-top: 4px; }
+
+.ph-spec-row {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.ph-tag {
+  font-size: 12px; font-weight: 700; color: var(--green);
+  background: var(--green-light); padding: 4px 10px;
+  border-radius: 4px; letter-spacing: 0.02em;
+}
+.ph-tag.terra { color: var(--terra); background: var(--terra-light); }
+.ph-tag.muted { color: var(--muted); background: var(--bg-tint); }
+
+.ph-name {
+  font-family: var(--serif); font-size: 56px; font-weight: 400;
+  line-height: 1.04; letter-spacing: -0.015em; color: var(--text);
+  margin-bottom: 6px;
+}
+.ph-name .small {
+  font-size: 28px; color: var(--muted); font-style: italic; font-weight: 300;
+  display: block; line-height: 1.2; letter-spacing: 0;
+}
+
+.ph-role {
+  font-family: var(--serif); font-style: italic; font-weight: 300;
+  font-size: 22px; color: var(--muted); line-height: 1.4;
+  margin-bottom: 20px;
+}
+.ph-role .sep { color: var(--subtle); margin: 0 8px; }
+
+/* Rating row */
+.ph-rating {
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.ph-rating-score {
+  display: inline-flex; align-items: baseline; gap: 8px;
+}
+.ph-rating-num {
+  font-family: var(--serif); font-size: 32px; font-weight: 500;
+  color: var(--text); line-height: 1;
+}
+.ph-stars { display: inline-flex; gap: 2px; }
+.ph-stars svg { width: 14px; height: 14px; fill: var(--gold); }
+.ph-rating-count {
+  font-size: 13px; color: var(--muted); font-weight: 600;
+}
+.ph-rating-count a { color: var(--green); border-bottom: 1px dashed var(--green); }
+.ph-rating-count a:hover { color: var(--green-dark); }
+.ph-rating-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; background: #FFF8E8; color: #946A0A;
+  border-radius: 999px; font-size: 12px; font-weight: 700;
+}
+.ph-rating-badge svg { width: 13px; height: 13px; fill: #D6A03A; }
+.ph-rating-loc {
+  margin-left: auto; font-size: 13px; color: var(--muted); font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.ph-rating-loc svg { width: 14px; height: 14px; stroke: var(--muted); stroke-width: 1.7; fill: none; }
+
+/* Quick facts grid */
+.ph-facts {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  margin-bottom: 28px;
+}
+.ph-fact {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.ph-fact-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--muted);
+}
+.ph-fact-value {
+  font-family: var(--serif); font-size: 24px; font-weight: 500;
+  color: var(--text); line-height: 1.1;
+}
+.ph-fact-value small {
+  font-family: var(--sans); font-size: 12px; color: var(--muted);
+  font-weight: 600; letter-spacing: 0;
+}
+
+/* Bio chunks */
+.ph-bio {
+  display: flex; flex-direction: column; gap: 16px;
+  padding-top: 28px; border-top: 1px solid var(--border);
+}
+.ph-bio p {
+  font-size: 15px; color: var(--text); line-height: 1.7;
+}
+.ph-bio p:first-child {
+  font-family: var(--serif); font-size: 20px; font-weight: 400;
+  color: var(--text); line-height: 1.45; font-style: italic;
+}
+
+/* Highlights row — what makes them stand out */
+.ph-high {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px;
+  margin-top: 20px; padding-top: 24px; border-top: 1px solid var(--border);
+}
+.ph-high-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; line-height: 1.5; color: var(--text);
+}
+.ph-high-item svg { width: 16px; height: 16px; stroke: var(--green); stroke-width: 2; flex-shrink: 0; margin-top: 2px; fill: none; }
+.ph-high-item b { font-weight: 700; }
+
+/* Right column — sticky booking card */
+.ph-side { position: sticky; top: 96px; }
+
+.bk-card {
+  background: #fff; border-radius: 16px;
+  border: 1px solid rgba(28,25,21,0.07);
+  box-shadow: var(--shadow-lg);
+  padding: 24px 22px; margin-bottom: 14px;
+}
+.bk-price-row {
+  display: flex; align-items: baseline; gap: 8px;
+  padding-bottom: 16px; border-bottom: 1px solid var(--border);
+  margin-bottom: 18px;
+}
+.bk-price {
+  font-family: var(--serif); font-size: 32px; font-weight: 500;
+  color: var(--text); line-height: 1;
+}
+.bk-price small {
+  font-family: var(--sans); font-size: 13px; color: var(--muted);
+  font-weight: 600; margin-left: 2px;
+}
+.bk-price-meta {
+  margin-left: auto; font-size: 11px; font-weight: 700;
+  color: var(--green); background: var(--green-light);
+  padding: 3px 8px; border-radius: 4px; letter-spacing: 0.03em;
+}
+
+.bk-options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+.bk-opt {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--text);
+}
+.bk-opt-icon {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: var(--green-tint); display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0;
+}
+.bk-opt-icon svg { width: 14px; height: 14px; stroke: var(--green); stroke-width: 1.8; fill: none; }
+.bk-opt b { font-weight: 700; }
+.bk-opt-sub { color: var(--muted); font-size: 12px; margin-top: 1px; }
+
+.bk-cta-row { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.bk-btn-primary {
+  background: var(--green); color: #fff; border: none;
+  border-radius: 8px; padding: 14px 16px; font-family: var(--sans);
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: background 180ms var(--ease), transform 150ms var(--ease);
+}
+.bk-btn-primary:hover { background: var(--green-dark); }
+.bk-btn-primary:active { transform: scale(0.98); }
+
+.bk-btn-secondary {
+  background: #fff; color: var(--text); border: 1.5px solid var(--border-input);
+  border-radius: 8px; padding: 12px 16px;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  transition: border-color 180ms var(--ease), background 180ms var(--ease);
+}
+.bk-btn-secondary:hover { border-color: var(--green); background: var(--green-tint); }
+.bk-btn-secondary svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+.bk-btn-secondary.wa { color: #25A36F; border-color: rgba(37,163,111,0.35); }
+.bk-btn-secondary.wa:hover { background: rgba(37,163,111,0.06); border-color: #25A36F; }
+
+.bk-meta-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding-top: 16px; margin-top: 16px; border-top: 1px solid var(--border);
+}
+.bk-meta-item {
+  font-size: 11px; color: var(--muted); font-weight: 600;
+  display: inline-flex; align-items: center; gap: 5px;
+  letter-spacing: 0.02em;
+}
+.bk-meta-item svg { width: 13px; height: 13px; stroke: var(--green); stroke-width: 1.8; fill: none; }
+
+/* Save/share */
+.bk-actions {
+  display: flex; gap: 8px;
+}
+.bk-action {
+  flex: 1; background: #fff; border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  cursor: pointer; transition: all 160ms var(--ease);
+}
+.bk-action:hover { color: var(--text); border-color: var(--border-input); background: #FCFAF6; }
+.bk-action.saved { color: var(--terra); border-color: var(--terra-light); background: var(--terra-light); }
+.bk-action svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+.bk-action.saved svg { fill: var(--terra); }
+
+/* ══════════════════════════════════════════
+   SUB-NAV (sticky tab nav for sections)
+══════════════════════════════════════════ */
+.sub-nav {
+  position: sticky; top: 72px; z-index: 50;
+  background: rgba(249,246,240,0.92); backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.sub-nav .container {
+  display: flex; align-items: center; gap: 4px;
+  height: 56px; overflow-x: auto; scrollbar-width: none;
+}
+.sub-nav .container::-webkit-scrollbar { display: none; }
+.sn-link {
+  font-size: 13px; font-weight: 700; color: var(--muted);
+  padding: 8px 14px; border-radius: 999px; white-space: nowrap;
+  transition: color 160ms var(--ease), background 160ms var(--ease);
+  letter-spacing: 0.02em;
+}
+.sn-link:hover { color: var(--text); background: var(--bg-tint); }
+.sn-link.active { color: var(--text); background: var(--surface); box-shadow: 0 1px 3px rgba(28,25,21,0.06); }
+.sn-link .count {
+  font-size: 11px; color: var(--muted); margin-left: 5px; font-weight: 600;
+}
+.sn-link.active .count { color: var(--green); }
+.sn-cta {
+  margin-left: auto; font-size: 13px; font-weight: 700;
+  color: var(--green); display: inline-flex; align-items: center; gap: 5px;
+}
+.sn-cta:hover { color: var(--green-dark); }
+.sn-cta svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+/* ══════════════════════════════════════════
+   GENERIC SECTION HEADERS
+══════════════════════════════════════════ */
+.section { padding: 72px 0; border-top: 1px solid var(--border); }
+.section:first-of-type { border-top: none; padding-top: 56px; }
+.sec-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 24px; margin-bottom: 36px; flex-wrap: wrap;
+}
+.sec-head-left { display: flex; align-items: baseline; gap: 16px; }
+.sec-num {
+  font-family: var(--serif); font-size: 16px; font-weight: 500;
+  color: var(--terra); letter-spacing: 0.04em;
+}
+.sec-h2 {
+  font-family: var(--serif); font-size: 40px; font-weight: 400;
+  line-height: 1.1; color: var(--text); letter-spacing: -0.01em;
+}
+.sec-meta { font-size: 13px; color: var(--muted); font-weight: 600; }
+
+/* ══════════════════════════════════════════
+   ABOUT (Обо мне) — bio + facts
+══════════════════════════════════════════ */
+.about-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px;
+  align-items: start;
+}
+.about-text p {
+  font-size: 16px; line-height: 1.75; color: var(--text);
+  margin-bottom: 18px;
+}
+.about-text p:first-child {
+  font-family: var(--serif); font-size: 24px; font-weight: 400;
+  line-height: 1.4; color: var(--text); font-style: italic;
+  border-left: 2px solid var(--green); padding-left: 20px;
+  margin-bottom: 28px;
+}
+
+.about-text p strong { font-weight: 700; color: var(--text); }
+
+.facts-card {
+  background: #fff; border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 28px 28px;
+}
+.facts-card h3 {
+  font-family: var(--serif); font-size: 22px; font-weight: 500;
+  color: var(--text); margin-bottom: 4px;
+}
+.facts-card .sub {
+  font-size: 13px; color: var(--muted); margin-bottom: 22px;
+}
+.facts-row {
+  display: flex; gap: 16px; padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+.facts-row:last-child { padding-bottom: 0; }
+.facts-key {
+  width: 140px; flex-shrink: 0;
+  font-size: 11px; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px;
+}
+.facts-val { font-size: 14px; color: var(--text); line-height: 1.5; }
+.facts-val b { font-weight: 700; }
+.facts-val ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+.facts-val li { padding-left: 14px; position: relative; }
+.facts-val li::before {
+  content: ''; position: absolute; left: 0; top: 9px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--green);
+}
+
+/* ══════════════════════════════════════════
+   SERVICES (Услуги и цены)
+══════════════════════════════════════════ */
+.svc-tabs {
+  display: flex; gap: 8px; margin-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.svc-tab {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--sans); font-size: 14px; font-weight: 700;
+  color: var(--muted); padding: 12px 18px;
+  border-bottom: 2px solid transparent;
+  transition: color 180ms var(--ease), border-color 180ms var(--ease);
+  margin-bottom: -1px;
+}
+.svc-tab:hover { color: var(--text); }
+.svc-tab.active { color: var(--text); border-bottom-color: var(--green); }
+.svc-tab .count {
+  font-size: 11px; color: var(--muted); margin-left: 6px;
+  background: var(--bg-tint); padding: 1px 7px; border-radius: 999px;
+}
+.svc-tab.active .count { color: var(--green); background: var(--green-light); }
+
+.svc-list { display: flex; flex-direction: column; gap: 0; background: #fff; border-radius: 14px; border: 1px solid var(--border); box-shadow: var(--shadow-md); overflow: hidden; }
+.svc-item {
+  display: grid; grid-template-columns: 56px 1fr auto auto;
+  gap: 20px; align-items: center;
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--border);
+  transition: background 180ms var(--ease);
+}
+.svc-item:last-child { border-bottom: none; }
+.svc-item:hover { background: var(--bg); }
+.svc-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--green-tint); color: var(--green);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.svc-icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.5; fill: none; }
+.svc-icon.terra { background: var(--terra-light); color: var(--terra); }
+.svc-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.svc-title { font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--text); line-height: 1.2; }
+.svc-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.svc-dur {
+  font-size: 12px; color: var(--muted); font-weight: 600;
+  display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+}
+.svc-dur svg { width: 13px; height: 13px; stroke: var(--muted); stroke-width: 1.8; fill: none; }
+.svc-price-col {
+  text-align: right; white-space: nowrap;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+}
+.svc-price {
+  font-family: var(--serif); font-size: 22px; font-weight: 500;
+  color: var(--text); line-height: 1;
+}
+.svc-price small { font-family: var(--sans); font-size: 12px; color: var(--muted); font-weight: 600; }
+.svc-book {
+  background: transparent; color: var(--green);
+  border: 1.5px solid var(--green); border-radius: 8px;
+  padding: 7px 14px; font-size: 12px; font-weight: 700;
+  cursor: pointer; letter-spacing: 0.02em;
+  transition: all 180ms var(--ease);
+}
+.svc-book:hover { background: var(--green); color: #fff; }
+
+.svc-note {
+  margin-top: 14px; font-size: 13px; color: var(--muted);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.svc-note svg { width: 14px; height: 14px; stroke: var(--muted); stroke-width: 1.8; fill: none; flex-shrink: 0; margin-top: 3px; }
+
+/* ══════════════════════════════════════════
+   EDUCATION & CERTIFICATES
+══════════════════════════════════════════ */
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.edu-card {
+  background: #fff; border-radius: 14px; border: 1px solid var(--border);
+  box-shadow: var(--shadow-md); padding: 28px;
+}
+.edu-card h3 {
+  font-family: var(--serif); font-size: 20px; font-weight: 500;
+  margin-bottom: 18px; color: var(--text);
+  display: flex; align-items: center; gap: 10px;
+}
+.edu-card h3 svg { width: 20px; height: 20px; stroke: var(--green); stroke-width: 1.6; fill: none; }
+.edu-list { display: flex; flex-direction: column; gap: 18px; }
+.edu-item {
+  display: grid; grid-template-columns: 76px 1fr; gap: 18px;
+  padding-bottom: 18px; border-bottom: 1px solid var(--border);
+}
+.edu-item:last-child { padding-bottom: 0; border-bottom: none; }
+.edu-year {
+  font-family: var(--serif); font-size: 20px; font-weight: 500;
+  color: var(--terra); padding-top: 2px;
+}
+.edu-body h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; line-height: 1.4; }
+.edu-body p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+.certs-strip {
+  margin-top: 32px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+}
+.cert-thumb {
+  aspect-ratio: 3/4; background: #fff;
+  border: 1px solid var(--border); border-radius: 8px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 16px; text-align: center; gap: 8px;
+  cursor: pointer; transition: all 200ms var(--ease);
+  position: relative; overflow: hidden;
+}
+.cert-thumb::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--green);
+}
+.cert-thumb:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.cert-thumb svg { width: 28px; height: 28px; stroke: var(--green); stroke-width: 1.4; fill: none; opacity: 0.5; }
+.cert-name { font-family: var(--serif); font-size: 13px; line-height: 1.3; color: var(--text); font-weight: 500; }
+.cert-meta { font-size: 10px; color: var(--muted); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+
+/* ══════════════════════════════════════════
+   SCHEDULE / LOCATION
+══════════════════════════════════════════ */
+.loc-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; }
+
+.map-card {
+  background: #fff; border-radius: 14px; overflow: hidden;
+  border: 1px solid var(--border); box-shadow: var(--shadow-md);
+  display: flex; flex-direction: column;
+}
+.map-canvas {
+  flex: 1; min-height: 420px;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(61,122,107,0.12) 0%, transparent 30%),
+    radial-gradient(circle at 70% 60%, rgba(181,82,42,0.08) 0%, transparent 30%),
+    repeating-linear-gradient(0deg, transparent 0, transparent 40px, rgba(28,25,21,0.04) 40px, rgba(28,25,21,0.04) 41px),
+    repeating-linear-gradient(90deg, transparent 0, transparent 40px, rgba(28,25,21,0.04) 40px, rgba(28,25,21,0.04) 41px),
+    #F2EEE5;
+  position: relative;
+}
+.map-roads { position: absolute; inset: 0; overflow: hidden; }
+.map-pin {
+  position: absolute; top: 45%; left: 32%;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.map-pin-dot {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--green); border: 4px solid #fff;
+  box-shadow: 0 6px 18px rgba(61,122,107,0.45);
+  display: flex; align-items: center; justify-content: center;
+}
+.map-pin-dot svg { width: 18px; height: 18px; stroke: #fff; stroke-width: 2; fill: none; }
+.map-pin-label {
+  font-size: 11px; font-weight: 700; color: var(--text);
+  background: #fff; padding: 4px 10px; border-radius: 999px;
+  box-shadow: var(--shadow-md); white-space: nowrap;
+}
+.map-zone {
+  position: absolute; top: 50%; left: 50%;
+  width: 260px; height: 260px; border-radius: 50%;
+  border: 1.5px dashed rgba(61,122,107,0.4);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.map-zone-label {
+  position: absolute; top: 80%; right: 10%;
+  font-size: 11px; font-weight: 700; color: var(--muted);
+  background: rgba(255,255,255,0.85); padding: 4px 10px; border-radius: 4px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  backdrop-filter: blur(4px);
+}
+.map-foot {
+  padding: 20px 24px; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.map-foot-addr { font-size: 14px; color: var(--text); }
+.map-foot-addr b { font-weight: 700; }
+.map-foot-addr small { color: var(--muted); display: block; margin-top: 2px; font-size: 12px; }
+.map-foot a { font-size: 13px; font-weight: 700; color: var(--green); display: inline-flex; align-items: center; gap: 5px; }
+.map-foot a:hover { color: var(--green-dark); }
+.map-foot a svg { width: 13px; height: 13px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+/* Schedule */
+.sched-card {
+  background: #fff; border-radius: 14px;
+  border: 1px solid var(--border); box-shadow: var(--shadow-md);
+  padding: 24px 24px;
+}
+.sched-card h3 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+.sched-card .sub { font-size: 13px; color: var(--muted); margin-bottom: 18px; }
+.sched-list { display: flex; flex-direction: column; gap: 0; }
+.sched-row {
+  display: grid; grid-template-columns: 110px 1fr auto; gap: 14px;
+  align-items: center; padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.sched-row:last-child { border-bottom: none; }
+.sched-day { font-weight: 700; color: var(--text); }
+.sched-day.today { color: var(--green); }
+.sched-day.today::after { content: ' · сегодня'; font-size: 11px; font-weight: 600; color: var(--muted); }
+.sched-hours { color: var(--muted); }
+.sched-status {
+  font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 999px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.sched-status.free { background: var(--green-light); color: var(--green); }
+.sched-status.few  { background: #FFF8E8; color: #946A0A; }
+.sched-status.busy { background: var(--terra-light); color: var(--terra); }
+
+.zones-card {
+  background: var(--bg-tint); border-radius: 14px;
+  padding: 22px 24px; margin-top: 14px;
+  border: 1px solid var(--border);
+}
+.zones-card h4 {
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+  margin-bottom: 12px;
+}
+.zones-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.zone-chip {
+  font-size: 12px; font-weight: 600; color: var(--text);
+  background: #fff; padding: 5px 10px; border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+/* ══════════════════════════════════════════
+   REVIEWS
+══════════════════════════════════════════ */
+.rev-overview {
+  display: grid; grid-template-columns: 280px 1fr; gap: 40px;
+  padding: 32px 32px; background: #fff; border-radius: 14px;
+  border: 1px solid var(--border); box-shadow: var(--shadow-md);
+  margin-bottom: 28px;
+}
+.rev-score-big {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  padding-right: 32px; border-right: 1px solid var(--border);
+}
+.rev-score-big .num {
+  font-family: var(--serif); font-size: 64px; font-weight: 400;
+  line-height: 1; color: var(--text);
+}
+.rev-score-big .stars { display: inline-flex; gap: 3px; }
+.rev-score-big .stars svg { width: 18px; height: 18px; fill: var(--gold); }
+.rev-score-big .count { font-size: 13px; color: var(--muted); font-weight: 600; }
+.rev-score-big .sources { font-size: 11px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+.rev-score-big .sources b { color: var(--text); font-weight: 700; }
+
+.rev-bars { display: flex; flex-direction: column; gap: 8px; padding-top: 4px; }
+.rev-bar-row { display: grid; grid-template-columns: 90px 1fr 40px; gap: 12px; align-items: center; }
+.rev-bar-key { font-size: 12px; font-weight: 600; color: var(--text); }
+.rev-bar-track { height: 8px; background: var(--bg-tint); border-radius: 999px; overflow: hidden; }
+.rev-bar-fill { height: 100%; background: var(--green); border-radius: 999px; }
+.rev-bar-val { font-size: 12px; font-weight: 700; color: var(--text); text-align: right; }
+
+.rev-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.rev-card {
+  background: #fff; border-radius: 14px;
+  border: 1px solid var(--border); box-shadow: var(--shadow-md);
+  padding: 24px 24px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.rev-card-head { display: flex; align-items: center; gap: 12px; }
+.rev-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--green-tint); display: flex;
+  align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 18px; font-weight: 500; color: var(--green);
+  flex-shrink: 0;
+}
+.rev-avatar.terra { background: var(--terra-light); color: var(--terra); }
+.rev-avatar.muted { background: var(--bg-tint); color: var(--muted); }
+.rev-id { flex: 1; min-width: 0; }
+.rev-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.rev-date { font-size: 12px; color: var(--muted); margin-top: 1px; }
+.rev-stars { display: inline-flex; gap: 2px; }
+.rev-stars svg { width: 14px; height: 14px; fill: var(--gold); }
+.rev-text { font-size: 14px; color: var(--text); line-height: 1.65; }
+.rev-foot {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 14px; border-top: 1px solid var(--border);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+}
+.rev-source { color: var(--subtle); }
+.rev-tag {
+  color: var(--green); background: var(--green-light);
+  padding: 3px 9px; border-radius: 4px;
+}
+.rev-tag.terra { color: var(--terra); background: var(--terra-light); }
+
+.rev-more {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 28px; font-size: 14px; font-weight: 700; color: var(--green);
+  padding: 12px 22px; border: 1.5px solid var(--green);
+  border-radius: 8px; cursor: pointer; background: transparent;
+  transition: all 180ms var(--ease);
+}
+.rev-more:hover { background: var(--green); color: #fff; }
+.rev-more svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+/* ══════════════════════════════════════════
+   SIMILAR SPECIALISTS — Catalog hook!
+══════════════════════════════════════════ */
+.sim-section { background: #F0EDE7; padding: 80px 0; }
+
+.sim-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.sim-card {
+  background: #fff; border-radius: 14px;
+  border: 1px solid rgba(28,25,21,0.07);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: box-shadow 240ms var(--ease), transform 240ms var(--ease);
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.sim-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.sim-photo {
+  aspect-ratio: 4/3; background: linear-gradient(155deg, #DCD3C3, #C4BAB0);
+  position: relative;
+  display: flex; align-items: flex-end; justify-content: flex-start;
+  padding: 12px;
+}
+.sim-photo.terra-tint { background: linear-gradient(155deg, #E0CDC0, #C9A998); }
+.sim-photo.sage-tint  { background: linear-gradient(155deg, #C8D5CE, #9FB8AF); }
+.sim-photo.warm-tint  { background: linear-gradient(155deg, #DDD0BB, #BFAE94); }
+.sim-photo-ph {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5);
+}
+.sim-photo-ph svg { width: 48px; height: 48px; stroke: #fff; stroke-width: 0.8; fill: none; opacity: 0.5; }
+.sim-photo .badge {
+  position: relative; z-index: 1;
+  background: rgba(28,25,21,0.85); color: #fff;
+  font-size: 10px; font-weight: 700; padding: 4px 9px;
+  border-radius: 999px; letter-spacing: 0.04em;
+  display: inline-flex; align-items: center; gap: 4px;
+  backdrop-filter: blur(4px);
+}
+.sim-photo .badge svg { width: 11px; height: 11px; stroke: #6FD3A6; stroke-width: 2.5; fill: none; }
+.sim-photo .heart {
+  position: absolute; top: 12px; right: 12px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255,255,255,0.9); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 160ms var(--ease);
+}
+.sim-photo .heart svg { width: 14px; height: 14px; stroke: var(--text); stroke-width: 2; fill: none; }
+.sim-photo .heart:hover { background: #fff; }
+.sim-photo .heart.saved svg { fill: var(--terra); stroke: var(--terra); }
+
+.sim-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.sim-name { font-family: var(--serif); font-size: 22px; font-weight: 500; line-height: 1.15; color: var(--text); }
+.sim-role { font-size: 12px; color: var(--muted); font-weight: 600; }
+.sim-rating-row { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+.sim-rating-row .num { font-size: 13px; font-weight: 700; color: var(--text); display: inline-flex; align-items: center; gap: 3px; }
+.sim-rating-row .num svg { width: 13px; height: 13px; fill: var(--gold); }
+.sim-rating-row .count { font-size: 12px; color: var(--muted); }
+.sim-meta-row {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 11px; color: var(--muted); font-weight: 600;
+  letter-spacing: 0.02em; margin-top: 6px;
+}
+.sim-meta-row span { display: inline-flex; align-items: center; gap: 4px; }
+.sim-meta-row svg { width: 12px; height: 12px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+.sim-foot {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border);
+}
+.sim-price { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--text); }
+.sim-price small { font-family: var(--sans); font-size: 12px; color: var(--muted); font-weight: 600; }
+.sim-link {
+  font-size: 12px; font-weight: 700; color: var(--green);
+  display: inline-flex; align-items: center; gap: 4px;
+  transition: gap 180ms var(--ease);
+}
+.sim-card:hover .sim-link { gap: 8px; }
+.sim-link svg { width: 12px; height: 12px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+.sim-all {
+  text-align: center; margin-top: 36px;
+}
+.sim-all a {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 700; color: var(--text);
+  padding: 14px 28px; border: 1.5px solid var(--text);
+  border-radius: 999px; transition: all 180ms var(--ease);
+}
+.sim-all a:hover { background: var(--text); color: #fff; }
+.sim-all a svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 2; fill: none; }
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+.footer { background: #1C1915; padding: 56px 0 28px; color: rgba(255,255,255,0.7); }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 40px; margin-bottom: 36px;
+}
+.footer-logo {
+  font-family: var(--serif); font-size: 26px; font-weight: 500;
+  color: #fff; margin-bottom: 12px;
+}
+.footer-logo span { color: #6BAE9D; }
+.footer-tagline { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; max-width: 280px; }
+.footer-col-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.5);
+  margin-bottom: 14px;
+}
+.footer-links { display: flex; flex-direction: column; gap: 9px; }
+.footer-links a, .footer-links span {
+  font-size: 13px; color: rgba(255,255,255,0.65); transition: color 160ms var(--ease);
+}
+.footer-links a:hover { color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 20px; display: flex; justify-content: space-between;
+  align-items: center; font-size: 12px; color: rgba(255,255,255,0.35);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE (lightweight)
+══════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .ph-grid { grid-template-columns: 320px 1fr; }
+  .ph-side { grid-column: 1 / -1; position: static; }
+  .bk-card { max-width: 480px; }
+  .sim-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; }
+  .loc-grid { grid-template-columns: 1fr; }
+  .edu-grid, .rev-grid { grid-template-columns: 1fr; }
+  .rev-overview { grid-template-columns: 1fr; }
+  .rev-score-big { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 24px; }
+}
+@media (max-width: 720px) {
+  :root { --px: 20px; }
+  .ph-grid { grid-template-columns: 1fr; }
+  .ph-name { font-size: 40px; }
+  .ph-facts { grid-template-columns: 1fr 1fr; }
+  .ph-high { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+<template id="__bundler_thumbnail" data-bg-color="#F9F6F0">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F9F6F0"/>
+    <rect x="380" y="200" width="200" height="240" rx="14" fill="#C4BAB0"/>
+    <rect x="610" y="220" width="220" height="22" rx="3" fill="#1C1915"/>
+    <rect x="610" y="260" width="160" height="14" rx="3" fill="#8A7E6F"/>
+    <rect x="610" y="300" width="60" height="14" rx="3" fill="#3D7A6B"/>
+    <rect x="680" y="300" width="120" height="14" rx="3" fill="#8A7E6F"/>
+    <rect x="610" y="360" width="220" height="40" rx="8" fill="#3D7A6B"/>
+  </svg>
+</template>
+</head>
+<body>
+
+<!-- // SECTION: marketplace-bar -->
+<div class="mp-bar">
+  <div class="container">
+    <div class="mp-bar-left">
+      <a href="/" class="city-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Москва
+      </a>
+      <a href="/about/">О massash</a>
+      <a href="/how/">Как это работает</a>
+      <a href="/blog/">Журнал</a>
+    </div>
+    <div class="mp-bar-right">
+      <a href="/specialists/join/">Стать специалистом</a>
+      <span class="mp-divider"></span>
+      <a href="/favorites/">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Избранное · 3
+      </a>
+      <a href="/login/">Войти</a>
+    </div>
+  </div>
+</div>
+
+<!-- // SECTION: header -->
+<header class="header">
+  <nav class="header-nav">
+    <div class="container">
+      <a href="/" class="logo">mas<span>sash</span><small>Каталог специалистов</small></a>
+
+      <div class="hdr-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Услуга, специалист или район…" value="Массажист с выездом · Москва" aria-label="Поиск">
+        <button class="hdr-search-btn" type="button">Найти</button>
+      </div>
+
+      <div class="hdr-right">
+        <a href="/specialists/" class="hdr-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          Каталог
+        </a>
+        <a href="/account/" class="hdr-link muted">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Кабинет
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- // SECTION: catalog-strip -->
+<div class="cat-strip">
+  <div class="container">
+    <a href="/specialists/massage/" class="cat-pill active">Массажисты</a>
+    <a href="/specialists/rehab/" class="cat-pill">Реабилитологи</a>
+    <a href="/specialists/trainers/" class="cat-pill">Тренеры</a>
+    <a href="/specialists/osteopath/" class="cat-pill">Остеопаты</a>
+    <a href="/specialists/kinesio/" class="cat-pill">Кинезиологи</a>
+    <span class="sep"></span>
+    <a href="#" class="cat-pill">Выезд на дом</a>
+    <a href="#" class="cat-pill">В студии</a>
+    <a href="#" class="cat-pill">С медобразованием</a>
+    <span class="cat-strip-meta">
+      <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      247 специалистов в Москве
+    </span>
+  </div>
+</div>
+
+<!-- // SECTION: breadcrumbs -->
+<div class="breadcrumb-wrap">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Хлебные крошки">
+      <a href="/">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Главная
+      </a>
+      <span class="sep">›</span>
+      <a href="/specialists/">Специалисты</a>
+      <span class="sep">›</span>
+      <a href="/specialists/massage/">Массажисты в Москве</a>
+      <span class="sep">›</span>
+      <a href="/specialists/massage/?district=airport">м. Аэропорт</a>
+      <span class="sep">›</span>
+      <span class="current">Вахания А. П.</span>
+    </nav>
+  </div>
+</div>
+
+<!-- // SECTION: profile-hero (3-column: photo / main / booking sidebar) -->
+<section class="profile-hero" data-screen-label="01 Профиль · шапка">
+  <div class="container">
+    <div class="ph-grid">
+
+      <!-- LEFT: Photo column -->
+      <div>
+        <div class="ph-photo-wrap">
+          <div class="ph-photo">
+            <div class="ph-photo-ph">
+              <div>
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-5 4-8 8-8s8 3 8 8"/></svg>
+                <div>Портрет специалиста</div>
+              </div>
+            </div>
+            <div class="ph-verified">
+              <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Верифицирован · паспорт + диплом
+            </div>
+          </div>
+        </div>
+        <div class="ph-thumbs">
+          <div class="ph-thumb">Студия 1</div>
+          <div class="ph-thumb">Студия 2</div>
+          <div class="ph-thumb video">▶ 0:48</div>
+          <div class="ph-thumb more">+6</div>
+        </div>
+      </div>
+
+      <!-- CENTER: Main info -->
+      <div class="ph-main">
+        <div class="ph-spec-row">
+          <span class="ph-tag">Массаж</span>
+          <span class="ph-tag terra">Реабилитация</span>
+          <span class="ph-tag muted">Персональные тренировки</span>
+        </div>
+
+        <h1 class="ph-name">Александр Вахания<span class="small">Вахания Александр Петрович</span></h1>
+        <p class="ph-role">Массажист-реабилитолог<span class="sep">·</span>персональный тренер<span class="sep">·</span>Москва</p>
+
+        <!-- Rating row -->
+        <div class="ph-rating">
+          <div class="ph-rating-score">
+            <span class="ph-rating-num">4,9</span>
+            <span class="ph-stars">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>
+            </span>
+          </div>
+          <span class="ph-rating-count"><a href="#reviews">184 отзыва</a> · 96% рекомендуют</span>
+          <span class="ph-rating-badge">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>
+            Топ-10 в Москве
+          </span>
+          <span class="ph-rating-loc">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            м. Аэропорт · выезд по Москве
+          </span>
+        </div>
+
+        <!-- Quick facts -->
+        <div class="ph-facts">
+          <div class="ph-fact">
+            <div class="ph-fact-label">Опыт</div>
+            <div class="ph-fact-value">12 <small>лет</small></div>
+          </div>
+          <div class="ph-fact">
+            <div class="ph-fact-label">Клиентов</div>
+            <div class="ph-fact-value">1 800<small>+</small></div>
+          </div>
+          <div class="ph-fact">
+            <div class="ph-fact-label">Образование</div>
+            <div class="ph-fact-value">МГМСУ <small>· реабилитация</small></div>
+          </div>
+          <div class="ph-fact">
+            <div class="ph-fact-label">Ответ</div>
+            <div class="ph-fact-value">~28 <small>мин</small></div>
+          </div>
+        </div>
+
+        <!-- Bio teaser -->
+        <div class="ph-bio">
+          <p>«Системно работаю с телом — от снятия мышечного напряжения до восстановления после травм и поддержки спортивной формы. Подход доказательный, без эзотерики.»</p>
+          <p>Веду частную практику с 2014 года: до этого — реабилитационный центр <strong>ОАО «РЖД»</strong>, фитнес-сеть <strong>World Class</strong>, спортивная команда ХК «Динамо». Работаю с офисными синдромами, болями в спине и шее, последствиями травм и подготовкой к соревнованиям.</p>
+        </div>
+
+        <!-- Highlights -->
+        <div class="ph-high">
+          <div class="ph-high-item">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><b>Медицинское образование</b><br><span style="color:var(--muted);font-size:12px;">МГМСУ им. Евдокимова, физическая реабилитация</span></span>
+          </div>
+          <div class="ph-high-item">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><b>Выезд со своим столом</b><br><span style="color:var(--muted);font-size:12px;">Москва в пределах ТТК и Подмосковье</span></span>
+          </div>
+          <div class="ph-high-item">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><b>Работа по протоколу</b><br><span style="color:var(--muted);font-size:12px;">Курс из 8–10 сеансов под Ваш запрос</span></span>
+          </div>
+          <div class="ph-high-item">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><b>Без выходных, 9:00–22:00</b><br><span style="color:var(--muted);font-size:12px;">Подтверждение записи в течение часа</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Sticky booking card -->
+      <aside class="ph-side">
+        <div class="bk-card">
+          <div class="bk-price-row">
+            <div class="bk-price">от 3 500 ₽<small>/ сеанс</small></div>
+            <span class="bk-price-meta">60 мин</span>
+          </div>
+
+          <div class="bk-options">
+            <div class="bk-opt">
+              <div class="bk-opt-icon">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <div>
+                <b>Выезд на дом</b>
+                <div class="bk-opt-sub">Москва · от 800 ₽</div>
+              </div>
+            </div>
+            <div class="bk-opt">
+              <div class="bk-opt-icon">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div>
+                <b>Студия у м. Аэропорт</b>
+                <div class="bk-opt-sub">7 мин пешком от метро</div>
+              </div>
+            </div>
+            <div class="bk-opt">
+              <div class="bk-opt-icon">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+              </div>
+              <div>
+                <b>Ближайшее окно</b>
+                <div class="bk-opt-sub" style="color:var(--green);font-weight:700;">Сегодня, 18:30 · свободно</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bk-cta-row">
+            <button class="bk-btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться на сеанс</button>
+            <button class="bk-btn-secondary wa">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Написать в WhatsApp
+            </button>
+          </div>
+
+          <div class="bk-meta-row">
+            <span class="bk-meta-item">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg>
+              Гарантия безопасной сделки
+            </span>
+            <span class="bk-meta-item">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Оплата после сеанса
+            </span>
+          </div>
+        </div>
+
+        <div class="bk-actions">
+          <button class="bk-action" onclick="this.classList.toggle('saved'); const t=this.querySelector('.lbl'); t.textContent = this.classList.contains('saved') ? 'В избранном' : 'В избранное';">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="lbl">В избранное</span>
+          </button>
+          <button class="bk-action">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Поделиться
+          </button>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- // SECTION: sub-nav (sticky anchor tabs) -->
+<nav class="sub-nav" id="subnav">
+  <div class="container">
+    <a href="#about" class="sn-link active">Обо мне</a>
+    <a href="#services" class="sn-link">Услуги и цены <span class="count">17</span></a>
+    <a href="#education" class="sn-link">Образование</a>
+    <a href="#location" class="sn-link">Адрес и выезд</a>
+    <a href="#reviews" class="sn-link">Отзывы <span class="count">184</span></a>
+    <a href="#similar" class="sn-link">Похожие специалисты</a>
+    <a href="#booking" class="sn-cta">
+      Записаться
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- // SECTION: about -->
+<section class="section" id="about" data-screen-label="02 Обо мне">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <div class="sec-num">01</div>
+        <h2 class="sec-h2">Обо мне</h2>
+      </div>
+      <div class="sec-meta">Подробно о подходе, опыте и принципах работы</div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>«Тело — это система, и боль в одной точке почти никогда не появляется сама по себе. Моя задача — найти настоящую причину и помочь телу вернуться в баланс.»</p>
+        <p>Я работаю с массажем и реабилитацией с <strong>2014 года</strong>. За это время прошёл путь от младшего реабилитолога в центре ОАО «РЖД» до частной практики со стабильной клиентской базой. Получил профильное образование в МГМСУ им. Евдокимова — специальность «Физическая реабилитация» — и регулярно повышаю квалификацию: миофасциальный релиз, кинезиология, спортивная реабилитация.</p>
+        <p>Ко мне приходят с разным запросом: офисный синдром и боли в шее, последствия травм, восстановление после операций, подготовка к соревнованиям, просто желание системно восстанавливать тело. Я всегда начинаю с разговора и осмотра — без этого нет смысла приступать к работе. После первого сеанса согласуем план: один сеанс «по запросу» или курс из 8–10 встреч с конкретным результатом на горизонте.</p>
+        <p>Помимо массажа веду персональные тренировки — корректирующие, восстановительные и общеукрепляющие. Они хорошо дополняют курс массажа: то, что мы разогнали руками, фиксируется движением.</p>
+      </div>
+
+      <div class="facts-card">
+        <h3>В цифрах и фактах</h3>
+        <div class="sub">Документы, образование и опыт работы.</div>
+
+        <div class="facts-row">
+          <div class="facts-key">Образование</div>
+          <div class="facts-val">
+            <b>МГМСУ им. А. И. Евдокимова</b><br>
+            Специальность «Физическая реабилитация», 2010–2014
+          </div>
+        </div>
+        <div class="facts-row">
+          <div class="facts-key">Опыт работы</div>
+          <div class="facts-val">
+            <ul>
+              <li>Реабилитационный центр ОАО «РЖД» — 2014–2017</li>
+              <li>Сеть фитнес-клубов World Class — 2015–2020</li>
+              <li>Спортивная команда ХК «Динамо» — 2018–2021</li>
+              <li>Частная практика — с 2014 по настоящее время</li>
+            </ul>
+          </div>
+        </div>
+        <div class="facts-row">
+          <div class="facts-key">Повышение квалификации</div>
+          <div class="facts-val">
+            <ul>
+              <li>Миофасциальный релиз (Anatomy Trains)</li>
+              <li>Кинезиология PNF</li>
+              <li>Спортивная реабилитация (FFM Academy)</li>
+              <li>Лимфодренаж по методике Vodder</li>
+            </ul>
+          </div>
+        </div>
+        <div class="facts-row">
+          <div class="facts-key">Языки</div>
+          <div class="facts-val">Русский, английский (B2)</div>
+        </div>
+        <div class="facts-row">
+          <div class="facts-key">Документы</div>
+          <div class="facts-val">
+            <span style="color:var(--green);font-weight:700;">✓ Паспорт</span> · 
+            <span style="color:var(--green);font-weight:700;">✓ Диплом</span> · 
+            <span style="color:var(--green);font-weight:700;">✓ Самозанятость</span><br>
+            <span style="color:var(--muted);font-size:12px;">Все документы проверены massash.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- // SECTION: services-and-prices (tabs) -->
+<section class="section" id="services" data-screen-label="03 Услуги и цены">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <div class="sec-num">02</div>
+        <h2 class="sec-h2">Услуги и цены</h2>
+      </div>
+      <div class="sec-meta">Цены указаны за сеанс в студии · выезд +800 ₽</div>
+    </div>
+
+    <div class="svc-tabs" id="svc-tabs">
+      <button class="svc-tab active" data-tab="massage">Массаж <span class="count">12</span></button>
+      <button class="svc-tab" data-tab="rehab">Реабилитация <span class="count">3</span></button>
+      <button class="svc-tab" data-tab="training">Тренировки <span class="count">2</span></button>
+    </div>
+
+    <div class="svc-list" id="svc-list"></div>
+
+    <div class="svc-note">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <span>Курс из 8 сеансов — скидка 10% · абонемент на 4 тренировки — скидка 15%. Окончательную стоимость подтвержу после знакомства и оценки запроса.</span>
+    </div>
+  </div>
+</section>
+
+<!-- // SECTION: education-and-certificates (timeline) -->
+<section class="section" id="education" data-screen-label="04 Образование">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <div class="sec-num">03</div>
+        <h2 class="sec-h2">Образование и сертификаты</h2>
+      </div>
+      <div class="sec-meta">Подтверждено документами · проверено massash.com</div>
+    </div>
+
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h3>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+          Высшее образование
+        </h3>
+        <div class="edu-list">
+          <div class="edu-item">
+            <div class="edu-year">2014</div>
+            <div class="edu-body">
+              <h4>МГМСУ им. А. И. Евдокимова</h4>
+              <p>Факультет среднего медицинского образования. Специальность «Физическая реабилитация». Красный диплом.</p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2017</div>
+            <div class="edu-body">
+              <h4>РУДН · Ординатура</h4>
+              <p>«Лечебная физкультура и спортивная медицина», 2 года клинической практики на базе ЦКБ.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <h3>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          Повышение квалификации
+        </h3>
+        <div class="edu-list">
+          <div class="edu-item">
+            <div class="edu-year">2024</div>
+            <div class="edu-body">
+              <h4>Anatomy Trains · Миофасциальный релиз</h4>
+              <p>Сертификационный курс по работе с миофасциальными цепями. Преподаватель — Том Майерс (онлайн).</p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2022</div>
+            <div class="edu-body">
+              <h4>FFM Academy · Спортивная реабилитация</h4>
+              <p>Восстановление после травм опорно-двигательного аппарата у спортсменов.</p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-year">2019</div>
+            <div class="edu-body">
+              <h4>Школа Vodder · Лимфодренаж</h4>
+              <p>Мануальный лимфодренаж по классической методике Эмиля Воддера.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="certs-strip">
+      <div class="cert-thumb">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        <div class="cert-name">Диплом МГМСУ</div>
+        <div class="cert-meta">2014</div>
+      </div>
+      <div class="cert-thumb">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        <div class="cert-name">Anatomy Trains</div>
+        <div class="cert-meta">2024 · MFR</div>
+      </div>
+      <div class="cert-thumb">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        <div class="cert-name">Vodder Lymph</div>
+        <div class="cert-meta">2019</div>
+      </div>
+      <div class="cert-thumb">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        <div class="cert-name">FFM Спорт. реаб.</div>
+        <div class="cert-meta">2022</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- // SECTION: location (map placeholder + schedule + zones) -->
+<section class="section" id="location" data-screen-label="05 Адрес и выезд">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <div class="sec-num">04</div>
+        <h2 class="sec-h2">Адрес и выезд</h2>
+      </div>
+      <div class="sec-meta">Студия в Москве + выезд по городу и Подмосковью</div>
+    </div>
+
+    <div class="loc-grid">
+      <div class="map-card">
+        <div class="map-canvas">
+          <div class="map-zone"></div>
+          <div class="map-zone-label">Зона выезда</div>
+          <div class="map-pin">
+            <div class="map-pin-dot">
+              <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="map-pin-label">Студия · м. Аэропорт</div>
+          </div>
+        </div>
+        <div class="map-foot">
+          <div class="map-foot-addr">
+            <b>Ленинградский пр-т, 62, кор. 1, оф. 304</b>
+            <small>7 минут пешком от м. Аэропорт · кодовый замок 1234</small>
+          </div>
+          <a href="#">
+            Маршрут
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="sched-card">
+          <h3>Расписание</h3>
+          <div class="sub">Сегодня — четверг, 14 марта</div>
+          <div class="sched-list">
+            <div class="sched-row">
+              <div class="sched-day today">Чт</div>
+              <div class="sched-hours">9:00 — 22:00</div>
+              <div class="sched-status few">4 окна</div>
+            </div>
+            <div class="sched-row">
+              <div class="sched-day">Пт</div>
+              <div class="sched-hours">9:00 — 22:00</div>
+              <div class="sched-status free">Свободно</div>
+            </div>
+            <div class="sched-row">
+              <div class="sched-day">Сб</div>
+              <div class="sched-hours">10:00 — 20:00</div>
+              <div class="sched-status busy">Занято</div>
+            </div>
+            <div class="sched-row">
+              <div class="sched-day">Вс</div>
+              <div class="sched-hours">10:00 — 20:00</div>
+              <div class="sched-status few">2 окна</div>
+            </div>
+            <div class="sched-row">
+              <div class="sched-day">Пн–Ср</div>
+              <div class="sched-hours">9:00 — 22:00</div>
+              <div class="sched-status free">Свободно</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="zones-card">
+          <h4>Выезжаю в районы</h4>
+          <div class="zones-list">
+            <span class="zone-chip">Аэропорт</span>
+            <span class="zone-chip">Сокол</span>
+            <span class="zone-chip">Динамо</span>
+            <span class="zone-chip">Беговая</span>
+            <span class="zone-chip">Полежаевская</span>
+            <span class="zone-chip">Войковская</span>
+            <span class="zone-chip">Тверская</span>
+            <span class="zone-chip">Пресня</span>
+            <span class="zone-chip">Сокольники</span>
+            <span class="zone-chip">Хорошёво</span>
+            <span class="zone-chip">+ Подмосковье до 30 км</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- // SECTION: reviews -->
+<section class="section" id="reviews" data-screen-label="06 Отзывы">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <div class="sec-num">05</div>
+        <h2 class="sec-h2">Отзывы клиентов</h2>
+      </div>
+      <div class="sec-meta">184 отзыва · средняя оценка 4,9 / 5</div>
+    </div>
+
+    <div class="rev-overview">
+      <div class="rev-score-big">
+        <div class="num">4,9</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>
+        </div>
+        <div class="count">184 отзыва</div>
+        <div class="sources"><b>96%</b> рекомендуют · собрано с Яндекс Услуг, Профи.ру и massash.com</div>
+      </div>
+      <div class="rev-bars">
+        <div class="rev-bar-row">
+          <div class="rev-bar-key">Качество</div>
+          <div class="rev-bar-track"><div class="rev-bar-fill" style="width: 98%;"></div></div>
+          <div class="rev-bar-val">4,98</div>
+        </div>
+        <div class="rev-bar-row">
+          <div class="rev-bar-key">Пунктуальность</div>
+          <div class="rev-bar-track"><div class="rev-bar-fill" style="width: 96%;"></div></div>
+          <div class="rev-bar-val">4,89</div>
+        </div>
+        <div class="rev-bar-row">
+          <div class="rev-bar-key">Общение</div>
+          <div class="rev-bar-track"><div class="rev-bar-fill" style="width: 99%;"></div></div>
+          <div class="rev-bar-val">4,95</div>
+        </div>
+        <div class="rev-bar-row">
+          <div class="rev-bar-key">Результат</div>
+          <div class="rev-bar-track"><div class="rev-bar-fill" style="width: 94%;"></div></div>
+          <div class="rev-bar-val">4,82</div>
+        </div>
+        <div class="rev-bar-row">
+          <div class="rev-bar-key">Цена / качество</div>
+          <div class="rev-bar-track"><div class="rev-bar-fill" style="width: 92%;"></div></div>
+          <div class="rev-bar-val">4,76</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rev-grid" id="rev-grid"></div>
+
+    <div style="text-align:center;">
+      <button class="rev-more">
+        Показать все 184 отзыва
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- // SECTION: similar-specialists (catalog hook) -->
+<section class="sim-section" id="similar" data-screen-label="07 Похожие специалисты">
+  <div class="container">
+    <div class="sec-head" style="margin-bottom:32px;">
+      <div class="sec-head-left">
+        <div class="sec-num">06</div>
+        <h2 class="sec-h2">Похожие специалисты в Москве</h2>
+      </div>
+      <div class="sec-meta">Подобраны по специализации, району и рейтингу</div>
+    </div>
+
+    <div class="sim-grid" id="sim-grid"></div>
+
+    <div class="sim-all">
+      <a href="/specialists/massage/">
+        Открыть весь каталог · 247 специалистов
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- // SECTION: footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">mas<span>sash</span></div>
+        <p class="footer-tagline">Каталог специалистов по массажу, реабилитации и оздоровительным тренировкам. Системная работа с телом.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Каталог</div>
+        <div class="footer-links">
+          <a href="/specialists/massage/">Массажисты</a>
+          <a href="/specialists/rehab/">Реабилитологи</a>
+          <a href="/specialists/trainers/">Тренеры</a>
+          <a href="/specialists/osteopath/">Остеопаты</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Города</div>
+        <div class="footer-links">
+          <a href="#">Москва</a>
+          <a href="#">Санкт-Петербург</a>
+          <a href="#">Екатеринбург</a>
+          <a href="#">Новосибирск</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Специалистам</div>
+        <div class="footer-links">
+          <a href="/specialists/join/">Стать специалистом</a>
+          <a href="#">Условия размещения</a>
+          <a href="#">Кабинет</a>
+          <a href="#">Поддержка</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Помощь</div>
+        <div class="footer-links">
+          <a href="#">Как это работает</a>
+          <a href="#">Гарантия</a>
+          <a href="#">Контакты</a>
+          <a href="#">Оферта</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 massash.com · Все права защищены</div>
+      <div>Политика конфиденциальности · Оферта</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// SECTION: js-icons
+/* ── ICONS (subset of lucide for services) ── */
+const ICONS = {
+  classic:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12c0-4 4-7 8-7s8 3 8 7-4 7-8 7-8-3-8-7z"/><path d="M4 12c3 0 5-2 8-2s5 2 8 2"/></svg>',
+  sport:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l2 2-2 2 2 2-2 2"/><path d="M18 20l-2-2 2-2-2-2 2-2"/><line x1="8" y1="6" x2="16" y2="18"/></svg>',
+  lymph:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 8c3 0 4-2 7-2s4 2 7 2"/><path d="M5 14c3 0 4-2 7-2s4 2 7 2"/></svg>',
+  stress:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4 0-8-3-8-8 0-3 2-5 5-5 1.5 0 2.5.5 3 1.5C12.5 8.5 13.5 8 15 8c3 0 5 2 5 5 0 5-4 8-8 8z"/></svg>',
+  recovery:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 4 3 10 9 10"/></svg>',
+  thai:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3c3 3 3 15 0 18"/><path d="M3 12h18"/></svg>',
+  back:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 0-5 2-5 5v8c0 3 2 5 5 5s5-2 5-5V8c0-3-2-5-5-5z"/><line x1="12" y1="7" x2="12" y2="19"/></svg>',
+  neck:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M8 21V13a4 4 0 0 1 8 0v8"/></svg>',
+  point:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>',
+  manual:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11V5a2 2 0 1 1 4 0v6"/><path d="M12 11V4a2 2 0 1 1 4 0v7"/><path d="M16 11V6a2 2 0 1 1 4 0v9a6 6 0 0 1-12 0v-3"/></svg>',
+  medical:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/><line x1="12" y1="9" x2="12" y2="15"/><line x1="9" y1="12" x2="15" y2="12"/></svg>',
+  cellulite: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="2"/><circle cx="16" cy="8" r="2"/><circle cx="8" cy="16" r="2"/><circle cx="16" cy="16" r="2"/><circle cx="12" cy="12" r="2"/></svg>',
+  postop:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
+  posture:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><polyline points="6 8 12 3 18 8"/></svg>',
+  pain:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>',
+  training:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l-3 3 3 3M18 4l3 3-3 3"/><line x1="3" y1="7" x2="21" y2="7"/><path d="M9 17l-3-3M15 17l3-3"/></svg>',
+  func:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>',
+};
+const CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>';
+const STAR  = '<svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>';
+
+// SECTION: js-service-data-and-render
+/* ── SERVICE DATA ── */
+const services = {
+  massage: [
+    { icon: 'classic',   t: 'Классический массаж',     d: 'Базовая глубокая проработка всех групп мышц.',                p: '3 500', dur: '60–90 мин' },
+    { icon: 'sport',     t: 'Спортивный массаж',       d: 'Подготовка к нагрузке и восстановление после неё.',          p: '3 500', dur: '60–90 мин' },
+    { icon: 'lymph',     t: 'Лимфодренажный массаж',   d: 'Мягкая ритмичная техника по методике Vodder.',               p: '3 800', dur: '60–90 мин' },
+    { icon: 'stress',    t: 'Антистрессовый массаж',   d: 'Расслабляющий, для снятия напряжения и улучшения сна.',      p: '3 500', dur: '60–90 мин' },
+    { icon: 'recovery',  t: 'Восстановительный',       d: 'После перелётов, недосыпа, интенсивных нагрузок.',           p: '3 500', dur: '60–90 мин' },
+    { icon: 'thai',      t: 'Тайский массаж',          d: 'Растяжки и проработка энергетических линий, без масла.',     p: '4 000', dur: '90 мин'    },
+    { icon: 'point',     t: 'Точечный массаж',         d: 'Биологически активные точки — для целевых задач.',           p: '2 500', dur: '45–60 мин' },
+    { icon: 'manual',    t: 'Мануальный массаж',       d: 'Мягкая работа с позвоночником, суставами и фасциями.',       p: '4 200', dur: '60 мин'    },
+    { icon: 'medical',   t: 'Лечебный массаж',         d: 'По медицинским показаниям, согласованный с лечащим врачом.',  p: '4 000', dur: '60 мин'    },
+    { icon: 'cellulite', t: 'Антицеллюлитный',         d: 'Работа с подкожно-жировой клетчаткой и микроциркуляцией.',   p: '3 500', dur: '60–90 мин' },
+    { icon: 'back',      t: 'Массаж спины',            d: 'Зональная работа со спиной и плечевым поясом.',              p: '2 000', dur: '30–45 мин' },
+    { icon: 'neck',      t: 'Шейно-воротниковая зона', d: 'Прицельная работа для тех, кто много сидит.',                p: '1 800', dur: '30 мин'    },
+  ],
+  rehab: [
+    { icon: 'postop',  t: 'Постоперационное восстановление', d: 'После операций на суставах, позвоночнике, мягких тканях. По индивидуальному протоколу.', p: '5 500', dur: '60 мин' },
+    { icon: 'pain',    t: 'Хроническая боль в спине',        d: 'Системная работа с источником боли — мышцы, фасции, осанка, движение.',                  p: '5 000', dur: '60–90 мин' },
+    { icon: 'posture', t: 'Коррекция осанки',                d: 'Диагностика и поэтапная коррекция нарушений осанки у взрослых и подростков.',            p: '4 500', dur: '60 мин' },
+  ],
+  training: [
+    { icon: 'training', t: 'Персональная тренировка',   d: 'Функциональное движение, стабилизация позвоночника и укрепление тела.',  p: '4 000', dur: '60 мин' },
+    { icon: 'func',     t: 'Восстановительный тренинг', d: 'Мягкие упражнения после массажа или реабилитации — закрепить результат.', p: '3 500', dur: '45–60 мин' },
+  ]
+};
+
+function renderServices(tab) {
+  const list = document.getElementById('svc-list');
+  const items = services[tab] || services.massage;
+  list.innerHTML = items.map(s => `
+    <div class="svc-item">
+      <div class="svc-icon ${tab==='rehab' ? 'terra':''}">${ICONS[s.icon] || ICONS.classic}</div>
+      <div class="svc-info">
+        <div class="svc-title">${s.t}</div>
+        <div class="svc-desc">${s.d}</div>
+      </div>
+      <div class="svc-dur">${CLOCK} ${s.dur}</div>
+      <div class="svc-price-col">
+        <div class="svc-price">${s.p} <small>₽</small></div>
+        <button class="svc-book" onclick="document.getElementById('booking') ? null : window.scrollTo(0,document.body.scrollHeight)">Записаться</button>
+      </div>
+    </div>
+  `).join('');
+}
+renderServices('massage');
+
+document.getElementById('svc-tabs').addEventListener('click', e => {
+  const tab = e.target.closest('.svc-tab'); if (!tab) return;
+  document.querySelectorAll('.svc-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  renderServices(tab.dataset.tab);
+});
+
+// SECTION: js-reviews-render
+/* ── REVIEWS ── */
+const reviews = [
+  {
+    initial: 'Е', name: 'Елена К.', date: '8 марта 2026', stars: 5, tag: 'Массаж · спина',
+    text: '«Хронические боли в пояснице после родов — ходила к разным массажистам, помогало максимум на неделю. У Александра другой подход: первый сеанс почти полностью разговор и осмотр, потом план на 8 встреч. После четвёртой стало явно легче, а сейчас, через два месяца, боли практически нет. Очень благодарна.»',
+    src: 'massash.com'
+  },
+  {
+    initial: 'Д', name: 'Дмитрий М.', date: '24 февраля 2026', stars: 5, tag: 'Спорт. реабилитация', avatar: 'terra',
+    text: '«После травмы колена врач посоветовал найти спортивного реабилитолога. Александр приехал на дом со своим оборудованием, провёл осмотр, расписал программу — массаж + упражнения. За 6 недель колено восстановилось практически полностью. Знает, что делает.»',
+    src: 'Яндекс Услуги'
+  },
+  {
+    initial: 'А', name: 'Анна Т.', date: '12 февраля 2026', stars: 5, tag: 'Лимфодренаж',
+    text: '«Очень профессионально и аккуратно. Записалась на лимфодренаж после длительного перелёта, выезд на дом — приехал минута в минуту со своим столом. Объяснил, что делает и почему. Отёки ушли уже к утру. Запишусь ещё на курс.»',
+    src: 'Профи.ру'
+  },
+  {
+    initial: 'М', name: 'Максим В.', date: '3 февраля 2026', stars: 5, tag: 'Тренировки', avatar: 'muted',
+    text: '«Год занимался у Александра персонально — после грыжи L4–L5. Не просто восстановил спину, но и научил, что делать дома, чтобы не возвращалось. Сейчас бегаю и тренируюсь без боли. Спасибо.»',
+    src: 'massash.com'
+  }
+];
+const STAR_INLINE = '<svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 9.5 16.5 14.5 18.5 22 12 18 5.5 22 7.5 14.5 2 9.5 9 9 12 2"/></svg>';
+document.getElementById('rev-grid').innerHTML = reviews.map(r => `
+  <div class="rev-card">
+    <div class="rev-card-head">
+      <div class="rev-avatar ${r.avatar||''}">${r.initial}</div>
+      <div class="rev-id">
+        <div class="rev-name">${r.name}</div>
+        <div class="rev-date">${r.date}</div>
+      </div>
+      <div class="rev-stars">${STAR_INLINE.repeat(r.stars)}</div>
+    </div>
+    <div class="rev-text">${r.text}</div>
+    <div class="rev-foot">
+      <span class="rev-tag">${r.tag}</span>
+      <span class="rev-source">${r.src}</span>
+    </div>
+  </div>
+`).join('');
+
+// SECTION: js-similar-specialists-render
+/* ── SIMILAR SPECIALISTS ── */
+const similar = [
+  { name: 'Анна Смирнова',     role: 'Массажист-реабилитолог',     rating: '4,9', count: '127', exp: '8 лет', loc: 'м. Сокол',        price: '3 800', tint: 'terra-tint', top: true },
+  { name: 'Дмитрий Орлов',     role: 'Спортивный массажист',        rating: '4,8', count: '94',  exp: '10 лет', loc: 'м. Динамо',      price: '4 000', tint: 'sage-tint',  top: false },
+  { name: 'Ольга Лебедева',    role: 'Лимфодренаж · косметология',  rating: '5,0', count: '76',  exp: '6 лет', loc: 'м. Аэропорт',    price: '3 500', tint: 'warm-tint',  top: true },
+  { name: 'Иван Корнеев',      role: 'Остеопат · мануальная терапия', rating: '4,7', count: '212', exp: '14 лет', loc: 'м. Беговая',  price: '5 500', tint: '',           top: false },
+];
+const HEART = '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>';
+document.getElementById('sim-grid').innerHTML = similar.map(s => `
+  <a href="/specialists/${s.name.toLowerCase().replace(/\s+/g,'-')}/" class="sim-card">
+    <div class="sim-photo ${s.tint}">
+      <div class="sim-photo-ph"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-5 4-8 8-8s8 3 8 8"/></svg></div>
+      ${s.top ? `<span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Топ-10</span>` : `<span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Верифицирован</span>`}
+      <div class="heart" onclick="event.preventDefault(); this.classList.toggle('saved');">${HEART}</div>
+    </div>
+    <div class="sim-body">
+      <div class="sim-name">${s.name}</div>
+      <div class="sim-role">${s.role}</div>
+      <div class="sim-rating-row">
+        <span class="num">${STAR_INLINE} ${s.rating}</span>
+        <span class="count">${s.count} отзывов</span>
+      </div>
+      <div class="sim-meta-row">
+        <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg> ${s.exp}</span>
+        <span><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> ${s.loc}</span>
+      </div>
+      <div class="sim-foot">
+        <div class="sim-price">от ${s.price} <small>₽</small></div>
+        <span class="sim-link">Профиль <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </div>
+  </a>
+`).join('');
+
+// SECTION: js-sub-nav-scroll-spy
+/* ── SUB-NAV scroll spy ── */
+const sections = ['about', 'services', 'education', 'location', 'reviews', 'similar'];
+const links = document.querySelectorAll('.sn-link');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 200;
+  let current = sections[0];
+  for (const id of sections) {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= y) current = id;
+  }
+  links.forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
+</script>
+
+</body>
+</html>

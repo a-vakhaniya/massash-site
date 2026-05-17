@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item -ItemType Directory -Force \"d:\\\\WEB\\\\Domen\\\\massash.com\\\\massash-site\\\\specialists\\\\vakhaniya\")",
+      "Bash(Out-Null)",
+      "Bash(Move-Item \"d:\\\\WEB\\\\Domen\\\\massash.com\\\\massash-site\\\\Vakhaniya - Specialist Profile.html\" \"d:\\\\WEB\\\\Domen\\\\massash.com\\\\massash-site\\\\specialists\\\\vakhaniya\\\\index.html\")"
+    ]
+  }
+}
