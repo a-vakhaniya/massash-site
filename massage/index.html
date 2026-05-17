@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Массаж на дому в Москве от сертифицированного специалиста с профессиональной переподготовкой и более 10 лет опыта работы с телом. Классический, спортивный, лимфодренажный, тайский массаж. Выезд на дом, м. Аэропорт.">
+<meta name="keywords" content="массаж на дому Москва, классический массаж, спортивный массаж, лимфодренаж, тайский массаж, массажист на дом, м. Аэропорт">
+<meta name="author" content="Александр Вахания">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://massash.com/massage/">
+<meta property="og:title" content="Массаж в Москве — Александр Вахания | massash">
+<meta property="og:description" content="Массаж на дому в Москве от сертифицированного специалиста с профессиональной переподготовкой и более 10 лет опыта работы с телом.">
+<meta property="og:image" content="https://massash.com/assets/image/hero.jpg">
+
+<link rel="canonical" href="https://massash.com/massage/">
+<title>Массаж в Москве — на дому и в студии | massash</title>
+
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="icon" type="image/svg+xml" href="../assets/image/favicon.svg">
+
+<style>
+/* Dropdown меню */
+.nav-dropdown { position: relative; }
+.nav-arrow { font-size: 14px; opacity: 0.7; margin-left: 6px; }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  padding-top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid var(--border, #e5e0d8);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  min-width: 180px;
+  padding: 8px 0;
+  list-style: none;
+  z-index: 100;
+}
+.nav-dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: var(--text, #1a1a1a);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.nav-dropdown-menu li a:hover {
+  background: var(--bg-alt, #f5f2ed);
+  color: var(--accent, #2d6a4f);
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+
+/* Теги-ссылки */
+.tile-tags a.tag-outline {
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.tile-tags a.tag-outline:hover {
+  background: var(--accent, #2d6a4f);
+  color: #fff;
+  border-color: var(--accent, #2d6a4f);
+}
+.tile-tags a.tag-outline.terra:hover {
+  background: #c0623a;
+  color: #fff;
+  border-color: #c0623a;
+}
+.tile-tags a.tag-outline.muted:hover {
+  background: #666;
+  color: #fff;
+  border-color: #666;
+}
+a.btn-tile {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Страница массажа */
+.massage-hero {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 0 64px;
+}
+.massage-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.massage-hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 16px;
+  font-family: var(--sans);
+}
+.massage-hero-h1 {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.massage-hero-h1 em {
+  font-style: italic;
+  color: var(--terra);
+}
+.massage-hero-desc {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
+  max-width: 480px;
+}
+.massage-hero-seo {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 32px;
+  max-width: 480px;
+  border-left: 3px solid var(--border-input);
+  padding-left: 16px;
+}
+.massage-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.massage-hero-img {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: var(--shadow-lg);
+}
+.massage-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Статистика под hero */
+.massage-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.massage-stat-num {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1;
+}
+.massage-stat-lbl {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+  font-family: var(--sans);
+}
+
+/* Секция услуг */
+.massage-services {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.massage-services-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.massage-services-h2 {
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.massage-services-sub {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Карточки видов массажа */
+.massage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.massage-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 240ms var(--ease), transform 240ms var(--ease);
+  display: flex;
+  flex-direction: column;
+}
+.massage-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.massage-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--green-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+.massage-card-icon.terra { background: var(--terra-light); }
+.massage-card-icon.neutral { background: #F0EDE7; }
+.massage-card-body {
+  padding: 24px 24px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.massage-card-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 8px;
+  font-family: var(--sans);
+}
+.massage-card-eyebrow.terra { color: var(--terra); }
+.massage-card-eyebrow.muted { color: var(--muted); }
+.massage-card-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.massage-card-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 16px;
+}
+.massage-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 0;
+}
+.massage-card-footer {
+  padding: 16px 24px 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.massage-card-price {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text);
+  white-space: nowrap;
+}
+.massage-card-price-sub {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 1px;
+  font-family: var(--sans);
+}
+.btn-card {
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 180ms var(--ease);
+  display: inline-block;
+}
+.btn-card:hover { background: var(--green-dark); color: #fff; }
+
+/* Как проходит сеанс */
+.massage-process {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.massage-process-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.massage-process-head {
+  margin-bottom: 32px;
+}
+.massage-process-h2 {
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.massage-process-sub {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.process-steps {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.process-step:last-child { border-bottom: none; }
+.process-num {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--green);
+  line-height: 1;
+  min-width: 28px;
+  opacity: 0.7;
+}
+.process-title {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.process-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.massage-process-img {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  box-shadow: var(--shadow-lg);
+  margin-top: 8px;
+}
+.massage-process-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Cross-sell */
+.massage-crosssell {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.massage-crosssell-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.massage-crosssell-h2 {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.massage-crosssell-sub {
+  font-size: 15px;
+  color: var(--muted);
+}
+.crosssell-tiles {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.crosssell-tile {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  transition: background 180ms var(--ease);
+}
+.crosssell-tile:last-child { border-bottom: none; }
+.crosssell-tile:hover { background: #fff; }
+.crosssell-tile-img {
+  overflow: hidden;
+  min-height: 140px;
+}
+.crosssell-tile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.crosssell-tile-body {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.crosssell-tile-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 6px;
+  font-family: var(--sans);
+}
+.crosssell-tile-eyebrow.muted { color: var(--muted); }
+.crosssell-tile-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.crosssell-tile-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.crosssell-tile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.crosssell-tile-action {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-left: 1px solid var(--border);
+  min-width: 160px;
+}
+.crosssell-tile-price {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  text-align: center;
+  white-space: nowrap;
+}
+.crosssell-tile-price-sub {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  font-family: var(--sans);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .massage-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .massage-hero-h1 { font-size: 38px; }
+  .massage-hero-img { display: none; }
+  .massage-stats { gap: 20px; }
+  .massage-grid { grid-template-columns: 1fr; }
+  .massage-process-inner { grid-template-columns: 1fr; gap: 32px; }
+  .massage-process-img { display: none; }
+.crosssell-tile { grid-template-columns: 1fr; }
+  .crosssell-tile-img { min-height: 180px; }
+  .crosssell-tile-action { border-left: none; border-top: 1px solid var(--border); flex-direction: row; justify-content: space-between; }
+  .massage-crosssell-h2 { font-size: 32px; }
+  .massage-services-h2 { font-size: 32px; }
+  .massage-process-h2 { font-size: 32px; }
+.massage-hero-actions { flex-direction: column; }
+  .massage-hero-actions .btn-primary,
+  .massage-hero-actions .btn-outline { width: 100%; text-align: center; }
+}
+</style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+  m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109000859', 'ym');
+ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109000859" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-text">Сертифицированный специалист · Москва · м. Аэропорт</div>
+      <div class="header-top-phone"><a href="tel:+79266636641">+7 (926) 663-66-41</a></div>
+    </div>
+  </div>
+  <nav class="header-nav">
+    <div class="container">
+      <div class="logo"><a href="/" style="text-decoration:none;color:inherit;">mas<span>sash</span></a></div>
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle active">Услуги <span class="nav-arrow">▾</span></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/massage/" style="font-weight:700;">Массаж</a></li>
+            <li><a href="/rehab/">Реабилитация</a></li>
+            <li><a href="/training/">Тренировки</a></li>
+          </ul>
+        </li>
+        <li><a href="/specialists/">Специалисты</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <button class="burger-btn" onclick="toggleMenu()" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="btn-book" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="massage-hero">
+  <div class="container">
+    <div class="massage-hero-inner">
+      <div>
+        <div class="massage-hero-eyebrow">Массаж · Москва · Выезд на дом</div>
+        <h1 class="massage-hero-h1">Ручная работа<br><em>с тканями тела</em></h1>
+        <p class="massage-hero-seo">Массаж на дому в Москве от сертифицированного специалиста с профессиональной переподготовкой и более 10 лет опыта работы с телом. Выезд на дом по Москве.</p>
+        <p class="massage-hero-desc">Снятие мышечного напряжения, работа с триггерными точками, улучшение кровообращения и лимфотока. Подбираю формат под Вашу задачу — не шаблон, а осознанная работа.</p>
+        <div class="massage-hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться на сеанс</button>
+          <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Виды массажа</button>
+        </div>
+        <div class="massage-stats">
+          <div>
+            <div class="massage-stat-num">8+</div>
+            <div class="massage-stat-lbl">лет практики</div>
+          </div>
+          <div>
+            <div class="massage-stat-num">1&nbsp;200+</div>
+            <div class="massage-stat-lbl">сеансов</div>
+          </div>
+          <div>
+            <div class="massage-stat-num">4.9</div>
+            <div class="massage-stat-lbl">рейтинг</div>
+          </div>
+          <div>
+            <div class="massage-stat-num">МЦПО</div>
+            <div class="massage-stat-lbl">диплом 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="massage-hero-img">
+        <img src="../assets/image/massage.jpg" alt="Профессиональный массаж — Александр Вахания">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ВИДЫ МАССАЖА ═══════════ -->
+<section class="massage-services" id="services" style="padding: var(--section-py, 80px) 0;">
+  <div class="container">
+    <div class="massage-services-head">
+      <div class="eyebrow">Виды массажа</div>
+      <h2 class="massage-services-h2">Что я делаю</h2>
+      <p class="massage-services-sub">Каждый вид массажа — под конкретную задачу. Рассказываю, что и для кого подходит, чтобы Вы сделали осознанный выбор.</p>
+    </div>
+    <div class="massage-grid">
+
+      <!-- Классический -->
+      <div class="massage-card">
+        <div class="massage-card-body">
+          <div class="massage-card-icon">🤲</div>
+          <div class="massage-card-eyebrow">Базовый</div>
+          <div class="massage-card-title">Классический массаж</div>
+          <div class="massage-card-desc">Работа со всем телом или отдельной зоной: снятие напряжения, расслабление мышц, улучшение кровообращения. Подходит как для отдыха, так и для работы с хроническими зажимами.</div>
+          <div class="massage-card-tags">
+            <a href="/massage/classic/" class="tag-outline">Всё тело</a>
+            <a href="/massage/classic/" class="tag-outline">Спина и шея</a>
+            <a href="/massage/classic/" class="tag-outline">Расслабляющий</a>
+          </div>
+        </div>
+        <div class="massage-card-footer">
+          <div>
+            <div class="massage-card-price">от 4 500 ₽</div>
+            <div class="massage-card-price-sub">60–90 мин</div>
+          </div>
+          <a href="/massage/classic/" class="btn-card">Подробнее</a>
+        </div>
+      </div>
+
+      <!-- Спортивный -->
+      <div class="massage-card">
+        <div class="massage-card-body">
+          <div class="massage-card-icon terra">🏃</div>
+          <div class="massage-card-eyebrow terra">Спортивный</div>
+          <div class="massage-card-title">Спортивный массаж</div>
+          <div class="massage-card-desc">Восстановление после нагрузок, работа с перегруженными мышцами, профилактика травм. Для тех, кто регулярно тренируется или испытывает профессиональные нагрузки.</div>
+          <div class="massage-card-tags">
+            <a href="/massage/sport/" class="tag-outline terra">До тренировки</a>
+            <a href="/massage/sport/" class="tag-outline terra">После нагрузки</a>
+            <a href="/massage/sport/" class="tag-outline terra">Восстановление</a>
+          </div>
+        </div>
+        <div class="massage-card-footer">
+          <div>
+            <div class="massage-card-price">от 4 500 ₽</div>
+            <div class="massage-card-price-sub">60–90 мин</div>
+          </div>
+          <a href="/massage/sport/" class="btn-card">Подробнее</a>
+        </div>
+      </div>
+
+      <!-- Лимфодренажный -->
+      <div class="massage-card">
+        <div class="massage-card-body">
+          <div class="massage-card-icon">💧</div>
+          <div class="massage-card-eyebrow">Дренаж</div>
+          <div class="massage-card-title">Лимфодренажный</div>
+          <div class="massage-card-desc">Улучшение лимфотока, снятие отёчности, выведение лишней жидкости. Особенно эффективен при сидячей работе, отёках ног, после операций и при целлюлите.</div>
+          <div class="massage-card-tags">
+            <a href="/massage/lymphatic/" class="tag-outline">Отёки</a>
+            <a href="/massage/lymphatic/" class="tag-outline">Целлюлит</a>
+            <a href="/massage/lymphatic/" class="tag-outline">Реабилитация</a>
+          </div>
+        </div>
+        <div class="massage-card-footer">
+          <div>
+            <div class="massage-card-price">от 4 500 ₽</div>
+            <div class="massage-card-price-sub">60–90 мин</div>
+          </div>
+          <a href="/massage/lymphatic/" class="btn-card">Подробнее</a>
+        </div>
+      </div>
+
+      <!-- Антицеллюлитный -->
+      <div class="massage-card">
+        <div class="massage-card-body">
+          <div class="massage-card-icon terra">✨</div>
+          <div class="massage-card-eyebrow terra">Коррекция</div>
+          <div class="massage-card-title">Антицеллюлитный</div>
+          <div class="massage-card-desc">Интенсивная работа с проблемными зонами: бёдра, живот, ягодицы. Комбинация ручных техник и LPG вакуумного массажа для видимого эффекта.</div>
+          <div class="massage-card-tags">
+            <a href="/massage/anticellulite/" class="tag-outline terra">Бёдра</a>
+            <a href="/massage/anticellulite/" class="tag-outline terra">Живот</a>
+            <a href="/massage/anticellulite/" class="tag-outline terra">LPG вакуум</a>
+          </div>
+        </div>
+        <div class="massage-card-footer">
+          <div>
+            <div class="massage-card-price">от 4 500 ₽</div>
+            <div class="massage-card-price-sub">60 мин</div>
+          </div>
+          <a href="/massage/anticellulite/" class="btn-card">Подробнее</a>
+        </div>
+      </div>
+
+      <!-- Тайский -->
+      <div class="massage-card">
+        <div class="massage-card-body">
+          <div class="massage-card-icon neutral">🌿</div>
+          <div class="massage-card-eyebrow muted">Восток</div>
+          <div class="massage-card-title">Тайский массаж</div>
+          <div class="massage-card-desc">Сочетание акупрессуры, растяжки и работы по энергетическим меридианам. Восстанавливает подвижность суставов, снимает глубинное напряжение, заряжает энергией.</div>
+          <div class="massage-card-tags">
+            <a href="/massage/thai/" class="tag-outline muted">Суставы</a>
+            <a href="/massage/thai/" class="tag-outline muted">Растяжка</a>
+            <a href="/massage/thai/" class="tag-outline muted">Энергия</a>
+          </div>
+        </div>
+        <div class="massage-card-footer">
+          <div>
+            <div class="massage-card-price">от 5 000 ₽</div>
+            <div class="massage-card-price-sub">90 мин</div>
+          </div>
+          <a href="/massage/thai/" class="btn-card">Подробнее</a>
+        </div>
+      </div>
+
+      <!-- ПИР -->
+      <div class="massage-card">
+        <div class="massage-card-body">
+          <div class="massage-card-icon">🔧</div>
+          <div class="massage-card-eyebrow">Мануальный</div>
+          <div class="massage-card-title">ПИР — мягкие техники</div>
+          <div class="massage-card-desc">Постизометрическая релаксация — мягкая мануальная работа с мышечными блоками и ограничениями движения. Безопасно, без болезненных воздействий.</div>
+          <div class="massage-card-tags">
+            <a href="/massage/pir/" class="tag-outline">Блоки</a>
+            <a href="/massage/pir/" class="tag-outline">Шея</a>
+            <a href="/massage/pir/" class="tag-outline">Спина</a>
+          </div>
+        </div>
+        <div class="massage-card-footer">
+          <div>
+            <div class="massage-card-price">от 4 500 ₽</div>
+            <div class="massage-card-price-sub">60 мин</div>
+          </div>
+          <a href="/massage/pir/" class="btn-card">Подробнее</a>
+        </div>
+      </div>
+
+      <!-- Оздоровительный -->
+      <div class="massage-card">
+        <div class="massage-card-body">
+          <div class="massage-card-icon">🌱</div>
+          <div class="massage-card-eyebrow">Оздоровительный</div>
+          <div class="massage-card-title">Оздоровительный массаж</div>
+          <div class="massage-card-desc">Профилактический массаж для поддержания здоровья — укрепляет иммунитет, улучшает работу внутренних органов, нормализует обмен веществ и общий тонус.</div>
+          <div class="massage-card-tags">
+            <a href="/massage/health/" class="tag-outline">Профилактика</a>
+            <a href="/massage/health/" class="tag-outline">Тонус</a>
+            <a href="/massage/health/" class="tag-outline">Иммунитет</a>
+          </div>
+        </div>
+        <div class="massage-card-footer">
+          <div>
+            <div class="massage-card-price">от 4 500 ₽</div>
+            <div class="massage-card-price-sub">60–90 мин</div>
+          </div>
+          <a href="/massage/health/" class="btn-card">Подробнее</a>
+        </div>
+      </div>
+
+      <!-- Антистрессовый -->
+      <div class="massage-card">
+        <div class="massage-card-body">
+          <div class="massage-card-icon neutral">🧘</div>
+          <div class="massage-card-eyebrow muted">Расслабление</div>
+          <div class="massage-card-title">Антистрессовый массаж</div>
+          <div class="massage-card-desc">Глубокое расслабление нервной системы: работа с зонами хронического напряжения — шея, плечи, голова. Снимает тревожность, улучшает сон и качество жизни.</div>
+          <div class="massage-card-tags">
+            <a href="/massage/antistress/" class="tag-outline muted">Шея</a>
+            <a href="/massage/antistress/" class="tag-outline muted">Стресс</a>
+            <a href="/massage/antistress/" class="tag-outline muted">Сон</a>
+          </div>
+        </div>
+        <div class="massage-card-footer">
+          <div>
+            <div class="massage-card-price">от 4 500 ₽</div>
+            <div class="massage-card-price-sub">60–90 мин</div>
+          </div>
+          <a href="/massage/antistress/" class="btn-card">Подробнее</a>
+        </div>
+      </div>
+
+      <!-- Детский -->
+      <div class="massage-card">
+        <div class="massage-card-body">
+          <div class="massage-card-icon">🧸</div>
+          <div class="massage-card-eyebrow">Детский</div>
+          <div class="massage-card-title">Детский массаж</div>
+          <div class="massage-card-desc">Нежная работа с детским телом: коррекция осанки, укрепление мышечного корсета, работа при плоскостопии и нарушениях развития. Возраст от 3 лет.</div>
+          <div class="massage-card-tags">
+            <a href="/massage/children/" class="tag-outline">Осанка</a>
+            <a href="/massage/children/" class="tag-outline">Плоскостопие</a>
+            <a href="/massage/children/" class="tag-outline">от 3 лет</a>
+          </div>
+        </div>
+        <div class="massage-card-footer">
+          <div>
+            <div class="massage-card-price">от 3 000 ₽</div>
+            <div class="massage-card-price-sub">45–60 мин</div>
+          </div>
+          <a href="/massage/children/" class="btn-card">Подробнее</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ КАК ПРОХОДИТ СЕАНС ═══════════ -->
+<section class="massage-process" style="padding: var(--section-py, 80px) 0;">
+  <div class="container">
+    <div class="massage-process-inner">
+      <div>
+        <div class="massage-process-head">
+          <div class="eyebrow">Методология</div>
+          <h2 class="massage-process-h2">Как проходит сеанс</h2>
+          <p class="massage-process-sub">Каждый сеанс начинается с короткой диагностики — это позволяет точно определить зоны работы и подобрать нужные техники.</p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-num">01</div>
+            <div>
+              <div class="process-title">Первичный опрос</div>
+              <div class="process-desc">Уточняю запрос, историю болей и ограничений. Это занимает 5–10 минут и позволяет работать точно, а не по шаблону.</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">02</div>
+            <div>
+              <div class="process-title">Оценка состояния</div>
+              <div class="process-desc">Пальпирую зоны напряжения, проверяю объём движений. Определяю, где работать в первую очередь.</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">03</div>
+            <div>
+              <div class="process-title">Работа руками</div>
+              <div class="process-desc">Массаж с комбинацией техник под Вашу задачу. Слежу за реакцией тела, корректирую интенсивность.</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-num">04</div>
+            <div>
+              <div class="process-title">Завершение и рекомендации</div>
+              <div class="process-desc">Даю конкретные советы для поддержания результата: как двигаться, что делать между сеансами.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="massage-process-img">
+        <img src="../assets/image/massage.jpg" alt="Сеанс массажа">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CROSS-SELL ═══════════ -->
+<section class="massage-crosssell" style="padding: var(--section-py, 80px) 0;">
+  <div class="container">
+    <div class="massage-crosssell-head">
+      <div class="eyebrow">Другие направления</div>
+      <h2 class="massage-crosssell-h2">Массаж — часть системы</h2>
+      <p class="massage-crosssell-sub">Для долгосрочного результата массаж работает в связке с реабилитацией и тренировками.</p>
+    </div>
+    <div class="crosssell-tiles">
+
+      <!-- Реабилитация -->
+      <div class="crosssell-tile">
+        <div class="crosssell-tile-img">
+          <img src="../assets/image/physiotherapy.jpg" alt="Реабилитация">
+        </div>
+        <div class="crosssell-tile-body">
+          <div class="crosssell-tile-eyebrow">Реабилитация</div>
+          <div class="crosssell-tile-title">Восстановление после травм и операций</div>
+          <div class="crosssell-tile-desc">Системная работа при хронической боли, нарушениях осанки, постоперационном восстановлении. Индивидуальный протокол и контроль результата.</div>
+          <div class="crosssell-tile-tags">
+            <a href="/rehab/posture/" class="tag-outline terra">Осанка</a>
+            <a href="/rehab/spine/" class="tag-outline terra">Позвоночник</a>
+            <a href="/rehab/flatfoot/" class="tag-outline terra">Плоскостопие</a>
+            <a href="/rehab/shoulder/" class="tag-outline terra">Плечо и рука</a>
+            <a href="/rehab/postop/" class="tag-outline terra">После операции</a>
+            <a href="/rehab/stroke/" class="tag-outline terra">Инсульт</a>
+          </div>
+        </div>
+        <div class="crosssell-tile-action">
+          <div>
+            <div class="crosssell-tile-price">от 4 500 ₽</div>
+            <div class="crosssell-tile-price-sub">60–90 мин</div>
+          </div>
+          <a href="/rehab/" class="btn-tile terra-btn">Подробнее</a>
+        </div>
+      </div>
+
+      <!-- Тренировки -->
+      <div class="crosssell-tile">
+        <div class="crosssell-tile-img">
+          <img src="../assets/image/personal-trainer.jpg" alt="Оздоровительные тренировки">
+        </div>
+        <div class="crosssell-tile-body">
+          <div class="crosssell-tile-eyebrow muted">Оздоровительные тренировки</div>
+          <div class="crosssell-tile-title">Движение как основа здоровья</div>
+          <div class="crosssell-tile-desc">Персональные тренировки с акцентом на функциональное движение, стабилизацию позвоночника и укрепление тела. Для тех, кто хочет двигаться правильно — без боли и травм.</div>
+          <div class="crosssell-tile-tags">
+            <a href="/training/functional/" class="tag-outline muted">Функциональный тренинг</a>
+            <a href="/training/lfk/" class="tag-outline muted">ЛФК</a>
+            <a href="/training/stabilization/" class="tag-outline muted">Стабилизация</a>
+          </div>
+        </div>
+        <div class="crosssell-tile-action">
+          <div>
+            <div class="crosssell-tile-price">от 4 500 ₽</div>
+            <div class="crosssell-tile-price-sub">60 мин</div>
+          </div>
+          <a href="/training/" class="btn-tile">Подробнее</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ REVIEWS ═══════════ -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-head">
+      <div>
+        <div class="eyebrow">Отзывы клиентов</div>
+        <h2 class="reviews-h2">Что говорят клиенты</h2>
+      </div>
+      <div class="reviews-nav">
+        <button class="reviews-nav-btn" id="rev-prev" aria-label="Назад">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="reviews-nav-btn" id="rev-next" aria-label="Вперёд">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+    <div class="reviews-track-wrap">
+      <div class="reviews-track" id="reviews-track">
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">«Казалось, он точно знает где и какую мышцу нужно промассировать. Столько техник и приёмов — и очень приятная энергия человека. Вот как найти своего мастера.»</p>
+          <div class="review-meta">
+            <div class="review-avatar">С</div>
+            <div>
+              <div class="review-name">Сергей</div>
+              <div class="review-date">17 апреля 2025</div>
+            </div>
+          </div>
+          <div class="review-source">АВИТО</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">«Спина ломила так, что руки поднять было больно — компрессионный перелом 12 лет назад. Через пару часов уже лежал на столе, а ещё через час выходил и радовался жизни.»</p>
+          <div class="review-meta">
+            <div class="review-avatar">И</div>
+            <div>
+              <div class="review-name">Игорь Быков</div>
+              <div class="review-date">15 января 2025</div>
+            </div>
+          </div>
+          <div class="review-source">АВИТО</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">«Шею заклинило — искала того, кто справляется с сильным гипертонусом. После первого сеанса мышцы расслабились, шея начала поворачиваться. Мои триггеры найти непросто, но вы справились.»</p>
+          <div class="review-meta">
+            <div class="review-avatar">Э</div>
+            <div>
+              <div class="review-name">Эльвира Абрамович</div>
+              <div class="review-date">7 декабря 2024</div>
+            </div>
+          </div>
+          <div class="review-source">АВИТО</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">«25 лет езжу по санаториям — знаю, что такое качественный массаж. Александр провёл диагностику, выявил проблемные места, боли ушли. Массажист от Бога.»</p>
+          <div class="review-meta">
+            <div class="review-avatar">А</div>
+            <div>
+              <div class="review-name">Алексей Бодю</div>
+              <div class="review-date">20 сентября 2024</div>
+            </div>
+          </div>
+          <div class="review-source">ЯНДЕКС УСЛУГИ</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">«Мама перенесла инсульт — правая сторона почти не работала. Александр приезжал трижды в неделю, выстроил программу. Через 2 месяца мама пошла без опоры. Не верили, что так быстро.»</p>
+          <div class="review-meta">
+            <div class="review-avatar">Н</div>
+            <div>
+              <div class="review-name">Наталья К.</div>
+              <div class="review-date">2024</div>
+            </div>
+          </div>
+          <div class="review-source">ЯНДЕКС УСЛУГИ</div>
+        </div>
+
+      </div>
+    </div>
+    <div class="reviews-footer">
+      <span class="reviews-footer-label">Читать все отзывы:</span>
+      <a href="https://uslugi.yandex.ru/profile/AleksandrVakhaniya-256116" class="btn-review-link" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 16 12 12 16"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        Отзывы на Яндекс Услугах
+      </a>
+      <a href="https://www.avito.ru/moskva/predlozheniya_uslug/massazh_i_reabilitatsiya._insult_travmy_2214479851#open-reviews-list" class="btn-review-link" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 16 12 12 16"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        Отзывы на Авито
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-head">
+      <div class="eyebrow">Вопросы и ответы</div>
+      <h2 class="faq-h2">Часто спрашивают</h2>
+      <p class="faq-sub">Ответы на самые популярные вопросы о массаже и записи.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Выезжаете ли вы на дом?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Да, выезжаю на дом по Москве — в пределах ТТК и ближайшего Подмосковья (Химки, Красногорск, Мытищи, Одинцово). Привожу с собой профессиональный массажный стол, масла и всё необходимое. Вам ничего готовить не нужно. Стоимость выезда уточняется индивидуально в зависимости от района.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Сколько длится сеанс массажа?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Стандартный сеанс — 60–90 минут. Зональный массаж (спина, шея или ноги отдельно) — от 45 минут. Тайский массаж занимает 90 минут. Детский — 45–60 минут. Точную длительность уточняю при записи в зависимости от Вашего запроса и выбранного вида массажа.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Нужна ли подготовка к массажу?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Специальной подготовки не требуется. Желательно не есть за 1–1,5 часа до сеанса. Если Вы только что пришли с улицы — примите душ или протрите кожу. После массажа рекомендую отдохнуть 20–30 минут и выпить воды. В день сеанса избегайте интенсивных физических нагрузок.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Как записаться на массаж?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Проще всего — заполнить форму ниже или написать в WhatsApp по номеру +7 (926) 663-66-41. Уточню удобное время, адрес и вид массажа. Первичная консультация бесплатна: расскажете о своём запросе, я подберу оптимальный формат. Отвечаю оперативно в рабочее время.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Есть ли противопоказания к массажу?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Да. Основные противопоказания: острые воспалительные процессы, повышенная температура, кожные заболевания в зоне работы, тромбофлебит, онкологические заболевания (без разрешения врача), беременность (первый триместр). При хронических заболеваниях — уточните у лечащего врача. Если сомневаетесь — напишите мне, разберёмся вместе.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BOOKING / CTA ═══════════ -->
+<section class="cta-section" id="booking">
+  <div class="container">
+    <div class="cta-inner">
+
+      <div class="cta-left">
+        <div class="eyebrow cta-eyebrow">Запись на приём</div>
+        <h2 class="cta-h2">Запишитесь на массаж</h2>
+        <p class="cta-sub">Первичная консультация бесплатна — разберём Вашу ситуацию, выберем подходящий вид массажа и ответим на все вопросы.</p>
+        <div class="cta-details">
+          <div class="cta-detail">
+            <div class="cta-detail-icon">📞</div>
+            <div>
+              <div class="cta-detail-text">+7 (926) 663-66-41</div>
+              <div class="cta-detail-sub">Звонок или WhatsApp</div>
+            </div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-detail-icon">📍</div>
+            <div>
+              <div class="cta-detail-text">г. Москва, м. Аэропорт</div>
+              <div class="cta-detail-sub">Выезд на дом · Точный адрес после записи</div>
+            </div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-detail-icon">🕐</div>
+            <div>
+              <div class="cta-detail-text">Пн–Пт 9:00–20:00</div>
+              <div class="cta-detail-sub">Сб–Вс 10:00–18:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-form">
+        <div class="form-title">Оставьте заявку</div>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Ваше имя</label>
+              <input type="text" id="name" placeholder="Анна Иванова" required>
+            </div>
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" placeholder="+7 (999) 000-00-00" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">Вид массажа</label>
+            <select id="service">
+              <option value="">Не выбрано</option>
+              <option>Классический массаж — от 4 500 ₽</option>
+              <option>Спортивный массаж — от 4 500 ₽</option>
+              <option>Лимфодренажный массаж — от 4 500 ₽</option>
+              <option>Антицеллюлитный массаж — от 4 500 ₽</option>
+              <option>Оздоровительный массаж — от 4 500 ₽</option>
+              <option>Антистрессовый массаж — от 4 500 ₽</option>
+              <option>Тайский массаж — от 5 000 ₽</option>
+              <option>ПИР — мягкие мануальные техники — от 4 500 ₽</option>
+              <option>Детский массаж — от 3 000 ₽</option>
+              <option>Зональный массаж (спина/шея/ноги) — от 2 500 ₽</option>
+              <option>Не знаю — хочу консультацию</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="comment">Расскажите о Вашей ситуации</label>
+            <textarea id="comment" rows="3" placeholder="Опишите запрос — это поможет подготовиться к встрече..."></textarea>
+          </div>
+          <div class="consent-block">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">
+              Я согласен(а) на обработку персональных данных в соответствии с
+              <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a>
+            </label>
+          </div>
+          <button type="submit" class="btn-submit">Отправить заявку</button>
+          <p class="form-note">Отвечаю оперативно в рабочее время</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer" id="contacts">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">mas<span>sash</span></div>
+        <p class="footer-tagline">Профессиональный массаж, реабилитация и оздоровительные тренировки в Москве.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Услуги</div>
+        <div class="footer-links">
+          <a href="/massage/">Массаж</a>
+          <a href="/rehab/">Реабилитация</a>
+          <a href="/training/">Тренировки</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Специалисты</div>
+        <div class="footer-links">
+          <a href="/specialists/">Все специалисты</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Информация</div>
+        <div class="footer-links">
+          <a href="/#about">Обо мне</a>
+          <a href="/#reviews">Отзывы</a>
+          <a href="/oferta.html">Оферта</a>
+          <a href="/privacy.html">Политика конфиденциальности</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Контакты</div>
+        <div class="footer-links">
+          <a href="tel:+79266636641">+7 (926) 663-66-41</a>
+          <a href="#contacts">г. Москва, м. Аэропорт</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 ИП Вахания Александр Петрович · ИНН 504410052123</div>
+      <div class="footer-copy">
+        <a href="/oferta.html">Оферта</a> ·
+        <a href="/privacy.html">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+</script>
+</body>
+</html>
