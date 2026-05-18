@@ -1624,6 +1624,7 @@
           </div>
           <button type="submit" class="btn-submit">Отправить заявку</button>
           <p class="form-note">Стараюсь отвечать оперативно</p>
+          <p class="form-status" id="formStatus" style="display:none;margin-top:12px;font-size:15px;"></p>
         </form>
       </div>
     </div>
@@ -1723,27 +1724,35 @@ document.addEventListener('keydown', function(e) {
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.btn-submit');
+  const status = document.getElementById('formStatus');
   btn.textContent = 'Отправляем…';
   btn.disabled = true;
+  status.style.display = 'none';
   const data = {
     name: document.getElementById('name').value,
     phone: document.getElementById('phone').value,
     service: document.getElementById('service').value,
-    comment: document.getElementById('comment').value,
-    page: 'specialists/vakhaniya'
+    message: document.getElementById('comment').value
   };
-  fetch('https://n8n.ezi.ru/webhook/massash-booking', {
+  fetch('https://n8n.ezi.ru/webhook/massash-form', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   })
   .then(() => {
-    btn.textContent = 'Заявка отправлена ✓';
+    btn.textContent = 'Отправить заявку';
+    btn.disabled = false;
     e.target.reset();
+    status.textContent = 'Спасибо! Свяжусь с вами в ближайшее время.';
+    status.style.color = '#3d7a6b';
+    status.style.display = 'block';
   })
   .catch(() => {
-    btn.textContent = 'Ошибка — позвоните нам';
+    btn.textContent = 'Отправить заявку';
     btn.disabled = false;
+    status.textContent = 'Ошибка — позвоните нам: +7 (926) 663-66-41';
+    status.style.color = '#b5522a';
+    status.style.display = 'block';
   });
 }
 </script>
