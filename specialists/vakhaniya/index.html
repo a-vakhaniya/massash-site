@@ -78,40 +78,34 @@
 /* ── HERO ── */
 .sp-hero {
   background: var(--bg);
-  padding: 0 0 72px;
+  padding: 24px 0 72px;
   border-bottom: 1px solid var(--border);
-}
-.sp-hero-photo-wrap {
-  position: relative;
-  width: 100%;
-  max-height: 480px;
-  overflow: hidden;
-  border-radius: 0;
-  margin-bottom: 0;
-}
-.sp-hero-photo {
-  width: 100%;
-  max-height: 480px;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
 }
 .sp-hero-grid {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 32px;
-  align-items: flex-start;
-  margin-top: -60px;
-  padding-top: 0;
-  position: relative;
+  grid-template-columns: 2fr 3fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 32px;
 }
-.sp-avatar-wrap { padding-top: 0; }
+.sp-hero-photo-col {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 520px;
+}
+.sp-hero-photo-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.sp-avatar-wrap { margin-bottom: 20px; }
 .sp-avatar {
-  width: 160px;
-  height: 160px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  border: 4px solid var(--bg);
-  box-shadow: var(--shadow-md);
+  border: 3px solid var(--border);
   overflow: hidden;
   background: #DCD3C3;
 }
@@ -121,7 +115,7 @@
   object-fit: cover;
   object-position: top center;
 }
-.sp-main { padding-top: 68px; }
+.sp-main { padding-top: 0; }
 .sp-tags {
   display: flex;
   gap: 8px;
@@ -230,16 +224,19 @@
 .sp-work-photo {
   border-radius: 14px;
   overflow: hidden;
-  aspect-ratio: 3/4;
+  width: 380px;
+  height: 320px;
   box-shadow: var(--shadow-lg);
   background: #DCD3C3;
   position: sticky;
   top: 100px;
+  flex-shrink: 0;
 }
 .sp-work-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 30% center;
 }
 
 /* ── SERVICES ── */
@@ -339,6 +336,73 @@
   gap: 8px;
 }
 .sp-svc-note svg { width: 14px; height: 14px; stroke: var(--muted); stroke-width: 1.8; fill: none; flex-shrink: 0; margin-top: 2px; }
+
+/* ── SERVICES ACCORDION ── */
+.sp-svc-group {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 12px;
+}
+.sp-svc-group-header {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: background 180ms var(--ease);
+}
+.sp-svc-group-header:hover { background: rgba(61,122,107,0.04); }
+.sp-svc-group.open .sp-svc-group-header { background: rgba(61,122,107,0.05); }
+.sp-svc-group-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--green-tint, #EFF4F3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.sp-svc-group-icon svg { width: 20px; height: 20px; stroke: var(--green); stroke-width: 1.5; fill: none; }
+.sp-svc-group-icon.terra { background: var(--terra-tint, #F5EAE4); }
+.sp-svc-group-icon.terra svg { stroke: var(--terra); }
+.sp-svc-group-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  flex: 1;
+}
+.sp-svc-group-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--bg-tint, #F2EEE5);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-family: var(--sans);
+}
+.sp-svc-group.open .sp-svc-group-count { background: var(--green-tint, #EFF4F3); color: var(--green); }
+.sp-svc-group-arrow {
+  font-size: 18px;
+  color: var(--green);
+  transition: transform 240ms var(--ease);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.sp-svc-group.open .sp-svc-group-arrow { transform: rotate(180deg); }
+.sp-svc-group-body {
+  display: none;
+  border-top: 1px solid var(--border);
+}
+.sp-svc-group.open .sp-svc-group-body { display: block; }
 
 /* ── EDUCATION ── */
 .sp-edu {
@@ -459,18 +523,27 @@
 }
 .lightbox-close:hover { background: rgba(255,255,255,0.22); }
 
-/* ── REVIEWS ── */
+/* ── REVIEWS CAROUSEL ── */
 .sp-reviews {
   padding: 72px 0;
   background: var(--surface, #fff);
   border-bottom: 1px solid var(--border);
 }
-.sp-rev-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.sp-rev-carousel-wrap { position: relative; }
+.sp-rev-carousel {
+  display: flex;
   gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
 }
+.sp-rev-carousel::-webkit-scrollbar { display: none; }
 .sp-rev-card {
+  flex: 0 0 calc(33.333% - 14px);
+  scroll-snap-align: start;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -479,6 +552,7 @@
   flex-direction: column;
   gap: 12px;
   box-shadow: var(--shadow-sm);
+  min-width: 0;
 }
 .sp-rev-head { display: flex; align-items: center; gap: 12px; }
 .sp-rev-avatar {
@@ -498,7 +572,7 @@
 .sp-rev-meta { flex: 1; }
 .sp-rev-name { font-size: 14px; font-weight: 700; color: var(--text); }
 .sp-rev-date { font-size: 12px; color: var(--muted); margin-top: 2px; }
-.sp-rev-text { font-size: 14px; color: var(--text); line-height: 1.65; }
+.sp-rev-text { font-size: 14px; color: var(--text); line-height: 1.65; flex: 1; }
 .sp-rev-foot {
   display: flex;
   align-items: center;
@@ -510,6 +584,54 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--muted);
+}
+/* Кнопки-стрелки */
+.sp-rev-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 180ms var(--ease);
+  z-index: 2;
+}
+.sp-rev-btn:hover { background: var(--green); border-color: var(--green); }
+.sp-rev-btn:hover svg { stroke: #fff; }
+.sp-rev-btn svg { width: 18px; height: 18px; stroke: var(--text); stroke-width: 2; fill: none; }
+.sp-rev-btn.prev { left: -20px; }
+.sp-rev-btn.next { right: -20px; }
+/* Точки-индикаторы */
+.sp-rev-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+.sp-rev-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-input, #D6CEC4);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 180ms, transform 180ms;
+}
+.sp-rev-dot.active { background: var(--green); transform: scale(1.3); }
+@media (max-width: 900px) {
+  .sp-rev-card { flex: 0 0 calc(50% - 10px); }
+  .sp-rev-btn { display: none; }
+}
+@media (max-width: 540px) {
+  .sp-rev-card { flex: 0 0 calc(90%); }
 }
 
 /* ── FAQ ── */
@@ -702,9 +824,10 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .sp-hero-grid { grid-template-columns: 160px 1fr; }
+  .sp-hero-grid { grid-template-columns: 1fr; }
+  .sp-hero-photo-col { height: 360px; }
   .sp-about-grid { grid-template-columns: 1fr; }
-  .sp-work-photo { position: static; aspect-ratio: 16/9; }
+  .sp-work-photo { position: static; width: 100%; height: 260px; }
   .sp-booking-inner { grid-template-columns: 1fr; }
   .sp-rev-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -712,9 +835,7 @@
   .sp-name { font-size: 36px; }
   .sp-section-h2 { font-size: 32px; }
   .sp-booking-h2 { font-size: 36px; }
-  .sp-hero-grid { grid-template-columns: 1fr; }
-  .sp-avatar { width: 120px; height: 120px; }
-  .sp-main { padding-top: 16px; }
+  .sp-hero-photo-col { height: 280px; }
   .sp-rev-grid { grid-template-columns: 1fr; }
   .sp-facts { gap: 24px; }
   .sp-svc-item { grid-template-columns: 40px 1fr; }
@@ -759,9 +880,6 @@
 
 <!-- ═══════════ HERO ═══════════ -->
 <section class="sp-hero">
-  <div class="sp-hero-photo-wrap">
-    <img class="sp-hero-photo" src="/assets/image/specialists/hero.jpg" alt="Вахания Александр Петрович">
-  </div>
   <div class="container">
     <nav class="sp-breadcrumb-wrap" aria-label="Навигация">
       <div class="sp-breadcrumb">
@@ -774,12 +892,17 @@
     </nav>
 
     <div class="sp-hero-grid">
-      <div class="sp-avatar-wrap">
-        <div class="sp-avatar">
-          <img src="/assets/image/specialists/avatar.jpg" alt="Александр Вахания">
-        </div>
+      <!-- Левая колонка: фото -->
+      <div class="sp-hero-photo-col">
+        <img src="/assets/image/specialists/hero.jpg" alt="Вахания Александр Петрович">
       </div>
+      <!-- Правая колонка: информация -->
       <div class="sp-main">
+        <div class="sp-avatar-wrap">
+          <div class="sp-avatar">
+            <img src="/assets/image/specialists/avatar.jpg" alt="Александр Вахания">
+          </div>
+        </div>
         <div class="sp-tags">
           <span class="sp-tag">Профиль специалиста</span>
         </div>
@@ -816,7 +939,7 @@
         </blockquote>
         <div class="sp-about-text">
           <p>Совмещаю две практики — персональные тренировки (с 2004 года) и массаж с реабилитацией (с 2018). Такой подход позволяет работать системно: не только снимать симптомы, но и менять причину — слабые мышцы, перегруженные звенья, нарушенную осанку.</p>
-          <p>Образование подтверждено: профпереподготовка в МИРК (788 часов) по реабилитационной работе и шесть профильных сертификатов — от медицинского массажа и лечебной физкультуры до мануальных техник и гемолимфодренажа.</p>
+          <p>Образование подтверждено: профпереподготовка в Московском институте реабилитации и косметологии (МИРК) (788 часов) по реабилитационной работе и шесть профильных сертификатов — от оздоровительного массажа и лечебной физкультуры до мануальных техник и гемолимфодренажа.</p>
         </div>
         <div class="sp-about-cta">
           <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться на сеанс →</button>
@@ -840,107 +963,230 @@
     <h2 class="sp-section-h2">Услуги и цены</h2>
     <p class="sp-section-sub">Выезд на дом по Москве · оплата после сеанса</p>
 
-    <div class="sp-svc-list">
-
-      <div class="sp-svc-item">
-        <div class="sp-svc-icon">
+    <!-- Группа: Массаж (открыта) -->
+    <div class="sp-svc-group open">
+      <button class="sp-svc-group-header" onclick="toggleSvcGroup(this)">
+        <div class="sp-svc-group-icon">
           <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <div class="sp-svc-info">
-          <div class="sp-svc-name">Медицинский массаж</div>
-          <div class="sp-svc-meta">Классический и оздоровительный · работа с напряжением, болью, восстановлением</div>
+        <span class="sp-svc-group-title">Массаж</span>
+        <span class="sp-svc-group-count">12 услуг</span>
+        <span class="sp-svc-group-arrow">▾</span>
+      </button>
+      <div class="sp-svc-group-body">
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Классический массаж</div>
+            <div class="sp-svc-meta">Общеукрепляющий, расслабляющий</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span></div>
         </div>
-        <div class="sp-svc-price">
-          <span class="from">от</span>
-          <span class="amount">4 500 ₽</span>
-          <span class="from">60–90 мин</span>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Спортивный массаж</div>
+            <div class="sp-svc-meta">Восстановление после нагрузок</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Антистрессовый массаж</div>
+            <div class="sp-svc-meta">Снятие напряжения, нормализация сна</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M4.93 4.93A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10 10 10 0 0 0-10-10 10 10 0 0 0-5.07 1.38"/><polyline points="3 8 4.93 4.93 8 6"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Лимфодренажный массаж</div>
+            <div class="sp-svc-meta">Отёки, тонус тканей</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Антицеллюлитный массаж</div>
+            <div class="sp-svc-meta">Коррекция, улучшение кожи</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Тайский массаж</div>
+            <div class="sp-svc-meta">Работа с мышцами и суставами через растяжение</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">5 000 ₽</span><span class="from">90 мин</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Точечный массаж</div>
+            <div class="sp-svc-meta">Акупрессура, работа с триггерами</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 1-7.743 5.743L8 16H6v2H4v2H2v-2.586l5.878-5.878A6 6 0 1 1 18 8z"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Мануальный массаж</div>
+            <div class="sp-svc-meta">Глубокая работа с мышцами</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Детский массаж</div>
+            <div class="sp-svc-meta">Мягкие техники, с 1 года</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">3 000 ₽</span><span class="from">30–45 мин</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-5 4-8 8-8s8 3 8 8"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Массаж лица</div>
+            <div class="sp-svc-meta">Тонус, релакс, мимические мышцы</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">45 мин</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Зональный массаж</div>
+            <div class="sp-svc-meta">Спина, шея, ноги — отдельными зонами</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">30–45 мин</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Оздоровительный массаж</div>
+            <div class="sp-svc-meta">Общее восстановление тела</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
         </div>
       </div>
+    </div>
 
-      <div class="sp-svc-item">
-        <div class="sp-svc-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div class="sp-svc-info">
-          <div class="sp-svc-name">Тайский массаж</div>
-          <div class="sp-svc-meta">Работа с мышцами и суставами через растяжение и давление</div>
-        </div>
-        <div class="sp-svc-price">
-          <span class="from">от</span>
-          <span class="amount">5 000 ₽</span>
-        </div>
-      </div>
-
-      <div class="sp-svc-item">
-        <div class="sp-svc-icon">
-          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <div class="sp-svc-info">
-          <div class="sp-svc-name">Детский массаж</div>
-          <div class="sp-svc-meta">Оздоровительный массаж для детей · мягкие техники</div>
-        </div>
-        <div class="sp-svc-price">
-          <span class="from">от</span>
-          <span class="amount">3 000 ₽</span>
-        </div>
-      </div>
-
-      <div class="sp-svc-item">
-        <div class="sp-svc-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        </div>
-        <div class="sp-svc-info">
-          <div class="sp-svc-name">Массаж лица</div>
-          <div class="sp-svc-meta">Тонус, релакс, снятие напряжения мимических мышц</div>
-        </div>
-        <div class="sp-svc-price">
-          <span class="from">от</span>
-          <span class="amount">2 500 ₽</span>
-        </div>
-      </div>
-
-      <div class="sp-svc-item">
-        <div class="sp-svc-icon">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <div class="sp-svc-info">
-          <div class="sp-svc-name">Зональный массаж</div>
-          <div class="sp-svc-meta">Спина, шея, ноги — отдельными зонами</div>
-        </div>
-        <div class="sp-svc-price">
-          <span class="from">от</span>
-          <span class="amount">2 500 ₽</span>
-        </div>
-      </div>
-
-      <div class="sp-svc-item">
-        <div class="sp-svc-icon terra">
+    <!-- Группа: Реабилитация (закрыта) -->
+    <div class="sp-svc-group">
+      <button class="sp-svc-group-header" onclick="toggleSvcGroup(this)">
+        <div class="sp-svc-group-icon terra">
           <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
-        <div class="sp-svc-info">
-          <div class="sp-svc-name">Реабилитация (все направления)</div>
-          <div class="sp-svc-meta">Биомеханическая · нейрореабилитация · постоперационная — по согласованию</div>
+        <span class="sp-svc-group-title">Реабилитация</span>
+        <span class="sp-svc-group-count">8 программ</span>
+        <span class="sp-svc-group-arrow">▾</span>
+      </button>
+      <div class="sp-svc-group-body">
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Восстановление после травм</div>
+            <div class="sp-svc-meta">Переломы, растяжения</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span></div>
         </div>
-        <div class="sp-svc-price">
-          <span class="from">от</span>
-          <span class="amount">4 500 ₽</span>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Восстановление после операций</div>
+            <div class="sp-svc-meta">Постоперационный период</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Коррекция осанки</div>
+            <div class="sp-svc-meta">Сколиоз, кифоз, плоскостопие</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Работа с болями в спине и шее</div>
+            <div class="sp-svc-meta">Остеохондроз, грыжи</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Восстановление при ДЦП</div>
+            <div class="sp-svc-meta">Индивидуальная программа</div>
+          </div>
+          <div class="sp-svc-price"><span class="amount" style="font-size:16px;">по согласованию</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">ЧМТ</div>
+            <div class="sp-svc-meta">Восстановление после черепно-мозговой травмы</div>
+          </div>
+          <div class="sp-svc-price"><span class="amount" style="font-size:16px;">по согласованию</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Реабилитация после инсульта</div>
+            <div class="sp-svc-meta">Программа восстановления</div>
+          </div>
+          <div class="sp-svc-price"><span class="amount" style="font-size:16px;">по согласованию</span></div>
+        </div>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Спортивная реабилитация</div>
+            <div class="sp-svc-meta">Возврат к тренировкам</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span></div>
         </div>
       </div>
+    </div>
 
-      <div class="sp-svc-item">
-        <div class="sp-svc-icon terra">
+    <!-- Группа: Тренировки (закрыта) -->
+    <div class="sp-svc-group">
+      <button class="sp-svc-group-header" onclick="toggleSvcGroup(this)">
+        <div class="sp-svc-group-icon terra">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <div class="sp-svc-info">
-          <div class="sp-svc-name">Персональные тренировки</div>
-          <div class="sp-svc-meta">Индивидуальная программа · коррекция, укрепление, осанка</div>
+        <span class="sp-svc-group-title">Тренировки</span>
+        <span class="sp-svc-group-count">3 формата</span>
+        <span class="sp-svc-group-arrow">▾</span>
+      </button>
+      <div class="sp-svc-group-body">
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Корректирующие тренировки</div>
+            <div class="sp-svc-meta">Осанка, баланс, координация</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span></div>
         </div>
-        <div class="sp-svc-price">
-          <span class="from">от</span>
-          <span class="amount">4 500 ₽</span>
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Восстановительные тренировки</div>
+            <div class="sp-svc-meta">После травм и операций</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span></div>
+        </div>
+        <div class="sp-svc-item" style="border-bottom:none;">
+          <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Общеукрепляющие тренировки</div>
+            <div class="sp-svc-meta">Тонус, сила, выносливость</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span></div>
         </div>
       </div>
-
     </div>
 
     <p class="sp-svc-note">
@@ -1069,55 +1315,102 @@
   <div class="container">
     <div class="sp-section-eyebrow">03</div>
     <h2 class="sp-section-h2">Отзывы</h2>
-    <p class="sp-section-sub">Отзывы клиентов с Авито</p>
+    <p class="sp-section-sub">Отзывы клиентов с Авито и Яндекс Услуг</p>
 
-    <div class="sp-rev-grid">
+    <!-- TODO: заменить на реальные отзывы с Авито и Яндекс Услуг -->
+    <div class="sp-rev-carousel-wrap">
+      <button class="sp-rev-btn prev" onclick="revScroll(-1)" aria-label="Предыдущий">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
 
-      <div class="sp-rev-card">
-        <div class="sp-rev-head">
-          <div class="sp-rev-avatar">М</div>
-          <div class="sp-rev-meta">
-            <div class="sp-rev-name">Михаил К.</div>
-            <div class="sp-rev-date">апрель 2025</div>
+      <div class="sp-rev-carousel" id="revCarousel">
+
+        <div class="sp-rev-card">
+          <div class="sp-rev-head">
+            <div class="sp-rev-avatar">М</div>
+            <div class="sp-rev-meta">
+              <div class="sp-rev-name">Михаил К.</div>
+              <div class="sp-rev-date">апрель 2025</div>
+            </div>
           </div>
+          <p class="sp-rev-text">Обратился с болью в спине — остеохондроз и постоянное напряжение в шее. Александр разобрал ситуацию, объяснил причины, провёл курс. После 5 сеансов стало заметно легче. Рекомендую.</p>
+          <div class="sp-rev-foot"><span>Авито</span><span>Массаж · Реабилитация</span></div>
         </div>
-        <p class="sp-rev-text">Обратился с болью в спине — остеохондроз и постоянное напряжение в шее. Александр разобрал ситуацию, объяснил причины, провёл курс. После 5 сеансов стало заметно легче. Рекомендую.</p>
-        <div class="sp-rev-foot">
-          <span>Авито</span>
-          <span>Массаж · реабилитация</span>
+
+        <div class="sp-rev-card">
+          <div class="sp-rev-head">
+            <div class="sp-rev-avatar" style="background:var(--terra-tint,#F5EAE4);color:var(--terra);">Е</div>
+            <div class="sp-rev-meta">
+              <div class="sp-rev-name">Елена В.</div>
+              <div class="sp-rev-date">март 2025</div>
+            </div>
+          </div>
+          <p class="sp-rev-text">Брала тренировки после перерыва — хотела восстановиться без риска для спины. Александр составил программу, учёл мои особенности. Занимаемся уже 3 месяца, прогресс очевиден.</p>
+          <div class="sp-rev-foot"><span>Авито</span><span>Персональные тренировки</span></div>
         </div>
+
+        <div class="sp-rev-card">
+          <div class="sp-rev-head">
+            <div class="sp-rev-avatar" style="background:#f0ede7;color:var(--muted);">А</div>
+            <div class="sp-rev-meta">
+              <div class="sp-rev-name">Алексей Н.</div>
+              <div class="sp-rev-date">февраль 2025</div>
+            </div>
+          </div>
+          <p class="sp-rev-text">Делал тайский массаж — очень профессионально. Видно, что человек понимает анатомию и работает осознанно. Приеду ещё.</p>
+          <div class="sp-rev-foot"><span>Авито</span><span>Тайский массаж</span></div>
+        </div>
+
+        <div class="sp-rev-card">
+          <div class="sp-rev-head">
+            <div class="sp-rev-avatar" style="background:var(--green-tint,#EFF4F3);color:var(--green);">О</div>
+            <div class="sp-rev-meta">
+              <div class="sp-rev-name">Ольга С.</div>
+              <div class="sp-rev-date">март 2025</div>
+            </div>
+          </div>
+          <p class="sp-rev-text">Александр выехал на дом, всё взял с собой. Массаж спины и шеи — после первого сеанса почувствовала разницу. Записалась на курс.</p>
+          <div class="sp-rev-foot"><span>Яндекс Услуги</span><span>Массаж</span></div>
+        </div>
+
+        <div class="sp-rev-card">
+          <div class="sp-rev-head">
+            <div class="sp-rev-avatar" style="background:#f0ede7;color:var(--muted);">Д</div>
+            <div class="sp-rev-meta">
+              <div class="sp-rev-name">Дмитрий Р.</div>
+              <div class="sp-rev-date">январь 2025</div>
+            </div>
+          </div>
+          <p class="sp-rev-text">Восстанавливался после растяжения. Александр объяснил что делать, составил план. Через месяц вернулся к тренировкам.</p>
+          <div class="sp-rev-foot"><span>Авито</span><span>Реабилитация</span></div>
+        </div>
+
+        <div class="sp-rev-card">
+          <div class="sp-rev-head">
+            <div class="sp-rev-avatar" style="background:var(--terra-tint,#F5EAE4);color:var(--terra);">Н</div>
+            <div class="sp-rev-meta">
+              <div class="sp-rev-name">Наталья К.</div>
+              <div class="sp-rev-date">февраль 2025</div>
+            </div>
+          </div>
+          <p class="sp-rev-text">Брала антицеллюлитный массаж курсом 8 сеансов. Результат виден. Приятно, что специалист объясняет что и зачем делает.</p>
+          <div class="sp-rev-foot"><span>Яндекс Услуги</span><span>Массаж</span></div>
+        </div>
+
       </div>
 
-      <div class="sp-rev-card">
-        <div class="sp-rev-head">
-          <div class="sp-rev-avatar" style="background:var(--terra-tint,#F5EAE4);color:var(--terra);">Е</div>
-          <div class="sp-rev-meta">
-            <div class="sp-rev-name">Елена В.</div>
-            <div class="sp-rev-date">март 2025</div>
-          </div>
-        </div>
-        <p class="sp-rev-text">Брала тренировки после перерыва — хотела восстановиться без риска для спины. Александр составил программу, учёл мои особенности. Занимаемся уже 3 месяца, прогресс очевиден.</p>
-        <div class="sp-rev-foot">
-          <span>Авито</span>
-          <span>Персональные тренировки</span>
-        </div>
-      </div>
+      <button class="sp-rev-btn next" onclick="revScroll(1)" aria-label="Следующий">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
 
-      <div class="sp-rev-card">
-        <div class="sp-rev-head">
-          <div class="sp-rev-avatar" style="background:#f0ede7;color:var(--muted);">А</div>
-          <div class="sp-rev-meta">
-            <div class="sp-rev-name">Алексей Н.</div>
-            <div class="sp-rev-date">февраль 2025</div>
-          </div>
-        </div>
-        <p class="sp-rev-text">Делал тайский массаж — очень профессионально. Видно, что человек понимает анатомию и работает осознанно. Приеду ещё.</p>
-        <div class="sp-rev-foot">
-          <span>Авито</span>
-          <span>Тайский массаж</span>
-        </div>
-      </div>
-
+    <div class="sp-rev-dots" id="revDots">
+      <button class="sp-rev-dot active" onclick="revGoTo(0)"></button>
+      <button class="sp-rev-dot" onclick="revGoTo(1)"></button>
+      <button class="sp-rev-dot" onclick="revGoTo(2)"></button>
+      <button class="sp-rev-dot" onclick="revGoTo(3)"></button>
+      <button class="sp-rev-dot" onclick="revGoTo(4)"></button>
+      <button class="sp-rev-dot" onclick="revGoTo(5)"></button>
     </div>
   </div>
 </section>
@@ -1136,7 +1429,7 @@
           <span class="faq-arrow">▾</span>
         </button>
         <div class="sp-faq-a">
-          Начинаем с короткого разговора о вашем запросе — что беспокоит, какой результат хотите получить. Затем я подбираю подходящую технику и темп работы. После сеанса даю рекомендации — что делать между встречами.
+          Начинаем с короткого разговора о вашем запросе — что беспокоит, какой результат хотите получить. Если это реабилитация или работа с конкретной проблемой — прошу заранее прислать документы из больницы или выписки, изучаю их до встречи. На первом сеансе проводим пробную сессию. Если готовы работать курсом — составляю индивидуальную программу. После каждого сеанса даю рекомендации — что делать между встречами.
         </div>
       </div>
 
@@ -1146,7 +1439,7 @@
           <span class="faq-arrow">▾</span>
         </button>
         <div class="sp-faq-a">
-          Выезжаю преимущественно по Москве в пределах ТТК и ближайшего Подмосковья. Стоимость выезда за МКАД обсуждается индивидуально — напишите мне адрес, уточним.
+          Выезжаю преимущественно в пределах МКАД. За МКАД — обсуждается индивидуально. Напишите адрес, уточним стоимость и возможность выезда.
         </div>
       </div>
 
@@ -1156,7 +1449,8 @@
           <span class="faq-arrow">▾</span>
         </button>
         <div class="sp-faq-a">
-          Удобное место — кровать, диван или пол с ковриком. Желательно отдельная комната. Полотенце и простыня. Всё оборудование — стол, масло — привожу с собой.
+          Массажный стол — на клиенте. Выезжаю своим ходом, поэтому стол с собой не привожу. Можно работать на кровати или диване — обговорим заранее.<br><br>
+          Если планируете заниматься регулярно, рекомендую приобрести складной массажный стол — стоит от 5 000 ₽, окупается быстро. Либо можете приехать ко мне — принимаю у м. Аэропорт.
         </div>
       </div>
 
@@ -1324,6 +1618,38 @@ function toggleFaq(btn) {
   const item = btn.closest('.sp-faq-item');
   item.classList.toggle('open');
 }
+
+function toggleSvcGroup(btn) {
+  const group = btn.closest('.sp-svc-group');
+  group.classList.toggle('open');
+}
+
+/* Карусель отзывов */
+function revScroll(dir) {
+  const carousel = document.getElementById('revCarousel');
+  const card = carousel.querySelector('.sp-rev-card');
+  const cardW = card.offsetWidth + 20;
+  carousel.scrollBy({ left: dir * cardW, behavior: 'smooth' });
+}
+
+function revGoTo(idx) {
+  const carousel = document.getElementById('revCarousel');
+  const card = carousel.querySelector('.sp-rev-card');
+  const cardW = card.offsetWidth + 20;
+  carousel.scrollTo({ left: idx * cardW, behavior: 'smooth' });
+}
+
+(function() {
+  const carousel = document.getElementById('revCarousel');
+  const dots = document.querySelectorAll('.sp-rev-dot');
+  if (!carousel) return;
+  carousel.addEventListener('scroll', function() {
+    const card = carousel.querySelector('.sp-rev-card');
+    const cardW = card.offsetWidth + 20;
+    const idx = Math.round(carousel.scrollLeft / cardW);
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }, { passive: true });
+})();
 
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
