@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Специалисты massash — сертифицированные массажисты, реабилитологи и тренеры в Москве. Выезд на дом, индивидуальные программы.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://massash.com/specialists/">
+<title>Специалисты massash — Москва | massash</title>
+
+<link rel="stylesheet" href="/css/variables.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="icon" type="image/svg+xml" href="/assets/image/favicon.svg">
+
+<style>
+/* Dropdown меню */
+.nav-dropdown { position: relative; }
+.nav-arrow { font-size: 14px; opacity: 0.7; margin-left: 6px; }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  padding-top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid var(--border, #e5e0d8);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  min-width: 180px;
+  padding: 8px 0;
+  list-style: none;
+  z-index: 100;
+}
+.nav-dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: var(--text, #1a1a1a);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.nav-dropdown-menu li a:hover {
+  background: var(--bg-alt, #f5f2ed);
+  color: var(--accent, #2d6a4f);
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+
+/* Страница каталога */
+.catalog-hero {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 56px 0 48px;
+}
+.catalog-breadcrumb {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.catalog-breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 200ms;
+}
+.catalog-breadcrumb a:hover { color: var(--green); }
+.catalog-breadcrumb .sep { color: var(--subtle); }
+.catalog-h1 {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.catalog-sub {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+/* Карточка специалиста */
+.specialists-section {
+  padding: 64px 0 80px;
+  background: var(--bg);
+}
+.specialists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.spec-card {
+  background: var(--surface, #fff);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 240ms var(--ease), transform 240ms var(--ease);
+  display: flex;
+  flex-direction: column;
+}
+.spec-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.spec-photo {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: #DCD3C3;
+}
+.spec-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 400ms var(--ease);
+}
+.spec-card:hover .spec-photo img { transform: scale(1.03); }
+.spec-body {
+  padding: 24px 24px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.spec-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 10px;
+  font-family: var(--sans);
+}
+.spec-name {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.spec-role {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+.spec-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.spec-fact {
+  font-size: 13px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.spec-fact-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+.spec-btn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background: var(--green);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 200ms var(--ease);
+  margin-top: auto;
+}
+.spec-btn:hover { background: var(--green-dark, #336859); }
+
+/* Нижняя фраза */
+.catalog-footer-phrase {
+  text-align: center;
+  padding: 48px 0 64px;
+  border-top: 1px solid var(--border);
+}
+.catalog-footer-phrase p {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .specialists-grid { grid-template-columns: repeat(2, 1fr); }
+  .catalog-h1 { font-size: 38px; }
+}
+@media (max-width: 600px) {
+  .specialists-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-text">Сертифицированный специалист · Москва · выезд на дом</div>
+      <div class="header-top-phone"><a href="tel:+79266636641">+7 (926) 663-66-41</a></div>
+    </div>
+  </div>
+  <nav class="header-nav">
+    <div class="container">
+      <div class="logo"><a href="/" style="text-decoration:none;color:inherit;">mas<span>sash</span></a></div>
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Услуги <span class="nav-arrow">▾</span></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/massage/">Массаж</a></li>
+            <li><a href="/rehab/">Реабилитация</a></li>
+            <li><a href="/training/">Тренировки</a></li>
+          </ul>
+        </li>
+        <li><a href="/specialists/" class="active">Специалисты</a></li>
+        <li><a href="/#reviews">Отзывы</a></li>
+        <li><a href="/#contacts">Контакты</a></li>
+      </ul>
+      <button class="burger-btn" onclick="toggleMenu()" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="btn-book" onclick="location.href='/#booking'">Записаться</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="catalog-hero">
+  <div class="container">
+    <nav class="catalog-breadcrumb" aria-label="Навигация">
+      <a href="/">Главная</a>
+      <span class="sep">›</span>
+      <span>Специалисты</span>
+    </nav>
+    <h1 class="catalog-h1">Специалисты massash</h1>
+    <p class="catalog-sub">Проверенные специалисты в области массажа, реабилитации и оздоровительных тренировок в Москве.</p>
+  </div>
+</section>
+
+<!-- ═══════════ КАТАЛОГ ═══════════ -->
+<section class="specialists-section">
+  <div class="container">
+    <div class="specialists-grid">
+
+      <div class="spec-card">
+        <div class="spec-photo">
+          <img src="/assets/image/specialists/hero.jpg" alt="Вахания Александр Петрович — массажист-реабилитолог">
+        </div>
+        <div class="spec-body">
+          <div class="spec-tag">Москва · выезд на дом</div>
+          <div class="spec-name">Вахания Александр Петрович</div>
+          <p class="spec-role">Массажист-реабилитолог · персональный тренер</p>
+          <div class="spec-facts">
+            <div class="spec-fact">
+              <span class="spec-fact-dot"></span>
+              Тренер с 2004 — 22 года практики
+            </div>
+            <div class="spec-fact">
+              <span class="spec-fact-dot"></span>
+              Массаж и реабилитация с 2018
+            </div>
+            <div class="spec-fact">
+              <span class="spec-fact-dot"></span>
+              8 профильных сертификатов · МИРК 2023
+            </div>
+          </div>
+          <a href="/specialists/vakhaniya/" class="spec-btn">Подробнее →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="catalog-footer-phrase">
+      <p>Работаем с проверенными специалистами Москвы</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer" id="contacts">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">mas<span>sash</span></div>
+        <p class="footer-tagline">Профессиональный массаж, реабилитация и оздоровительные тренировки в Москве.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Услуги</div>
+        <div class="footer-links">
+          <a href="/massage/">Массаж</a>
+          <a href="/rehab/">Реабилитация</a>
+          <a href="/training/">Тренировки</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Специалисты</div>
+        <div class="footer-links">
+          <a href="/specialists/">Все специалисты</a>
+          <a href="/specialists/vakhaniya/">Вахания А.П.</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Информация</div>
+        <div class="footer-links">
+          <a href="/#about">Обо мне</a>
+          <a href="/#reviews">Отзывы</a>
+          <a href="/oferta.html">Оферта</a>
+          <a href="/privacy.html">Политика конфиденциальности</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Контакты</div>
+        <div class="footer-links">
+          <a href="tel:+79266636641">+7 (926) 663-66-41</a>
+          <span>г. Москва · выезд на дом</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 ИП Вахания Александр Петрович · ИНН 504410052123</div>
+      <div class="footer-copy">
+        <a href="/oferta.html">Оферта</a> ·
+        <a href="/privacy.html">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+</script>
+</body>
+</html>
