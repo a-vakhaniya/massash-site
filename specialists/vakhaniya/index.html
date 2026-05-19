@@ -1586,13 +1586,14 @@
 </section>
 
 <!-- ═══════════ ЗАПИСЬ ═══════════ -->
-<section class="sp-booking" id="booking">
+<section class="cta-section" id="booking">
   <div class="container">
-    <div class="sp-booking-inner">
-      <div>
-        <div class="sp-booking-eyebrow">Запись на сеанс</div>
-        <h2 class="sp-booking-h2">Записаться<br>на сеанс</h2>
-        <p class="sp-booking-sub">Первичная консультация бесплатна — разберём Вашу ситуацию, составим программу восстановления и ответим на все вопросы.</p>
+    <div class="cta-inner">
+
+      <div class="cta-left">
+        <div class="eyebrow cta-eyebrow">Запись на приём</div>
+        <h2 class="cta-h2">Записаться на сеанс</h2>
+        <p class="cta-sub">Первичная консультация бесплатна — разберём Вашу ситуацию, составим программу восстановления и ответим на все вопросы.</p>
         <div class="cta-details">
           <div class="cta-detail">
             <div class="cta-detail-icon">📞</div>
@@ -1625,16 +1626,18 @@
         </div>
       </div>
 
-      <div class="sp-booking-form">
+      <div class="cta-form">
         <div class="form-title">Оставьте заявку</div>
         <form onsubmit="handleSubmit(event)">
-          <div class="field">
-            <label for="name">Ваше имя</label>
-            <input type="text" id="name" placeholder="Анна Иванова" required>
-          </div>
-          <div class="field">
-            <label for="phone">Телефон</label>
-            <input type="tel" id="phone" placeholder="+7 (999) 000-00-00" required>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Ваше имя</label>
+              <input type="text" id="name" placeholder="Анна Иванова" required>
+            </div>
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" placeholder="+7 (999) 000-00-00" required>
+            </div>
           </div>
           <div class="field">
             <label for="service">Услуга</label>
@@ -1673,21 +1676,22 @@
             </select>
           </div>
           <div class="field">
-            <label for="comment">Ваш запрос</label>
-            <textarea id="comment" rows="3" placeholder="Опишите ситуацию — это поможет подготовиться к встрече..."></textarea>
+            <label for="comment">Расскажите о Вашей ситуации</label>
+            <textarea id="comment" rows="3" placeholder="Опишите запрос — это поможет подготовиться к встрече..."></textarea>
           </div>
           <div class="consent-block">
             <input type="checkbox" id="consent" name="consent" required>
             <label for="consent">
-              Согласен(а) на обработку персональных данных в соответствии с
+              Я согласен(а) на обработку персональных данных в соответствии с
               <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a>
             </label>
           </div>
           <button type="submit" class="btn-submit">Отправить заявку</button>
-          <p class="form-note">Стараюсь отвечать оперативно</p>
+          <p class="form-note">Отвечаю оперативно в рабочее время</p>
           <p class="form-status" id="formStatus" style="display:none;margin-top:12px;font-size:15px;"></p>
         </form>
       </div>
+
     </div>
   </div>
 </section>
