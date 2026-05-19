@@ -91,3 +91,20 @@ window.addEventListener('scroll', () => {
 function toggleMenu() {
   document.querySelector('.nav-links').classList.toggle('open');
 }
+
+// Review expand/collapse
+function toggleReview(btn) {
+  const text = btn.previousElementSibling;
+  const isExpanded = text.style.webkitLineClamp === 'unset';
+  text.style.webkitLineClamp = isExpanded ? '4' : 'unset';
+  text.style.overflow = isExpanded ? 'hidden' : 'visible';
+  btn.textContent = isExpanded ? 'Читать полностью →' : 'Свернуть ↑';
+}
+
+document.querySelectorAll('.review-text').forEach(function(el) {
+  var btn = document.createElement('button');
+  btn.textContent = 'Читать полностью →';
+  btn.onclick = function() { toggleReview(this); };
+  btn.style.cssText = 'font-size:0.8rem;color:#2d6a4f;cursor:pointer;background:none;border:none;padding:4px 0;display:block;margin-top:6px;';
+  el.parentNode.insertBefore(btn, el.nextSibling);
+});
