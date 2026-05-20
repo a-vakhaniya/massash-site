@@ -391,18 +391,14 @@
 }
 .sp-svc-group.open .sp-svc-group-count { background: var(--green-tint, #EFF4F3); color: var(--green); }
 .sp-svc-group-arrow {
-  width: 28px; height: 28px; border-radius: 50%;
-  border: 1.5px solid #2d6a4f; color: #2d6a4f;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--green-light); flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 18px; font-weight: 300; flex-shrink: 0;
-  background: transparent;
-  transition: background 180ms, color 180ms;
-  line-height: 1;
+  transition: background 220ms var(--ease);
 }
-.sp-svc-group.open .sp-svc-group-arrow {
-  background: #2d6a4f;
-  color: #fff;
-}
+.sp-svc-group-arrow svg { width: 12px; height: 12px; stroke: var(--green); stroke-width: 2.5; transition: transform 220ms var(--ease); fill: none; }
+.sp-svc-group.open .sp-svc-group-arrow { background: var(--green); }
+.sp-svc-group.open .sp-svc-group-arrow svg { stroke: #fff; transform: rotate(45deg); }
 .sp-svc-group-body {
   display: none;
   border-top: 1px solid var(--border);
@@ -673,18 +669,14 @@
 }
 .sp-faq-q:hover { color: var(--green); }
 .sp-faq-q .faq-arrow {
-  width: 28px; height: 28px; border-radius: 50%;
-  border: 1.5px solid #2d6a4f; color: #2d6a4f;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--green-light); flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  font-size: 18px; font-weight: 300; flex-shrink: 0;
-  background: transparent;
-  transition: background 180ms, color 180ms;
-  line-height: 1;
+  transition: background 220ms var(--ease);
 }
-.sp-faq-item.open .faq-arrow {
-  background: #2d6a4f;
-  color: #fff;
-}
+.sp-faq-q .faq-arrow svg { width: 12px; height: 12px; stroke: var(--green); stroke-width: 2.5; transition: transform 220ms var(--ease); fill: none; }
+.sp-faq-item.open .faq-arrow { background: var(--green); }
+.sp-faq-item.open .faq-arrow svg { stroke: #fff; transform: rotate(45deg); }
 .sp-faq-a {
   display: none;
   padding: 0 0 22px;
@@ -985,7 +977,7 @@
         </div>
         <span class="sp-svc-group-title">Массаж</span>
         <span class="sp-svc-group-count">12 услуг</span>
-        <span class="sp-svc-group-arrow">−</span>
+        <span class="sp-svc-group-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
       </button>
       <div class="sp-svc-group-body">
         <div class="sp-svc-item">
@@ -1095,7 +1087,7 @@
         </div>
         <span class="sp-svc-group-title">Реабилитация</span>
         <span class="sp-svc-group-count">8 программ</span>
-        <span class="sp-svc-group-arrow">+</span>
+        <span class="sp-svc-group-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
       </button>
       <div class="sp-svc-group-body">
         <div class="sp-svc-item">
@@ -1173,7 +1165,7 @@
         </div>
         <span class="sp-svc-group-title">Тренировки</span>
         <span class="sp-svc-group-count">3 формата</span>
-        <span class="sp-svc-group-arrow">+</span>
+        <span class="sp-svc-group-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
       </button>
       <div class="sp-svc-group-body">
         <div class="sp-svc-item">
@@ -1543,7 +1535,7 @@
       <div class="sp-faq-item">
         <button class="sp-faq-q" onclick="toggleFaq(this)">
           Как проходит первый сеанс?
-          <span class="faq-arrow">+</span>
+          <span class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
         </button>
         <div class="sp-faq-a">
           Начинаем с короткого разговора о вашем запросе — что беспокоит, какой результат хотите получить. Если это реабилитация или работа с конкретной проблемой — прошу заранее прислать документы из больницы или выписки, изучаю их до встречи. На первом сеансе проводим пробную сессию. Если готовы работать курсом — составляю индивидуальную программу. После каждого сеанса даю рекомендации — что делать между встречами.
@@ -1553,7 +1545,7 @@
       <div class="sp-faq-item">
         <button class="sp-faq-q" onclick="toggleFaq(this)">
           Выезжаете ли за МКАД?
-          <span class="faq-arrow">+</span>
+          <span class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
         </button>
         <div class="sp-faq-a">
           Выезжаю преимущественно в пределах МКАД. За МКАД — обсуждается индивидуально. Напишите адрес, уточним стоимость и возможность выезда.
@@ -1563,7 +1555,7 @@
       <div class="sp-faq-item">
         <button class="sp-faq-q" onclick="toggleFaq(this)">
           Что нужно подготовить дома?
-          <span class="faq-arrow">+</span>
+          <span class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
         </button>
         <div class="sp-faq-a">
           Массажный стол — на клиенте. Выезжаю своим ходом, поэтому стол с собой не привожу. Можно работать на кровати или диване — обговорим заранее.<br><br>
@@ -1574,7 +1566,7 @@
       <div class="sp-faq-item">
         <button class="sp-faq-q" onclick="toggleFaq(this)">
           Работаете ли с детьми?
-          <span class="faq-arrow">+</span>
+          <span class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
         </button>
         <div class="sp-faq-a">
           Да, провожу оздоровительный массаж для детей от 3 лет. Работаю мягко, в подходящем для ребёнка темпе. На сеансе обязательно присутствует родитель.
@@ -1584,7 +1576,7 @@
       <div class="sp-faq-item">
         <button class="sp-faq-q" onclick="toggleFaq(this)">
           Как оплатить?
-          <span class="faq-arrow">+</span>
+          <span class="faq-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
         </button>
         <div class="sp-faq-a">
           Принимаю оплату наличными или переводом на карту. Работаю как ИП — могу выдать чек.
@@ -1772,15 +1764,11 @@ function toggleMenu() {
 function toggleFaq(btn) {
   const item = btn.closest('.sp-faq-item');
   item.classList.toggle('open');
-  const arrow = btn.querySelector('.faq-arrow');
-  if (arrow) arrow.textContent = item.classList.contains('open') ? '−' : '+';
 }
 
 function toggleSvcGroup(btn) {
   const group = btn.closest('.sp-svc-group');
   group.classList.toggle('open');
-  const arrow = btn.querySelector('.sp-svc-group-arrow');
-  if (arrow) arrow.textContent = group.classList.contains('open') ? '−' : '+';
 }
 
 
