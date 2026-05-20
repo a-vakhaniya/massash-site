@@ -1207,14 +1207,19 @@ body {
   }
 
   /* REVIEWS */
-  .reviews-track {
-    flex-direction: column;
+  .reviews-nav { display: none; }
+  .reviews-track { flex-direction: row; gap: 0; }
+  .review-card { flex-shrink: 0; }
+  .reviews-dots {
+    display: flex; justify-content: center; gap: 8px; margin-top: 20px;
   }
-
-  .review-card {
-  width: 100% !important;
-  min-width: unset !important;
+  .reviews-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--border-input, #D6CEC4);
+    border: none; cursor: pointer; padding: 0;
+    transition: background 180ms, transform 180ms;
   }
+  .reviews-dot.active { background: var(--green); transform: scale(1.3); }
 
   /* SERVICES TILE */
 .services-tiles {

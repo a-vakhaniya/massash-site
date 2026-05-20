@@ -32,30 +32,96 @@ function handleSubmit(e) {
 // Reviews carousel
 (function() {
   const track = document.getElementById('reviews-track');
+  if (!track) return;
   const cards = track.querySelectorAll('.review-card');
-  let idx = 0;
-  const visible = 3;
   const total = cards.length;
+  let idx = 0;
+
+  function isMobile() { return window.innerWidth <= 768; }
 
   function getCardWidth() {
     const wrap = track.parentElement;
+    if (isMobile()) return wrap.offsetWidth;
     const gap = 20;
-    return (wrap.offsetWidth - gap * (visible - 1)) / visible;
+    return (wrap.offsetWidth - gap * 2) / 3;
   }
 
   function update() {
     const w = getCardWidth();
-    track.style.transform = `translateX(-${idx * (w + 20)}px)`;
+    if (isMobile()) {
+      cards.forEach(c => { c.style.width = w + 'px'; c.style.flexBasis = w + 'px'; });
+      track.style.transform = `translateX(-${idx * w}px)`;
+    } else {
+      cards.forEach(c => { c.style.width = ''; c.style.flexBasis = ''; });
+      track.style.transform = `translateX(-${idx * (w + 20)}px)`;
+    }
+    updateDots();
   }
 
-  document.getElementById('rev-prev').addEventListener('click', () => {
+  const prevBtn = document.getElementById('rev-prev');
+  const nextBtn = document.getElementById('rev-next');
+  if (prevBtn) prevBtn.addEventListener('click', () => {
     if (idx > 0) { idx--; update(); }
   });
-  document.getElementById('rev-next').addEventListener('click', () => {
+  if (nextBtn) nextBtn.addEventListener('click', () => {
+    const visible = isMobile() ? 1 : 3;
     if (idx < total - visible) { idx++; update(); }
   });
 
-  window.addEventListener('resize', update);
+  window.addEventListener('resize', () => {
+    const visible = isMobile() ? 1 : 3;
+    idx = Math.min(idx, Math.max(0, total - visible));
+    rebuildDots();
+    update();
+  });
+
+  // Dots
+  let dotsContainer = null;
+
+  function rebuildDots() {
+    if (!isMobile()) {
+      if (dotsContainer) { dotsContainer.remove(); dotsContainer = null; }
+      return;
+    }
+    if (!dotsContainer) {
+      dotsContainer = document.createElement('div');
+      dotsContainer.className = 'reviews-dots';
+      track.parentElement.insertAdjacentElement('afterend', dotsContainer);
+    }
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'reviews-dot' + (i === idx ? ' active' : '');
+      dot.setAttribute('aria-label', 'Отзыв ' + (i + 1));
+      (function(i) {
+        dot.addEventListener('click', () => { idx = i; update(); });
+      })(i);
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    if (!dotsContainer) return;
+    dotsContainer.querySelectorAll('.reviews-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+  }
+
+  // Touch/swipe
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  track.addEventListener('touchend', e => {
+    if (!isMobile()) return;
+    const delta = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(delta) < 40) return;
+    if (delta > 0 && idx < total - 1) { idx++; update(); }
+    else if (delta < 0 && idx > 0) { idx--; update(); }
+  });
+
+  rebuildDots();
+  update();
 })();
 
 // FAQ accordion
