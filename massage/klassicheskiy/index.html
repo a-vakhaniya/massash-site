@@ -161,6 +161,8 @@
 .sp-svc-price .amount { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--text); display: block; line-height: 1; }
 .sp-svc-price .from { font-size: 12px; color: var(--muted); font-family: var(--sans); }
 .sp-svc-note { margin-top: 14px; font-size: 13px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; }
+.sp-svc-link { font-size: 0.8rem; color: var(--green); text-decoration: none; white-space: nowrap; display: block; margin-top: 4px; }
+.sp-svc-link:hover { text-decoration: underline; }
 
 /* ── CROSS-SELL ── */
 .massage-crosssell { background: var(--bg); border-bottom: 1px solid var(--border); }
@@ -583,7 +585,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">Классический массаж <a href="/massage/klassicheskiy/">Подробнее →</a></div>
               <div class="sp-svc-meta">Общеукрепляющий, расслабляющий</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">30–90 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">30–90 мин</span><a href="/massage/klassicheskiy/" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
           <div class="sp-svc-item">
@@ -592,7 +594,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">Спортивный массаж</div>
               <div class="sp-svc-meta">Восстановление после нагрузок</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
           <div class="sp-svc-item">
@@ -601,7 +603,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">Антистрессовый массаж</div>
               <div class="sp-svc-meta">Снятие напряжения, нормализация сна</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
           <div class="sp-svc-item">
@@ -610,7 +612,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">Лимфодренажный массаж</div>
               <div class="sp-svc-meta">Отёки, тонус тканей</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
           <div class="sp-svc-item">
@@ -619,7 +621,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">Антицеллюлитный массаж</div>
               <div class="sp-svc-meta">Коррекция, улучшение кожи</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
           <div class="sp-svc-item">
@@ -628,7 +630,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">Тайский массаж</div>
               <div class="sp-svc-meta">Суставы, растяжка, энергия</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">5 000 ₽</span><span class="from">90 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">5 000 ₽</span><span class="from">90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
           <div class="sp-svc-item">
@@ -637,7 +639,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">ПИР — мягкие техники</div>
               <div class="sp-svc-meta">Ноги, руки, шея, спина</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">от 30 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">от 30 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
           <div class="sp-svc-item">
@@ -646,7 +648,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">Детский массаж</div>
               <div class="sp-svc-meta">Мягкие техники, от 3 лет</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">30–45 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">30–45 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
           <div class="sp-svc-item">
@@ -655,7 +657,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">Массаж лица</div>
               <div class="sp-svc-meta">Тонус, релакс, мимические мышцы</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">30 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">30 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
           <div class="sp-svc-item">
@@ -664,7 +666,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">Зональный массаж (спина, шея, ноги)</div>
               <div class="sp-svc-meta">Отдельными зонами</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">20–60 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">20–60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
           <div class="sp-svc-item">
@@ -673,7 +675,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">Оздоровительный массаж</div>
               <div class="sp-svc-meta">Общее укрепление тела, профилактика</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
           <div class="sp-svc-item">
@@ -682,7 +684,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <div class="sp-svc-name">Восстановительный массаж</div>
               <div class="sp-svc-meta">После нагрузок, болезни, стресса</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
 
         </div>
