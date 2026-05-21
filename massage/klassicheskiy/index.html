@@ -23,484 +23,194 @@
 <link rel="icon" type="image/svg+xml" href="../../assets/image/favicon.svg">
 
 <style>
-/* Dropdown меню */
+/* ── DROPDOWN ── */
 .nav-dropdown { position: relative; }
 .nav-arrow { font-size: 14px; opacity: 0.7; margin-left: 6px; }
 .nav-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  padding-top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  border: 1px solid var(--border, #e5e0d8);
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-  min-width: 180px;
-  padding: 8px 0;
-  list-style: none;
-  z-index: 100;
+  display: none; position: absolute; top: 100%; padding-top: 8px;
+  left: 50%; transform: translateX(-50%); background: #fff;
+  border: 1px solid var(--border, #e5e0d8); border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10); min-width: 180px;
+  padding: 8px 0; list-style: none; z-index: 100;
 }
 .nav-dropdown-menu li a {
-  display: block;
-  padding: 10px 20px;
-  font-size: 14px;
-  color: var(--text, #1a1a1a);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background 0.15s;
+  display: block; padding: 10px 20px; font-size: 14px;
+  color: var(--text, #1a1a1a); text-decoration: none; white-space: nowrap; transition: background 0.15s;
 }
-.nav-dropdown-menu li a:hover {
-  background: var(--bg-alt, #f5f2ed);
-  color: var(--accent, #2d6a4f);
-}
+.nav-dropdown-menu li a:hover { background: var(--bg-alt, #f5f2ed); color: var(--accent, #2d6a4f); }
 .nav-dropdown:hover .nav-dropdown-menu { display: block; }
 
-/* Breadcrumb */
-.breadcrumb {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
-}
-.breadcrumb-list {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  list-style: none;
-  font-size: 13px;
-  color: var(--muted);
-  margin: 0;
-  padding: 0;
-}
-.breadcrumb-list a {
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.15s;
-}
+/* ── BREADCRUMB ── */
+.breadcrumb { padding: 14px 0; border-bottom: 1px solid var(--border); background: var(--bg); }
+.breadcrumb-list { display: flex; align-items: center; gap: 6px; list-style: none; font-size: 13px; color: var(--muted); margin: 0; padding: 0; }
+.breadcrumb-list a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
 .breadcrumb-list a:hover { color: var(--green); }
 .breadcrumb-sep { opacity: 0.4; }
 .breadcrumb-list li:last-child { color: var(--text); }
 
-/* Hero */
-.service-hero {
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  padding: 72px 0 60px;
-}
-.service-hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-.service-hero-eyebrow {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--green);
-  margin-bottom: 16px;
-  font-family: var(--sans);
-}
-.service-hero-h1 {
-  font-family: var(--serif);
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 1.1;
-  color: var(--text);
-  margin-bottom: 20px;
-}
-.service-hero-h1 em {
-  font-style: italic;
-  color: var(--terra);
-}
-.service-hero-desc {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 12px;
-  max-width: 480px;
-}
-.service-hero-seo {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.65;
-  margin-bottom: 32px;
-  max-width: 480px;
-  border-left: 3px solid var(--border-input);
-  padding-left: 16px;
-}
-.service-hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 36px;
-}
-.service-hero-img {
-  border-radius: 16px;
-  overflow: hidden;
-  aspect-ratio: 4/3;
-  box-shadow: var(--shadow-lg);
-}
-.service-hero-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Быстрые факты */
-.service-facts {
-  display: flex;
-  gap: 0;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  margin-top: 0;
-}
-.service-fact {
-  flex: 1;
-  padding: 18px 20px;
-  border-right: 1px solid var(--border);
-  background: var(--surface);
-}
+/* ── HERO ── */
+.service-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 72px 0 60px; }
+.service-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.service-hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; font-family: var(--sans); }
+.service-hero-h1 { font-family: var(--serif); font-size: 48px; font-weight: 400; line-height: 1.1; color: var(--text); margin-bottom: 20px; }
+.service-hero-h1 em { font-style: italic; color: var(--terra); }
+.service-hero-desc { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; max-width: 480px; }
+.service-hero-seo { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 32px; max-width: 480px; border-left: 3px solid var(--border-input); padding-left: 16px; }
+.service-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+.service-hero-img { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-lg); }
+.service-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.service-facts { display: flex; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.service-fact { flex: 1; padding: 18px 20px; border-right: 1px solid var(--border); background: var(--surface); }
 .service-fact:last-child { border-right: none; }
-.service-fact-val {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--text);
-  line-height: 1;
-}
-.service-fact-lbl {
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 4px;
-  font-family: var(--sans);
-}
+.service-fact-val { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); line-height: 1; }
+.service-fact-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; font-family: var(--sans); }
 
-/* Специалист */
-.service-specialist {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px 20px;
-  background: var(--green-tint);
-  border-radius: 12px;
-  margin-top: 24px;
-  text-decoration: none;
-  transition: background 0.15s;
-}
-.service-specialist:hover { background: #d4eddf; }
-.service-specialist-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--green);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-size: 20px;
-  flex-shrink: 0;
-}
-.service-specialist-name {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text);
-  font-family: var(--sans);
-}
-.service-specialist-role {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 2px;
-}
+/* ── BENEFITS ── */
+.service-benefits { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.service-benefits-head { text-align: center; margin-bottom: 48px; }
+.service-benefits-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
+.service-benefits-sub { font-size: 16px; color: var(--muted); max-width: 560px; margin: 0 auto; }
+.benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.benefit-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; box-shadow: var(--shadow-sm); }
+.benefit-icon { font-size: 28px; margin-bottom: 14px; }
+.benefit-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.benefit-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
-/* Эффекты/польза */
-.service-benefits {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: var(--section-py, 80px) 0;
-}
-.service-benefits-head {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.service-benefits-h2 {
-  font-family: var(--serif);
-  font-size: 44px;
-  font-weight: 400;
-  color: var(--text);
-  line-height: 1.1;
-  margin-bottom: 12px;
-}
-.service-benefits-sub {
-  font-size: 16px;
-  color: var(--muted);
-  max-width: 560px;
-  margin: 0 auto;
-}
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.benefit-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px 24px;
-  box-shadow: var(--shadow-sm);
-}
-.benefit-icon {
-  font-size: 28px;
-  margin-bottom: 14px;
-}
-.benefit-title {
-  font-family: var(--sans);
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-.benefit-desc {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
-/* Зоны работы */
-.service-zones {
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  padding: var(--section-py, 80px) 0;
-}
-.service-zones-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
-}
-.service-zones-h2 {
-  font-family: var(--serif);
-  font-size: 40px;
-  font-weight: 400;
-  color: var(--text);
-  line-height: 1.1;
-  margin-bottom: 12px;
-}
-.service-zones-sub {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 32px;
-}
-.zones-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.zone-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  transition: background 0.15s;
-}
+/* ── ZONES ── */
+.service-zones { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.service-zones-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.service-zones-h2 { font-family: var(--serif); font-size: 36px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 10px; }
+.service-zones-sub { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+.zones-list { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.zone-row { display: flex; align-items: center; gap: 16px; padding: 14px 18px; background: var(--bg); border-bottom: 1px solid var(--border); transition: background 0.15s; }
 .zone-row:last-child { border-bottom: none; }
 .zone-row:hover { background: var(--surface); }
-.zone-icon { font-size: 20px; flex-shrink: 0; }
-.zone-name {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text);
-  font-family: var(--sans);
-}
-.zone-desc {
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 2px;
-}
+.zone-icon { font-size: 18px; flex-shrink: 0; }
+.zone-name { font-size: 14px; font-weight: 600; color: var(--text); font-family: var(--sans); }
+.zone-desc { font-size: 12px; color: var(--muted); margin-top: 2px; }
 
-/* Как проходит */
-.service-process {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: var(--section-py, 80px) 0;
-}
-.service-process-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
-}
-.service-process-h2 {
-  font-family: var(--serif);
-  font-size: 44px;
-  font-weight: 400;
-  color: var(--text);
-  line-height: 1.1;
-  margin-bottom: 12px;
-}
-.service-process-sub {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 32px;
-}
-.process-steps {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.process-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 22px 24px;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
-}
+/* ── PROCESS ── */
+.service-process { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.service-process-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.service-process-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
+.service-process-sub { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
+.process-steps { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.process-step { display: flex; align-items: flex-start; gap: 20px; padding: 22px 24px; border-bottom: 1px solid var(--border); background: var(--bg); }
 .process-step:last-child { border-bottom: none; }
-.process-num {
-  font-family: var(--serif);
-  font-size: 28px;
-  font-weight: 300;
-  color: var(--green);
-  line-height: 1;
-  min-width: 28px;
-  opacity: 0.7;
-}
-.process-title {
-  font-family: var(--sans);
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-.process-desc {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-.service-process-img {
-  border-radius: 12px;
-  overflow: hidden;
-  aspect-ratio: 4/5;
-  box-shadow: var(--shadow-lg);
-}
-.service-process-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.process-num { font-family: var(--serif); font-size: 28px; font-weight: 300; color: var(--green); line-height: 1; min-width: 28px; opacity: 0.7; }
+.process-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.process-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.service-process-img { border-radius: 12px; overflow: hidden; aspect-ratio: 4/5; box-shadow: var(--shadow-lg); }
+.service-process-img img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Цена */
-.service-price {
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  padding: var(--section-py, 80px) 0;
-}
-.service-price-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-.service-price-h2 {
-  font-family: var(--serif);
-  font-size: 44px;
-  font-weight: 400;
-  color: var(--text);
-  line-height: 1.1;
-  margin-bottom: 12px;
-}
-.service-price-sub {
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 32px;
-}
-.price-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 40px 36px;
-  box-shadow: var(--shadow-md);
-  text-align: center;
-}
-.price-card-eyebrow {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--green);
-  margin-bottom: 12px;
-  font-family: var(--sans);
-}
-.price-card-val {
-  font-family: var(--serif);
-  font-size: 56px;
-  font-weight: 400;
-  color: var(--text);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.price-card-from {
-  font-size: 16px;
-  color: var(--muted);
-  margin-bottom: 20px;
-  font-family: var(--sans);
-}
-.price-card-divider {
-  height: 1px;
-  background: var(--border);
-  margin: 24px 0;
-}
-.price-card-details {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 28px;
-  text-align: left;
-}
-.price-card-detail {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--muted);
-}
-.price-card-detail-icon { font-size: 16px; }
+/* ── PRICE ── */
+.service-price { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.service-price-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.service-price-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
+.service-price-sub { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
+.price-table { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm); }
+.price-table-row { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 18px 24px; border-bottom: 1px solid var(--border); background: var(--bg); transition: background 0.15s; }
+.price-table-row:last-child { border-bottom: none; }
+.price-table-row:hover { background: var(--surface); }
+.price-table-time { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); }
+.price-table-amount { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--green); text-align: right; }
+.price-table-from { font-size: 12px; color: var(--muted); font-family: var(--sans); margin-top: 1px; }
+.price-note { font-size: 14px; color: var(--muted); margin: 20px 0; display: flex; align-items: center; gap: 8px; }
 
-/* Mobile */
+/* ── SPECIALIST CARD ── */
+.service-specialist-section { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.specialist-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 36px; box-shadow: var(--shadow-md); display: flex; align-items: flex-start; gap: 28px; }
+.specialist-card-avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 24px; font-weight: 400; flex-shrink: 0; }
+.specialist-card-body { flex: 1; }
+.specialist-card-name { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--text); margin-bottom: 6px; line-height: 1.2; }
+.specialist-card-role { font-size: 15px; color: var(--muted); margin-bottom: 8px; font-family: var(--sans); }
+.specialist-card-facts { font-size: 14px; color: var(--green); font-weight: 600; font-family: var(--sans); margin-bottom: 10px; }
+.specialist-card-location { font-size: 13px; color: var(--muted); margin-bottom: 20px; display: flex; align-items: center; gap: 6px; }
+.sp-card-btn { display: inline-block; font-size: 14px; font-weight: 700; color: var(--green); text-decoration: none; border: 1.5px solid var(--green); border-radius: 8px; padding: 9px 18px; font-family: var(--sans); transition: background 180ms, color 180ms; }
+.sp-card-btn:hover { background: var(--green); color: #fff; }
+
+/* ── SERVICES ACCORDION ── */
+.service-services-section { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.sp-svc-group { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--bg); box-shadow: var(--shadow-sm); margin-bottom: 12px; }
+.sp-svc-group-header { width: 100%; text-align: left; background: none; border: none; padding: 20px 28px; display: flex; align-items: center; gap: 16px; cursor: pointer; transition: background 180ms var(--ease); }
+.sp-svc-group-header:hover { background: rgba(61,122,107,0.04); }
+.sp-svc-group.open .sp-svc-group-header { background: rgba(61,122,107,0.05); }
+.sp-svc-group-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--green-tint, #EFF4F3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.sp-svc-group-icon svg { width: 20px; height: 20px; stroke: var(--green); stroke-width: 1.5; fill: none; }
+.sp-svc-group-title { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); flex: 1; }
+.sp-svc-group-count { font-size: 12px; font-weight: 700; color: var(--muted); background: var(--bg-tint, #F2EEE5); padding: 3px 10px; border-radius: 999px; font-family: var(--sans); }
+.sp-svc-group.open .sp-svc-group-count { background: var(--green-tint, #EFF4F3); color: var(--green); }
+.sp-svc-group-arrow { width: 24px; height: 24px; border-radius: 50%; background: var(--green-light); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background 220ms var(--ease); }
+.sp-svc-group-arrow svg { width: 12px; height: 12px; stroke: var(--green); stroke-width: 2.5; transition: transform 220ms var(--ease); fill: none; }
+.sp-svc-group.open .sp-svc-group-arrow { background: var(--green); }
+.sp-svc-group.open .sp-svc-group-arrow svg { stroke: #fff; transform: rotate(45deg); }
+.sp-svc-group-body { display: none; border-top: 1px solid var(--border); }
+.sp-svc-group.open .sp-svc-group-body { display: block; }
+.sp-svc-item { display: grid; grid-template-columns: 48px 1fr auto; gap: 20px; align-items: center; padding: 18px 28px; border-bottom: 1px solid var(--border); transition: background 180ms var(--ease); }
+.sp-svc-item:last-child { border-bottom: none; }
+.sp-svc-item:hover { background: var(--surface); }
+.sp-svc-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--green-tint, #EFF4F3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.sp-svc-icon svg { width: 20px; height: 20px; stroke: var(--green); stroke-width: 1.5; fill: none; }
+.sp-svc-info { display: flex; flex-direction: column; gap: 3px; }
+.sp-svc-name { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--text); line-height: 1.2; }
+.sp-svc-name a { color: var(--green); text-decoration: none; font-size: 13px; font-family: var(--sans); font-weight: 600; margin-left: 8px; opacity: 0; transition: opacity 0.15s; }
+.sp-svc-item:hover .sp-svc-name a { opacity: 1; }
+.sp-svc-meta { font-size: 13px; color: var(--muted); }
+.sp-svc-price { text-align: right; white-space: nowrap; }
+.sp-svc-price .amount { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--text); display: block; line-height: 1; }
+.sp-svc-price .from { font-size: 12px; color: var(--muted); font-family: var(--sans); }
+.sp-svc-note { margin-top: 14px; font-size: 13px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; }
+
+/* ── CROSS-SELL ── */
+.massage-crosssell { background: var(--bg); border-bottom: 1px solid var(--border); }
+.massage-crosssell-head { text-align: center; margin-bottom: 40px; }
+.massage-crosssell-h2 { font-family: var(--serif); font-size: 40px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 10px; }
+.massage-crosssell-sub { font-size: 15px; color: var(--muted); }
+.crosssell-tiles { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm); }
+.crosssell-tile { display: grid; grid-template-columns: 200px 1fr auto; background: var(--bg); border-bottom: 1px solid var(--border); transition: background 180ms var(--ease); }
+.crosssell-tile:last-child { border-bottom: none; }
+.crosssell-tile:hover { background: #fff; }
+.crosssell-tile-img { overflow: hidden; min-height: 140px; }
+.crosssell-tile-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.crosssell-tile-body { padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
+.crosssell-tile-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; font-family: var(--sans); }
+.crosssell-tile-eyebrow.muted { color: var(--muted); }
+.crosssell-tile-title { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
+.crosssell-tile-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+.crosssell-tile-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.crosssell-tile-action { padding: 24px 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-left: 1px solid var(--border); min-width: 160px; }
+.crosssell-tile-price { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); text-align: center; white-space: nowrap; }
+.crosssell-tile-price-sub { font-size: 11px; color: var(--muted); text-align: center; font-family: var(--sans); }
+a.btn-tile { display: inline-block; text-decoration: none; text-align: center; }
+.tile-tags a.tag-outline { text-decoration: none; cursor: pointer; transition: background 0.15s, color 0.15s; }
+.tile-tags a.tag-outline:hover { background: var(--accent, #2d6a4f); color: #fff; border-color: var(--accent, #2d6a4f); }
+
+/* ── MOBILE ── */
 @media (max-width: 768px) {
   .service-hero-inner { grid-template-columns: 1fr; gap: 32px; }
   .service-hero-h1 { font-size: 36px; }
   .service-hero-img { display: none; }
   .service-hero-actions { flex-direction: column; }
-  .service-hero-actions .btn-primary,
-  .service-hero-actions .btn-outline { width: 100%; text-align: center; }
+  .service-hero-actions .btn-primary, .service-hero-actions .btn-outline { width: 100%; text-align: center; }
   .service-facts { flex-direction: column; }
   .service-fact { border-right: none; border-bottom: 1px solid var(--border); }
   .service-fact:last-child { border-bottom: none; }
   .benefits-grid { grid-template-columns: 1fr; }
   .service-benefits-h2 { font-size: 32px; }
   .service-zones-inner { grid-template-columns: 1fr; gap: 32px; }
-  .service-zones-h2 { font-size: 32px; }
+  .service-zones-h2 { font-size: 28px; }
   .service-process-inner { grid-template-columns: 1fr; gap: 32px; }
   .service-process-h2 { font-size: 32px; }
   .service-process-img { display: none; }
   .service-price-inner { grid-template-columns: 1fr; gap: 32px; }
   .service-price-h2 { font-size: 32px; }
-  .price-card-val { font-size: 44px; }
+  .specialist-card { flex-direction: column; gap: 16px; }
+  .crosssell-tile { grid-template-columns: 1fr; }
+  .crosssell-tile-img { min-height: 180px; }
+  .crosssell-tile-action { border-left: none; border-top: 1px solid var(--border); flex-direction: row; justify-content: space-between; }
+  .massage-crosssell-h2 { font-size: 32px; }
+  .sp-svc-item { grid-template-columns: 1fr auto; }
+  .sp-svc-icon { display: none; }
 }
 </style>
 
@@ -551,7 +261,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
   </nav>
 </header>
 
-<!-- ═══════════ BREADCRUMB ═══════════ -->
+<!-- ── Breadcrumb ── -->
 <nav class="breadcrumb" aria-label="Хлебные крошки">
   <div class="container">
     <ol class="breadcrumb-list">
@@ -564,7 +274,9 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
   </div>
 </nav>
 
-<!-- ═══════════ HERO ═══════════ -->
+<!-- ══════════════════════════════════════════
+  1. HERO
+══════════════════════════════════════════ -->
 <section class="service-hero">
   <div class="container">
     <div class="service-hero-inner">
@@ -572,7 +284,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
         <div class="service-hero-eyebrow">Классический массаж · Москва · Выезд на дом</div>
         <h1 class="service-hero-h1">Классический массаж<br><em>на дому в Москве</em></h1>
         <p class="service-hero-seo">Классический массаж на дому в Москве от сертифицированного специалиста. Снятие напряжения, работа с триггерными точками, улучшение кровообращения. Выезд по Москве.</p>
-        <p class="service-hero-desc">Работа со всем телом или отдельными зонами: расслабление мышц, коррекция хронических зажимов, восстановление подвижности. Специалист приезжает с профессиональным оборудованием — Вам ничего готовить не нужно.</p>
+        <p class="service-hero-desc">Работа со всем телом или отдельными зонами: расслабление мышц, коррекция хронических зажимов, восстановление подвижности. Приезжаю со всем необходимым.</p>
         <div class="service-hero-actions">
           <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться на сеанс</button>
           <button class="btn-outline" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">Как проходит</button>
@@ -591,13 +303,6 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="service-fact-lbl">м. Аэропорт, Москва</div>
           </div>
         </div>
-        <a href="/specialists/vakhaniya/" class="service-specialist">
-          <div class="service-specialist-avatar">В</div>
-          <div>
-            <div class="service-specialist-name">Вахания Александр Петрович</div>
-            <div class="service-specialist-role">Сертифицированный специалист · с 2020</div>
-          </div>
-        </a>
       </div>
       <div class="service-hero-img">
         <img src="/assets/image/specialists/work-session.jpg" alt="Классический массаж на дому — Александр Вахания">
@@ -606,7 +311,9 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
   </div>
 </section>
 
-<!-- ═══════════ ЭФФЕКТЫ ═══════════ -->
+<!-- ══════════════════════════════════════════
+  2. ЧТО ДАЁТ МАССАЖ
+══════════════════════════════════════════ -->
 <section class="service-benefits">
   <div class="container">
     <div class="service-benefits-head">
@@ -615,55 +322,50 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
       <p class="service-benefits-sub">Классический массаж — базовая и наиболее универсальная техника. Подходит большинству клиентов независимо от запроса.</p>
     </div>
     <div class="benefits-grid">
-
       <div class="benefit-card">
         <div class="benefit-icon">💆</div>
         <div class="benefit-title">Снятие мышечного напряжения</div>
         <div class="benefit-desc">Работа с зонами хронических зажимов — шея, спина, плечи. Расслабление глубоких слоёв мышц уже за один сеанс.</div>
       </div>
-
       <div class="benefit-card">
         <div class="benefit-icon">🔄</div>
         <div class="benefit-title">Улучшение кровообращения</div>
         <div class="benefit-desc">Активация кровотока в прорабатываемых зонах — питание тканей, ускорение восстановления, ощущение тепла и лёгкости.</div>
       </div>
-
       <div class="benefit-card">
         <div class="benefit-icon">🎯</div>
         <div class="benefit-title">Работа с триггерными точками</div>
         <div class="benefit-desc">Точечное снятие болевых узлов — мест, где мышца не расслабляется самостоятельно. Убирает отражённую боль и скованность.</div>
       </div>
-
       <div class="benefit-card">
         <div class="benefit-icon">🌊</div>
         <div class="benefit-title">Лимфодренажный эффект</div>
         <div class="benefit-desc">Улучшение оттока лимфы, снятие отёчности в зонах застоя. Особенно актуально при сидячей работе.</div>
       </div>
-
       <div class="benefit-card">
         <div class="benefit-icon">🧘</div>
         <div class="benefit-title">Снятие стресса и тревоги</div>
         <div class="benefit-desc">Нормализация тонуса нервной системы, глубокое расслабление. После сеанса — ощущение покоя, улучшение качества сна.</div>
       </div>
-
       <div class="benefit-card">
         <div class="benefit-icon">🔃</div>
         <div class="benefit-title">Восстановление подвижности</div>
         <div class="benefit-desc">Коррекция ограничений в шейном отделе, плечевом поясе, пояснице. Возврат нормального объёма движений без болезненных воздействий.</div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════ ЗОНЫ РАБОТЫ ═══════════ -->
+<!-- ══════════════════════════════════════════
+  3. ЗОНЫ И ФОРМАТЫ + КОМУ ПОДХОДИТ
+══════════════════════════════════════════ -->
 <section class="service-zones">
   <div class="container">
     <div class="service-zones-inner">
       <div>
         <div class="eyebrow">Форматы</div>
         <h2 class="service-zones-h2">Зоны и форматы</h2>
-        <p class="service-zones-sub">Классический массаж можно провести как для всего тела, так и точечно — под конкретный запрос. Я подберу формат на консультации.</p>
+        <p class="service-zones-sub">Классический массаж можно провести как для всего тела, так и точечно — под конкретный запрос.</p>
         <div class="zones-list">
           <div class="zone-row">
             <div class="zone-icon">🤲</div>
@@ -676,35 +378,35 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="zone-icon">🔙</div>
             <div>
               <div class="zone-name">Спина и поясница</div>
-              <div class="zone-desc">Снятие напряжения, работа с паравертебральными мышцами · 45–60 мин</div>
+              <div class="zone-desc">Снятие напряжения, работа с паравертебральными мышцами · 30–60 мин</div>
             </div>
           </div>
           <div class="zone-row">
             <div class="zone-icon">🦴</div>
             <div>
               <div class="zone-name">Шея и воротниковая зона</div>
-              <div class="zone-desc">Головная боль напряжения, ограничение поворота · 30–45 мин</div>
+              <div class="zone-desc">Головная боль напряжения, ограничение поворота · 20–30 мин</div>
             </div>
           </div>
           <div class="zone-row">
             <div class="zone-icon">🦵</div>
             <div>
               <div class="zone-name">Ноги</div>
-              <div class="zone-desc">Усталость, отёки, тяжесть, восстановление после нагрузок · 45–60 мин</div>
+              <div class="zone-desc">Усталость, отёки, тяжесть, восстановление после нагрузок · 30–45 мин</div>
             </div>
           </div>
           <div class="zone-row">
             <div class="zone-icon">💪</div>
             <div>
               <div class="zone-name">Плечи и руки</div>
-              <div class="zone-desc">Зажатость плечевого пояса, работа за компьютером · 30–45 мин</div>
+              <div class="zone-desc">Зажатость плечевого пояса, работа за компьютером · 20–30 мин</div>
             </div>
           </div>
         </div>
       </div>
       <div>
         <div class="eyebrow">Кому подойдёт</div>
-        <h2 class="service-zones-h2" style="margin-top: 8px;">Кому подходит</h2>
+        <h2 class="service-zones-h2" style="margin-top:8px;">Кому подходит</h2>
         <p class="service-zones-sub">Классический массаж — универсальный формат для большинства запросов.</p>
         <div class="zones-list">
           <div class="zone-row">
@@ -748,7 +450,9 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
   </div>
 </section>
 
-<!-- ═══════════ КАК ПРОХОДИТ СЕАНС ═══════════ -->
+<!-- ══════════════════════════════════════════
+  4. КАК ПРОХОДИТ СЕАНС
+══════════════════════════════════════════ -->
 <section class="service-process" id="process">
   <div class="container">
     <div class="service-process-inner">
@@ -767,8 +471,8 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
           <div class="process-step">
             <div class="process-num">02</div>
             <div>
-              <div class="process-title">Выезд и сеанс</div>
-              <div class="process-desc">Выезд и сеанс 30–90 минут — всё необходимое специалист берёт с собой.</div>
+              <div class="process-title">Оценка состояния</div>
+              <div class="process-desc">Пальпирую зоны напряжения, проверяю объём движений. Определяю, где работать в первую очередь.</div>
             </div>
           </div>
           <div class="process-step">
@@ -794,68 +498,216 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
   </div>
 </section>
 
-<!-- ═══════════ ЦЕНА ═══════════ -->
+<!-- ══════════════════════════════════════════
+  5. СТОИМОСТЬ СЕАНСА
+══════════════════════════════════════════ -->
 <section class="service-price" id="price">
   <div class="container">
     <div class="service-price-inner">
       <div>
         <div class="eyebrow">Стоимость</div>
-        <h2 class="service-price-h2">Цена классического массажа</h2>
-        <p class="service-price-sub">Стоимость зависит от зоны работы и длительности сеанса. Точную цену уточняю при записи после обсуждения Вашего запроса.</p>
-        <div class="process-steps" style="margin-top: 0;">
-          <div class="process-step">
-            <div class="process-num">✓</div>
-            <div>
-              <div class="process-title">В стоимость включено</div>
-              <div class="process-desc">Профессиональный массажный стол, масла, все расходные материалы. Выезд на дом по Москве.</div>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-num">✓</div>
-            <div>
-              <div class="process-title">Первичная консультация</div>
-              <div class="process-desc">Бесплатно — по телефону или в WhatsApp. Подберём оптимальный формат и длительность.</div>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-num">✓</div>
-            <div>
-              <div class="process-title">Гибкое расписание</div>
-              <div class="process-desc">Пн–Пт 9:00–20:00, Сб–Вс 10:00–18:00. Договариваемся индивидуально.</div>
-            </div>
-          </div>
-        </div>
+        <h2 class="service-price-h2">Стоимость сеанса</h2>
+        <p class="service-price-sub">Цена зависит от зоны работы и длительности. Точную стоимость уточняю при записи — после обсуждения Вашего запроса.</p>
+        <div style="margin-top:8px; font-size:14px; color:var(--muted); margin-bottom:28px;">В стоимость включено: профессиональный стол, масла, расходники. Приезжаю со всем необходимым.</div>
+        <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться на сеанс</button>
       </div>
-      <div class="price-card">
-        <div class="price-card-eyebrow">Классический массаж</div>
-        <div class="price-card-val">2 500 ₽</div>
-        <div class="price-card-from">от · выезд на дом</div>
-        <div class="price-card-divider"></div>
-        <div class="price-card-details">
-          <div class="price-card-detail">
-            <span class="price-card-detail-icon">⏱</span>
-            <span>Длительность: 30–90 минут</span>
+      <div>
+        <div class="price-table">
+          <div class="price-table-row">
+            <div>
+              <div class="price-table-time">30 мин</div>
+              <div class="price-table-from">зональный сеанс</div>
+            </div>
+            <div class="price-table-amount">от 2 500 ₽</div>
           </div>
-          <div class="price-card-detail">
-            <span class="price-card-detail-icon">📍</span>
-            <span>г. Москва, м. Аэропорт</span>
+          <div class="price-table-row">
+            <div>
+              <div class="price-table-time">60 мин</div>
+              <div class="price-table-from">стандартный сеанс</div>
+            </div>
+            <div class="price-table-amount">от 4 500 ₽</div>
           </div>
-          <div class="price-card-detail">
-            <span class="price-card-detail-icon">🚗</span>
-            <span>Выезд по всей Москве</span>
-          </div>
-          <div class="price-card-detail">
-            <span class="price-card-detail-icon">🎒</span>
-            <span>Всё оборудование — с собой</span>
+          <div class="price-table-row">
+            <div>
+              <div class="price-table-time">90 мин</div>
+              <div class="price-table-from">расширенный сеанс</div>
+            </div>
+            <div class="price-table-amount">от 6 000 ₽</div>
           </div>
         </div>
-        <button class="btn-primary" style="width:100%;" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться на сеанс</button>
+        <div class="price-note">
+          <span>📍</span>
+          <span>г. Москва, м. Аэропорт · Выезд на дом</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ REVIEWS ═══════════ -->
+<!-- ══════════════════════════════════════════
+  6. ВАШ СПЕЦИАЛИСТ
+══════════════════════════════════════════ -->
+<section class="service-specialist-section">
+  <div class="container">
+    <div class="eyebrow">Кто проводит сеанс</div>
+    <h2 style="font-family:var(--serif);font-size:44px;font-weight:400;color:var(--text);line-height:1.1;margin-bottom:32px;">Ваш специалист</h2>
+    <div class="specialist-card">
+      <div class="specialist-card-avatar">ВА</div>
+      <div class="specialist-card-body">
+        <div class="specialist-card-name">Вахания Александр Петрович</div>
+        <div class="specialist-card-role">Массажист-реабилитолог · персональный тренер</div>
+        <div class="specialist-card-facts">Тренер с 2004 · Массаж с 2020 · 8 сертификатов МИРК</div>
+        <div class="specialist-card-location">
+          <span>📍</span>
+          <span>г. Москва, м. Аэропорт · Выезд на дом</span>
+        </div>
+        <a href="/specialists/vakhaniya/" class="sp-card-btn">Подробнее о специалисте →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  7. УСЛУГИ И ЦЕНЫ
+══════════════════════════════════════════ -->
+<section class="service-services-section">
+  <div class="container">
+    <div class="eyebrow">Прайс-лист</div>
+    <h2 style="font-family:var(--serif);font-size:44px;font-weight:400;color:var(--text);line-height:1.1;margin-bottom:8px;">Услуги и цены</h2>
+    <p style="font-size:15px;color:var(--muted);margin-bottom:32px;">Выезд на дом по Москве</p>
+
+    <div class="sp-svc-group open">
+      <button class="sp-svc-group-header" onclick="toggleSvcGroup(this)">
+        <div class="sp-svc-group-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <span class="sp-svc-group-title">Массаж</span>
+        <span class="sp-svc-group-count">12 услуг</span>
+        <span class="sp-svc-group-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+      </button>
+      <div class="sp-svc-group-body">
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Классический массаж <a href="/massage/klassicheskiy/">Подробнее</a></div>
+            <div class="sp-svc-meta">Общеукрепляющий, расслабляющий</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">30–90 мин</span></div>
+        </div>
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Спортивный массаж <a href="/massage/sportivnyy/">Подробнее</a></div>
+            <div class="sp-svc-meta">Восстановление после нагрузок</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+        </div>
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Антистрессовый массаж</div>
+            <div class="sp-svc-meta">Снятие напряжения, нормализация сна</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+        </div>
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M4.93 4.93A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10 10 10 0 0 0-10-10 10 10 0 0 0-5.07 1.38"/><polyline points="3 8 4.93 4.93 8 6"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Лимфодренажный массаж</div>
+            <div class="sp-svc-meta">Отёки, тонус тканей</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+        </div>
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Антицеллюлитный массаж</div>
+            <div class="sp-svc-meta">Коррекция, улучшение кожи</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+        </div>
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Тайский массаж</div>
+            <div class="sp-svc-meta">Суставы, растяжка, энергия</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">5 000 ₽</span><span class="from">90 мин</span></div>
+        </div>
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">ПИР — мягкие техники</div>
+            <div class="sp-svc-meta">Блоки, шея, спина</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span></div>
+        </div>
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Детский массаж</div>
+            <div class="sp-svc-meta">Мягкие техники, от 3 лет</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">3 000 ₽</span><span class="from">30–45 мин</span></div>
+        </div>
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-5 4-8 8-8s8 3 8 8"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Массаж лица</div>
+            <div class="sp-svc-meta">Тонус, релакс, мимические мышцы</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">30 мин</span></div>
+        </div>
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Зональный массаж</div>
+            <div class="sp-svc-meta">Спина, шея, ноги — отдельными зонами</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">2 500 ₽</span><span class="from">20–60 мин</span></div>
+        </div>
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Оздоровительный массаж</div>
+            <div class="sp-svc-meta">Общее укрепление тела, профилактика</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span></div>
+        </div>
+
+        <div class="sp-svc-item">
+          <div class="sp-svc-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <div class="sp-svc-info">
+            <div class="sp-svc-name">Восстановительный массаж</div>
+            <div class="sp-svc-meta">После нагрузок, болезни, стресса</div>
+          </div>
+          <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="sp-svc-note">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Стоимость выезда обсуждается отдельно в зависимости от района.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  8. ОТЗЫВЫ
+══════════════════════════════════════════ -->
 <section class="reviews" id="reviews">
   <div class="container">
     <div class="reviews-head">
@@ -883,13 +735,10 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24" style="opacity:0.25"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="review-text">Мой папа пережил операцию по расслоению аорты, лежал в реанимации почти 20 дней, что сильно сказалось на его возможности двигаться. Когда я искала реабилитолога, у папы еще была не вылеченная пневмония, и другие специалисты соглашались на занятия, не обращая внимания на это состояние. Однако Александр показал свой профессионализм, отметив, что начинать реабилитацию при остром течении пневмонии нельзя. Папу повторно госпитализировали в тот же вечер, но мы поняли, что начнем заниматься после выписки именно с Александром. Для нас это был зеленый флаг :) Хотя прошло меньше месяца с начала занятий, уже есть заметные результаты: папа встает практически без помощи и может проходить с ходунками большее расстояние по квартире без перерыва. Благодаря этим маленьким победам у папы стало улучшаться настроение, начал снова шутить, смеяться, что очень ценно. Мы очень надеемся, что занятия продолжат приносить такие же положительные результаты, и папа полностью восстановится. Огромная благодарность Александру за его внимательность и индивидуальный подход!</p>
+          <p class="review-text">Мой папа пережил операцию по расслоению аорты, лежал в реанимации почти 20 дней, что сильно сказалось на его возможности двигаться. Когда я искала реабилитолога, у папы еще была не вылеченная пневмония, и другие специалисты соглашались на занятия, не обращая внимания на это состояние. Однако Александр показал свой профессионализм, отметив, что начинать реабилитацию при остром течении пневмонии нельзя. Папу повторно госпитализировали в тот же вечер, но мы поняли, что начнем заниматься после выписки именно с Александром. Для нас это был зеленый флаг :) Хотя прошло меньше месяца с начала занятий, уже есть заметные результаты: папа встает практически без помощи и может проходить с ходунками большее расстояние по квартире без перерыва. Огромная благодарность Александру за его внимательность и индивидуальный подход!</p>
           <div class="review-meta">
             <div class="review-avatar">А</div>
-            <div>
-              <div class="review-name">Алина</div>
-              <div class="review-date">18 мая 2026</div>
-            </div>
+            <div><div class="review-name">Алина</div><div class="review-date">18 мая 2026</div></div>
           </div>
           <div class="review-source">АВИТО</div>
         </div>
@@ -902,13 +751,10 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="review-text">Попасть к мастеру высокого уровня — настоящая редкость, и мне действительно повезло. Я давно делаю массаж и знакома со многими специалистами, поэтому могу сравнить. Работа у мастера-мужчины имеет особый эффект: тело получает глубинный физиологический результат, а психика — ресурсное наполнение и внутренний баланс. С первых минут стало ясно, что у вас особый дар. Руки работают точно и профессионально, при этом вы тонко чувствуете тело и его потребности. Каждое движение будто выверено, наполнено вниманием и заботой. После сеанса появилось ощущение лёгкости, свободы и огромный заряд энергии. Я счастлива, что нашла такого мастера. Это прям джэкпот. Благодарю ☀️</p>
+          <p class="review-text">Попасть к мастеру высокого уровня — настоящая редкость, и мне действительно повезло. Я давно делаю массаж и знакома со многими специалистами, поэтому могу сравнить. С первых минут стало ясно, что у вас особый дар. Руки работают точно и профессионально, при этом вы тонко чувствуете тело и его потребности. После сеанса появилось ощущение лёгкости, свободы и огромный заряд энергии. Я счастлива, что нашла такого мастера. Это прям джэкпот. Благодарю ☀️</p>
           <div class="review-meta">
             <div class="review-avatar">Е</div>
-            <div>
-              <div class="review-name">Екатерина Волобуева</div>
-              <div class="review-date">29 сентября 2025</div>
-            </div>
+            <div><div class="review-name">Екатерина Волобуева</div><div class="review-date">29 сентября 2025</div></div>
           </div>
           <div class="review-source">ЯНДЕКС</div>
         </div>
@@ -921,13 +767,10 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="review-text">Редко оставляю отзывы, но тут уникальный случай. Александр конечно удивительный по энергетике человек, я много где ходил и по салонам и разного уровня, но тут всё профессионально. Казалось он точно знает где и какую мышцу нужно промассировать. Я конечно под впечатлением пишу, но буду ходить к нему ещё. Вот как найти своего мастера… Вежливый, приятный, видно развивающийся человек… с огромным опытом и лечения более запущенных историй. Короче говоря, рекомендую… столько техник знает, столько приёмов… и очень приятная энергия человека. Александр, спасибо Вам огромное и до встречи!</p>
+          <p class="review-text">Редко оставляю отзывы, но тут уникальный случай. Александр конечно удивительный по энергетике человек, я много где ходил и по салонам и разного уровня, но тут всё профессионально. Казалось он точно знает где и какую мышцу нужно промассировать. Рекомендую… столько техник знает, столько приёмов… и очень приятная энергия человека. Александр, спасибо Вам огромное и до встречи!</p>
           <div class="review-meta">
             <div class="review-avatar">С</div>
-            <div>
-              <div class="review-name">Сергей</div>
-              <div class="review-date">17 апреля 2025</div>
-            </div>
+            <div><div class="review-name">Сергей</div><div class="review-date">17 апреля 2025</div></div>
           </div>
           <div class="review-source">АВИТО</div>
         </div>
@@ -943,10 +786,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
           <p class="review-text">Александр отличный массажист, быстро договорились о дате и времени сеанса. Приехал вовремя. У меня были боли в ногах и шейно-воротниковой зоне. Я почувствовала улучшения уже после первого сеанса. Подвижность в шейном отделе улучшилась очень значительно. Муж так же остался доволен, проработали поясничную зону. Спасибо большое! Договорились сразу о последующих сеансах.</p>
           <div class="review-meta">
             <div class="review-avatar">О</div>
-            <div>
-              <div class="review-name">Оля</div>
-              <div class="review-date">18 октября 2024</div>
-            </div>
+            <div><div class="review-name">Оля</div><div class="review-date">18 октября 2024</div></div>
           </div>
           <div class="review-source">ЯНДЕКС</div>
         </div>
@@ -959,51 +799,10 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="review-text">Спасибо Александру за проведенную на свежем воздухе тренировку. Я 100% уверен, что она далеко не последняя. Все по делу. Без лишних сюсюканий. Все с пониманием дела. Тренер явно с правильным опытом в спорте и медицине, а это крайне важно. Всем его рекомендую. Ну и удачных занятий каждому!</p>
-          <div class="review-meta">
-            <div class="review-avatar">K</div>
-            <div>
-              <div class="review-name">Kayt Zalgeris</div>
-              <div class="review-date">31 марта 2025</div>
-            </div>
-          </div>
-          <div class="review-source">АВИТО</div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="review-text">Тренируемся по фитнесу и боксу с Александром. Занимаемся несколько месяцев, все нравится. Большим плюсом является то, что Александр также профессиональный массажист, поэтому работа может идти в комплексе.</p>
-          <div class="review-meta">
-            <div class="review-avatar">Н</div>
-            <div>
-              <div class="review-name">Никита</div>
-              <div class="review-date">25 сентября 2024</div>
-            </div>
-          </div>
-          <div class="review-source">ЯНДЕКС</div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p class="review-text">Массажем очень довольна, сделала уже 2 сеанса. Постоянный гипертонус плечевого пояса лечу очень давно. В этот раз шею заклинило, и я искала того, кто справляется с сильным гипертонусом, как у спортсменов. Смело можете обращаться за решением задач подобного рода. Уже после первого сеанса мышцы расслабились, шея начала поворачиваться в стороны. Чувствуется, что мастер работает для результата. Спасибо за действительно лечебный массаж. Мои триггеры найти очень непросто, но вы справились.</p>
+          <p class="review-text">Массажем очень довольна, сделала уже 2 сеанса. Постоянный гипертонус плечевого пояса снимаю очень давно. В этот раз шею заклинило, и я искала того, кто справляется с сильным гипертонусом, как у спортсменов. Смело можете обращаться за решением задач подобного рода. Уже после первого сеанса мышцы расслабились, шея начала поворачиваться в стороны. Чувствуется, что мастер работает для результата. Мои триггеры найти очень непросто, но вы справились.</p>
           <div class="review-meta">
             <div class="review-avatar">Э</div>
-            <div>
-              <div class="review-name">Эльвира Абрамович</div>
-              <div class="review-date">7 декабря 2024</div>
-            </div>
+            <div><div class="review-name">Эльвира Абрамович</div><div class="review-date">7 декабря 2024</div></div>
           </div>
           <div class="review-source">АВИТО</div>
         </div>
@@ -1016,13 +815,10 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="review-text">25 лет езжу по санаториям, знаю на деле, что такое качественный массаж. Не мог долго в Москве найти хорошего специалиста по точечному и лечебному массажу. Обратился к Александру, объяснил свою ситуацию и проблему, он провел диагностику, выявил проблемные места и выполнил профессиональный массаж. После чего я почувствовал облегчение и ушли боли. Рекомендую всем своим друзьям и знакомым. Массажист от Бога!</p>
+          <p class="review-text">25 лет езжу по санаториям, знаю на деле, что такое качественный массаж. Не мог долго в Москве найти хорошего специалиста. Обратился к Александру, объяснил свою ситуацию и проблему, он выявил проблемные места и выполнил профессиональный массаж. После чего я почувствовал облегчение и ушли боли. Рекомендую всем своим друзьям и знакомым. Массажист от Бога!</p>
           <div class="review-meta">
             <div class="review-avatar">А</div>
-            <div>
-              <div class="review-name">Алексей Бодю</div>
-              <div class="review-date">20 сентября 2024</div>
-            </div>
+            <div><div class="review-name">Алексей Бодю</div><div class="review-date">20 сентября 2024</div></div>
           </div>
           <div class="review-source">ЯНДЕКС</div>
         </div>
@@ -1038,10 +834,39 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
           <p class="review-text">Огромное спасибо Александру за помощь. Спина ломила так что руки поднять было больно, в связи с компрессионным переломом лет 12 назад. Я к нему обратился и уже через пару часов лежал на массажном столе, а ещё через час я уже выходя от него радовался жизни. Огромное спасибо, буду и дальше ходить!</p>
           <div class="review-meta">
             <div class="review-avatar">И</div>
-            <div>
-              <div class="review-name">Игорь Быков</div>
-              <div class="review-date">15 января 2025</div>
-            </div>
+            <div><div class="review-name">Игорь Быков</div><div class="review-date">15 января 2025</div></div>
+          </div>
+          <div class="review-source">АВИТО</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Тренируемся по фитнесу и боксу с Александром. Занимаемся несколько месяцев, все нравится. Большим плюсом является то, что Александр также профессиональный массажист, поэтому работа может идти в комплексе.</p>
+          <div class="review-meta">
+            <div class="review-avatar">Н</div>
+            <div><div class="review-name">Никита</div><div class="review-date">25 сентября 2024</div></div>
+          </div>
+          <div class="review-source">ЯНДЕКС</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Спасибо Александру за проведенную тренировку. Я 100% уверен, что она далеко не последняя. Все по делу. Без лишних сюсюканий. Тренер явно с правильным опытом в спорте и медицине, а это крайне важно. Всем его рекомендую.</p>
+          <div class="review-meta">
+            <div class="review-avatar">K</div>
+            <div><div class="review-name">Kayt Zalgeris</div><div class="review-date">31 марта 2025</div></div>
           </div>
           <div class="review-source">АВИТО</div>
         </div>
@@ -1062,7 +887,9 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
   </div>
 </section>
 
-<!-- ═══════════ FAQ ═══════════ -->
+<!-- ══════════════════════════════════════════
+  9. FAQ
+══════════════════════════════════════════ -->
 <section class="faq">
   <div class="container">
     <div class="faq-head">
@@ -1098,7 +925,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
         </button>
         <div class="faq-a-wrap">
-          <div class="faq-a">Да, выезжаю на дом по Москве — в пределах МКАД и ближайшего Подмосковья (Химки, Красногорск, Мытищи, Одинцово). Привожу с собой профессиональный массажный стол, масла и всё необходимое. Вам ничего готовить не нужно. Стоимость выезда уточняется индивидуально в зависимости от района.</div>
+          <div class="faq-a">Да, выезжаю на дом по Москве — в пределах МКАД и ближайшего Подмосковья (Химки, Красногорск, Мытищи, Одинцово). Приезжаю со всем необходимым. Стоимость выезда уточняется индивидуально в зависимости от района.</div>
         </div>
       </div>
 
@@ -1108,7 +935,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
         </button>
         <div class="faq-a-wrap">
-          <div class="faq-a">Специальной подготовки не требуется. Желательно не есть за 1–1,5 часа до сеанса. Если Вы только что пришли с улицы — примите душ или протрите кожу. После массажа рекомендую отдохнуть 20–30 минут и выпить воды. В день сеанса избегайте интенсивных физических нагрузок.</div>
+          <div class="faq-a">Специальной подготовки не требуется. Желательно не есть за 1–1,5 часа до сеанса. После массажа рекомендую отдохнуть 20–30 минут и выпить воды. В день сеанса избегайте интенсивных физических нагрузок.</div>
         </div>
       </div>
 
@@ -1126,7 +953,72 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
   </div>
 </section>
 
-<!-- ═══════════ BOOKING / CTA ═══════════ -->
+<!-- ══════════════════════════════════════════
+  10. ТАКЖЕ РАБОТАЮ С
+══════════════════════════════════════════ -->
+<section class="massage-crosssell" style="padding: var(--section-py, 80px) 0;">
+  <div class="container">
+    <div class="massage-crosssell-head">
+      <div class="eyebrow">Другие направления</div>
+      <h2 class="massage-crosssell-h2">Массаж — часть системы</h2>
+      <p class="massage-crosssell-sub">Для долгосрочного результата массаж работает в связке с реабилитацией и тренировками.</p>
+    </div>
+    <div class="crosssell-tiles">
+
+      <div class="crosssell-tile">
+        <div class="crosssell-tile-img">
+          <img src="/assets/image/physiotherapy.jpg" alt="Реабилитация">
+        </div>
+        <div class="crosssell-tile-body">
+          <div class="crosssell-tile-eyebrow">Реабилитация</div>
+          <div class="crosssell-tile-title">Восстановление после травм и операций</div>
+          <div class="crosssell-tile-desc">Системная работа при хронической боли, нарушениях осанки, постоперационном восстановлении. Индивидуальная программа и контроль результата.</div>
+          <div class="crosssell-tile-tags tile-tags">
+            <a href="/rehab/posture/" class="tag-outline terra">Осанка</a>
+            <a href="/rehab/spine/" class="tag-outline terra">Позвоночник</a>
+            <a href="/rehab/flatfoot/" class="tag-outline terra">Плоскостопие</a>
+            <a href="/rehab/shoulder/" class="tag-outline terra">Плечо и рука</a>
+          </div>
+        </div>
+        <div class="crosssell-tile-action">
+          <div>
+            <div class="crosssell-tile-price">от 4 500 ₽</div>
+            <div class="crosssell-tile-price-sub">60–90 мин</div>
+          </div>
+          <a href="/rehab/" class="btn-tile terra-btn">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="crosssell-tile">
+        <div class="crosssell-tile-img">
+          <img src="/assets/image/personal-trainer.jpg" alt="Оздоровительные тренировки">
+        </div>
+        <div class="crosssell-tile-body">
+          <div class="crosssell-tile-eyebrow muted">Оздоровительные тренировки</div>
+          <div class="crosssell-tile-title">Движение как основа здоровья</div>
+          <div class="crosssell-tile-desc">Персональные тренировки с акцентом на функциональное движение, стабилизацию позвоночника и укрепление тела. Для тех, кто хочет двигаться правильно — без боли и травм.</div>
+          <div class="crosssell-tile-tags tile-tags">
+            <a href="/training/functional/" class="tag-outline muted">Функциональный тренинг</a>
+            <a href="/training/lfk/" class="tag-outline muted">ЛФК</a>
+            <a href="/training/stabilization/" class="tag-outline muted">Стабилизация</a>
+          </div>
+        </div>
+        <div class="crosssell-tile-action">
+          <div>
+            <div class="crosssell-tile-price">от 4 500 ₽</div>
+            <div class="crosssell-tile-price-sub">60 мин</div>
+          </div>
+          <a href="/training/" class="btn-tile">Подробнее</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  11. ФОРМА ЗАПИСИ
+══════════════════════════════════════════ -->
 <section class="cta-section" id="booking">
   <div class="container">
     <div class="cta-inner">
@@ -1184,7 +1076,6 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <label for="service">Вид массажа</label>
             <select id="service">
               <option value="klassicheskiy" selected>Классический массаж</option>
-              <option value="">Не выбрано</option>
               <option>Спортивный массаж</option>
               <option>Лимфодренажный массаж</option>
               <option>Антицеллюлитный массаж</option>
@@ -1217,7 +1108,9 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
   </div>
 </section>
 
-<!-- ═══════════ FOOTER ═══════════ -->
+<!-- ══════════════════════════════════════════
+  12. FOOTER
+══════════════════════════════════════════ -->
 <footer class="footer" id="contacts">
   <div class="container">
     <div class="footer-grid">
@@ -1271,6 +1164,11 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
 <script>
 function toggleMenu() {
   document.querySelector('.nav-links').classList.toggle('open');
+}
+
+function toggleSvcGroup(btn) {
+  var group = btn.closest('.sp-svc-group');
+  group.classList.toggle('open');
 }
 </script>
 </body>
