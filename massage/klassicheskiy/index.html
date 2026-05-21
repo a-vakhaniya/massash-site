@@ -105,7 +105,7 @@
 
 /* ── PRICE ── */
 .service-price { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
-.service-price-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.service-price-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .service-price-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
 .service-price-sub { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
 .price-table { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm); }
@@ -566,8 +566,6 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
     <div style="margin-top:48px;">
       <div class="eyebrow">Прайс-лист</div>
       <h3 style="font-family:var(--serif);font-size:32px;font-weight:400;color:var(--text);line-height:1.1;margin-bottom:8px;">Услуги и цены</h3>
-      <p style="font-size:15px;color:var(--muted);margin-bottom:32px;">Выезд на дом по Москве</p>
-
       <div class="sp-svc-group open">
         <button class="sp-svc-group-header" onclick="toggleSvcGroup(this)">
           <div class="sp-svc-group-icon">
