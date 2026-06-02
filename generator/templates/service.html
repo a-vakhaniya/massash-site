@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Восстановительная работа после инсульта на дому в Москве. Специалист по реабилитационной работе — выезд по Москве. Работа с паретичной стороной, снижение спастики, вертикализация.">
-<meta name="keywords" content="восстановление после инсульта на дому, реабилитация после инсульта Москва, выезд реабилитолог Москва">
+<meta name="description" content="{{ meta_description }}">
+<meta name="keywords" content="">
 <meta name="author" content="Александр Вахания">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://massash.com/rehab/insult/">
-<meta property="og:title" content="Восстановление после инсульта на дому в Москве — реабилитация специалиста | massash">
-<meta property="og:description" content="Восстановительная работа после инсульта на дому в Москве. Работа с паретичной стороной, снижение спастики, вертикализация. Выезд по Москве.">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:title" content="{{ og_title }}">
+<meta property="og:description" content="{{ og_description }}">
 <meta property="og:image" content="https://massash.com/assets/image/specialists/work-session.jpg">
 
-<link rel="canonical" href="https://massash.com/rehab/insult/">
-<title>Восстановление после инсульта на дому в Москве — реабилитация специалиста | massash</title>
+<link rel="canonical" href="{{ canonical_url }}">
+<title>{{ page_title }}</title>
 
-<link rel="stylesheet" href="../../css/variables.css">
-<link rel="stylesheet" href="../../css/main.css">
-<link rel="icon" type="image/svg+xml" href="../../assets/image/favicon.svg">
+<link rel="stylesheet" href="/css/variables.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="icon" type="image/svg+xml" href="/assets/image/favicon.svg">
 
 <style>
 /* ── DROPDOWN ── */
@@ -58,7 +58,7 @@
 .service-hero-seo { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 32px; max-width: 480px; border-left: 3px solid var(--border-input); padding-left: 16px; }
 .service-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
 .service-hero-img { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-lg); }
-.service-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.service-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 .service-facts { display: flex; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
 .service-fact { flex: 1; padding: 18px 20px; border-right: 1px solid var(--border); background: var(--surface); }
 .service-fact:last-child { border-right: none; }
@@ -76,52 +76,33 @@
 .benefit-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
 .benefit-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
-/* ── PERIODS ── */
-.service-periods { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
-.service-periods-head { text-align: center; margin-bottom: 48px; }
-.service-periods-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
-.service-periods-sub { font-size: 16px; color: var(--muted); max-width: 600px; margin: 0 auto; }
-.periods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.period-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; box-shadow: var(--shadow-sm); }
-.period-icon { font-size: 28px; margin-bottom: 14px; }
-.period-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
-.period-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+/* ── ZONES ── */
+.service-zones { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.service-zones-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 
-/* ── ZONES (кому подходит) ── */
-.service-zones { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
 .service-zones-h2 { font-family: var(--serif); font-size: 36px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 10px; }
-.service-zones-sub { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
-.zones-list { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.service-zones-sub { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; min-height: 48px; }
+.zones-list { display: flex; flex-direction: column; height: 100%; gap: 1px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
 .zone-row { display: flex; align-items: center; gap: 16px; padding: 14px 18px; background: var(--bg); border-bottom: 1px solid var(--border); transition: background 0.15s; }
 .zone-row:last-child { border-bottom: none; }
 .zone-row:hover { background: var(--surface); }
 .zone-icon { font-size: 18px; flex-shrink: 0; }
 .zone-name { font-size: 14px; font-weight: 600; color: var(--text); font-family: var(--sans); }
-.zone-desc { font-size: 14px; color: var(--muted); margin-top: 2px; }
-.service-zones-inner { display: grid; grid-template-columns: 1fr 320px; gap: 48px; align-items: start; margin-top: 28px; }
-.zones-important { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; box-shadow: var(--shadow-sm); }
-.zones-important-title { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terra); margin-bottom: 14px; }
-.zones-important-text { font-size: 14px; color: var(--muted); line-height: 1.75; }
+.zone-desc { font-size: 12px; color: var(--muted); margin-top: 2px; }
 
 /* ── PROCESS ── */
-.service-process { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.service-process { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
 .service-process-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .service-process-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
 .service-process-sub { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
 .process-steps { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-.process-step { display: flex; align-items: flex-start; gap: 20px; padding: 22px 24px; border-bottom: 1px solid var(--border); background: var(--surface); }
+.process-step { display: flex; align-items: flex-start; gap: 20px; padding: 22px 24px; border-bottom: 1px solid var(--border); background: var(--bg); }
 .process-step:last-child { border-bottom: none; }
 .process-num { font-family: var(--serif); font-size: 28px; font-weight: 300; color: var(--green); line-height: 1; min-width: 28px; opacity: 0.7; }
 .process-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
 .process-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
 .service-process-img { border-radius: 12px; overflow: hidden; aspect-ratio: 4/5; box-shadow: var(--shadow-lg); }
 .service-process-img img { width: 100%; height: 100%; object-fit: cover; }
-
-/* ── SESSION ── */
-.service-session { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
-.service-session-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-.service-session-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
-.service-session-sub { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
 
 /* ── PRICE ── */
 .service-price { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
@@ -132,9 +113,10 @@
 .price-table-row { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 18px 24px; border-bottom: 1px solid var(--border); background: var(--bg); transition: background 0.15s; }
 .price-table-row:last-child { border-bottom: none; }
 .price-table-row:hover { background: var(--surface); }
-.price-table-time { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--text); }
+.price-table-time { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); }
 .price-table-amount { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--green); text-align: right; }
 .price-table-from { font-size: 12px; color: var(--muted); font-family: var(--sans); margin-top: 1px; }
+.price-note { font-size: 14px; color: var(--muted); margin: 20px 0; display: flex; align-items: center; gap: 8px; }
 
 /* ── SPECIALIST CARD ── */
 .service-specialist-section { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
@@ -145,6 +127,7 @@
 .specialist-card-name { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--text); margin-bottom: 6px; line-height: 1.2; }
 .specialist-card-role { font-size: 15px; color: var(--muted); margin-bottom: 8px; font-family: var(--sans); }
 .specialist-card-facts { font-size: 14px; color: var(--green); font-weight: 600; font-family: var(--sans); margin-bottom: 10px; }
+.specialist-card-location { font-size: 13px; color: var(--muted); margin-bottom: 20px; display: flex; align-items: center; gap: 6px; }
 .sp-card-btn { display: inline-block; font-size: 14px; font-weight: 700; color: var(--green); text-decoration: none; border: 1.5px solid var(--green); border-radius: 8px; padding: 9px 18px; font-family: var(--sans); transition: background 180ms, color 180ms; }
 .sp-card-btn:hover { background: var(--green); color: #fff; }
 
@@ -156,16 +139,23 @@
 .sp-svc-group.open .sp-svc-group-header { background: rgba(61,122,107,0.05); }
 .sp-svc-group-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--green-tint, #EFF4F3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .sp-svc-group-icon svg { width: 20px; height: 20px; stroke: var(--green); stroke-width: 1.5; fill: none; }
-.sp-svc-group-icon.terra { background: var(--terra-tint, #F5EAE4); }
-.sp-svc-group-icon.terra svg { stroke: var(--terra); }
 .sp-svc-group-title { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); flex: 1; }
 .sp-svc-group-count { font-size: 12px; font-weight: 700; color: var(--muted); background: var(--bg-tint, #F2EEE5); padding: 3px 10px; border-radius: 999px; font-family: var(--sans); }
 .sp-svc-group.open .sp-svc-group-count { background: var(--green-tint, #EFF4F3); color: var(--green); }
 .sp-svc-group-arrow { width: 24px; height: 24px; border-radius: 50%; background: var(--green-light); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background 220ms var(--ease); }
 .sp-svc-group-arrow svg { width: 12px; height: 12px; stroke: var(--green); stroke-width: 2.5; transition: transform 220ms var(--ease); fill: none; }
+.sp-svc-group-icon.terra { background: var(--terra-light, #F5EAE4); }
+.sp-svc-group-icon.terra svg { stroke: var(--terra); }
+.sp-svc-icon.terra { background: var(--terra-light, #F5EAE4); }
+.sp-svc-icon.terra svg { stroke: var(--terra); }
+.sp-svc-group-arrow svg line,
+.faq-icon svg line { transition: opacity 150ms; }
 .sp-svc-group.open .sp-svc-group-arrow { background: var(--green); }
 .sp-svc-group.open .sp-svc-group-arrow svg { stroke: #fff; transform: none; }
-.sp-svc-group.open .sp-svc-group-arrow svg line:first-child { display: none; }
+.sp-svc-group.open .sp-svc-group-arrow svg line:first-child { opacity: 0; }
+/* FAQ: минус вместо крестика при открытом элементе */
+.faq-item.open .faq-icon svg { stroke: #fff; transform: none; }
+.faq-item.open .faq-icon svg line:first-child { opacity: 0; }
 .sp-svc-group-body { display: none; border-top: 1px solid var(--border); }
 .sp-svc-group.open .sp-svc-group-body { display: block; }
 .sp-svc-item { display: grid; grid-template-columns: 48px 1fr auto; gap: 20px; align-items: center; padding: 18px 28px; border-bottom: 1px solid var(--border); transition: background 180ms var(--ease); }
@@ -173,8 +163,6 @@
 .sp-svc-item:hover { background: var(--surface); }
 .sp-svc-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--green-tint, #EFF4F3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .sp-svc-icon svg { width: 20px; height: 20px; stroke: var(--green); stroke-width: 1.5; fill: none; }
-.sp-svc-icon.terra { background: var(--terra-tint, #F5EAE4); }
-.sp-svc-icon.terra svg { stroke: var(--terra); }
 .sp-svc-info { display: flex; flex-direction: column; gap: 3px; }
 .sp-svc-name { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--text); line-height: 1.2; }
 .sp-svc-name a { color: var(--green); text-decoration: none; font-size: 13px; font-family: var(--sans); font-weight: 600; margin-left: 8px; opacity: 0; transition: opacity 0.15s; }
@@ -211,17 +199,8 @@ a.btn-tile { display: inline-block; text-decoration: none; text-align: center; }
 .tile-tags a.tag-outline { text-decoration: none; cursor: pointer; transition: background 0.15s, color 0.15s; }
 .tile-tags a.tag-outline:hover { background: var(--accent, #2d6a4f); color: #fff; border-color: var(--accent, #2d6a4f); }
 
-/* ── FAQ — иконка минус при открытом ── */
-.faq-item.open .faq-icon svg { transform: none !important; }
-.faq-item.open .faq-icon svg line:first-child { display: none; }
-
-/* ── Eyebrow над сеткой в блоках с фото ── */
-.service-process > .container > .eyebrow,
-.service-session > .container > .eyebrow { margin-bottom: 20px; }
-
 /* ── MOBILE ── */
 @media (max-width: 768px) {
-  .service-zones-inner { grid-template-columns: 1fr; gap: 24px; }
   .service-hero-inner { grid-template-columns: 1fr; gap: 32px; }
   .service-hero-h1 { font-size: 36px; }
   .service-hero-img { display: none; }
@@ -231,13 +210,11 @@ a.btn-tile { display: inline-block; text-decoration: none; text-align: center; }
   .service-fact { border-right: none; border-bottom: 1px solid var(--border); }
   .service-fact:last-child { border-bottom: none; }
   .benefits-grid { grid-template-columns: 1fr; }
-  .periods-grid { grid-template-columns: 1fr; }
   .service-benefits-h2 { font-size: 32px; }
-  .service-periods-h2 { font-size: 32px; }
+  .service-zones-inner { grid-template-columns: 1fr; gap: 32px; }
+  .service-zones-h2 { font-size: 28px; }
   .service-process-inner { grid-template-columns: 1fr; gap: 32px; }
-  .service-session-inner { grid-template-columns: 1fr; gap: 32px; }
   .service-process-h2 { font-size: 32px; }
-  .service-session-h2 { font-size: 32px; }
   .service-process-img { display: none; }
   .service-price-inner { grid-template-columns: 1fr; gap: 32px; }
   .service-price-h2 { font-size: 32px; }
@@ -265,6 +242,8 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
 </head>
 <body>
 
+{% if breadcrumb_section == 'Массаж' %}{% set section_url = 'massage' %}{% elif breadcrumb_section == 'Реабилитация' %}{% set section_url = 'rehab' %}{% elif breadcrumb_section == 'Тренировки' %}{% set section_url = 'training' %}{% else %}{% set section_url = breadcrumb_section | lower %}{% endif %}
+
 <!-- ═══════════ HEADER ═══════════ -->
 <header class="header">
   <div class="header-top">
@@ -281,8 +260,8 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
         <li class="nav-dropdown">
           <a href="#" class="nav-dropdown-toggle active">Услуги <span class="nav-arrow">▾</span></a>
           <ul class="nav-dropdown-menu">
-            <li><a href="/massage/">Массаж</a></li>
-            <li><a href="/rehab/" style="font-weight:700;">Реабилитация</a></li>
+            <li><a href="/massage/" style="font-weight:700;">Массаж</a></li>
+            <li><a href="/rehab/">Реабилитация</a></li>
             <li><a href="/training/">Тренировки</a></li>
           </ul>
         </li>
@@ -304,9 +283,9 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
     <ol class="breadcrumb-list">
       <li><a href="/">Главная</a></li>
       <li class="breadcrumb-sep">›</li>
-      <li><a href="/rehab/">Реабилитация</a></li>
+      <li><a href="/{{ section_url }}/">{{ breadcrumb_section }}</a></li>
       <li class="breadcrumb-sep">›</li>
-      <li>Восстановление после инсульта</li>
+      <li>{{ breadcrumb_label }}</li>
     </ol>
   </div>
 </nav>
@@ -318,22 +297,22 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
   <div class="container">
     <div class="service-hero-inner">
       <div>
-        <div class="service-hero-eyebrow">РЕАБИЛИТАЦИЯ · МОСКВА · ВЫЕЗД НА ДОМ</div>
-        <h1 class="service-hero-h1">Восстановление после инсульта<br><em>на дому в Москве</em></h1>
-        <p class="service-hero-seo">Работа с последствиями инсульта на дому в Москве. Восстановление движения, снижение спастики, вертикализация. Выезд по Москве, работа с документами пациента до первого сеанса.</p>
-        <p class="service-hero-desc">Специалист приезжает со всем необходимым. Работа с семьёй — обучение уходу и домашним упражнениям между сеансами.</p>
+        <div class="service-hero-eyebrow">{{ breadcrumb_label }} · Москва · Выезд на дом</div>
+        <h1 class="service-hero-h1">{{ h1 }}</h1>
+        <p class="service-hero-seo">{{ intro_text }}</p>
+        <p class="service-hero-desc">{{ hero_subtitle }}</p>
         <div class="service-hero-actions">
           <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться на сеанс</button>
           <button class="btn-outline" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">Как проходит</button>
         </div>
         <div class="service-facts">
           <div class="service-fact">
-            <div class="service-fact-val">от 4 500 ₽</div>
+            <div class="service-fact-val">{{ price_items[0].price }}</div>
             <div class="service-fact-lbl">стоимость сеанса</div>
           </div>
           <div class="service-fact">
-            <div class="service-fact-val">курс от 10</div>
-            <div class="service-fact-lbl">сеансов</div>
+            <div class="service-fact-val">60–90 мин</div>
+            <div class="service-fact-lbl">длительность</div>
           </div>
           <div class="service-fact">
             <div class="service-fact-val">Выезд</div>
@@ -342,271 +321,127 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
         </div>
       </div>
       <div class="service-hero-img">
-        <img src="/assets/image/specialists/work-session.jpg" alt="Восстановление после инсульта на дому — Александр Вахания">
+        <img src="{{ hero_photo }}" alt="{{ h1 }} — Александр Вахания">
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════
-  2. НАПРАВЛЕНИЯ РАБОТЫ
+  2. ЧТО ДАЁТ МАССАЖ
 ══════════════════════════════════════════ -->
 <section class="service-benefits">
   <div class="container">
     <div class="service-benefits-head">
-      <div class="eyebrow">Направления работы</div>
-      <h2 class="service-benefits-h2">Что восстанавливаем</h2>
-      <p class="service-benefits-sub">Работа ведётся комплексно — по всем последствиям инсульта одновременно.</p>
+      <div class="eyebrow">Эффекты</div>
+      <h2 class="service-benefits-h2">Что даёт {{ breadcrumb_label | lower }}</h2>
+      <p class="service-benefits-sub">Работа с мышцами и тканями под конкретный запрос. Подходит для регулярного восстановления и профилактики.</p>
     </div>
     <div class="benefits-grid">
+      {% for card in benefits %}
       <div class="benefit-card">
-        <div class="benefit-icon">🖐</div>
-        <div class="benefit-title">Движение в руке</div>
-        <div class="benefit-desc">Захват, разгибание пальцев, объём движений в плечевом суставе.</div>
+        <div class="benefit-icon">{{ card.icon }}</div>
+        <div class="benefit-title">{{ card.title }}</div>
+        <div class="benefit-desc">{{ card.desc }}</div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🦵</div>
-        <div class="benefit-title">Движение в ноге</div>
-        <div class="benefit-desc">Сгибание колена, подъём стопы, опороспособность.</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">⚡</div>
-        <div class="benefit-title">Снижение спастики</div>
-        <div class="benefit-desc">Расслабление спастичных мышц, антиспастические техники, ПИР.</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🧍</div>
-        <div class="benefit-title">Вертикализация</div>
-        <div class="benefit-desc">Поэтапный переход: лёжа → сидя → стоя → ходьба с опорой.</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🏠</div>
-        <div class="benefit-title">Бытовые навыки</div>
-        <div class="benefit-desc">Одевание, пересаживание, передвижение по квартире.</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">👨‍👩‍👦</div>
-        <div class="benefit-title">Работа с семьёй</div>
-        <div class="benefit-desc">Обучение родственников уходу и упражнениям между сеансами.</div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════
-  3. ПЕРИОДЫ ВОССТАНОВЛЕНИЯ
-══════════════════════════════════════════ -->
-<section class="service-periods">
-  <div class="container">
-    <div class="service-periods-head">
-      <div class="eyebrow">Периоды восстановления</div>
-      <h2 class="service-periods-h2">На каком этапе начинать</h2>
-      <p class="service-periods-sub">Тактика работы зависит от периода после инсульта. Чем раньше начать — тем выше потенциал восстановления.</p>
-    </div>
-    <div class="periods-grid">
-      <div class="period-card">
-        <div class="period-icon">⏱</div>
-        <div class="period-title">Ранний период (21 день – 6 месяцев)</div>
-        <div class="period-desc">Мягкие техники: поглаживание, антиспастические укладки, пассивная гимнастика. Обязательно — разрешение лечащего врача и контроль АД перед каждым сеансом.</div>
-      </div>
-      <div class="period-card">
-        <div class="period-icon">📈</div>
-        <div class="period-title">Поздний период (6–12 месяцев)</div>
-        <div class="period-desc">Расширение объёма движений, ПИР, активно-пассивная гимнастика, вертикализация, работа с балансом. Интенсивность постепенно возрастает по динамике.</div>
-      </div>
-      <div class="period-card">
-        <div class="period-icon">🔄</div>
-        <div class="period-title">Резидуальный период (более 1 года)</div>
-        <div class="period-desc">Поддерживающая работа: профилактика контрактур, поддержание достигнутых функций, оздоровительные упражнения. Курсы 1–2 раза в год.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-  4. КОМУ ПОДХОДИТ
+  3. ЗОНЫ И ФОРМАТЫ + КОМУ ПОДХОДИТ
 ══════════════════════════════════════════ -->
 <section class="service-zones">
   <div class="container">
-    <div class="eyebrow">Кому подходит</div>
-    <h2 class="service-zones-h2">Кому подходит</h2>
     <div class="service-zones-inner">
-      <div class="zones-list">
-        <div class="zone-row">
-          <div class="zone-icon">🧠</div>
-          <div>
-            <div class="zone-name">После ишемического инсульта</div>
-            <div class="zone-desc">От 21 дня после события, при стабильном состоянии</div>
-          </div>
-        </div>
-        <div class="zone-row">
-          <div class="zone-icon">🩸</div>
-          <div>
-            <div class="zone-name">После геморрагического инсульта</div>
-            <div class="zone-desc">От 4–6 недель, при разрешении лечащего врача</div>
-          </div>
-        </div>
-        <div class="zone-row">
-          <div class="zone-icon">💪</div>
-          <div>
-            <div class="zone-name">Гемипарез</div>
-            <div class="zone-desc">Частичная слабость одной стороны, есть потенциал восстановления</div>
-          </div>
-        </div>
-        <div class="zone-row">
-          <div class="zone-icon">🏥</div>
-          <div>
-            <div class="zone-name">После выписки из стационара</div>
-            <div class="zone-desc">Продолжение восстановительной работы в домашних условиях</div>
-          </div>
-        </div>
-        <div class="zone-row">
-          <div class="zone-icon">⏳</div>
-          <div>
-            <div class="zone-name">Резидуальный период</div>
-            <div class="zone-desc">Поддержание и развитие достигнутых результатов</div>
-          </div>
-        </div>
-      </div>
-      <div class="zones-important">
-        <div class="zones-important-title">Важно знать</div>
-        <p class="zones-important-text">Перед началом работы всегда прошу выписку из стационара и разрешение лечащего невролога.<br><br>Это не формальность — это безопасность пациента.<br><br>Работаю только при стабильном состоянии и в рамках допустимой нагрузки.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════
-  5. КАК Я РАБОТАЮ
-══════════════════════════════════════════ -->
-<section class="service-process" id="approach">
-  <div class="container">
-    <div class="eyebrow">Мой подход</div>
-    <div class="service-process-inner">
       <div>
-        <h2 class="service-process-h2">Как я работаю</h2>
-        <p class="service-process-sub">Системная работа с учётом периода, документов пациента и возможностей семьи.</p>
-        <div class="process-steps">
-          <div class="process-step">
-            <div class="process-num">01</div>
+        <div class="eyebrow">Форматы</div>
+        <h2 class="service-zones-h2">Зоны и форматы</h2>
+        <p class="service-zones-sub">Массаж можно провести как для всего тела, так и точечно — под конкретный запрос.</p>
+        <div class="zones-list">
+          {% for item in zones %}
+          <div class="zone-row">
+            <div class="zone-icon">{{ item.icon }}</div>
             <div>
-              <div class="process-title">Изучаю документы</div>
-              <div class="process-desc">Прошу прислать выписку из стационара до первого сеанса. Изучаю диагноз, период восстановления, сопутствующие заболевания и медикаменты. Это позволяет прийти подготовленным.</div>
+              <div class="zone-name">{{ item.name }}</div>
+              <div class="zone-desc">{{ item.desc }}</div>
             </div>
           </div>
-          <div class="process-step">
-            <div class="process-num">02</div>
-            <div>
-              <div class="process-title">Пробный сеанс</div>
-              <div class="process-desc">На первой встрече оцениваю состояние, определяю зоны работы, знакомлюсь с пациентом и семьёй. Мягкая работа без форсирования. Обсуждаем план дальнейших сеансов.</div>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-num">03</div>
-            <div>
-              <div class="process-title">Программа восстановления</div>
-              <div class="process-desc">Если принимаем решение работать курсом — составляю индивидуальную программу с учётом периода, степени пареза и бытовых задач пациента.</div>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-num">04</div>
-            <div>
-              <div class="process-title">Веду журнал динамики</div>
-              <div class="process-desc">На каждом сеансе фиксирую АД, показатели движения, реакцию на нагрузку. Отслеживаю прогресс и при необходимости корректирую программу. При значимых изменениях — сообщаю лечащему врачу.</div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
-      <div class="service-process-img">
-        <img src="/assets/image/specialists/work-session.jpg" alt="Восстановительная работа после инсульта">
+      <div>
+        <div class="eyebrow">Кому подойдёт</div>
+        <h2 class="service-zones-h2" style="margin-top:8px;">Кому подходит</h2>
+        <p class="service-zones-sub">Универсальный формат для большинства запросов.</p>
+        <div class="zones-list">
+          {% for item in for_whom %}
+          <div class="zone-row">
+            <div class="zone-icon">{{ item.icon }}</div>
+            <div>
+              <div class="zone-name">{{ item.name }}</div>
+              <div class="zone-desc">{{ item.desc }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════
-  6. КАК ПРОХОДИТ СЕАНС
+  4. КАК ПРОХОДИТ СЕАНС
 ══════════════════════════════════════════ -->
-<section class="service-session" id="process">
+<section class="service-process" id="process">
   <div class="container">
     <div class="eyebrow">Методология</div>
-    <div class="service-session-inner">
+    <div class="service-process-inner">
       <div>
-        <h2 class="service-session-h2">Как проходит сеанс</h2>
-        <p class="service-session-sub">Каждый сеанс начинается с измерения давления — безопасность прежде всего.</p>
+        <h2 class="service-process-h2">Как проходит сеанс</h2>
+        <p class="service-process-sub">Каждый сеанс начинается с короткого опроса — это позволяет точно определить зоны работы и подобрать нужные техники.</p>
         <div class="process-steps">
+          {% for step in process_steps %}
           <div class="process-step">
-            <div class="process-num">01</div>
+            <div class="process-num">{{ step.num }}</div>
             <div>
-              <div class="process-title">Измерение АД и оценка состояния</div>
-              <div class="process-desc">Перед каждым сеансом измеряю давление и ЧСС. При показателях вне нормы — сеанс переносим. Спрашиваю о самочувствии, сне, изменениях.</div>
+              <div class="process-title">{{ step.title }}</div>
+              <div class="process-desc">{{ step.desc }}</div>
             </div>
           </div>
-          <div class="process-step">
-            <div class="process-num">02</div>
-            <div>
-              <div class="process-title">Антиспастическая подготовка</div>
-              <div class="process-desc">Укладка в антиспастическую позицию, мягкое поглаживание паретичной стороны. Подготовка к основной работе — снижение тонуса спастичных мышц.</div>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-num">03</div>
-            <div>
-              <div class="process-title">Основная работа</div>
-              <div class="process-desc">Массаж, ПИР, пассивная или активно-пассивная гимнастика в зависимости от периода и состояния. Работа с паретичной рукой, ногой, плечевым поясом.</div>
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-num">04</div>
-            <div>
-              <div class="process-title">Завершение и рекомендации</div>
-              <div class="process-desc">Финальное расслабление. Рекомендации для родственников: что делать между сеансами, как правильно помогать при передвижении.</div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
       <div class="service-process-img">
-        <img src="/assets/image/specialists/hero.jpg" alt="Сеанс восстановления после инсульта">
+        <img src="{{ method_photo }}" alt="Сеанс {{ breadcrumb_label | lower }}">
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════
-  7. СТОИМОСТЬ
+  5. СТОИМОСТЬ СЕАНСА
 ══════════════════════════════════════════ -->
 <section class="service-price" id="price">
   <div class="container">
     <div class="eyebrow">Стоимость</div>
     <div class="service-price-inner">
       <div>
-        <h2 class="service-price-h2">Стоимость курса</h2>
-        <p class="service-price-sub">Восстановление после инсульта — курсовая работа. Оплата по сеансам или курсом — как удобно вам. Точную стоимость уточняю после изучения ситуации.</p>
+        <h2 class="service-price-h2">Стоимость сеанса</h2>
+        <p class="service-price-sub">Цена зависит от зоны работы и длительности. Точную стоимость уточняю при записи — после обсуждения Вашего запроса.</p>
         <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться на сеанс</button>
       </div>
       <div>
         <div class="price-table">
+          {% for item in price_items %}
           <div class="price-table-row">
             <div>
-              <div class="price-table-time">Пробный сеанс</div>
-              <div class="price-table-from">первичная оценка состояния</div>
+              <div class="price-table-time">{{ item.name }}</div>
             </div>
-            <div class="price-table-amount">от 4 500 ₽</div>
+            <div class="price-table-amount">{{ item.price }}</div>
           </div>
-          <div class="price-table-row">
-            <div>
-              <div class="price-table-time">Курс 10 сеансов</div>
-              <div class="price-table-from">ранний и поздний период</div>
-            </div>
-            <div class="price-table-amount">от 40 000 ₽</div>
-          </div>
-          <div class="price-table-row">
-            <div>
-              <div class="price-table-time">Поддерживающий курс</div>
-              <div class="price-table-from">резидуальный период</div>
-            </div>
-            <div class="price-table-amount">от 30 000 ₽</div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -614,7 +449,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
 </section>
 
 <!-- ══════════════════════════════════════════
-  8. ВАШ СПЕЦИАЛИСТ + ПРАЙС-ЛИСТ
+  6+7. ВАШ СПЕЦИАЛИСТ + ПРАЙС-ЛИСТ
 ══════════════════════════════════════════ -->
 <section class="service-specialist-section">
   <div class="container">
@@ -637,9 +472,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
     <div style="margin-top:48px;">
       <div class="eyebrow">Прайс-лист</div>
       <h3 style="font-family:var(--serif);font-size:44px;font-weight:400;color:var(--text);line-height:1.1;margin-bottom:40px;">Услуги и цены</h3>
-
-      <!-- Массаж — свёрнут -->
-      <div class="sp-svc-group">
+      <div class="sp-svc-group open">
         <button class="sp-svc-group-header" onclick="toggleSvcGroup(this)">
           <div class="sp-svc-group-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -649,6 +482,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
           <span class="sp-svc-group-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
         </button>
         <div class="sp-svc-group-body">
+
           <div class="sp-svc-item">
             <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div class="sp-svc-info">
@@ -657,14 +491,16 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             </div>
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="/massage/klassicheskiy/" class="sp-svc-link">Подробнее →</a></div>
           </div>
+
           <div class="sp-svc-item">
             <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Спортивный массаж</div>
               <div class="sp-svc-meta">Восстановление после нагрузок</div>
             </div>
-            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="/massage/sportivnyy/" class="sp-svc-link">Подробнее →</a></div>
           </div>
+
           <div class="sp-svc-item">
             <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.93 4.93A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10 10 10 0 0 0-10-10 10 10 0 0 0-5.07 1.38"/><polyline points="3 8 4.93 4.93 8 6"/></svg></div>
             <div class="sp-svc-info">
@@ -673,6 +509,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             </div>
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
+
           <div class="sp-svc-item">
             <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
             <div class="sp-svc-info">
@@ -681,6 +518,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             </div>
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
+
           <div class="sp-svc-item">
             <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             <div class="sp-svc-info">
@@ -689,6 +527,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             </div>
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">5 000 ₽</span><span class="from">90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
+
           <div class="sp-svc-item">
             <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div class="sp-svc-info">
@@ -697,6 +536,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             </div>
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
+
           <div class="sp-svc-item">
             <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div class="sp-svc-info">
@@ -705,6 +545,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             </div>
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
+
           <div class="sp-svc-item">
             <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
             <div class="sp-svc-info">
@@ -713,14 +554,15 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             </div>
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
+
         </div>
       </div>
 
-      <!-- Реабилитация — раскрыта -->
-      <div class="sp-svc-group open">
+      <!-- Группа: Реабилитация (закрыта) -->
+      <div class="sp-svc-group">
         <button class="sp-svc-group-header" onclick="toggleSvcGroup(this)">
           <div class="sp-svc-group-icon terra">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <span class="sp-svc-group-title">Реабилитация</span>
           <span class="sp-svc-group-count">9 программ</span>
@@ -728,7 +570,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
         </button>
         <div class="sp-svc-group-body">
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Восстановление после инсульта</div>
               <div class="sp-svc-meta">Программа восстановления на дому</div>
@@ -736,7 +578,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="/rehab/insult/" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Исправление осанки и сколиоза</div>
               <div class="sp-svc-meta">Осанка, позвоночник, сколиоз</div>
@@ -744,7 +586,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Восстановление при остеохондрозе</div>
               <div class="sp-svc-meta">Шея, спина, поясница</div>
@@ -752,7 +594,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Реабилитация плеча и руки после травмы</div>
               <div class="sp-svc-meta">Плечо, локоть, запястье</div>
@@ -760,7 +602,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Коррекция плоскостопия у взрослых</div>
               <div class="sp-svc-meta">Стопа, свод, походка</div>
@@ -768,7 +610,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Реабилитация после операции на позвоночнике</div>
               <div class="sp-svc-meta">После операции, позвоночник</div>
@@ -776,7 +618,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Реабилитация после переломов и растяжений</div>
               <div class="sp-svc-meta">Переломы, связки, суставы</div>
@@ -784,7 +626,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Восстановление после ЧМТ</div>
               <div class="sp-svc-meta">Координация, память, восстановление</div>
@@ -792,7 +634,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Реабилитация после эндопротезирования</div>
               <div class="sp-svc-meta">Тазобедренный и коленный сустав</div>
@@ -802,11 +644,11 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
         </div>
       </div>
 
-      <!-- Тренировки — свёрнуты -->
+      <!-- Группа: Тренировки (закрыта) -->
       <div class="sp-svc-group">
         <button class="sp-svc-group-header" onclick="toggleSvcGroup(this)">
           <div class="sp-svc-group-icon terra">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <span class="sp-svc-group-title">Тренировки</span>
           <span class="sp-svc-group-count">7 форматов</span>
@@ -814,7 +656,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
         </button>
         <div class="sp-svc-group-body">
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Функциональный тренинг</div>
               <div class="sp-svc-meta">Сила, координация, выносливость</div>
@@ -822,7 +664,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="/training/funkcionalnyy/" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Коррекция осанки и позвоночника</div>
               <div class="sp-svc-meta">Спина, позвоночник, стабилизация</div>
@@ -830,7 +672,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">ЛФК — лечебная физкультура</div>
               <div class="sp-svc-meta">Реабилитация, суставы, восстановление</div>
@@ -838,7 +680,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Тренировки для снижения веса</div>
               <div class="sp-svc-meta">Вес, кардио, метаболизм</div>
@@ -846,7 +688,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Тренировки при болях в спине</div>
               <div class="sp-svc-meta">Поясница, шея, корсет</div>
@@ -854,7 +696,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Тренировки для старшего возраста</div>
               <div class="sp-svc-meta">55+, равновесие, активность</div>
@@ -862,7 +704,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
           </div>
           <div class="sp-svc-item">
-            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div class="sp-svc-info">
               <div class="sp-svc-name">Онлайн-тренировки</div>
               <div class="sp-svc-meta">Zoom, WhatsApp, удалённо</div>
@@ -881,7 +723,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
 </section>
 
 <!-- ══════════════════════════════════════════
-  9. ОТЗЫВЫ
+  8. ОТЗЫВЫ
 ══════════════════════════════════════════ -->
 <section class="reviews" id="reviews">
   <div class="container">
@@ -998,6 +840,54 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
           <div class="review-source">ЯНДЕКС</div>
         </div>
 
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Огромное спасибо Александру за помощь. Спина ломила так что руки поднять было больно, в связи с компрессионным переломом лет 12 назад. Я к нему обратился и уже через пару часов лежал на массажном столе, а ещё через час я уже выходя от него радовался жизни. Огромное спасибо, буду и дальше ходить!</p>
+          <div class="review-meta">
+            <div class="review-avatar">И</div>
+            <div><div class="review-name">Игорь Быков</div><div class="review-date">15 января 2025</div></div>
+          </div>
+          <div class="review-source">АВИТО</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Тренируемся по фитнесу и боксу с Александром. Занимаемся несколько месяцев, все нравится. Большим плюсом является то, что Александр также профессиональный массажист, поэтому работа может идти в комплексе.</p>
+          <div class="review-meta">
+            <div class="review-avatar">Н</div>
+            <div><div class="review-name">Никита</div><div class="review-date">25 сентября 2024</div></div>
+          </div>
+          <div class="review-source">ЯНДЕКС</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Спасибо Александру за проведенную тренировку. Я 100% уверен, что она далеко не последняя. Все по делу. Без лишних сюсюканий. Тренер явно с правильным опытом в спорте и медицине, а это крайне важно. Всем его рекомендую.</p>
+          <div class="review-meta">
+            <div class="review-avatar">K</div>
+            <div><div class="review-name">Kayt Zalgeris</div><div class="review-date">31 марта 2025</div></div>
+          </div>
+          <div class="review-source">АВИТО</div>
+        </div>
+
       </div>
     </div>
     <div class="reviews-footer">
@@ -1015,104 +905,58 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
 </section>
 
 <!-- ══════════════════════════════════════════
-  10. FAQ
+  9. FAQ
 ══════════════════════════════════════════ -->
 <section class="faq">
   <div class="container">
     <div class="faq-head">
       <div class="eyebrow">Вопросы и ответы</div>
       <h2 class="faq-h2">Часто спрашивают</h2>
+      <p class="faq-sub">Ответы на частые вопросы о {{ breadcrumb_label | lower }}.</p>
     </div>
     <div class="faq-list">
 
+      {% for faq in faqs %}
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Когда после инсульта можно начинать восстановительную работу?</span>
+          <span class="faq-q-text">{{ faq.q }}</span>
           <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
         </button>
         <div class="faq-a-wrap">
-          <div class="faq-a">При ишемическом инсульте — от 21 дня при стабильном состоянии. При геморрагическом — от 4–6 недель. Точные сроки определяет лечащий врач. Я прошу прислать выписку до первого сеанса и при необходимости уточняю у врача.</div>
+          <div class="faq-a">{{ faq.a }}</div>
         </div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Нужно ли разрешение врача?</span>
-          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
-        </button>
-        <div class="faq-a-wrap">
-          <div class="faq-a">Да, обязательно. Перед началом работы прошу выписку из стационара и разрешение лечащего невролога. Это не формальность — это безопасность пациента.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Сколько сеансов нужно для результата?</span>
-          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
-        </button>
-        <div class="faq-a-wrap">
-          <div class="faq-a">Минимальный курс — 10 сеансов с интервалом 2–3 раза в неделю. Первые изменения обычно заметны после 3–5 сеансов. Полный курс и его продолжительность определяются индивидуально по динамике.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Выезжаете ли вы на дом, если пациент не передвигается?</span>
-          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
-        </button>
-        <div class="faq-a-wrap">
-          <div class="faq-a">Да, именно для таких случаев и работаю на дому. Приезжаю со всем необходимым. Работаю в условиях квартиры — на кровати или диване.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Что делать родственникам между сеансами?</span>
-          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
-        </button>
-        <div class="faq-a-wrap">
-          <div class="faq-a">На каждом сеансе даю конкретные рекомендации: упражнения, правила укладки, как помогать при передвижении. Обучение семьи — часть моей работы.</div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-text">Как часто заниматься и сколько времени займёт восстановление?</span>
-          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
-        </button>
-        <div class="faq-a-wrap">
-          <div class="faq-a">Оптимальная частота — 2–3 раза в неделю. При таком ритме минимальный курс (10 сеансов) занимает 3–5 недель. Ранний период восстановления длится до 6 месяцев — это наиболее активная фаза работы. Поздний период (6–12 месяцев) — продолжаем с меньшей частотой, 1–2 раза в неделю. В резидуальном периоде (после года) достаточно поддерживающих курсов 1–2 раза в год. Конкретный план обсуждаем после пробного сеанса.</div>
-        </div>
-      </div>
+      {% endfor %}
 
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════
-  11. CROSS-SELL
+  10. ТАКЖЕ РАБОТАЮ С
 ══════════════════════════════════════════ -->
 <section class="massage-crosssell" style="padding: var(--section-py, 80px) 0;">
   <div class="container">
     <div class="massage-crosssell-head">
       <div class="eyebrow">Другие направления</div>
-      <h2 class="massage-crosssell-h2">Реабилитация — часть системы</h2>
-      <p class="massage-crosssell-sub">Восстановление после инсульта — первый шаг. Движение и сила — следующий.</p>
+      <h2 class="massage-crosssell-h2">Массаж — часть системы</h2>
+      <p class="massage-crosssell-sub">Для долгосрочного результата массаж работает в связке с реабилитацией и тренировками.</p>
     </div>
     <div class="crosssell-tiles">
 
       <div class="crosssell-tile">
         <div class="crosssell-tile-img">
-          <img src="/assets/image/catalog/massage.jpg" alt="Массаж">
+          <img src="/assets/image/catalog/physiotherapy.jpg" alt="Реабилитация">
         </div>
         <div class="crosssell-tile-body">
-          <div class="crosssell-tile-eyebrow">Массаж</div>
-          <div class="crosssell-tile-title">Общеукрепляющая и восстановительная работа</div>
-          <div class="crosssell-tile-desc">Классический, спортивный, антистрессовый массаж на дому. Расслабление, снятие напряжения, работа с триггерными точками.</div>
+          <div class="crosssell-tile-eyebrow">Реабилитация</div>
+          <div class="crosssell-tile-title">Восстановление после травм и операций</div>
+          <div class="crosssell-tile-desc">Системная работа при хронической боли, нарушениях осанки, постоперационном восстановлении. Индивидуальная программа и контроль результата.</div>
           <div class="crosssell-tile-tags tile-tags">
-            <a href="/massage/klassicheskiy/" class="tag-outline">Классический</a>
-            <a href="#" class="tag-outline">Спортивный</a>
-            <a href="#" class="tag-outline">Антистрессовый</a>
+            <a href="/rehab/posture/" class="tag-outline terra">Осанка</a>
+            <a href="/rehab/spine/" class="tag-outline terra">Позвоночник</a>
+            <a href="/rehab/flatfoot/" class="tag-outline terra">Плоскостопие</a>
+            <a href="/rehab/shoulder/" class="tag-outline terra">Плечо и рука</a>
           </div>
         </div>
         <div class="crosssell-tile-action">
@@ -1120,7 +964,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             <div class="crosssell-tile-price">от 4 500 ₽</div>
             <div class="crosssell-tile-price-sub">60–90 мин</div>
           </div>
-          <a href="/massage/" class="btn-tile">Подробнее</a>
+          <a href="/rehab/" class="btn-tile terra-btn">Подробнее</a>
         </div>
       </div>
 
@@ -1131,11 +975,11 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
         <div class="crosssell-tile-body">
           <div class="crosssell-tile-eyebrow muted">Оздоровительные тренировки</div>
           <div class="crosssell-tile-title">Движение как основа здоровья</div>
-          <div class="crosssell-tile-desc">Персональные тренировки с акцентом на функциональное движение, стабилизацию и укрепление. Для тех, кто хочет двигаться правильно — без боли и травм.</div>
+          <div class="crosssell-tile-desc">Персональные тренировки с акцентом на функциональное движение, стабилизацию позвоночника и укрепление тела. Для тех, кто хочет двигаться правильно — без боли и травм.</div>
           <div class="crosssell-tile-tags tile-tags">
-            <a href="#" class="tag-outline muted">Функциональный тренинг</a>
-            <a href="#" class="tag-outline muted">ЛФК</a>
-            <a href="#" class="tag-outline muted">Стабилизация</a>
+            <a href="/training/functional/" class="tag-outline muted">Функциональный тренинг</a>
+            <a href="/training/lfk/" class="tag-outline muted">ЛФК</a>
+            <a href="/training/stabilization/" class="tag-outline muted">Стабилизация</a>
           </div>
         </div>
         <div class="crosssell-tile-action">
@@ -1152,7 +996,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
 </section>
 
 <!-- ══════════════════════════════════════════
-  12. ФОРМА ЗАПИСИ
+  11. ФОРМА ЗАПИСИ
 ══════════════════════════════════════════ -->
 <section class="cta-section" id="booking">
   <div class="container">
@@ -1160,8 +1004,8 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
 
       <div class="cta-left">
         <div class="eyebrow cta-eyebrow">Запись на приём</div>
-        <h2 class="cta-h2">Запишитесь на восстановление после инсульта</h2>
-        <p class="cta-sub">Первичная консультация бесплатна — разберём ситуацию пациента, изучим документы и согласуем план работы.</p>
+        <h2 class="cta-h2">Запишитесь на {{ breadcrumb_label | lower }}</h2>
+        <p class="cta-sub">Первичная консультация бесплатна — разберём Вашу ситуацию, выберем подходящий формат и ответим на все вопросы.</p>
         <div class="cta-details">
           <div class="cta-detail">
             <div class="cta-detail-icon">📞</div>
@@ -1208,22 +1052,24 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
             </div>
           </div>
           <div class="field">
-            <label for="service">Направление реабилитации</label>
+            <label for="service">Вид массажа</label>
             <select id="service">
-              <option value="insult" selected>Восстановление после инсульта</option>
-              <option>Исправление осанки и сколиоза</option>
-              <option>Восстановление при остеохондрозе</option>
-              <option>Реабилитация плеча и руки после травмы</option>
-              <option>Коррекция плоскостопия у взрослых</option>
-              <option>Реабилитация после операции на позвоночнике</option>
-              <option>Реабилитация после переломов и растяжений</option>
-              <option>Восстановление после ЧМТ</option>
-              <option>Другое</option>
+              <option value="{{ breadcrumb_label }}" selected>{{ breadcrumb_label }}</option>
+              <option>Классический массаж</option>
+              <option>Лимфодренажный массаж</option>
+              <option>Антицеллюлитный массаж</option>
+              <option>Оздоровительный массаж</option>
+              <option>Антистрессовый массаж</option>
+              <option>Тайский массаж</option>
+              <option>ПИР — мягкие мануальные техники</option>
+              <option>Детский массаж</option>
+              <option>Зональный массаж (спина/шея/ноги)</option>
+              <option>Не знаю — хочу консультацию</option>
             </select>
           </div>
           <div class="field">
-            <label for="comment">Расскажите о ситуации пациента</label>
-            <textarea id="comment" rows="3" placeholder="Период после инсульта, текущее состояние, есть ли выписка из стационара..."></textarea>
+            <label for="comment">Расскажите о Вашей ситуации</label>
+            <textarea id="comment" rows="3" placeholder="Опишите запрос — это поможет подготовиться к встрече..."></textarea>
           </div>
           <div class="consent-block">
             <input type="checkbox" id="consent" name="consent" required>
@@ -1242,7 +1088,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
 </section>
 
 <!-- ══════════════════════════════════════════
-  13. FOOTER
+  12. FOOTER
 ══════════════════════════════════════════ -->
 <footer class="footer" id="contacts">
   <div class="container">
@@ -1293,7 +1139,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
   </div>
 </footer>
 
-<script src="../../js/main.js"></script>
+<script src="/js/main.js"></script>
 <script>
 function toggleMenu() {
   document.querySelector('.nav-links').classList.toggle('open');
