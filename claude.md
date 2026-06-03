@@ -34,3 +34,24 @@ massage/index.html — эталон для всех новых страниц.
 ## Юридический фильтр (Александр не врач)
 ❌ лечение, диагностика, медицинская помощь
 ✅ восстановление, коррекция, работа с, снятие, укрепление
+
+## Генератор страниц
+
+### Запуск
+python generator/generate.py [название_файла]
+
+### Пути — только абсолютные
+/css/variables.css, /css/main.css, /js/main.js, /assets/image/favicon.svg
+
+### Фото
+Hero (массаж): /assets/image/general/hero.jpg
+Методология: /assets/image/services/[раздел]/[название].jpg
+
+### Зафиксированные CSS-стандарты шаблона
+.service-zones-inner: display:grid; grid-template-columns:repeat(2,1fr); gap:48px; align-items:stretch
+.service-zones-inner > div: display:flex; flex-direction:column
+.zones-list: flex:1
+.service-zones-h2: min-height:52px
+.service-zones-sub: min-height:56px
+Hero-фото: object-position: center 30%
+НЕ использовать инлайн style= на заголовках в шаблоне
