@@ -1,0 +1,47 @@
+{% if breadcrumb_section == 'Массаж' %}{% set section_url = 'massage' %}{% elif breadcrumb_section == 'Реабилитация' %}{% set section_url = 'rehab' %}{% elif breadcrumb_section == 'Тренировки' %}{% set section_url = 'training' %}{% else %}{% set section_url = breadcrumb_section | lower %}{% endif %}
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-text">Сертифицированный специалист · Москва · м. Аэропорт</div>
+      <div class="header-top-phone"><a href="tel:+79266636641">+7 (926) 663-66-41</a></div>
+    </div>
+  </div>
+  <nav class="header-nav">
+    <div class="container">
+      <div class="logo"><a href="/" style="text-decoration:none;color:inherit;">mas<span>sash</span></a></div>
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle active">Услуги <span class="nav-arrow">▾</span></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/massage/" style="font-weight:700;">Массаж</a></li>
+            <li><a href="/rehab/">Реабилитация</a></li>
+            <li><a href="/training/">Тренировки</a></li>
+          </ul>
+        </li>
+        <li><a href="/specialists/">Специалисты</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <button class="burger-btn" onclick="toggleMenu()" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="btn-book" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ── Breadcrumb ── -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+  <div class="container">
+    <ol class="breadcrumb-list">
+      <li><a href="/">Главная</a></li>
+      <li class="breadcrumb-sep">›</li>
+      <li><a href="/{{ section_url }}/">{{ breadcrumb_section }}</a></li>
+      <li class="breadcrumb-sep">›</li>
+      <li>{{ breadcrumb_label }}</li>
+    </ol>
+  </div>
+</nav>

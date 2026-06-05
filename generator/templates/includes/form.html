@@ -1,0 +1,91 @@
+<!-- ══════════════════════════════════════════
+  11. ФОРМА ЗАПИСИ
+══════════════════════════════════════════ -->
+<section class="cta-section" id="booking">
+  <div class="container">
+    <div class="cta-inner">
+
+      <div class="cta-left">
+        <div class="eyebrow cta-eyebrow">Запись на приём</div>
+        <h2 class="cta-h2">Запишитесь на {{ breadcrumb_label | lower }}</h2>
+        <p class="cta-sub">Первичная консультация бесплатна — разберём Вашу ситуацию, выберем подходящий формат и ответим на все вопросы.</p>
+        <div class="cta-details">
+          <div class="cta-detail">
+            <div class="cta-detail-icon">📞</div>
+            <div>
+              <div class="cta-detail-text">+7 (926) 663-66-41</div>
+              <div class="cta-detail-sub">Звонок · WhatsApp · Telegram</div>
+            </div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-detail-icon">✉️</div>
+            <div>
+              <div class="cta-detail-text"><a href="mailto:promassash@gmail.com" style="color:inherit;">promassash@gmail.com</a></div>
+              <div class="cta-detail-sub">Email</div>
+            </div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-detail-icon">📍</div>
+            <div>
+              <div class="cta-detail-text">г. Москва, м. Аэропорт · Выезд на дом</div>
+              <div class="cta-detail-sub">МКАД и ближайшее Подмосковье</div>
+            </div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-detail-icon">🕐</div>
+            <div>
+              <div class="cta-detail-text">Пн–Пт 9:00–20:00</div>
+              <div class="cta-detail-sub">Сб–Вс 10:00–18:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-form">
+        <div class="form-title">Оставьте заявку</div>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Ваше имя</label>
+              <input type="text" id="name" placeholder="Анна Иванова" required>
+            </div>
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" placeholder="+7 (999) 000-00-00" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">Вид массажа</label>
+            <select id="service">
+              <option value="{{ breadcrumb_label }}" selected>{{ breadcrumb_label }}</option>
+              <option>Классический массаж</option>
+              <option>Лимфодренажный массаж</option>
+              <option>Антицеллюлитный массаж</option>
+              <option>Оздоровительный массаж</option>
+              <option>Антистрессовый массаж</option>
+              <option>Тайский массаж</option>
+              <option>ПИР — мягкие мануальные техники</option>
+              <option>Детский массаж</option>
+              <option>Зональный массаж (спина/шея/ноги)</option>
+              <option>Не знаю — хочу консультацию</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="comment">Расскажите о Вашей ситуации</label>
+            <textarea id="comment" rows="3" placeholder="Опишите запрос — это поможет подготовиться к встрече..."></textarea>
+          </div>
+          <div class="consent-block">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">
+              Я согласен(а) на обработку персональных данных в соответствии с
+              <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a>
+            </label>
+          </div>
+          <button type="submit" class="btn-submit">Отправить заявку</button>
+          <p class="form-note">Отвечаю оперативно в рабочее время</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
