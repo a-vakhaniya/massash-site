@@ -15,7 +15,12 @@ def generate(content_name):
         data = yaml.safe_load(f)
 
     env = Environment(loader=FileSystemLoader(template_dir), autoescape=False)
-    template = env.get_template('service.html')
+    section = data.get('section', '')
+    if section == 'rehab':
+        template_name = 'rehab_service.html'
+    else:
+        template_name = data.get('template', 'service.html')
+    template = env.get_template(template_name)
     output = template.render(**data)
 
     output_path = os.path.join(project_root, data['output_path'])

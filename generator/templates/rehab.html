@@ -1,0 +1,454 @@
+{% set breadcrumb_section = hero.breadcrumb_section %}
+{% set breadcrumb_label = hero.breadcrumb_page %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ meta.description }}">
+<meta name="author" content="Александр Вахания">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ meta.canonical }}">
+<meta property="og:title" content="{{ meta.title }}">
+<meta property="og:description" content="{{ meta.description }}">
+<meta property="og:image" content="https://massash.com/assets/image/specialists/work-session.jpg">
+
+<link rel="canonical" href="{{ meta.canonical }}">
+<title>{{ meta.title }}</title>
+
+<link rel="stylesheet" href="/css/variables.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="icon" type="image/svg+xml" href="/assets/image/favicon.svg">
+
+<style>
+/* ── DROPDOWN ── */
+.nav-dropdown { position: relative; }
+.nav-arrow { font-size: 14px; opacity: 0.7; margin-left: 6px; }
+.nav-dropdown-menu {
+  display: none; position: absolute; top: 100%; padding-top: 8px;
+  left: 50%; transform: translateX(-50%); background: #fff;
+  border: 1px solid var(--border, #e5e0d8); border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10); min-width: 180px;
+  padding: 8px 0; list-style: none; z-index: 100;
+}
+.nav-dropdown-menu li a {
+  display: block; padding: 10px 20px; font-size: 14px;
+  color: var(--text, #1a1a1a); text-decoration: none; white-space: nowrap; transition: background 0.15s;
+}
+.nav-dropdown-menu li a:hover { background: var(--bg-alt, #f5f2ed); color: var(--accent, #2d6a4f); }
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { padding: 14px 0; border-bottom: 1px solid var(--border); background: var(--bg); }
+.breadcrumb-list { display: flex; align-items: center; gap: 6px; list-style: none; font-size: 13px; color: var(--muted); margin: 0; padding: 0; }
+.breadcrumb-list a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+.breadcrumb-list a:hover { color: var(--green); }
+.breadcrumb-sep { opacity: 0.4; }
+.breadcrumb-list li:last-child { color: var(--text); }
+
+/* ── HERO ── */
+.service-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 72px 0 60px; }
+.service-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.service-hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; font-family: var(--sans); }
+.service-hero-h1 { font-family: var(--serif); font-size: 48px; font-weight: 400; line-height: 1.1; color: var(--text); margin-bottom: 20px; }
+.service-hero-desc { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; max-width: 480px; }
+.service-hero-intro { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; max-width: 480px; }
+.service-hero-intro p { margin: 0 0 12px; }
+.service-hero-intro p:last-child { margin-bottom: 0; }
+.service-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+.service-hero-img { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-lg); }
+.service-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.service-facts { display: flex; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.service-fact { flex: 1; padding: 18px 20px; border-right: 1px solid var(--border); background: var(--surface); }
+.service-fact:last-child { border-right: none; }
+.service-fact-val { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); line-height: 1; }
+.service-fact-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; font-family: var(--sans); }
+
+/* ── FORMATS ── */
+.rehab-formats { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.rehab-formats-head { text-align: center; margin-bottom: 48px; }
+.rehab-formats-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
+.rehab-formats-sub { font-size: 16px; color: var(--muted); max-width: 560px; margin: 0 auto; }
+.rehab-formats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.rehab-format-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 10px; }
+.rehab-format-icon { font-size: 26px; }
+.rehab-format-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--text); }
+.rehab-format-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+/* ── AUDIENCE ── */
+.rehab-audience { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.rehab-audience-head { text-align: center; margin-bottom: 48px; }
+.rehab-audience-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
+.rehab-audience-sub { font-size: 16px; color: var(--muted); max-width: 560px; margin: 0 auto; }
+.rehab-audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.rehab-audience-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow-sm); }
+.rehab-audience-icon { font-size: 26px; margin-bottom: 10px; }
+.rehab-audience-title { font-family: var(--sans); font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.rehab-audience-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ── ZONES (4-column 2x2 grid) ── */
+.rehab-zones { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.rehab-zones-head { text-align: center; margin-bottom: 48px; }
+.rehab-zones-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
+.rehab-zones-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.rehab-zone-col { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+.rehab-zone-col-title { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--text); margin-bottom: 4px; min-height: 52px; display: flex; align-items: center; }
+.rehab-zone-col-sub { font-size: 13px; color: var(--muted); margin-bottom: 16px; min-height: 40px; }
+.rehab-zone-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.rehab-zone-list li { font-size: 14px; color: var(--text); padding-left: 16px; position: relative; line-height: 1.5; }
+.rehab-zone-list li::before { content: "—"; position: absolute; left: 0; color: var(--terra); font-size: 12px; top: 1px; }
+
+/* ── METHODOLOGY ── */
+.rehab-method { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.rehab-method-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.rehab-method-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 32px; }
+.rehab-method-steps { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.rehab-method-step { display: flex; align-items: flex-start; gap: 20px; padding: 22px 24px; border-bottom: 1px solid var(--border); background: var(--bg); }
+.rehab-method-step:last-child { border-bottom: none; }
+.rehab-method-num { font-family: var(--serif); font-size: 28px; font-weight: 300; color: var(--terra); line-height: 1; min-width: 28px; opacity: 0.7; }
+.rehab-method-step-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.rehab-method-step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.rehab-method-img { border-radius: 12px; overflow: hidden; aspect-ratio: 4/5; box-shadow: var(--shadow-lg); }
+.rehab-method-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+
+/* ── PRICE ── */
+.rehab-price { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.rehab-price-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.rehab-price-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
+.rehab-price-note { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
+.rehab-price-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 36px; box-shadow: var(--shadow-md); text-align: center; }
+.rehab-price-val { font-family: var(--serif); font-size: 56px; font-weight: 400; color: var(--terra); line-height: 1; margin-bottom: 8px; }
+.rehab-price-sub { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+
+/* ── SPECIALIST CARD ── */
+.service-specialist-section { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.specialist-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 36px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 28px; }
+.specialist-card-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 24px; font-weight: 400; flex-shrink: 0; overflow: hidden; }
+.specialist-card-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+.specialist-card-body { flex: 1; }
+.specialist-card-name { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--text); margin-bottom: 6px; line-height: 1.2; }
+.specialist-card-role { font-size: 15px; color: var(--muted); margin-bottom: 8px; font-family: var(--sans); }
+.specialist-card-facts { font-size: 14px; color: var(--green); font-weight: 600; font-family: var(--sans); }
+.sp-card-btn { display: inline-block; font-size: 14px; font-weight: 700; color: var(--green); text-decoration: none; border: 1.5px solid var(--green); border-radius: 8px; padding: 9px 18px; font-family: var(--sans); transition: background 180ms, color 180ms; }
+.sp-card-btn:hover { background: var(--green); color: #fff; }
+
+/* ── SERVICES ACCORDION ── */
+.service-services-section { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.sp-svc-group { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--bg); box-shadow: var(--shadow-sm); margin-bottom: 12px; }
+.sp-svc-group-header { width: 100%; text-align: left; background: none; border: none; padding: 20px 28px; display: flex; align-items: center; gap: 16px; cursor: pointer; transition: background 180ms var(--ease); }
+.sp-svc-group-header:hover { background: rgba(61,122,107,0.04); }
+.sp-svc-group.open .sp-svc-group-header { background: rgba(61,122,107,0.05); }
+.sp-svc-group-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--green-tint, #EFF4F3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.sp-svc-group-icon svg { width: 20px; height: 20px; stroke: var(--green); stroke-width: 1.5; fill: none; }
+.sp-svc-group-title { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); flex: 1; }
+.sp-svc-group-count { font-size: 12px; font-weight: 700; color: var(--muted); background: var(--bg-tint, #F2EEE5); padding: 3px 10px; border-radius: 999px; font-family: var(--sans); }
+.sp-svc-group.open .sp-svc-group-count { background: var(--green-tint, #EFF4F3); color: var(--green); }
+.sp-svc-group-arrow { width: 24px; height: 24px; border-radius: 50%; background: var(--green-light); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background 220ms var(--ease); }
+.sp-svc-group-arrow svg { width: 12px; height: 12px; stroke: var(--green); stroke-width: 2.5; transition: transform 220ms var(--ease); fill: none; }
+.sp-svc-group-icon.terra { background: var(--terra-light, #F5EAE4); }
+.sp-svc-group-icon.terra svg { stroke: var(--terra); }
+.sp-svc-icon.terra { background: var(--terra-light, #F5EAE4); }
+.sp-svc-icon.terra svg { stroke: var(--terra); }
+.sp-svc-group-arrow svg line, .faq-icon svg line { transition: opacity 150ms; }
+.sp-svc-group.open .sp-svc-group-arrow { background: var(--green); }
+.sp-svc-group.open .sp-svc-group-arrow svg { stroke: #fff; transform: none; }
+.sp-svc-group.open .sp-svc-group-arrow svg line:first-child { opacity: 0; }
+.faq-item.open .faq-icon svg { stroke: #fff; transform: none; }
+.faq-item.open .faq-icon svg line:first-child { opacity: 0; }
+.sp-svc-group-body { display: none; border-top: 1px solid var(--border); }
+.sp-svc-group.open .sp-svc-group-body { display: block; }
+.sp-svc-item { display: grid; grid-template-columns: 48px 1fr auto; gap: 20px; align-items: center; padding: 18px 28px; border-bottom: 1px solid var(--border); transition: background 180ms var(--ease); }
+.sp-svc-item:last-child { border-bottom: none; }
+.sp-svc-item:hover { background: var(--surface); }
+.sp-svc-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--green-tint, #EFF4F3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.sp-svc-icon svg { width: 20px; height: 20px; stroke: var(--green); stroke-width: 1.5; fill: none; }
+.sp-svc-info { display: flex; flex-direction: column; gap: 3px; }
+.sp-svc-name { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--text); line-height: 1.2; }
+.sp-svc-name a { color: var(--green); text-decoration: none; font-size: 13px; font-family: var(--sans); font-weight: 600; margin-left: 8px; opacity: 0; transition: opacity 0.15s; }
+.sp-svc-item:hover .sp-svc-name a { opacity: 1; }
+.sp-svc-meta { font-size: 13px; color: var(--muted); }
+.sp-svc-price { text-align: right; white-space: nowrap; }
+.sp-svc-price .amount { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--text); display: block; line-height: 1; }
+.sp-svc-price .from { font-size: 12px; color: var(--muted); font-family: var(--sans); }
+.sp-svc-note { margin-top: 14px; font-size: 13px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; }
+.sp-svc-link { font-size: 0.8rem; color: var(--green); text-decoration: none; white-space: nowrap; display: block; margin-top: 4px; }
+.sp-svc-link:hover { text-decoration: underline; }
+
+/* ── CROSSSELL ── */
+.rehab-crosssell { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.rehab-crosssell-head { text-align: center; margin-bottom: 40px; }
+.rehab-crosssell-h2 { font-family: var(--serif); font-size: 40px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 10px; }
+.rehab-crosssell-sub { font-size: 15px; color: var(--muted); }
+.rehab-crosssell-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.rehab-crosssell-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 8px; }
+.rehab-crosssell-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terra); font-family: var(--sans); }
+.rehab-crosssell-title { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); line-height: 1.2; }
+.rehab-crosssell-desc { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; }
+.rehab-crosssell-link { display: inline-block; font-size: 14px; font-weight: 700; color: var(--green); text-decoration: none; margin-top: 4px; transition: opacity 0.15s; }
+.rehab-crosssell-link:hover { opacity: 0.7; }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .service-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .service-hero-h1 { font-size: 36px; }
+  .service-hero-img { display: none; }
+  .service-hero-actions { flex-direction: column; }
+  .service-hero-actions .btn-primary, .service-hero-actions .btn-outline { width: 100%; text-align: center; }
+  .service-facts { flex-direction: column; }
+  .service-fact { border-right: none; border-bottom: 1px solid var(--border); }
+  .service-fact:last-child { border-bottom: none; }
+  .rehab-formats-grid { grid-template-columns: 1fr; }
+  .rehab-formats-h2 { font-size: 32px; }
+  .rehab-audience-grid { grid-template-columns: 1fr; }
+  .rehab-audience-h2 { font-size: 32px; }
+  .rehab-zones-grid { grid-template-columns: 1fr; }
+  .rehab-zones-h2 { font-size: 32px; }
+  .rehab-method-inner { grid-template-columns: 1fr; gap: 32px; }
+  .rehab-method-h2 { font-size: 32px; }
+  .rehab-method-img { display: none; }
+  .rehab-price-inner { grid-template-columns: 1fr; gap: 32px; }
+  .rehab-price-h2 { font-size: 32px; }
+  .specialist-card { flex-direction: column; gap: 16px; }
+  .rehab-crosssell-grid { grid-template-columns: 1fr; }
+  .rehab-crosssell-h2 { font-size: 32px; }
+  .sp-svc-item { grid-template-columns: 1fr auto; }
+  .sp-svc-icon { display: none; }
+}
+</style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+  m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109000859', 'ym');
+ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109000859" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+</head>
+<body>
+
+{% include 'includes/header.html' %}
+
+<!-- ══════════════════════════════════════════
+  1. HERO
+══════════════════════════════════════════ -->
+<section class="service-hero">
+  <div class="container">
+    <div class="service-hero-inner">
+      <div>
+        <div class="service-hero-eyebrow">{{ hero.breadcrumb_section }} · Москва · Выезд на дом</div>
+        <h1 class="service-hero-h1">{{ hero.h1 }}</h1>
+        <p class="service-hero-desc">{{ hero.subtitle }}</p>
+        <div class="service-hero-intro">
+          {% for paragraph in intro.text.strip().split('\n\n') %}
+          <p>{{ paragraph.strip() }}</p>
+          {% endfor %}
+        </div>
+        <div class="service-hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться на сеанс</button>
+          <button class="btn-outline" onclick="document.getElementById('methodology').scrollIntoView({behavior:'smooth'})">Как проходит</button>
+        </div>
+        <div class="service-facts">
+          <div class="service-fact">
+            <div class="service-fact-val">{{ hero.price_from }}</div>
+            <div class="service-fact-lbl">пробная сессия</div>
+          </div>
+          <div class="service-fact">
+            <div class="service-fact-val">30–90 мин</div>
+            <div class="service-fact-lbl">длительность</div>
+          </div>
+          <div class="service-fact">
+            <div class="service-fact-val">Выезд</div>
+            <div class="service-fact-lbl">Москва, в пределах МКАД</div>
+          </div>
+        </div>
+      </div>
+      <div class="service-hero-img">
+        <img src="{{ hero.image }}" alt="{{ hero.h1 }} — Александр Вахания">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  2. ФОРМАТЫ РАБОТЫ
+══════════════════════════════════════════ -->
+<section class="rehab-formats">
+  <div class="container">
+    <div class="rehab-formats-head">
+      <div class="eyebrow">Форматы</div>
+      <h2 class="rehab-formats-h2">{{ formats.title }}</h2>
+      <p class="rehab-formats-sub">{{ formats.subtitle }}</p>
+    </div>
+    <div class="rehab-formats-grid">
+      {% for item in formats['items'] %}
+      <div class="rehab-format-card">
+        <div class="rehab-format-icon">{{ item.icon }}</div>
+        <div class="rehab-format-title">{{ item.title }}</div>
+        <div class="rehab-format-desc">{{ item.description }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  3. КОМУ ПОДОЙДЁТ
+══════════════════════════════════════════ -->
+<section class="rehab-audience">
+  <div class="container">
+    <div class="rehab-audience-head">
+      <div class="eyebrow">Показания</div>
+      <h2 class="rehab-audience-h2">{{ audience.title }}</h2>
+      <p class="rehab-audience-sub">{{ audience.subtitle }}</p>
+    </div>
+    <div class="rehab-audience-grid">
+      {% for item in audience['items'] %}
+      <div class="rehab-audience-card">
+        <div class="rehab-audience-icon">{{ item.icon }}</div>
+        <div class="rehab-audience-title">{{ item.title }}</div>
+        <div class="rehab-audience-desc">{{ item.description }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  4. ЧТО ВХОДИТ В РАБОТУ
+══════════════════════════════════════════ -->
+<section class="rehab-zones">
+  <div class="container">
+    <div class="rehab-zones-head">
+      <div class="eyebrow">Методы</div>
+      <h2 class="rehab-zones-h2">{{ zones.title }}</h2>
+    </div>
+    <div class="rehab-zones-grid">
+      {% for col in zones.columns %}
+      <div class="rehab-zone-col">
+        <div class="rehab-zone-col-title">{{ col.title }}</div>
+        <div class="rehab-zone-col-sub">{{ col.subtitle }}</div>
+        <ul class="rehab-zone-list">
+          {% for item in col['items'] %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  5. КАК ПРОХОДИТ РАБОТА
+══════════════════════════════════════════ -->
+<section class="rehab-method" id="methodology">
+  <div class="container">
+    <div class="eyebrow">Методология</div>
+    <div class="rehab-method-inner">
+      <div>
+        <h2 class="rehab-method-h2">{{ methodology.title }}</h2>
+        <div class="rehab-method-steps">
+          {% for step in methodology.steps %}
+          <div class="rehab-method-step">
+            <div class="rehab-method-num">{{ step.number }}</div>
+            <div>
+              <div class="rehab-method-step-title">{{ step.title }}</div>
+              <div class="rehab-method-step-desc">{{ step.description }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="rehab-method-img">
+        <img src="{{ methodology.image }}" alt="{{ hero.h1 }} — методология работы">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  6. СТОИМОСТЬ
+══════════════════════════════════════════ -->
+<section class="rehab-price" id="price">
+  <div class="container">
+    <div class="eyebrow">Стоимость</div>
+    <div class="rehab-price-inner">
+      <div>
+        <h2 class="rehab-price-h2">Стоимость работы</h2>
+        <p class="rehab-price-note">{{ price.note }}</p>
+        <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">{{ price.cta }}</button>
+      </div>
+      <div class="rehab-price-card">
+        <div class="rehab-price-val">{{ price.value }}</div>
+        <div class="rehab-price-sub">пробная сессия · 30–40 мин</div>
+        <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">{{ price.cta }}</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'includes/specialist.html' %}
+
+{% include 'includes/reviews.html' %}
+
+<!-- ══════════════════════════════════════════
+  9. FAQ
+══════════════════════════════════════════ -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-head">
+      <div class="eyebrow">Вопросы и ответы</div>
+      <h2 class="faq-h2">Часто спрашивают</h2>
+      <p class="faq-sub">Ответы на частые вопросы о восстановлении плеча и руки.</p>
+    </div>
+    <div class="faq-list">
+      {% for item in faq %}
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">{{ item.question }}</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">{{ item.answer }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  10. ТАКЖЕ РАБОТАЮ С
+══════════════════════════════════════════ -->
+<section class="rehab-crosssell">
+  <div class="container">
+    <div class="rehab-crosssell-head">
+      <div class="eyebrow">Другие направления</div>
+      <h2 class="rehab-crosssell-h2">Реабилитация — часть системы</h2>
+      <p class="rehab-crosssell-sub">Для долгосрочного результата реабилитация работает в связке с массажем и тренировками.</p>
+    </div>
+    <div class="rehab-crosssell-grid">
+      {% for item in crosssell %}
+      <div class="rehab-crosssell-card">
+        <div class="rehab-crosssell-tag">{{ item.tag }}</div>
+        <div class="rehab-crosssell-title">{{ item.title }}</div>
+        <div class="rehab-crosssell-desc">{{ item.description }}</div>
+        <a href="{{ item.url }}" class="rehab-crosssell-link">Подробнее →</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include 'includes/form.html' %}
+
+{% include 'includes/footer.html' %}
+</body>
+</html>

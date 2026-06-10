@@ -55,8 +55,21 @@
             </div>
           </div>
           <div class="field">
-            <label for="service">Вид массажа</label>
-            <select id="service">
+            <label for="service">{% if section == "rehab" %}Направление{% else %}Вид массажа{% endif %}</label>
+            <select id="service" style="white-space:nowrap">
+              {% if section == "rehab" %}
+              <option value="{{ page_service }}" selected>{{ page_service }}</option>
+              <option>Восстановление после инсульта</option>
+              <option>Исправление осанки и сколиоза</option>
+              <option>Восстановление при остеохондрозе</option>
+              <option>Реабилитация плеча и руки после травмы</option>
+              <option>Коррекция плоскостопия у взрослых</option>
+              <option>Реабилитация после операции на позвоночнике</option>
+              <option>Реабилитация после переломов и растяжений</option>
+              <option>Восстановление после ЧМТ</option>
+              <option>Реабилитация после эндопротезирования</option>
+              <option>Другое</option>
+              {% else %}
               <option value="{{ breadcrumb_label }}" selected>{{ breadcrumb_label }}</option>
               <option>Классический массаж</option>
               <option>Лимфодренажный массаж</option>
@@ -68,6 +81,7 @@
               <option>Детский массаж</option>
               <option>Зональный массаж (спина/шея/ноги)</option>
               <option>Не знаю — хочу консультацию</option>
+              {% endif %}
             </select>
           </div>
           <div class="field">
