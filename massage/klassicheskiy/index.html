@@ -58,7 +58,7 @@
 .service-hero-seo { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 32px; max-width: 480px; border-left: 3px solid var(--border-input); padding-left: 16px; }
 .service-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
 .service-hero-img { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-lg); }
-.service-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.service-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 .service-facts { display: flex; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
 .service-fact { flex: 1; padding: 18px 20px; border-right: 1px solid var(--border); background: var(--surface); }
 .service-fact:last-child { border-right: none; }
@@ -78,7 +78,9 @@
 
 /* ── ZONES ── */
 .service-zones { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
-.service-zones-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.service-zones-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: stretch; }
+.service-zones-inner > div { display: flex; flex-direction: column; }
+.service-zones-inner .zones-list { flex: 1; }
 .service-zones-h2 { font-family: var(--serif); font-size: 36px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 10px; }
 .service-zones-sub { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
 .zones-list { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
@@ -318,7 +320,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
         </div>
       </div>
       <div class="service-hero-img">
-        <img src="/assets/image/specialists/work-session.jpg" alt="Классический массаж на дому — Александр Вахания">
+        <img src="/assets/image/general/hero.jpg" alt="Классический массаж на дому — Александр Вахания">
       </div>
     </div>
   </div>
@@ -417,9 +419,9 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
           </div>
         </div>
       </div>
-      <div>
+      <div style="padding-top: 0; margin-top: 0;">
         <div class="eyebrow">Кому подойдёт</div>
-        <h2 class="service-zones-h2" style="margin-top:8px;">Кому подходит</h2>
+        <h2 class="service-zones-h2">Кому подходит</h2>
         <p class="service-zones-sub">Классический массаж — универсальный формат для большинства запросов.</p>
         <div class="zones-list">
           <div class="zone-row">
@@ -505,7 +507,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
         </div>
       </div>
       <div class="service-process-img">
-        <img src="/assets/image/specialists/work-session.jpg" alt="Сеанс классического массажа">
+        <img src="/assets/image/services/massage/klassicheskiy.jpg" alt="Сеанс классического массажа">
       </div>
     </div>
   </div>
@@ -1204,8 +1206,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
               <option>Антистрессовый массаж</option>
               <option>Тайский массаж</option>
               <option>ПИР — мягкие мануальные техники</option>
-              <option>Детский массаж</option>
-              <option>Зональный массаж (спина/шея/ноги)</option>
+
               <option>Не знаю — хочу консультацию</option>
             </select>
           </div>
