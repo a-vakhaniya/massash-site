@@ -71,15 +71,14 @@
               <option>Другое</option>
               {% else %}
               <option value="{{ breadcrumb_label }}" selected>{{ breadcrumb_label }}</option>
-              <option>Классический массаж</option>
-              <option>Лимфодренажный массаж</option>
-              <option>Антицеллюлитный массаж</option>
-              <option>Оздоровительный массаж</option>
-              <option>Антистрессовый массаж</option>
-              <option>Тайский массаж</option>
-              <option>ПИР — мягкие мануальные техники</option>
-              <option>Детский массаж</option>
-              <option>Зональный массаж (спина/шея/ноги)</option>
+              {% if breadcrumb_label != "Классический массаж" %}<option>Классический массаж</option>{% endif %}
+              {% if breadcrumb_label != "Спортивный массаж" %}<option>Спортивный массаж</option>{% endif %}
+              {% if breadcrumb_label != "Лимфодренажный массаж" %}<option>Лимфодренажный массаж</option>{% endif %}
+              {% if breadcrumb_label != "Антицеллюлитный массаж" %}<option>Антицеллюлитный массаж</option>{% endif %}
+              {% if breadcrumb_label != "Оздоровительный массаж" %}<option>Оздоровительный массаж</option>{% endif %}
+              {% if breadcrumb_label != "Антистрессовый массаж" %}<option>Антистрессовый массаж</option>{% endif %}
+              {% if breadcrumb_label != "Тайский массаж" %}<option>Тайский массаж</option>{% endif %}
+              {% if breadcrumb_label != "ПИР — мягкие мануальные техники" %}<option>ПИР — мягкие мануальные техники</option>{% endif %}
               <option>Не знаю — хочу консультацию</option>
               {% endif %}
             </select>
