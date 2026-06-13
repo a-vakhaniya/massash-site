@@ -59,15 +59,15 @@
             <select id="service" style="white-space:nowrap">
               {% if section == "rehab" %}
               <option value="{{ page_service }}" selected>{{ page_service }}</option>
-              <option>Восстановление после инсульта</option>
-              <option>Исправление осанки и сколиоза</option>
-              <option>Восстановление при остеохондрозе</option>
-              <option>Реабилитация плеча и руки после травмы</option>
-              <option>Коррекция плоскостопия у взрослых</option>
-              <option>Реабилитация после операции на позвоночнике</option>
-              <option>Реабилитация после переломов и растяжений</option>
-              <option>Восстановление после ЧМТ</option>
-              <option>Реабилитация после эндопротезирования</option>
+              {% if page_service != "Восстановление после инсульта" %}<option>Восстановление после инсульта</option>{% endif %}
+              {% if page_service != "Исправление осанки и сколиоза" %}<option>Исправление осанки и сколиоза</option>{% endif %}
+              {% if page_service != "Восстановление при остеохондрозе" %}<option>Восстановление при остеохондрозе</option>{% endif %}
+              {% if page_service != "Реабилитация плеча и руки после травмы" %}<option>Реабилитация плеча и руки после травмы</option>{% endif %}
+              {% if page_service != "Коррекция плоскостопия у взрослых" %}<option>Коррекция плоскостопия у взрослых</option>{% endif %}
+              {% if page_service != "Реабилитация после операции на позвоночнике" %}<option>Реабилитация после операции на позвоночнике</option>{% endif %}
+              {% if page_service != "Реабилитация после переломов и растяжений" %}<option>Реабилитация после переломов и растяжений</option>{% endif %}
+              {% if page_service != "Восстановление после ЧМТ" %}<option>Восстановление после ЧМТ</option>{% endif %}
+              {% if page_service != "Реабилитация после эндопротезирования" %}<option>Реабилитация после эндопротезирования</option>{% endif %}
               <option>Другое</option>
               {% else %}
               <option value="{{ breadcrumb_label }}" selected>{{ breadcrumb_label }}</option>
