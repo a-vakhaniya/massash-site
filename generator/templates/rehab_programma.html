@@ -278,7 +278,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
     <div class="faq-head">
       <div class="eyebrow">Вопросы и ответы</div>
       <h2 class="faq-h2">Часто спрашивают</h2>
-      <p class="faq-sub">Ответы на частые вопросы об индивидуальной программе восстановления.</p>
+      <p class="faq-sub">Ответы на частые вопросы о программе восстановления.</p>
     </div>
     <div class="faq-list">
       {% for item in faq %}
@@ -337,6 +337,7 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
   </div>
 </section>
 
+{% set breadcrumb_label = hero.breadcrumb_page_acc %}
 {% include 'includes/form.html' %}
 
 {% include 'includes/footer.html' %}
