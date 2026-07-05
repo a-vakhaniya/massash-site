@@ -97,6 +97,7 @@ FILES = [
     "rehab/perelom/index.html",
     "rehab/cmt/index.html",
     "rehab/endoprotez/index.html",
+    "rehab/programma-vosstanovleniya/index.html",
     "massage/klassicheskiy/index.html",
     "massage/sportivnyy/index.html",
     "massage/limfodrenazh/index.html",
