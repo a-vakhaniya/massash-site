@@ -1,0 +1,1175 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Изучаю ваши материалы и готовлю персональную программу восстановления с учётом вашей ситуации. Москва. Специалист — Вахания Александр.">
+<meta name="author" content="Александр Вахания">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://massash.com/rehab/programma-vosstanovleniya/">
+<meta property="og:title" content="Индивидуальная программа восстановления по вашим документам | massash">
+<meta property="og:description" content="Изучаю ваши материалы и готовлю персональную программу восстановления с учётом вашей ситуации. Москва. Специалист — Вахания Александр.">
+<meta property="og:image" content="https://massash.com/assets/image/specialists/work-session.jpg">
+
+<link rel="canonical" href="https://massash.com/rehab/programma-vosstanovleniya/">
+<title>Индивидуальная программа восстановления по вашим документам | massash</title>
+
+<link rel="stylesheet" href="/css/variables.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="icon" type="image/svg+xml" href="/assets/image/favicon.svg">
+
+<style>
+/* ── DROPDOWN ── */
+.nav-dropdown { position: relative; }
+.nav-arrow { font-size: 14px; opacity: 0.7; margin-left: 6px; }
+.nav-dropdown-menu {
+  display: none; position: absolute; top: 100%; padding-top: 8px;
+  left: 50%; transform: translateX(-50%); background: #fff;
+  border: 1px solid var(--border, #e5e0d8); border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10); min-width: 180px;
+  padding: 8px 0; list-style: none; z-index: 100;
+}
+.nav-dropdown-menu li a {
+  display: block; padding: 10px 20px; font-size: 14px;
+  color: var(--text, #1a1a1a); text-decoration: none; white-space: nowrap; transition: background 0.15s;
+}
+.nav-dropdown-menu li a:hover { background: var(--bg-alt, #f5f2ed); color: var(--accent, #2d6a4f); }
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { padding: 14px 0; border-bottom: 1px solid var(--border); background: var(--bg); }
+.breadcrumb-list { display: flex; align-items: center; gap: 6px; list-style: none; font-size: 13px; color: var(--muted); margin: 0; padding: 0; }
+.breadcrumb-list a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+.breadcrumb-list a:hover { color: var(--green); }
+.breadcrumb-sep { opacity: 0.4; }
+.breadcrumb-list li:last-child { color: var(--text); }
+
+/* ── HERO ── */
+.service-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 72px 0 60px; }
+.service-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.service-hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terra); margin-bottom: 16px; font-family: var(--sans); }
+.service-hero-h1 { font-family: var(--serif); font-size: 48px; font-weight: 400; line-height: 1.1; color: var(--text); margin-bottom: 20px; }
+.service-hero-desc { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; max-width: 480px; }
+.service-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+.service-hero-img { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-lg); }
+.service-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.service-facts { display: flex; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.service-fact { flex: 1; padding: 18px 20px; border-right: 1px solid var(--border); background: var(--surface); }
+.service-fact:last-child { border-right: none; }
+.service-fact-val { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); line-height: 1; }
+.service-fact-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; font-family: var(--sans); }
+
+/* ── AUDIENCE ── */
+.rehab-audience { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.rehab-audience-head { text-align: center; margin-bottom: 48px; }
+.rehab-audience-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 12px; }
+.rehab-audience-sub { font-size: 16px; color: var(--muted); max-width: 560px; margin: 0 auto; }
+.rehab-audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.rehab-audience-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; box-shadow: var(--shadow-sm); }
+.rehab-audience-icon { font-size: 26px; margin-bottom: 10px; }
+.rehab-audience-title { font-family: var(--sans); font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.rehab-audience-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ── HOW IT WORKS ── */
+.prog-how { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.prog-how-head { text-align: center; margin-bottom: 48px; }
+.prog-how-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 0; }
+.prog-how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.prog-how-step { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; box-shadow: var(--shadow-sm); }
+.prog-how-num { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--terra); line-height: 1; opacity: 0.6; margin-bottom: 16px; }
+.prog-how-step-title { font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.prog-how-step-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+/* ── WHAT'S INCLUDED ── */
+.prog-included { background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.prog-included-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.prog-included-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 32px; }
+.prog-included-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.prog-included-item { display: flex; align-items: flex-start; gap: 14px; padding: 18px 24px; border-bottom: 1px solid var(--border); background: var(--bg); font-size: 14px; color: var(--text); line-height: 1.6; }
+.prog-included-item:last-child { border-bottom: none; }
+.prog-included-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 7px; }
+.prog-included-side { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px 28px; box-shadow: var(--shadow-sm); }
+.prog-included-side-title { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text); margin-bottom: 20px; line-height: 1.2; }
+.prog-included-side-items { display: flex; flex-direction: column; gap: 16px; }
+.prog-included-side-item-title { font-family: var(--sans); font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.prog-included-side-item-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.prog-included-side-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+/* ── PRICE CUSTOM ── */
+.prog-price { background: var(--surface); border-bottom: 1px solid var(--border); padding: var(--section-py, 80px) 0; }
+.prog-price-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+.prog-price-h2 { font-family: var(--serif); font-size: 44px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 20px; }
+.prog-price-text { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .service-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .service-hero-h1 { font-size: 36px; }
+  .service-hero-img { display: none; }
+  .service-hero-actions { flex-direction: column; }
+  .service-hero-actions .btn-primary, .service-hero-actions .btn-outline { width: 100%; text-align: center; }
+  .service-facts { flex-direction: column; }
+  .service-fact { border-right: none; border-bottom: 1px solid var(--border); }
+  .service-fact:last-child { border-bottom: none; }
+  .rehab-audience-grid { grid-template-columns: 1fr; }
+  .rehab-audience-h2 { font-size: 32px; }
+  .prog-how-steps { grid-template-columns: 1fr; gap: 16px; }
+  .prog-how-h2 { font-size: 32px; }
+  .prog-included-inner { grid-template-columns: 1fr; gap: 32px; }
+  .prog-included-h2 { font-size: 32px; }
+  .prog-price-h2 { font-size: 32px; }
+  .specialist-card { flex-direction: column; gap: 16px; }
+  .crosssell-tiles { grid-template-columns: 1fr !important; }
+}
+</style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+  m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109000859', 'ym');
+ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109000859" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+</head>
+<body>
+
+
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-text">Сертифицированный специалист · Москва · м. Аэропорт</div>
+      <div class="header-top-phone"><a href="tel:+79266636641">+7 (926) 663-66-41</a></div>
+    </div>
+  </div>
+  <nav class="header-nav">
+    <div class="container">
+      <div class="logo"><a href="/" style="text-decoration:none;color:inherit;">mas<span>sash</span></a></div>
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle active">Услуги <span class="nav-arrow">▾</span></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/massage/" style="font-weight:700;">Массаж</a></li>
+            <li><a href="/rehab/">Реабилитация</a></li>
+            <li><a href="/training/">Тренировки</a></li>
+          </ul>
+        </li>
+        <li><a href="/specialists/">Специалисты</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <button class="burger-btn" onclick="toggleMenu()" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="btn-book" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ── Breadcrumb ── -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+  <div class="container">
+    <ol class="breadcrumb-list">
+      <li><a href="/">Главная</a></li>
+      <li class="breadcrumb-sep">›</li>
+      <li><a href="/rehab/">Реабилитация</a></li>
+      <li class="breadcrumb-sep">›</li>
+      <li>Индивидуальная программа</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+  1. HERO
+══════════════════════════════════════════ -->
+<section class="service-hero">
+  <div class="container">
+    <div class="service-hero-inner">
+      <div>
+        <div class="service-hero-eyebrow">ИНДИВИДУАЛЬНАЯ ПРОГРАММА · ПО ВАШИМ ДОКУМЕНТАМ</div>
+        <h1 class="service-hero-h1">Индивидуальная программа восстановления по вашим документам</h1>
+        <p class="service-hero-desc">Если стандартной программы недостаточно — изучаю ваши материалы (выписки, снимки, описание случая) и готовлю персональную программу восстановления с учётом всех особенностей вашей ситуации.</p>
+        <div class="service-hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Оставить заявку</button>
+          <button class="btn-outline" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">Как это работает</button>
+        </div>
+        <div class="service-facts">
+          
+          <div class="service-fact">
+            <div class="service-fact-val">По запросу</div>
+            <div class="service-fact-lbl">стоимость — после разбора случая</div>
+          </div>
+          
+          <div class="service-fact">
+            <div class="service-fact-val">Документ</div>
+            <div class="service-fact-lbl">формат — или документ + разбор упражнений</div>
+          </div>
+          
+          <div class="service-fact">
+            <div class="service-fact-val">Любой случай</div>
+            <div class="service-fact-lbl">от осанки до послеоперационного</div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="service-hero-img">
+        <img src="/assets/image/general/hero_rehab.jpg" alt="Индивидуальная программа восстановления по вашим документам — Александр Вахания">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  2. КОМУ ПОДОЙДЁТ
+══════════════════════════════════════════ -->
+<section class="rehab-audience">
+  <div class="container">
+    <div class="rehab-audience-head">
+      <div class="eyebrow">Показания</div>
+      <h2 class="rehab-audience-h2">Кому подойдёт</h2>
+      <p class="rehab-audience-sub">Подходит для любого случая, когда нужна персональная программа, а не общий курс</p>
+    </div>
+    <div class="rehab-audience-grid">
+      
+      <div class="rehab-audience-card">
+        <div class="rehab-audience-icon">📋</div>
+        <div class="rehab-audience-title">Стандартная программа не учитывает ваш случай</div>
+        <div class="rehab-audience-desc">Когда общие рекомендации не подходят из-за особенностей вашей ситуации или диагноза.</div>
+      </div>
+      
+      <div class="rehab-audience-card">
+        <div class="rehab-audience-icon">🏥</div>
+        <div class="rehab-audience-title">Нужна программа под конкретный диагноз или после операции</div>
+        <div class="rehab-audience-desc">Составляю с учётом вашего этапа восстановления и имеющихся ограничений.</div>
+      </div>
+      
+      <div class="rehab-audience-card">
+        <div class="rehab-audience-icon">🏙️</div>
+        <div class="rehab-audience-title">Живёте далеко и не можете приезжать на регулярные сеансы</div>
+        <div class="rehab-audience-desc">Программа в документе — можно работать самостоятельно по чёткому плану.</div>
+      </div>
+      
+      <div class="rehab-audience-card">
+        <div class="rehab-audience-icon">🔍</div>
+        <div class="rehab-audience-title">Хотите получить второе мнение по имеющейся программе</div>
+        <div class="rehab-audience-desc">Разбираю то, что уже есть, и при необходимости предлагаю корректировки.</div>
+      </div>
+      
+      <div class="rehab-audience-card">
+        <div class="rehab-audience-icon">🦴</div>
+        <div class="rehab-audience-title">Восстанавливаетесь после сложной операции</div>
+        <div class="rehab-audience-desc">Эндопротезирование, сложные травмы — составляю программу под ваш конкретный этап.</div>
+      </div>
+      
+      <div class="rehab-audience-card">
+        <div class="rehab-audience-icon">📌</div>
+        <div class="rehab-audience-title">Нужен понятный пошаговый план</div>
+        <div class="rehab-audience-desc">Для себя или родственника — с чёткими инструкциями и дневником наблюдений.</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  3. КАК ЭТО РАБОТАЕТ
+══════════════════════════════════════════ -->
+<section class="prog-how" id="how-it-works">
+  <div class="container">
+    <div class="prog-how-head">
+      <div class="eyebrow">Процесс</div>
+      <h2 class="prog-how-h2">Как это работает</h2>
+    </div>
+    <div class="prog-how-steps">
+      
+      <div class="prog-how-step">
+        <div class="prog-how-num">01</div>
+        <div class="prog-how-step-title">Оставляете заявку</div>
+        <div class="prog-how-step-desc">Коротко опишите случай через форму — этого достаточно для первого контакта.</div>
+      </div>
+      
+      <div class="prog-how-step">
+        <div class="prog-how-num">02</div>
+        <div class="prog-how-step-title">Присылаете материалы</div>
+        <div class="prog-how-step-desc">Выписки, снимки — почтой или в мессенджере. Если каких-то документов нет — не страшно, обсудим.</div>
+      </div>
+      
+      <div class="prog-how-step">
+        <div class="prog-how-num">03</div>
+        <div class="prog-how-step-title">Изучаю и готовлю программу</div>
+        <div class="prog-how-step-desc">Разбираю материалы, составляю программу под вашу ситуацию. Обычно 2–4 дня после получения всех материалов.</div>
+      </div>
+      
+      <div class="prog-how-step">
+        <div class="prog-how-num">04</div>
+        <div class="prog-how-step-title">Получаете документ</div>
+        <div class="prog-how-step-desc">Этапы, правила безопасности, упражнения с дозировкой, дневник наблюдений. По желанию — личный разбор упражнений очно или по видеосвязи.</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  4. ЧТО ВХОДИТ + ЧЕМ ОТЛИЧАЕТСЯ
+══════════════════════════════════════════ -->
+<section class="prog-included">
+  <div class="container">
+    <div class="prog-included-inner">
+      <div>
+        <h2 class="prog-included-h2">Что входит в программу</h2>
+        <ul class="prog-included-list">
+          
+          <li class="prog-included-item">
+            <span class="prog-included-dot"></span>
+            <span>Персональная программа документом — с учётом этапа и особенностей случая</span>
+          </li>
+          
+          <li class="prog-included-item">
+            <span class="prog-included-dot"></span>
+            <span>Правила безопасности — что можно и нельзя на данном этапе восстановления</span>
+          </li>
+          
+          <li class="prog-included-item">
+            <span class="prog-included-dot"></span>
+            <span>Комплекс упражнений — с чёткой дозировкой и техникой выполнения</span>
+          </li>
+          
+          <li class="prog-included-item">
+            <span class="prog-included-dot"></span>
+            <span>Режим нагрузок — как безопасно увеличивать активность</span>
+          </li>
+          
+          <li class="prog-included-item">
+            <span class="prog-included-dot"></span>
+            <span>Дневник наблюдений — для отслеживания прогресса</span>
+          </li>
+          
+          <li class="prog-included-item">
+            <span class="prog-included-dot"></span>
+            <span>По желанию — личный разбор упражнений, очно или по видеосвязи, чтобы вы точно всё делали правильно</span>
+          </li>
+          
+        </ul>
+      </div>
+      <div>
+        <div class="prog-included-side">
+          <div class="prog-included-side-title">Не курс для всех, а программа под вас</div>
+          <div class="prog-included-side-items">
+            
+            
+            <div>
+              <div class="prog-included-side-item-title">Индивидуально, а не по шаблону</div>
+              <div class="prog-included-side-item-desc">Программа составляется под ваш случай и вашу ситуацию, а не собирается из готового набора уроков для всех.</div>
+            </div>
+            
+            <hr class="prog-included-side-divider">
+            <div>
+              <div class="prog-included-side-item-title">Без лишнего</div>
+              <div class="prog-included-side-item-desc">Только то, что нужно на вашем этапе восстановления, без часов общих лекций.</div>
+            </div>
+            
+            <hr class="prog-included-side-divider">
+            <div>
+              <div class="prog-included-side-item-title">С контролем техники</div>
+              <div class="prog-included-side-item-desc">Если выбираете личный разбор, вы точно знаете, что делаете упражнения правильно, а не повторяете за видео из интернета.</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  5. СТОИМОСТЬ
+══════════════════════════════════════════ -->
+<section class="prog-price" id="price">
+  <div class="container">
+    <div class="eyebrow">Стоимость</div>
+    <div class="prog-price-inner">
+      <h2 class="prog-price-h2">Стоимость — по запросу</h2>
+      <p class="prog-price-text">Каждый случай индивидуален по объёму и сложности материалов, поэтому точную стоимость называю после изучения вашей ситуации. Оставьте заявку — обсудим детали и формат работы.</p>
+      <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Оставить заявку</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  6+7. ВАШ СПЕЦИАЛИСТ + ПРАЙС-ЛИСТ
+══════════════════════════════════════════ -->
+<section class="service-specialist-section">
+  <div class="container">
+    <div class="eyebrow">Кто проводит сеанс</div>
+    <h2 style="font-family:var(--serif);font-size:44px;font-weight:400;color:var(--text);line-height:1.1;margin-bottom:32px;">Ваш специалист</h2>
+    <div class="specialist-card">
+      <div class="specialist-card-avatar">
+        <img src="/assets/image/specialists/avatar.jpg" alt="Вахания Александр Петрович">
+      </div>
+      <div class="specialist-card-body">
+        <div class="specialist-card-name">Вахания Александр Петрович</div>
+        <div class="specialist-card-role">Массажист-реабилитолог · персональный тренер</div>
+        <div class="specialist-card-facts">Тренер с 2004 · Массаж с 2020 · 8 сертификатов МИРК</div>
+      </div>
+      <div style="flex-shrink:0;align-self:center;">
+        <a href="/specialists/vakhaniya/" class="sp-card-btn">Подробнее о специалисте →</a>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;">
+      <div class="eyebrow">Прайс-лист</div>
+      <h3 style="font-family:var(--serif);font-size:44px;font-weight:400;color:var(--text);line-height:1.1;margin-bottom:40px;">Услуги и цены</h3>
+      <!-- Группа: Реабилитация -->
+      <div class="sp-svc-group open">
+        <button class="sp-svc-group-header" onclick="toggleSvcGroup(this)">
+          <div class="sp-svc-group-icon terra">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <span class="sp-svc-group-title">Реабилитация</span>
+          <span class="sp-svc-group-count">9 программ</span>
+          <span class="sp-svc-group-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="sp-svc-group-body">
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Восстановление после инсульта</div>
+              <div class="sp-svc-meta">Программа восстановления на дому</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="/rehab/insult/" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Исправление осанки и сколиоза</div>
+              <div class="sp-svc-meta">Осанка, позвоночник, сколиоз</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Восстановление при остеохондрозе</div>
+              <div class="sp-svc-meta">Шея, спина, поясница</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Реабилитация плеча и руки после травмы</div>
+              <div class="sp-svc-meta">Плечо, локоть, запястье</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="/rehab/shoulder/" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Коррекция плоскостопия у взрослых</div>
+              <div class="sp-svc-meta">Стопа, свод, походка</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Реабилитация после операции на позвоночнике</div>
+              <div class="sp-svc-meta">После операции, позвоночник</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Реабилитация после переломов и растяжений</div>
+              <div class="sp-svc-meta">Переломы, связки, суставы</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Восстановление после ЧМТ</div>
+              <div class="sp-svc-meta">Координация, память, восстановление</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Реабилитация после эндопротезирования</div>
+              <div class="sp-svc-meta">Тазобедренный и коленный сустав</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Группа: Массаж -->
+      <div class="sp-svc-group">
+        <button class="sp-svc-group-header" onclick="toggleSvcGroup(this)">
+          <div class="sp-svc-group-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span class="sp-svc-group-title">Массаж</span>
+          <span class="sp-svc-group-count">8 услуг</span>
+          <span class="sp-svc-group-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="sp-svc-group-body">
+
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Классический массаж</div>
+              <div class="sp-svc-meta">Общеукрепляющий, расслабляющий</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="/massage/klassicheskiy/" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Спортивный массаж</div>
+              <div class="sp-svc-meta">Восстановление после нагрузок</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="/massage/sportivnyy/" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.93 4.93A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10 10 10 0 0 0-10-10 10 10 0 0 0-5.07 1.38"/><polyline points="3 8 4.93 4.93 8 6"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Лимфодренажный массаж</div>
+              <div class="sp-svc-meta">Отёки, целлюлит, тонус</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Антицеллюлитный массаж</div>
+              <div class="sp-svc-meta">Бёдра, живот, ягодицы</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Тайский массаж</div>
+              <div class="sp-svc-meta">Суставы, растяжка, энергия</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">5 000 ₽</span><span class="from">90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">ПИР — мягкие техники</div>
+              <div class="sp-svc-meta">Блоки, шея, спина</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Оздоровительный массаж</div>
+              <div class="sp-svc-meta">Профилактика, тонус, иммунитет</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Антистрессовый массаж</div>
+              <div class="sp-svc-meta">Шея, стресс, сон</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60–90 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Группа: Тренировки -->
+      <div class="sp-svc-group">
+        <button class="sp-svc-group-header" onclick="toggleSvcGroup(this)">
+          <div class="sp-svc-group-icon terra">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <span class="sp-svc-group-title">Тренировки</span>
+          <span class="sp-svc-group-count">7 форматов</span>
+          <span class="sp-svc-group-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="sp-svc-group-body">
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Функциональный тренинг</div>
+              <div class="sp-svc-meta">Сила, координация, выносливость</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="/training/funkcionalnyy/" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Коррекция осанки и позвоночника</div>
+              <div class="sp-svc-meta">Спина, позвоночник, стабилизация</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">ЛФК — лечебная физкультура</div>
+              <div class="sp-svc-meta">Реабилитация, суставы, восстановление</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Тренировки для снижения веса</div>
+              <div class="sp-svc-meta">Вес, кардио, метаболизм</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Тренировки при болях в спине</div>
+              <div class="sp-svc-meta">Поясница, шея, корсет</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Тренировки для старшего возраста</div>
+              <div class="sp-svc-meta">55+, равновесие, активность</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">4 500 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+          <div class="sp-svc-item">
+            <div class="sp-svc-icon terra"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="sp-svc-info">
+              <div class="sp-svc-name">Онлайн-тренировки</div>
+              <div class="sp-svc-meta">Zoom, WhatsApp, удалённо</div>
+            </div>
+            <div class="sp-svc-price"><span class="from">от</span><span class="amount">3 000 ₽</span><span class="from">60 мин</span><a href="#" class="sp-svc-link">Подробнее →</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sp-svc-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Стоимость выезда обсуждается отдельно в зависимости от района.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  8. ОТЗЫВЫ
+══════════════════════════════════════════ -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-head">
+      <div>
+        <div class="eyebrow">Отзывы клиентов</div>
+        <h2 class="reviews-h2">Что говорят клиенты</h2>
+      </div>
+      <div class="reviews-nav">
+        <button class="reviews-nav-btn" id="rev-prev" aria-label="Назад">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="reviews-nav-btn" id="rev-next" aria-label="Вперёд">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+    <div class="reviews-track-wrap">
+      <div class="reviews-track" id="reviews-track">
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" style="opacity:0.25"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Мой папа пережил операцию по расслоению аорты, лежал в реанимации почти 20 дней, что сильно сказалось на его возможности двигаться. Когда я искала реабилитолога, у папы еще была не вылеченная пневмония, и другие специалисты соглашались на занятия, не обращая внимания на это состояние. Однако Александр показал свой профессионализм, отметив, что начинать реабилитацию при остром течении пневмонии нельзя. Папу повторно госпитализировали в тот же вечер, но мы поняли, что начнем заниматься после выписки именно с Александром. Для нас это был зеленый флаг :) Хотя прошло меньше месяца с начала занятий, уже есть заметные результаты: папа встает практически без помощи и может проходить с ходунками большее расстояние по квартире без перерыва. Огромная благодарность Александру за его внимательность и индивидуальный подход!</p>
+          <div class="review-meta">
+            <div class="review-avatar">А</div>
+            <div><div class="review-name">Алина</div><div class="review-date">18 мая 2026</div></div>
+          </div>
+          <div class="review-source">АВИТО</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Попасть к мастеру высокого уровня — настоящая редкость, и мне действительно повезло. Я давно делаю массаж и знакома со многими специалистами, поэтому могу сравнить. С первых минут стало ясно, что у вас особый дар. Руки работают точно и профессионально, при этом вы тонко чувствуете тело и его потребности. После сеанса появилось ощущение лёгкости, свободы и огромный заряд энергии. Я счастлива, что нашла такого мастера. Это прям джэкпот. Благодарю ☀️</p>
+          <div class="review-meta">
+            <div class="review-avatar">Е</div>
+            <div><div class="review-name">Екатерина Волобуева</div><div class="review-date">29 сентября 2025</div></div>
+          </div>
+          <div class="review-source">ЯНДЕКС</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Редко оставляю отзывы, но тут уникальный случай. Александр конечно удивительный по энергетике человек, я много где ходил и по салонам и разного уровня, но тут всё профессионально. Казалось он точно знает где и какую мышцу нужно промассировать. Рекомендую… столько техник знает, столько приёмов… и очень приятная энергия человека. Александр, спасибо Вам огромное и до встречи!</p>
+          <div class="review-meta">
+            <div class="review-avatar">С</div>
+            <div><div class="review-name">Сергей</div><div class="review-date">17 апреля 2025</div></div>
+          </div>
+          <div class="review-source">АВИТО</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Александр отличный массажист, быстро договорились о дате и времени сеанса. Приехал вовремя. У меня были боли в ногах и шейно-воротниковой зоне. Я почувствовала улучшения уже после первого сеанса. Подвижность в шейном отделе улучшилась очень значительно. Муж так же остался доволен, проработали поясничную зону. Спасибо большое! Договорились сразу о последующих сеансах.</p>
+          <div class="review-meta">
+            <div class="review-avatar">О</div>
+            <div><div class="review-name">Оля</div><div class="review-date">18 октября 2024</div></div>
+          </div>
+          <div class="review-source">ЯНДЕКС</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Массажем очень довольна, сделала уже 2 сеанса. Постоянный гипертонус плечевого пояса снимаю очень давно. В этот раз шею заклинило, и я искала того, кто справляется с сильным гипертонусом, как у спортсменов. Смело можете обращаться за решением задач подобного рода. Уже после первого сеанса мышцы расслабились, шея начала поворачиваться в стороны. Чувствуется, что мастер работает для результата. Мои триггеры найти очень непросто, но вы справились.</p>
+          <div class="review-meta">
+            <div class="review-avatar">Э</div>
+            <div><div class="review-name">Эльвира Абрамович</div><div class="review-date">7 декабря 2024</div></div>
+          </div>
+          <div class="review-source">АВИТО</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">25 лет езжу по санаториям, знаю на деле, что такое качественный массаж. Не мог долго в Москве найти хорошего специалиста. Обратился к Александру, объяснил свою ситуацию и проблему, он выявил проблемные места и выполнил профессиональный массаж. После чего я почувствовал облегчение и ушли боли. Рекомендую всем своим друзьям и знакомым. Массажист от Бога!</p>
+          <div class="review-meta">
+            <div class="review-avatar">А</div>
+            <div><div class="review-name">Алексей Бодю</div><div class="review-date">20 сентября 2024</div></div>
+          </div>
+          <div class="review-source">ЯНДЕКС</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Огромное спасибо Александру за помощь. Спина ломила так что руки поднять было больно, в связи с компрессионным переломом лет 12 назад. Я к нему обратился и уже через пару часов лежал на массажном столе, а ещё через час я уже выходя от него радовался жизни. Огромное спасибо, буду и дальше ходить!</p>
+          <div class="review-meta">
+            <div class="review-avatar">И</div>
+            <div><div class="review-name">Игорь Быков</div><div class="review-date">15 января 2025</div></div>
+          </div>
+          <div class="review-source">АВИТО</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Тренируемся по фитнесу и боксу с Александром. Занимаемся несколько месяцев, все нравится. Большим плюсом является то, что Александр также профессиональный массажист, поэтому работа может идти в комплексе.</p>
+          <div class="review-meta">
+            <div class="review-avatar">Н</div>
+            <div><div class="review-name">Никита</div><div class="review-date">25 сентября 2024</div></div>
+          </div>
+          <div class="review-source">ЯНДЕКС</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="review-text">Спасибо Александру за проведенную тренировку. Я 100% уверен, что она далеко не последняя. Все по делу. Без лишних сюсюканий. Тренер явно с правильным опытом в спорте и медицине, а это крайне важно. Всем его рекомендую.</p>
+          <div class="review-meta">
+            <div class="review-avatar">K</div>
+            <div><div class="review-name">Kayt Zalgeris</div><div class="review-date">31 марта 2025</div></div>
+          </div>
+          <div class="review-source">АВИТО</div>
+        </div>
+
+      </div>
+    </div>
+    <div class="reviews-footer">
+      <span class="reviews-footer-label">Читать все отзывы:</span>
+      <a href="https://uslugi.yandex.ru/profile/AleksandrVakhaniya-256116" class="btn-review-link" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 16 12 12 16"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        Отзывы на Яндекс Услугах
+      </a>
+      <a href="https://www.avito.ru/moskva/predlozheniya_uslug/massazh_i_reabilitatsiya._insult_travmy_2214479851#open-reviews-list" class="btn-review-link" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 16 12 12 16"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        Отзывы на Авито
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  FAQ
+══════════════════════════════════════════ -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-head">
+      <div class="eyebrow">Вопросы и ответы</div>
+      <h2 class="faq-h2">Часто спрашивают</h2>
+      <p class="faq-sub">Ответы на частые вопросы об индивидуальной программе восстановления.</p>
+    </div>
+    <div class="faq-list">
+      
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Какие документы нужно прислать?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Выписки из больницы, снимки, описание диагноза или ситуации — всё, что у вас есть. Если каких-то документов нет — не страшно, обсудим.</div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Сколько времени занимает подготовка программы?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Обычно 2–4 дня после получения всех материалов, в зависимости от сложности случая.</div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Это замена работе с врачом?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Нет, программа не заменяет консультацию и наблюдение врача. Это оздоровительная программа восстановления, которая дополняет назначенное лечение.</div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Можно ли получить только документ без личного объяснения?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Да, это отдельная опция — выбираете формат при заявке.</div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Как проходит личное объяснение упражнений?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Очно на встрече или по видеосвязи — показываю и объясняю технику выполнения каждого упражнения.</div>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Подходит ли программа для пожилых родственников?</span>
+          <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+        </button>
+        <div class="faq-a-wrap">
+          <div class="faq-a">Да, часто такие программы заказывают для родителей — с понятными инструкциями и дневником для контроля.</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  CROSSSELL
+══════════════════════════════════════════ -->
+<section class="massage-crosssell" style="padding: var(--section-py, 80px) 0;">
+  <div class="container">
+    <div class="massage-crosssell-head">
+      <div class="eyebrow">Другие направления</div>
+      <h2 class="massage-crosssell-h2">Реабилитация — часть системы</h2>
+      <p class="massage-crosssell-sub">Для долгосрочного результата реабилитация работает в связке с массажем и тренировками.</p>
+    </div>
+    <div class="crosssell-tiles">
+      
+      <div class="crosssell-tile">
+        <div class="crosssell-tile-img">
+          <img src="/assets/image/catalog/massage.jpg" alt="Классический массаж">
+        </div>
+        <div class="crosssell-tile-body">
+          <div class="crosssell-tile-eyebrow">МАССАЖ</div>
+          <div class="crosssell-tile-title">Классический массаж</div>
+          <div class="crosssell-tile-desc">Общий расслабляющий и восстановительный массаж — для снятия напряжения и улучшения самочувствия.</div>
+          
+          <div class="crosssell-tile-tags tile-tags">
+            
+            <a href="/massage/klassicheskiy/" class="tag-outline terra">КЛАССИЧЕСКИЙ</a>
+            
+            <a href="/massage/sportivnyy/" class="tag-outline terra">СПОРТИВНЫЙ</a>
+            
+            <a href="/massage/antistress/" class="tag-outline terra">АНТИСТРЕССОВЫЙ</a>
+            
+          </div>
+          
+        </div>
+        <div class="crosssell-tile-action">
+          <div>
+            <div class="crosssell-tile-price">от 4 500 ₽</div>
+            <div class="crosssell-tile-price-sub">60–90 мин</div>
+          </div>
+          <a href="/massage/klassicheskiy/" class="btn-tile">Подробнее</a>
+        </div>
+      </div>
+      
+      <div class="crosssell-tile">
+        <div class="crosssell-tile-img">
+          <img src="/assets/image/catalog/personal-trainer.jpg" alt="Функциональный тренинг">
+        </div>
+        <div class="crosssell-tile-body">
+          <div class="crosssell-tile-eyebrow">ТРЕНИРОВКИ</div>
+          <div class="crosssell-tile-title">Функциональный тренинг</div>
+          <div class="crosssell-tile-desc">Персональные тренировки на восстановление движения, укрепление и стабилизацию.</div>
+          
+          <div class="crosssell-tile-tags tile-tags">
+            
+            <a href="/training/funkcionalnyy/" class="tag-outline terra">ФУНКЦИОНАЛЬНЫЙ ТРЕНИНГ</a>
+            
+            <a href="/training/lfk/" class="tag-outline terra">ЛФК</a>
+            
+            <a href="/training/stabilizaciya/" class="tag-outline terra">СТАБИЛИЗАЦИЯ</a>
+            
+          </div>
+          
+        </div>
+        <div class="crosssell-tile-action">
+          <div>
+            <div class="crosssell-tile-price">от 4 500 ₽</div>
+            <div class="crosssell-tile-price-sub">60 мин</div>
+          </div>
+          <a href="/training/funkcionalnyy/" class="btn-tile">Подробнее</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  11. ФОРМА ЗАПИСИ
+══════════════════════════════════════════ -->
+<section class="cta-section" id="booking">
+  <div class="container">
+    <div class="cta-inner">
+
+      <div class="cta-left">
+        <div class="eyebrow cta-eyebrow">Запись на приём</div>
+        <h2 class="cta-h2">Запишитесь на индивидуальная программа</h2>
+        <p class="cta-sub">Первичная консультация бесплатна — разберём Вашу ситуацию, выберем подходящий формат и ответим на все вопросы.</p>
+        <div class="cta-details">
+          <div class="cta-detail">
+            <div class="cta-detail-icon">📞</div>
+            <div>
+              <div class="cta-detail-text">+7 (926) 663-66-41</div>
+              <div class="cta-detail-sub">Звонок · WhatsApp · Telegram</div>
+            </div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-detail-icon">✉️</div>
+            <div>
+              <div class="cta-detail-text"><a href="mailto:promassash@gmail.com" style="color:inherit;">promassash@gmail.com</a></div>
+              <div class="cta-detail-sub">Email</div>
+            </div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-detail-icon">📍</div>
+            <div>
+              <div class="cta-detail-text">г. Москва, м. Аэропорт · Выезд на дом</div>
+              <div class="cta-detail-sub">МКАД и ближайшее Подмосковье</div>
+            </div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-detail-icon">🕐</div>
+            <div>
+              <div class="cta-detail-text">Пн–Пт 9:00–20:00</div>
+              <div class="cta-detail-sub">Сб–Вс 10:00–18:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-form">
+        <div class="form-title">Оставьте заявку</div>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Ваше имя</label>
+              <input type="text" id="name" placeholder="Анна Иванова" required>
+            </div>
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" placeholder="+7 (999) 000-00-00" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">Направление</label>
+            <select id="service" style="white-space:nowrap">
+              
+              <option value="Индивидуальная программа восстановления" selected>Индивидуальная программа восстановления</option>
+              <option>Восстановление после инсульта</option>
+              <option>Исправление осанки и сколиоза</option>
+              <option>Восстановление при остеохондрозе</option>
+              <option>Реабилитация плеча и руки после травмы</option>
+              <option>Коррекция плоскостопия у взрослых</option>
+              <option>Реабилитация после операции на позвоночнике</option>
+              <option>Реабилитация после переломов и растяжений</option>
+              <option>Восстановление после ЧМТ</option>
+              <option>Реабилитация после эндопротезирования</option>
+              <option>Другое</option>
+              
+            </select>
+          </div>
+          <div class="field">
+            <label for="comment">Расскажите о Вашей ситуации</label>
+            <textarea id="comment" rows="3" placeholder="Опишите запрос — это поможет подготовиться к встрече..."></textarea>
+          </div>
+          <div class="consent-block">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">
+              Я согласен(а) на обработку персональных данных в соответствии с
+              <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a>
+            </label>
+          </div>
+          <button type="submit" class="btn-submit">Отправить заявку</button>
+          <p class="form-note">Отвечаю оперативно в рабочее время</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  12. FOOTER
+══════════════════════════════════════════ -->
+<footer class="footer" id="contacts">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">mas<span>sash</span></div>
+        <p class="footer-tagline">Профессиональный массаж, реабилитация и оздоровительные тренировки в Москве.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Услуги</div>
+        <div class="footer-links">
+          <a href="/massage/">Массаж</a>
+          <a href="/rehab/">Реабилитация</a>
+          <a href="/training/">Тренировки</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Специалисты</div>
+        <div class="footer-links">
+          <a href="/specialists/">Все специалисты</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Информация</div>
+        <div class="footer-links">
+          <a href="/#about">Обо мне</a>
+          <a href="/#reviews">Отзывы</a>
+          <a href="/oferta.html">Оферта</a>
+          <a href="/privacy.html">Политика конфиденциальности</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Контакты</div>
+        <div class="footer-links">
+          <a href="tel:+79266636641">+7 (926) 663-66-41</a>
+          <a href="mailto:promassash@gmail.com">promassash@gmail.com</a>
+          <a href="#contacts">г. Москва, м. Аэропорт</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 ИП Вахания Александр Петрович · ИНН 504410052123</div>
+      <div class="footer-copy">
+        <a href="/oferta.html">Оферта</a> ·
+        <a href="/privacy.html">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+
+function toggleSvcGroup(btn) {
+  var group = btn.closest('.sp-svc-group');
+  group.classList.toggle('open');
+}
+</script>
+</body>
+</html>
