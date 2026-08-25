@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Анкета о состоянии здоровья перед сеансом массажа, реабилитации или тренировки у Александра Вахания. Заполните онлайн за 2–3 минуты перед первым визитом.">
+<meta name="author" content="Александр Вахания">
+<meta name="robots" content="noindex, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://massash.com/anketa/">
+<meta property="og:title" content="Анкета перед сеансом | massash">
+<meta property="og:description" content="Анкета о состоянии здоровья перед сеансом массажа, реабилитации или тренировки у Александра Вахания. Заполните онлайн за 2–3 минуты.">
+
+<link rel="canonical" href="https://massash.com/anketa/">
+<title>Анкета перед сеансом | massash</title>
+
+<link rel="stylesheet" href="/css/variables.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="icon" type="image/svg+xml" href="/assets/image/favicon.svg">
+
+<style>
+/* ── HERO ── */
+.anketa-hero { background: var(--bg); border-bottom: 1px solid var(--border); padding: 72px 0 56px; text-align: center; }
+.anketa-hero .eyebrow { justify-content: center; }
+.anketa-h1 { font-family: var(--serif); font-size: 48px; font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 14px; }
+.anketa-sub { font-size: 16px; color: var(--muted); }
+
+/* ── INTRO ── */
+.anketa-intro-section { background: var(--surface); border-bottom: 1px solid var(--border); padding: 56px 0; }
+.anketa-intro-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 36px 40px; box-shadow: var(--shadow-sm); max-width: 760px; margin: 0 auto; }
+.anketa-intro-card p { font-size: 15px; line-height: 1.75; color: var(--text); margin-bottom: 16px; }
+.anketa-intro-card p:last-child { margin-bottom: 0; }
+.anketa-intro-card p.intro-note { font-size: 13px; color: var(--muted); border-left: 3px solid var(--border-input); padding-left: 14px; }
+.anketa-intro-card p.intro-final { font-weight: 700; color: var(--text); }
+
+/* ── SECTIONS ── */
+.anketa-section { background: var(--bg); border-bottom: 1px solid var(--border); padding: 56px 0; }
+.anketa-section.alt { background: var(--surface); }
+.anketa-section-head { max-width: 640px; margin: 0 auto 32px; text-align: center; }
+.anketa-section-head .eyebrow { justify-content: center; }
+.anketa-h2 { font-family: var(--serif); font-size: 34px; font-weight: 400; color: var(--text); margin-bottom: 8px; }
+.anketa-section-sub { font-size: 14px; color: var(--muted); }
+
+/* ── QUESTION ROWS ── */
+.q-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.q-row { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; }
+.q-row-main { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.q-text { font-size: 14.5px; color: var(--text); line-height: 1.5; flex: 1; }
+.q-toggle { display: flex; gap: 8px; flex-shrink: 0; }
+.q-btn { font-family: var(--sans); font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: 8px; border: 1.5px solid var(--border-input); background: #fff; color: var(--muted); cursor: pointer; transition: all 180ms var(--ease); }
+.q-btn:hover { border-color: var(--green); }
+.q-btn.active[data-val="no"] { background: var(--green); border-color: var(--green); color: #fff; }
+.q-btn.active[data-val="yes"] { background: var(--terra); border-color: var(--terra); color: #fff; }
+
+.q-hint { display: none; margin-top: 14px; padding: 14px 16px; background: var(--terra-light); border-left: 3px solid var(--terra); border-radius: 8px; font-size: 13px; color: var(--text); line-height: 1.6; }
+.q-hint.show { display: block; }
+
+.q-input-wrap { display: none; margin-top: 14px; }
+.q-input-wrap.show { display: block; }
+.q-input-wrap input { width: 100%; font-family: var(--sans); font-size: 14px; color: var(--text); background: #fff; border: 1px solid var(--border-input); border-radius: 8px; padding: 10px 14px; outline: none; transition: border-color 180ms var(--ease), box-shadow 180ms var(--ease); }
+.q-input-wrap input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(61,122,107,0.15); }
+
+/* ── DIRECTIONS ── */
+.dir-note { text-align: center; font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+.dir-grid { max-width: 640px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.dir-card { display: flex; align-items: center; gap: 10px; background: var(--bg); border: 1.5px solid var(--border); border-radius: 12px; padding: 16px 18px; cursor: pointer; transition: border-color 180ms var(--ease), background 180ms var(--ease); }
+.dir-card:hover { border-color: var(--green); }
+.dir-card input { width: 18px; height: 18px; accent-color: var(--green); cursor: pointer; }
+.dir-card span { font-family: var(--sans); font-size: 14px; font-weight: 700; color: var(--text); }
+.dir-card.checked { border-color: var(--green); background: var(--green-tint); }
+
+/* ── BLOCK B ── */
+#block-b { display: none; }
+#block-b.show { display: block; }
+.q-subgroup { display: none; }
+.q-subgroup.show { display: block; }
+.q-subgroup + .q-subgroup { margin-top: 28px; }
+.q-subgroup-title { font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; max-width: 820px; margin-left: auto; margin-right: auto; }
+
+/* ── FINAL BLOCK ── */
+.anketa-final { max-width: 520px; margin: 0 auto; background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 36px; box-shadow: var(--shadow-md); }
+.field-error { display: none; font-size: 12px; color: var(--terra); margin-top: 6px; }
+.field-error.show { display: block; }
+.field.has-error input { border-color: var(--terra); }
+.consent-block.has-error .field-error { display: block; }
+
+/* ── CONFIRMATION ── */
+.anketa-confirm { display: none; max-width: 520px; margin: 0 auto; text-align: center; background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 48px 36px; box-shadow: var(--shadow-md); }
+.anketa-confirm.show { display: block; }
+.anketa-confirm-icon { font-size: 40px; margin-bottom: 16px; }
+.anketa-confirm h3 { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--text); margin-bottom: 14px; }
+.anketa-confirm p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 10px; }
+.anketa-confirm p:last-child { margin-bottom: 0; }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .anketa-h1 { font-size: 34px; }
+  .anketa-intro-card { padding: 26px 22px; }
+  .dir-grid { grid-template-columns: 1fr; }
+  .q-row-main { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .q-toggle { width: 100%; }
+  .q-btn { flex: 1; text-align: center; }
+  .anketa-final { padding: 28px 22px; }
+  .anketa-confirm { padding: 36px 22px; }
+}
+</style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+  m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109000859', 'ym');
+ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109000859" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top-text">Сертифицированный специалист · Москва · м. Аэропорт</div>
+      <div class="header-top-phone"><a href="tel:+79266636641">+7 (926) 663-66-41</a></div>
+    </div>
+  </div>
+  <nav class="header-nav">
+    <div class="container">
+      <div class="logo"><a href="/" style="text-decoration:none;color:inherit;">mas<span>sash</span></a></div>
+      <ul class="nav-links">
+        <li><a href="/">Главная</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-dropdown-toggle">Услуги <span class="nav-arrow">▾</span></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/massage/">Массаж</a></li>
+            <li><a href="/rehab/">Реабилитация</a></li>
+            <li><a href="/training/">Тренировки</a></li>
+          </ul>
+        </li>
+        <li><a href="/specialists/">Специалисты</a></li>
+        <li><a href="/#reviews">Отзывы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <button class="burger-btn" onclick="toggleMenu()" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="btn-book" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Записаться</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ── Breadcrumb ── -->
+<nav class="breadcrumb" aria-label="Хлебные крошки">
+  <div class="container">
+    <ol class="breadcrumb-list">
+      <li><a href="/">Главная</a></li>
+      <li class="breadcrumb-sep">›</li>
+      <li>Анкета перед сеансом</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+  1. HERO
+══════════════════════════════════════════ -->
+<section class="anketa-hero">
+  <div class="container">
+    <div class="eyebrow">Перед первым визитом</div>
+    <h1 class="anketa-h1">Анкета перед сеансом</h1>
+    <p class="anketa-sub">Займёт 2–3 минуты · заполняется один раз перед курсом</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  2. ВСТУПИТЕЛЬНЫЙ ТЕКСТ
+══════════════════════════════════════════ -->
+<section class="anketa-intro-section">
+  <div class="container">
+    <div class="anketa-intro-card">
+      <p>Чтобы сеанс прошёл максимально безопасно и эффективно, прошу заполнить короткую анкету о состоянии здоровья.</p>
+      <p>Моя работа — оздоровительный массаж и восстановительные программы, направленные на общее укрепление организма, снятие мышечного напряжения и коррекцию отдельных функциональных нарушений. Эта работа дополняет, но не заменяет наблюдение врача — поэтому точная информация о вашем состоянии помогает мне выстроить работу безопасно и подобрать подходящий формат сеанса.</p>
+      <p class="intro-note">Достоверность информации, которую вы указываете в анкете, находится полностью на вашей ответственности. Сокрытие или искажение данных о заболеваниях, травмах, операциях или иных состояниях может создать риск для вашего здоровья во время сеанса.</p>
+      <p>Если у вас есть сомнения по какому-то из пунктов — я подскажу, нужна ли предварительная консультация врача или справка, прежде чем мы продолжим.</p>
+      <p class="intro-final">Заполняя анкету и подтверждая чекбокс ниже, вы подтверждаете, что предоставленная информация верна, и берёте на себя ответственность за её достоверность.</p>
+    </div>
+  </div>
+</section>
+
+<form id="anketa-form" novalidate>
+
+<!-- ══════════════════════════════════════════
+  3. БЛОК А — ОБЩИЕ ВОПРОСЫ
+══════════════════════════════════════════ -->
+<section class="anketa-section">
+  <div class="container">
+    <div class="anketa-section-head">
+      <div class="eyebrow">Блок А</div>
+      <h2 class="anketa-h2">Общие вопросы о здоровье</h2>
+      <p class="anketa-section-sub">Отвечать не обязательно — но точность ответов помогает провести сеанс безопасно.</p>
+    </div>
+    <div class="q-list">
+
+      <div class="q-row" data-item="1" data-reveal="hint">
+        <div class="q-row-main">
+          <div class="q-text">1. Онкологические заболевания (текущие или в анамнезе)</div>
+          <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+        </div>
+        <div class="q-hint">По этому пункту рекомендуем предварительно проконсультироваться с врачом или прислать справку/снимок — пришлите, пожалуйста, при следующем контакте, обсудим детали перед сеансом.</div>
+      </div>
+
+      <div class="q-row" data-item="2" data-reveal="hint">
+        <div class="q-row-main">
+          <div class="q-text">2. Заболевания сердечно-сосудистой системы (гипертония, порок сердца, недавний инфаркт или инсульт)</div>
+          <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+        </div>
+        <div class="q-hint">По этому пункту рекомендуем предварительно проконсультироваться с врачом или прислать справку/снимок — пришлите, пожалуйста, при следующем контакте, обсудим детали перед сеансом.</div>
+      </div>
+
+      <div class="q-row" data-item="3" data-reveal="hint">
+        <div class="q-row-main">
+          <div class="q-text">3. Тромбозы, варикозное расширение вен в тяжёлой форме</div>
+          <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+        </div>
+        <div class="q-hint">По этому пункту рекомендуем предварительно проконсультироваться с врачом или прислать справку/снимок — пришлите, пожалуйста, при следующем контакте, обсудим детали перед сеансом.</div>
+      </div>
+
+      <div class="q-row" data-item="4" data-reveal="hint">
+        <div class="q-row-main">
+          <div class="q-text">4. Острые инфекционные или воспалительные заболевания, повышенная температура на данный момент</div>
+          <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+        </div>
+        <div class="q-hint">По этому пункту рекомендуем предварительно проконсультироваться с врачом или прислать справку/снимок — пришлите, пожалуйста, при следующем контакте, обсудим детали перед сеансом.</div>
+      </div>
+
+      <div class="q-row" data-item="5" data-reveal="hint">
+        <div class="q-row-main">
+          <div class="q-text">5. Заболевания кожи в зонах предполагаемого воздействия</div>
+          <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+        </div>
+        <div class="q-hint">По этому пункту рекомендуем предварительно проконсультироваться с врачом или прислать справку/снимок — пришлите, пожалуйста, при следующем контакте, обсудим детали перед сеансом.</div>
+      </div>
+
+      <div class="q-row" data-item="6" data-reveal="hint">
+        <div class="q-row-main">
+          <div class="q-text">6. Беременность</div>
+          <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+        </div>
+        <div class="q-hint">По этому пункту рекомендуем предварительно проконсультироваться с врачом или прислать справку/снимок — пришлите, пожалуйста, при следующем контакте, обсудим детали перед сеансом.</div>
+      </div>
+
+      <div class="q-row" data-item="7" data-reveal="hint">
+        <div class="q-row-main">
+          <div class="q-text">7. Психические заболевания в острой фазе, эпилепсия</div>
+          <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+        </div>
+        <div class="q-hint">По этому пункту рекомендуем предварительно проконсультироваться с врачом или прислать справку/снимок — пришлите, пожалуйста, при следующем контакте, обсудим детали перед сеансом.</div>
+      </div>
+
+      <div class="q-row" data-item="8" data-reveal="hint">
+        <div class="q-row-main">
+          <div class="q-text">8. Приём препаратов, влияющих на свёртываемость крови (антикоагулянты)</div>
+          <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+        </div>
+        <div class="q-hint">По этому пункту рекомендуем предварительно проконсультироваться с врачом или прислать справку/снимок — пришлите, пожалуйста, при следующем контакте, обсудим детали перед сеансом.</div>
+      </div>
+
+      <div class="q-row" data-item="9" data-reveal="text">
+        <div class="q-row-main">
+          <div class="q-text">9. Другие хронические заболевания, требующие постоянного наблюдения — укажите, какие</div>
+          <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+        </div>
+        <div class="q-input-wrap"><input type="text" placeholder="Укажите, какие заболевания"></div>
+      </div>
+
+      <div class="q-row" data-item="10" data-reveal="hint">
+        <div class="q-row-main">
+          <div class="q-text">10. Приём алкоголя или иных веществ, влияющих на самочувствие, в течение последних 24 часов</div>
+          <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+        </div>
+        <div class="q-hint">По этому пункту рекомендуем предварительно проконсультироваться с врачом или прислать справку/снимок — пришлите, пожалуйста, при следующем контакте, обсудим детали перед сеансом.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  4. НАПРАВЛЕНИЕ
+══════════════════════════════════════════ -->
+<section class="anketa-section alt">
+  <div class="container">
+    <div class="anketa-section-head">
+      <div class="eyebrow">Формат работы</div>
+      <h2 class="anketa-h2">Направление</h2>
+    </div>
+    <p class="dir-note">Можно выбрать несколько</p>
+    <div class="dir-grid">
+      <label class="dir-card" id="dir-card-massage">
+        <input type="checkbox" id="dir-massage" value="massage">
+        <span>Массаж</span>
+      </label>
+      <label class="dir-card" id="dir-card-rehab">
+        <input type="checkbox" id="dir-rehab" value="rehab">
+        <span>Реабилитация</span>
+      </label>
+      <label class="dir-card" id="dir-card-training">
+        <input type="checkbox" id="dir-training" value="training">
+        <span>Тренировки</span>
+      </label>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  5. БЛОК Б — УТОЧНЯЮЩИЕ ВОПРОСЫ
+══════════════════════════════════════════ -->
+<section class="anketa-section" id="block-b">
+  <div class="container">
+    <div class="anketa-section-head">
+      <div class="eyebrow">Блок Б</div>
+      <h2 class="anketa-h2">Уточняющие вопросы</h2>
+    </div>
+
+    <div class="q-subgroup" data-dir="rehab">
+      <div class="q-subgroup-title">Реабилитация</div>
+      <div class="q-list">
+
+        <div class="q-row" data-item="11" data-reveal="text">
+          <div class="q-row-main">
+            <div class="q-text">11. Были ли у вас операции за последние 12 месяцев? Если да — какие и когда</div>
+            <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+          </div>
+          <div class="q-input-wrap"><input type="text" placeholder="Какие и когда"></div>
+        </div>
+
+        <div class="q-row" data-item="12" data-reveal="none">
+          <div class="q-row-main">
+            <div class="q-text">12. Есть ли металлоконструкции, импланты, эндопротезы?</div>
+            <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+          </div>
+        </div>
+
+        <div class="q-row" data-item="13" data-reveal="none">
+          <div class="q-row-main">
+            <div class="q-text">13. Есть ли разрешение лечащего врача на физическую нагрузку/восстановительные занятия?</div>
+            <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+          </div>
+        </div>
+
+        <div class="q-row" data-item="14" data-reveal="text">
+          <div class="q-row-main">
+            <div class="q-text">14. Есть ли текущие ограничения по движению? Укажите, какие</div>
+            <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+          </div>
+          <div class="q-input-wrap"><input type="text" placeholder="Опишите ограничения"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="q-subgroup" data-dir="massage">
+      <div class="q-subgroup-title">Массаж</div>
+      <div class="q-list">
+
+        <div class="q-row" data-item="15" data-reveal="none">
+          <div class="q-row-main">
+            <div class="q-text">15. Купероз или повышенная сосудистая чувствительность кожи?</div>
+            <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+          </div>
+        </div>
+
+        <div class="q-row" data-item="16" data-reveal="none">
+          <div class="q-row-main">
+            <div class="q-text">16. Косметологические процедуры за последние 2 недели (пилинги, инъекции, лазер)?</div>
+            <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="q-subgroup" data-dir="training">
+      <div class="q-subgroup-title">Тренировки</div>
+      <div class="q-list">
+
+        <div class="q-row" data-item="17" data-reveal="text">
+          <div class="q-row-main">
+            <div class="q-text">17. Есть ли травмы или операции опорно-двигательного аппарата за последние 12 месяцев? Если да — какие именно, когда</div>
+            <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+          </div>
+          <div class="q-input-wrap"><input type="text" placeholder="Какие именно, когда"></div>
+        </div>
+
+        <div class="q-row" data-item="18" data-reveal="text">
+          <div class="q-row-main">
+            <div class="q-text">18. Есть ли ограничения по физической нагрузке? Укажите, какие</div>
+            <div class="q-toggle"><button type="button" class="q-btn" data-val="no">Нет</button><button type="button" class="q-btn" data-val="yes">Да</button></div>
+          </div>
+          <div class="q-input-wrap"><input type="text" placeholder="Укажите, какие"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+  6. ВАШИ ДАННЫЕ / ПОДТВЕРЖДЕНИЕ
+══════════════════════════════════════════ -->
+<section class="anketa-section alt" id="booking">
+  <div class="container">
+
+    <div id="anketa-form-wrap">
+      <div class="anketa-section-head">
+        <div class="eyebrow">Последний шаг</div>
+        <h2 class="anketa-h2">Ваши данные</h2>
+      </div>
+      <div class="anketa-final">
+        <div class="field" id="field-name">
+          <label for="anketa-name">ФИО</label>
+          <input type="text" id="anketa-name" placeholder="Иванова Анна Сергеевна">
+          <div class="field-error" id="error-name">Заполните ФИО</div>
+        </div>
+        <div class="field" id="field-phone">
+          <label for="anketa-phone">Телефон</label>
+          <input type="tel" id="anketa-phone" placeholder="+7 (999) 000-00-00">
+          <div class="field-error" id="error-phone">Укажите телефон</div>
+        </div>
+        <div class="consent-block" id="field-consent">
+          <input type="checkbox" id="anketa-consent">
+          <label for="anketa-consent">Я подтверждаю, что ознакомлен(а) с информацией выше, предоставленные данные о состоянии здоровья достоверны, и я несу ответственность за их точность</label>
+        </div>
+        <div class="field-error" id="error-consent" style="margin-top:-10px;margin-bottom:16px;">Подтвердите согласие, чтобы отправить анкету</div>
+        <div class="consent-block" id="field-consent-pd">
+          <input type="checkbox" id="anketa-consent-pd">
+          <label for="anketa-consent-pd">Я согласен(а) на обработку персональных данных, включая данные о состоянии здоровья, в соответствии с <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a></label>
+        </div>
+        <div class="field-error" id="error-consent-pd" style="margin-top:-10px;margin-bottom:16px;">Подтвердите согласие на обработку персональных данных</div>
+        <button type="submit" class="btn-submit">Отправить анкету</button>
+      </div>
+    </div>
+
+    <div class="anketa-confirm" id="confirm-norisk">
+      <div class="anketa-confirm-icon">✅</div>
+      <h3>Спасибо! Анкета получена</h3>
+      <p>Увидимся на сеансе.</p>
+    </div>
+
+    <div class="anketa-confirm" id="confirm-risk">
+      <div class="anketa-confirm-icon">✅</div>
+      <h3>Спасибо! Анкета получена</h3>
+      <p>По одному из пунктов хотели бы уточнить детали — пришлите, пожалуйста, справку или снимок, если они есть, любым удобным способом. Обсудим перед сеансом.</p>
+      <p>До встречи!</p>
+    </div>
+
+  </div>
+</section>
+
+</form>
+
+<!-- ══════════════════════════════════════════
+  7. FOOTER
+══════════════════════════════════════════ -->
+<footer class="footer" id="contacts">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">mas<span>sash</span></div>
+        <p class="footer-tagline">Профессиональный массаж, реабилитация и оздоровительные тренировки в Москве.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Услуги</div>
+        <div class="footer-links">
+          <a href="/massage/">Массаж</a>
+          <a href="/rehab/">Реабилитация</a>
+          <a href="/training/">Тренировки</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Специалисты</div>
+        <div class="footer-links">
+          <a href="/specialists/">Все специалисты</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Информация</div>
+        <div class="footer-links">
+          <a href="/#about">Обо мне</a>
+          <a href="/#reviews">Отзывы</a>
+          <a href="/oferta.html">Оферта</a>
+          <a href="/privacy.html">Политика конфиденциальности</a>
+          <a href="/anketa/">Анкета</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Контакты</div>
+        <div class="footer-links">
+          <a href="tel:+79266636641">+7 (926) 663-66-41</a>
+          <a href="mailto:promassash@gmail.com">promassash@gmail.com</a>
+          <a href="#contacts">г. Москва, м. Аэропорт</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 ИП Вахания Александр Петрович · ИНН 504410052123</div>
+      <div class="footer-copy">
+        <a href="/oferta.html">Оферта</a> ·
+        <a href="/privacy.html">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+
+// ── Q&A toggles (yes/no) ──
+document.querySelectorAll('.q-row').forEach(function(row) {
+  var buttons = row.querySelectorAll('.q-btn');
+  var reveal = row.dataset.reveal;
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      buttons.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var val = btn.dataset.val;
+      if (reveal === 'hint') {
+        row.querySelector('.q-hint').classList.toggle('show', val === 'yes');
+      } else if (reveal === 'text') {
+        row.querySelector('.q-input-wrap').classList.toggle('show', val === 'yes');
+      }
+    });
+  });
+});
+
+// ── Направление → Блок Б ──
+function updateBlockB() {
+  var rehabOn = document.getElementById('dir-rehab').checked;
+  var massageOn = document.getElementById('dir-massage').checked;
+  var trainingOn = document.getElementById('dir-training').checked;
+  document.querySelector('.q-subgroup[data-dir="rehab"]').classList.toggle('show', rehabOn);
+  document.querySelector('.q-subgroup[data-dir="massage"]').classList.toggle('show', massageOn);
+  document.querySelector('.q-subgroup[data-dir="training"]').classList.toggle('show', trainingOn);
+  document.getElementById('block-b').classList.toggle('show', rehabOn || massageOn || trainingOn);
+}
+document.querySelectorAll('.dir-card input[type="checkbox"]').forEach(function(cb) {
+  cb.addEventListener('change', function() {
+    cb.closest('.dir-card').classList.toggle('checked', cb.checked);
+    updateBlockB();
+  });
+});
+
+// ── Data helpers ──
+function qAnswer(item) {
+  var row = document.querySelector('.q-row[data-item="' + item + '"]');
+  if (!row) return null;
+  var active = row.querySelector('.q-btn.active');
+  return active ? active.dataset.val : null;
+}
+function qDetails(item) {
+  var row = document.querySelector('.q-row[data-item="' + item + '"]');
+  if (!row) return '';
+  var input = row.querySelector('.q-input-wrap input');
+  return input ? input.value.trim() : '';
+}
+
+function clearAnketaErrors() {
+  document.querySelectorAll('.field-error').forEach(function(el) { el.classList.remove('show'); });
+  document.querySelectorAll('.field.has-error').forEach(function(el) { el.classList.remove('has-error'); });
+  document.getElementById('field-consent').classList.remove('has-error');
+  document.getElementById('field-consent-pd').classList.remove('has-error');
+}
+
+// ── Submit ──
+document.getElementById('anketa-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  clearAnketaErrors();
+
+  var nameInput = document.getElementById('anketa-name');
+  var phoneInput = document.getElementById('anketa-phone');
+  var consentInput = document.getElementById('anketa-consent');
+  var consentPdInput = document.getElementById('anketa-consent-pd');
+  var valid = true;
+
+  if (!nameInput.value.trim()) {
+    document.getElementById('field-name').classList.add('has-error');
+    document.getElementById('error-name').classList.add('show');
+    valid = false;
+  }
+  if (!phoneInput.value.trim()) {
+    document.getElementById('field-phone').classList.add('has-error');
+    document.getElementById('error-phone').classList.add('show');
+    valid = false;
+  }
+  if (!consentInput.checked) {
+    document.getElementById('field-consent').classList.add('has-error');
+    document.getElementById('error-consent').classList.add('show');
+    valid = false;
+  }
+  if (!consentPdInput.checked) {
+    document.getElementById('field-consent-pd').classList.add('has-error');
+    document.getElementById('error-consent-pd').classList.add('show');
+    valid = false;
+  }
+  if (!valid) return;
+
+  var riskItems = [1, 2, 3, 4, 5, 6, 7, 8, 10];
+  var hasRisk = riskItems.some(function(n) { return qAnswer(n) === 'yes'; });
+
+  var directions = [];
+  document.querySelectorAll('.dir-card input[type="checkbox"]:checked').forEach(function(cb) {
+    directions.push(cb.value);
+  });
+
+  var data = {
+    general: {
+      q1_oncology: qAnswer(1),
+      q2_cardio: qAnswer(2),
+      q3_thrombosis: qAnswer(3),
+      q4_infection: qAnswer(4),
+      q5_skin: qAnswer(5),
+      q6_pregnancy: qAnswer(6),
+      q7_psych: qAnswer(7),
+      q8_anticoagulants: qAnswer(8),
+      q9_chronic: qAnswer(9),
+      q9_chronic_details: qDetails(9),
+      q10_alcohol24h: qAnswer(10)
+    },
+    hasRisk: hasRisk,
+    directions: directions,
+    rehab: {
+      q11_surgery_12m: qAnswer(11),
+      q11_surgery_details: qDetails(11),
+      q12_implants: qAnswer(12),
+      q13_doctor_permission: qAnswer(13),
+      q14_movement_limits: qAnswer(14),
+      q14_movement_limits_details: qDetails(14)
+    },
+    massage: {
+      q15_couperose: qAnswer(15),
+      q16_cosmetology_2w: qAnswer(16)
+    },
+    training: {
+      q17_injury_12m: qAnswer(17),
+      q17_injury_details: qDetails(17),
+      q18_load_limits: qAnswer(18),
+      q18_load_limits_details: qDetails(18)
+    },
+    fullName: nameInput.value.trim(),
+    phone: phoneInput.value.trim(),
+    consentHealth: consentInput.checked,
+    consentPersonalData: consentPdInput.checked,
+    submittedAt: new Date().toISOString()
+  };
+
+  console.log(data);
+
+  document.getElementById('anketa-form-wrap').style.display = 'none';
+  document.getElementById(hasRisk ? 'confirm-risk' : 'confirm-norisk').classList.add('show');
+});
+</script>
+</body>
+</html>
