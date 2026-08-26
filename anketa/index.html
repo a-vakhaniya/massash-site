@@ -442,7 +442,8 @@ ym(109000859, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLa
           <label for="anketa-consent-pd">Я согласен(а) на обработку персональных данных, включая данные о состоянии здоровья, в соответствии с <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a></label>
         </div>
         <div class="field-error" id="error-consent-pd" style="margin-top:-10px;margin-bottom:16px;">Подтвердите согласие на обработку персональных данных</div>
-        <button type="submit" class="btn-submit">Отправить анкету</button>
+        <button type="submit" class="btn-submit" id="anketa-submit-btn">Отправить анкету</button>
+        <div class="field-error" id="error-submit" style="margin-top:10px;">Не удалось отправить анкету. Проверьте подключение к интернету и попробуйте ещё раз.</div>
       </div>
     </div>
 
@@ -577,6 +578,7 @@ function clearAnketaErrors() {
   document.querySelectorAll('.field.has-error').forEach(function(el) { el.classList.remove('has-error'); });
   document.getElementById('field-consent').classList.remove('has-error');
   document.getElementById('field-consent-pd').classList.remove('has-error');
+  document.getElementById('error-submit').classList.remove('show');
 }
 
 // ── Submit ──
@@ -612,12 +614,27 @@ document.getElementById('anketa-form').addEventListener('submit', function(e) {
   }
   if (!valid) return;
 
-  var riskItems = [1, 2, 3, 4, 5, 6, 7, 8, 10];
-  var hasRisk = riskItems.some(function(n) { return qAnswer(n) === 'yes'; });
-
   var directions = [];
   document.querySelectorAll('.dir-card input[type="checkbox"]:checked').forEach(function(cb) {
     directions.push(cb.value);
+  });
+
+  var riskItems = [1, 2, 3, 4, 5, 6, 7, 8, 10];
+  var hasRisk = riskItems.some(function(n) { return qAnswer(n) === 'yes'; });
+
+  var blockBRiskCheckers = {
+    rehab: function() {
+      return qAnswer(11) === 'yes' || qAnswer(12) === 'yes' || qAnswer(13) === 'no' || qAnswer(14) === 'yes';
+    },
+    massage: function() {
+      return qAnswer(15) === 'yes' || qAnswer(16) === 'yes';
+    },
+    training: function() {
+      return qAnswer(17) === 'yes' || qAnswer(18) === 'yes';
+    }
+  };
+  directions.forEach(function(dir) {
+    if (blockBRiskCheckers[dir] && blockBRiskCheckers[dir]()) hasRisk = true;
   });
 
   var data = {
@@ -661,10 +678,26 @@ document.getElementById('anketa-form').addEventListener('submit', function(e) {
     submittedAt: new Date().toISOString()
   };
 
-  console.log(data);
+  var submitBtn = document.getElementById('anketa-submit-btn');
+  var submitError = document.getElementById('error-submit');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Отправка...';
+  submitError.classList.remove('show');
 
-  document.getElementById('anketa-form-wrap').style.display = 'none';
-  document.getElementById(hasRisk ? 'confirm-risk' : 'confirm-norisk').classList.add('show');
+  fetch('https://n8n.ezi.ru/webhook/massash-consent', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function(response) {
+    document.getElementById('anketa-form-wrap').style.display = 'none';
+    document.getElementById(hasRisk ? 'confirm-risk' : 'confirm-norisk').classList.add('show');
+  })
+  .catch(function(error) {
+    submitError.classList.add('show');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Отправить анкету';
+  });
 });
 </script>
 </body>
