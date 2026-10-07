@@ -1900,7 +1900,7 @@
   <img id="lightbox-img" src="" alt="Документ">
 </div>
 
-<script src="/js/main.js"></script>
+<script src="/js/main.js?v=20261007"></script>
 <script>
 function toggleMenu() {
   document.querySelector('.nav-links').classList.toggle('open');
@@ -1945,7 +1945,8 @@ function handleSubmit(e) {
     name: document.getElementById('name').value,
     phone: document.getElementById('phone').value,
     service: document.getElementById('service').value,
-    message: document.getElementById('comment').value
+    message: document.getElementById('comment').value,
+    page: window.location.href
   };
   fetch('https://n8n.ezi.ru/webhook/massash-form', {
     method: 'POST',

@@ -7,7 +7,8 @@ function handleSubmit(e) {
     name: document.getElementById('name').value,
     phone: document.getElementById('phone').value,
     service: document.getElementById('service').value,
-    message: document.getElementById('comment').value
+    message: document.getElementById('comment').value,
+    page: window.location.href
   };
 
   btn.textContent = 'Отправляем...';
